@@ -1,0 +1,164 @@
+[
+  {
+    "catalog_item_id": "ca000001-e5f6-4789-a012-b3c4d5e6f701",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "drop",
+    "title": "오늘 새벽 직송! 제주 감귤 3kg 한정 입고",
+    "title_snapshot": "오늘 새벽 직송! 제주 감귤 3kg 한정 입고",
+    "image_snapshot": null,
+    "price_snapshot": 12000
+  },
+  {
+    "catalog_item_id": "ca000002-e5f6-4789-a012-b3c4d5e6f702",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "drop",
+    "title": "당일 새벽 경매 국내산 고등어 1손 입고",
+    "title_snapshot": "당일 새벽 경매 국내산 고등어 1손 입고",
+    "image_snapshot": null,
+    "price_snapshot": 6000
+  },
+  {
+    "catalog_item_id": "ca000003-e5f6-4789-a012-b3c4d5e6f703",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "drop",
+    "title": "오늘 아침 직배송 국내산 삼겹살 600g",
+    "title_snapshot": "오늘 아침 직배송 국내산 삼겹살 600g",
+    "image_snapshot": null,
+    "price_snapshot": 18000
+  },
+  {
+    "catalog_item_id": "ca000004-e5f6-4789-a012-b3c4d5e6f704",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "drop",
+    "title": "경북 샤인머스캣 500g 특가 입고 — 수량 한정",
+    "title_snapshot": "경북 샤인머스캣 500g 특가 입고 — 수량 한정",
+    "image_snapshot": null,
+    "price_snapshot": 12000
+  },
+  {
+    "catalog_item_id": "ca000005-e5f6-4789-a012-b3c4d5e6f705",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "drop",
+    "title": "오늘 잡은 광어 회 300g (마감 임박)",
+    "title_snapshot": "오늘 잡은 광어 회 300g (마감 임박)",
+    "image_snapshot": null,
+    "price_snapshot": 22000
+  },
+  {
+    "catalog_item_id": "ca000006-e5f6-4789-a012-b3c4d5e6f706",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "drop",
+    "title": "남해 국내산 멸치 중멸 500g 오늘 아침 도착",
+    "title_snapshot": "남해 국내산 멸치 중멸 500g 오늘 아침 도착",
+    "image_snapshot": null,
+    "price_snapshot": 12000
+  },
+  {
+    "catalog_item_id": "ca000007-e5f6-4789-a012-b3c4d5e6f707",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "drop",
+    "title": "내일 아침 청양고추 500g 예약 입고 예정",
+    "title_snapshot": "내일 아침 청양고추 500g 예약 입고 예정",
+    "image_snapshot": null,
+    "price_snapshot": 3500
+  },
+  {
+    "catalog_item_id": "ca000008-e5f6-4789-a012-b3c4d5e6f708",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "drop",
+    "title": "내일 새벽 한우 불고기용 300g 특가 예정",
+    "title_snapshot": "내일 새벽 한우 불고기용 300g 특가 예정",
+    "image_snapshot": null,
+    "price_snapshot": 22000
+  },
+  {
+    "catalog_item_id": "ca000009-e5f6-4789-a012-b3c4d5e6f709",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "product",
+    "title": "제주 감귤 3kg",
+    "title_snapshot": "제주 감귤 3kg",
+    "image_snapshot": null,
+    "price_snapshot": 12000
+  },
+  {
+    "catalog_item_id": "ca000010-e5f6-4789-a012-b3c4d5e6f710",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "product",
+    "title": "경북 샤인머스캣 500g",
+    "title_snapshot": "경북 샤인머스캣 500g",
+    "image_snapshot": null,
+    "price_snapshot": 12000
+  },
+  {
+    "catalog_item_id": "ca000011-e5f6-4789-a012-b3c4d5e6f711",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "product",
+    "title": "국내산 삼겹살 600g",
+    "title_snapshot": "국내산 삼겹살 600g",
+    "image_snapshot": null,
+    "price_snapshot": 18000
+  },
+  {
+    "catalog_item_id": "ca000012-e5f6-4789-a012-b3c4d5e6f712",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "product",
+    "title": "남해 멸치 중멸 500g",
+    "title_snapshot": "남해 멸치 중멸 500g",
+    "image_snapshot": null,
+    "price_snapshot": 12000
+  },
+  {
+    "catalog_item_id": "ca000013-e5f6-4789-a012-b3c4d5e6f713",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "product",
+    "title": "한우 불고기용 300g",
+    "title_snapshot": "한우 불고기용 300g",
+    "image_snapshot": null,
+    "price_snapshot": 22000
+  },
+  {
+    "catalog_item_id": "ca000014-e5f6-4789-a012-b3c4d5e6f714",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "product",
+    "title": "국내산 시금치 200g",
+    "title_snapshot": "국내산 시금치 200g",
+    "image_snapshot": null,
+    "price_snapshot": 2500
+  },
+  {
+    "catalog_item_id": "ca000015-e5f6-4789-a012-b3c4d5e6f715",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "product",
+    "title": "국내산 고등어 1손",
+    "title_snapshot": "국내산 고등어 1손",
+    "image_snapshot": null,
+    "price_snapshot": 6000
+  },
+  {
+    "catalog_item_id": "ca000016-e5f6-4789-a012-b3c4d5e6f716",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "event",
+    "title": "망원시장 봄 맞이 특가전",
+    "title_snapshot": "망원시장 봄 맞이 특가전",
+    "image_snapshot": null,
+    "price_snapshot": null
+  },
+  {
+    "catalog_item_id": "ca000017-e5f6-4789-a012-b3c4d5e6f717",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "event",
+    "title": "5월 어버이날 선물 세트 기획전",
+    "title_snapshot": "5월 어버이날 선물 세트 기획전",
+    "image_snapshot": null,
+    "price_snapshot": null
+  },
+  {
+    "catalog_item_id": "ca000018-e5f6-4789-a012-b3c4d5e6f718",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "event",
+    "title": "주말 한정 수산물 직판 행사",
+    "title_snapshot": "주말 한정 수산물 직판 행사",
+    "image_snapshot": null,
+    "price_snapshot": null
+  }
+]

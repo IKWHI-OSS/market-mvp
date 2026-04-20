@@ -1,0 +1,56 @@
+[
+  {
+    "notification_id": "nt000001-e5f6-4789-a012-b3c4d5e6f701",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "type": "drop_alert",
+    "title": "제주 감귤 3kg 새벽 직송 입고 알림",
+    "target_type": "drop",
+    "target_id": "dr000001-e5f6-4789-a012-b3c4d5e6f701",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000002-e5f6-4789-a012-b3c4d5e6f702",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "type": "drop_alert",
+    "title": "고등어 1손 새벽 경매 입고! 지금 바로 확인하세요",
+    "target_type": "drop",
+    "target_id": "dr000002-e5f6-4789-a012-b3c4d5e6f702",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000003-e5f6-4789-a012-b3c4d5e6f703",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "type": "price_change",
+    "title": "청양고추 500g 가격이 4,000원 → 3,500원으로 인하됐어요",
+    "target_type": "product",
+    "target_id": "p1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000004-e5f6-4789-a012-b3c4d5e6f704",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "type": "event_start",
+    "title": "망원시장 봄 맞이 특가전이 시작됐어요!",
+    "target_type": "event",
+    "target_id": "ca000016-e5f6-4789-a012-b3c4d5e6f716",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000005-e5f6-4789-a012-b3c4d5e6f705",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "type": "system",
+    "title": "장보기 목록 '주말 바비큐 장보기'가 저장되었습니다",
+    "target_type": "market",
+    "target_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000006-e5f6-4789-a012-b3c4d5e6f706",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "type": "drop_alert",
+    "title": "내일 새벽 한우 불고기용 300g 특가 입고 예정 — 사전 알림",
+    "target_type": "drop",
+    "target_id": "dr000010-e5f6-4789-a012-b3c4d5e6f710",
+    "is_read": 0
+  }
+]

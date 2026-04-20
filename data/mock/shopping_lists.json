@@ -1,0 +1,17 @@
+[
+  {
+    "shopping_list_id": "sl000001-e5f6-4789-a012-b3c4d5e6f701",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "title": "이번 주 반찬거리"
+  },
+  {
+    "shopping_list_id": "sl000002-e5f6-4789-a012-b3c4d5e6f702",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "title": "추석 제수 준비"
+  },
+  {
+    "shopping_list_id": "sl000003-e5f6-4789-a012-b3c4d5e6f703",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "title": "주말 바비큐 장보기"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "role": "consumer",
+    "name": "김지연"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "role": "consumer",
+    "name": "이민준"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f703",
+    "role": "merchant",
+    "name": "박철수"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f704",
+    "role": "merchant",
+    "name": "최영희"
+  },
+  {
+    "user_id": "c1b2c3d4-e5f6-4789-a012-b3c4d5e6f705",
+    "role": "operator",
+    "name": "시스템관리자"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "preorder_id": "po000001-e5f6-4789-a012-b3c4d5e6f701",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "한우 갈비 600g",
+    "qty": 2,
+    "status": "requested"
+  },
+  {
+    "preorder_id": "po000002-e5f6-4789-a012-b3c4d5e6f702",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "꽃게 1kg",
+    "qty": 1,
+    "status": "confirmed"
+  }
+]

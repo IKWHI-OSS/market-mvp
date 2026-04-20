@@ -1,0 +1,119 @@
+[
+  {
+    "route_plan_id": "rp000001-e5f6-4789-a012-b3c4d5e6f701",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "route_json": {
+      "steps": [
+        {
+          "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+          "store_name": "망원 과일나라",
+          "lat": 37.5559,
+          "lng": 126.9103,
+          "order": 1
+        },
+        {
+          "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+          "store_name": "망원 수산",
+          "lat": 37.5557,
+          "lng": 126.9099,
+          "order": 2
+        },
+        {
+          "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+          "store_name": "망원 정육",
+          "lat": 37.5560,
+          "lng": 126.9105,
+          "order": 3
+        }
+      ],
+      "total_distance_m": 180,
+      "estimated_time_min": 12
+    }
+  },
+  {
+    "route_plan_id": "rp000002-e5f6-4789-a012-b3c4d5e6f702",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "route_json": {
+      "steps": [
+        {
+          "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+          "store_name": "망원 신선야채",
+          "lat": 37.5558,
+          "lng": 126.9101,
+          "order": 1
+        },
+        {
+          "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+          "store_name": "망원 과일나라",
+          "lat": 37.5559,
+          "lng": 126.9103,
+          "order": 2
+        },
+        {
+          "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+          "store_name": "망원 반찬가게",
+          "lat": 37.5552,
+          "lng": 126.9102,
+          "order": 3
+        },
+        {
+          "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+          "store_name": "망원 건어물",
+          "lat": 37.5554,
+          "lng": 126.9098,
+          "order": 4
+        }
+      ],
+      "total_distance_m": 220,
+      "estimated_time_min": 18
+    }
+  },
+  {
+    "route_plan_id": "rp000003-e5f6-4789-a012-b3c4d5e6f703",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "route_json": {
+      "steps": [
+        {
+          "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+          "store_name": "망원 채소마트",
+          "lat": 37.5554,
+          "lng": 126.9107,
+          "order": 1
+        },
+        {
+          "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+          "store_name": "달콤 과일",
+          "lat": 37.5553,
+          "lng": 126.9109,
+          "order": 2
+        },
+        {
+          "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+          "store_name": "망원 수산",
+          "lat": 37.5557,
+          "lng": 126.9099,
+          "order": 3
+        },
+        {
+          "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+          "store_name": "망원 정육",
+          "lat": 37.5560,
+          "lng": 126.9105,
+          "order": 4
+        },
+        {
+          "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+          "store_name": "망원 생활잡화",
+          "lat": 37.5558,
+          "lng": 126.9110,
+          "order": 5
+        }
+      ],
+      "total_distance_m": 310,
+      "estimated_time_min": 25
+    }
+  }
+]

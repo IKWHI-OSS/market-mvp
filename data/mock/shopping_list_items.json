@@ -1,0 +1,122 @@
+[
+  {
+    "list_item_id": "li000001-e5f6-4789-a012-b3c4d5e6f701",
+    "shopping_list_id": "sl000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name_snapshot": "국내산 시금치",
+    "qty": 200,
+    "unit": "g",
+    "checked": 1
+  },
+  {
+    "list_item_id": "li000002-e5f6-4789-a012-b3c4d5e6f702",
+    "shopping_list_id": "sl000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name_snapshot": "두부",
+    "qty": 1,
+    "unit": "모",
+    "checked": 1
+  },
+  {
+    "list_item_id": "li000003-e5f6-4789-a012-b3c4d5e6f703",
+    "shopping_list_id": "sl000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name_snapshot": "대파",
+    "qty": 1,
+    "unit": "단",
+    "checked": 0
+  },
+  {
+    "list_item_id": "li000004-e5f6-4789-a012-b3c4d5e6f704",
+    "shopping_list_id": "sl000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name_snapshot": "국내산 고등어",
+    "qty": 1,
+    "unit": "손",
+    "checked": 0
+  },
+  {
+    "list_item_id": "li000005-e5f6-4789-a012-b3c4d5e6f705",
+    "shopping_list_id": "sl000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name_snapshot": "국내산 깻잎",
+    "qty": 100,
+    "unit": "g",
+    "checked": 0
+  },
+  {
+    "list_item_id": "li000006-e5f6-4789-a012-b3c4d5e6f706",
+    "shopping_list_id": "sl000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name_snapshot": "나주 배",
+    "qty": 3,
+    "unit": "개",
+    "checked": 1
+  },
+  {
+    "list_item_id": "li000007-e5f6-4789-a012-b3c4d5e6f707",
+    "shopping_list_id": "sl000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name_snapshot": "청송 사과",
+    "qty": 5,
+    "unit": "개",
+    "checked": 1
+  },
+  {
+    "list_item_id": "li000008-e5f6-4789-a012-b3c4d5e6f708",
+    "shopping_list_id": "sl000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name_snapshot": "국내산 삼겹살",
+    "qty": 600,
+    "unit": "g",
+    "checked": 0
+  },
+  {
+    "list_item_id": "li000009-e5f6-4789-a012-b3c4d5e6f709",
+    "shopping_list_id": "sl000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name_snapshot": "황태채",
+    "qty": 1,
+    "unit": "봉",
+    "checked": 0
+  },
+  {
+    "list_item_id": "li000010-e5f6-4789-a012-b3c4d5e6f710",
+    "shopping_list_id": "sl000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name_snapshot": "강원도 감자",
+    "qty": 1,
+    "unit": "kg",
+    "checked": 0
+  },
+  {
+    "list_item_id": "li000011-e5f6-4789-a012-b3c4d5e6f711",
+    "shopping_list_id": "sl000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name_snapshot": "국내산 삼겹살",
+    "qty": 1200,
+    "unit": "g",
+    "checked": 1
+  },
+  {
+    "list_item_id": "li000012-e5f6-4789-a012-b3c4d5e6f712",
+    "shopping_list_id": "sl000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name_snapshot": "국내산 돼지 목살",
+    "qty": 600,
+    "unit": "g",
+    "checked": 0
+  },
+  {
+    "list_item_id": "li000013-e5f6-4789-a012-b3c4d5e6f713",
+    "shopping_list_id": "sl000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name_snapshot": "유기농 상추",
+    "qty": 200,
+    "unit": "g",
+    "checked": 0
+  },
+  {
+    "list_item_id": "li000014-e5f6-4789-a012-b3c4d5e6f714",
+    "shopping_list_id": "sl000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name_snapshot": "볶음 참깨",
+    "qty": 1,
+    "unit": "팩",
+    "checked": 0
+  },
+  {
+    "list_item_id": "li000015-e5f6-4789-a012-b3c4d5e6f715",
+    "shopping_list_id": "sl000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name_snapshot": "제주 감귤",
+    "qty": 3,
+    "unit": "kg",
+    "checked": 1
+  }
+]

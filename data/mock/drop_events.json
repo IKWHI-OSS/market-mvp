@@ -1,0 +1,86 @@
+[
+  {
+    "drop_id": "dr000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_id": "p1000011-e5f6-4789-a012-b3c4d5e6f711",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "expected_at": "2026-04-18 07:00:00",
+    "status": "scheduled"
+  },
+  {
+    "drop_id": "dr000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_id": "p1000021-e5f6-4789-a012-b3c4d5e6f721",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "expected_at": "2026-04-18 07:30:00",
+    "status": "arrived"
+  },
+  {
+    "drop_id": "dr000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_id": "p1000030-e5f6-4789-a012-b3c4d5e6f730",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "expected_at": "2026-04-18 08:00:00",
+    "status": "arrived"
+  },
+  {
+    "drop_id": "dr000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_id": "p1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "expected_at": "2026-04-18 09:00:00",
+    "status": "scheduled"
+  },
+  {
+    "drop_id": "dr000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_id": "p1000016-e5f6-4789-a012-b3c4d5e6f716",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "expected_at": "2026-04-18 09:30:00",
+    "status": "arrived"
+  },
+  {
+    "drop_id": "dr000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_id": "p1000026-e5f6-4789-a012-b3c4d5e6f726",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "expected_at": "2026-04-18 10:00:00",
+    "status": "sold_out"
+  },
+  {
+    "drop_id": "dr000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_id": "p1000044-e5f6-4789-a012-b3c4d5e6f744",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "expected_at": "2026-04-18 10:30:00",
+    "status": "arrived"
+  },
+  {
+    "drop_id": "dr000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_id": "p1000015-e5f6-4789-a012-b3c4d5e6f715",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "expected_at": "2026-04-18 11:00:00",
+    "status": "sold_out"
+  },
+  {
+    "drop_id": "dr000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_id": "p1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "expected_at": "2026-04-19 07:00:00",
+    "status": "scheduled"
+  },
+  {
+    "drop_id": "dr000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_id": "p1000031-e5f6-4789-a012-b3c4d5e6f731",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "expected_at": "2026-04-19 08:00:00",
+    "status": "scheduled"
+  },
+  {
+    "drop_id": "dr000011-e5f6-4789-a012-b3c4d5e6f711",
+    "product_id": "p1000017-e5f6-4789-a012-b3c4d5e6f717",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "expected_at": "2026-04-19 09:00:00",
+    "status": "scheduled"
+  },
+  {
+    "drop_id": "dr000012-e5f6-4789-a012-b3c4d5e6f712",
+    "product_id": "p1000022-e5f6-4789-a012-b3c4d5e6f722",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "expected_at": "2026-04-19 10:00:00",
+    "status": "scheduled"
+  }
+]

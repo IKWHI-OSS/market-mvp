@@ -1,0 +1,62 @@
+[
+  {
+    "merchant_id": "e1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f703",
+    "display_name": "망원 신선야채 사장님"
+  },
+  {
+    "merchant_id": "e1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f703",
+    "display_name": "망원 채소마트 사장님"
+  },
+  {
+    "merchant_id": "e1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f703",
+    "display_name": "망원 과일나라 사장님"
+  },
+  {
+    "merchant_id": "e1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f703",
+    "display_name": "달콤 과일 사장님"
+  },
+  {
+    "merchant_id": "e1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f703",
+    "display_name": "망원 수산 사장님"
+  },
+  {
+    "merchant_id": "e1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f704",
+    "display_name": "신선 해산물 사장님"
+  },
+  {
+    "merchant_id": "e1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f704",
+    "display_name": "망원 정육 사장님"
+  },
+  {
+    "merchant_id": "e1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f704",
+    "display_name": "망원 반찬가게 사장님"
+  },
+  {
+    "merchant_id": "e1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f704",
+    "display_name": "망원 생활잡화 사장님"
+  },
+  {
+    "merchant_id": "e1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f704",
+    "display_name": "망원 건어물 사장님"
+  }
+]

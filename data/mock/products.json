@@ -1,0 +1,386 @@
+[
+  {
+    "product_id": "p1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "국내산 시금치 200g",
+    "price": 2500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "강원도 감자 1kg",
+    "price": 3000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "충남 당근 500g",
+    "price": 1500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "유기농 상추 100g",
+    "price": 1800,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "국내산 고구마 1kg",
+    "price": 4500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "청양고추 500g",
+    "price": 3500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "국내산 깻잎 100g",
+    "price": 1500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "대파 1단",
+    "price": 2500,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "양파 1.5kg",
+    "price": 4000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "느타리버섯 300g",
+    "price": 3000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000011-e5f6-4789-a012-b3c4d5e6f711",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "제주 감귤 3kg",
+    "price": 12000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000012-e5f6-4789-a012-b3c4d5e6f712",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "청송 사과 5개입",
+    "price": 15000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000013-e5f6-4789-a012-b3c4d5e6f713",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "나주 배 3개입",
+    "price": 12000,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000014-e5f6-4789-a012-b3c4d5e6f714",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "성주 참외 5개입",
+    "price": 8000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000015-e5f6-4789-a012-b3c4d5e6f715",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "국내산 딸기 500g",
+    "price": 9000,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000016-e5f6-4789-a012-b3c4d5e6f716",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "샤인머스캣 500g",
+    "price": 12000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000017-e5f6-4789-a012-b3c4d5e6f717",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "제주 한라봉 3kg",
+    "price": 16000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000018-e5f6-4789-a012-b3c4d5e6f718",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "수입 바나나 1.5kg",
+    "price": 4500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000019-e5f6-4789-a012-b3c4d5e6f719",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "멜론 1개",
+    "price": 18000,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000020-e5f6-4789-a012-b3c4d5e6f720",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "국내산 블루베리 200g",
+    "price": 7000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000021-e5f6-4789-a012-b3c4d5e6f721",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "국내산 고등어 1손",
+    "price": 6000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000022-e5f6-4789-a012-b3c4d5e6f722",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "생물 갈치 1마리",
+    "price": 12000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000023-e5f6-4789-a012-b3c4d5e6f723",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "손질 오징어 2마리",
+    "price": 8000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000024-e5f6-4789-a012-b3c4d5e6f724",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "꽃게 1kg",
+    "price": 25000,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000025-e5f6-4789-a012-b3c4d5e6f725",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "국내산 바지락 500g",
+    "price": 5000,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000026-e5f6-4789-a012-b3c4d5e6f726",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "광어 회 300g",
+    "price": 22000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000027-e5f6-4789-a012-b3c4d5e6f727",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "생새우 500g",
+    "price": 15000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000028-e5f6-4789-a012-b3c4d5e6f728",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "국내산 전복 5개입",
+    "price": 18000,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000029-e5f6-4789-a012-b3c4d5e6f729",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "주꾸미 500g",
+    "price": 10000,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000030-e5f6-4789-a012-b3c4d5e6f730",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "국내산 삼겹살 600g",
+    "price": 18000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000031-e5f6-4789-a012-b3c4d5e6f731",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "한우 불고기용 300g",
+    "price": 22000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000032-e5f6-4789-a012-b3c4d5e6f732",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "국내산 닭다리 600g",
+    "price": 8000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000033-e5f6-4789-a012-b3c4d5e6f733",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "국내산 돼지 목살 600g",
+    "price": 16000,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000034-e5f6-4789-a012-b3c4d5e6f734",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "한우 갈비 600g",
+    "price": 35000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000035-e5f6-4789-a012-b3c4d5e6f735",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "도라지무침 200g",
+    "price": 4000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000036-e5f6-4789-a012-b3c4d5e6f736",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "고사리나물 200g",
+    "price": 3500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000037-e5f6-4789-a012-b3c4d5e6f737",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "어묵볶음 300g",
+    "price": 4500,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000038-e5f6-4789-a012-b3c4d5e6f738",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "깍두기 500g",
+    "price": 4000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000039-e5f6-4789-a012-b3c4d5e6f739",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "천연 수세미 3개입",
+    "price": 3500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000040-e5f6-4789-a012-b3c4d5e6f740",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "왕골 바구니 소",
+    "price": 8000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000041-e5f6-4789-a012-b3c4d5e6f741",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "한지 포장지 10매",
+    "price": 2000,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000042-e5f6-4789-a012-b3c4d5e6f742",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "무형광 면행주 5매",
+    "price": 5000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000043-e5f6-4789-a012-b3c4d5e6f743",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "대나무 소쿠리 중",
+    "price": 12000,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000044-e5f6-4789-a012-b3c4d5e6f744",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "국내산 멸치 중멸 500g",
+    "price": 12000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000045-e5f6-4789-a012-b3c4d5e6f745",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "황태채 200g",
+    "price": 9000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000046-e5f6-4789-a012-b3c4d5e6f746",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "국내산 다시마 150g",
+    "price": 5500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000047-e5f6-4789-a012-b3c4d5e6f747",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "건홍합 200g",
+    "price": 8000,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000048-e5f6-4789-a012-b3c4d5e6f748",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "볶음 참깨 250g",
+    "price": 7000,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  }
+]
