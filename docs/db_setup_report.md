@@ -244,8 +244,8 @@ User (1) ──< (N) Notification
 | role | 수 | 설명 |
 |------|:--:|------|
 | `consumer` | 2 | 장보기 목록·동선 계획·알림 수신 주체 |
-| `merchant` | 2 | 각 5개 점포 운영 — 한 사람이 여러 점포를 운영할 경우 점포 수만큼 Merchant 레코드를 각각 생성 (박철수: 야채 2·과일 2·수산 1, 최영희: 수산 1·정육·반찬·잡화·건어물) |
-| `operator` | 1 | 시장 전체 관리 및 CatalogItem 관리 주체 |
+| `merchant` | 2 | 각 5개 점포 운영 (박철수: A·B·A·C·B구역, 최영희: D·C·D·E·E구역) |
+| `operator` | 1 | 시장 전체 관리 및 CatalogItem 관리 주체 (Phase 2 활성화 예정) |
 
 ### 기타 설계 기준
 
@@ -270,57 +270,44 @@ User (1) ──< (N) Notification
 
 ---
 
-## 9. 데이터 소스 및 수집 방법
+## 9. 명세서 변경 이력
 
-### Market — 공공데이터 API 수집
+### 9.1 변경 배경
 
-| 항목 | 내용 |
-|------|------|
-| 주 소스 | 서울 열린데이터광장 `ListTraditionalMarket` API (`data.seoul.go.kr`) |
-| 수집 스크립트 | `scripts/market_collect.py` |
-| API 키 | `.env` 파일의 `SEOUL_API_KEY` (미설정 시 fallback 자동 전환) |
-| 수집 대상 | 망원시장, 통인시장 (시장명 기준 필터링) |
-| 출력 파일 | `data/real/markets.json` |
+2026-04-20, 팀 합의를 통해 MVP 구현 범위에서 **관리자(Admin) 역할** 및 **운영 대시보드(FR-A-03)** 를 제외하기로 결정하였습니다. 이에 따라 기능명세서, UI/UX 명세서, ERD 문서를 수정하고 GitHub에 반영하였습니다.
 
-**Fallback 기준**: API 호출 실패, 인증키 미설정, 또는 위경도 값이 0인 경우 아래 하드코딩 값을 사용합니다.
+### 9.2 변경 상세 내역
 
-| 시장명 | fallback lat | fallback lng |
-|--------|:------------:|:------------:|
-| 망원시장 | 37.5556 | 126.9104 |
-| 통인시장 | 37.5796 | 126.9688 |
+| 파일 | 위치 | 변경 전 | 변경 후 |
+|------|------|---------|---------|
+| Fuctional_Specification.md | §3.1 인스코프 공통 | 운영 대시보드(기본 모니터링) 포함 | 항목 삭제 |
+| Fuctional_Specification.md | §3.1 공통 — 인증 역할 | (소비자/상인/관리자) | (소비자/상인) |
+| Fuctional_Specification.md | §4.1 페르소나 | P5(운영): 지자체/시장 운영 관리자 | 항목 삭제 |
+| Fuctional_Specification.md | §4.2 사용자 목표 | 관리자: 시장 활성화 지표를 데이터로 확인 | 항목 삭제 |
+| Fuctional_Specification.md | §5.3 FR-A-03 | 운영 대시보드 KPI 섹션 전체 | 섹션 삭제 |
+| Fuctional_Specification.md | §5.3 FR-A-01 역할 | 소비자, 상인, 관리자 | 소비자, 상인 |
+| UIUX_Speification.md | §3.1 사용자 유형 | 소비자 / 상인 / 관리자(Admin) | 소비자 / 상인 |
+| UIUX_Speification.md | §3.2 접근 정책 | 관리자: 운영 대시보드(웹/관리 콘솔 별도) | 항목 삭제 |
+| UIUX_Speification.md | §7 SCR-M-01 연계 기능 | FR-A-03 (삭제된 기능 참조) | FR-M-01 |
+| UIUX_Speification.md | §15 오픈 이슈 4번 | 관리자 대시보드 UI 범위 확정 필요 | 항목 삭제 |
+| ERD.md | §3 엔터티 목록 | Preorder 포함 (Phase 2 표기) | Preorder 행 삭제 |
+| ERD.md | §4 엔터티 정의 | DropEvent 정의 블록 누락 | 정의 블록 복원 |
+| ERD.md | §5 엔터티 관계 | Store 1:N DropEvent 관계 누락 | 관계 복원 및 번호 재정렬 |
 
-기존 `markets.json`이 있으면 `market_name` 기준으로 `market_id`를 재사용해 덮어쓰기 충돌을 방지합니다.
+### 9.3 DB 스키마 영향 분석
 
----
+| 항목 | 영향 여부 | 비고 |
+|------|:---------:|------|
+| schema.sql | 없음 | Preorder 테이블은 이미 Phase 2로 분리 설계됨 |
+| seed_mock.py | 없음 | 모킹 데이터 변경 불필요 |
+| seed_real.py | 없음 | 실데이터 적재 로직 변경 없음 |
+| User.role ENUM | 유지 결정 | `operator` ENUM 값 유지 — MVP에서는 기능 없음. Phase 2 관리자 콘솔 구현 시 활성화 예정. 스키마 변경 불필요 |
 
-### 나머지 엔터티 — 모킹 데이터 생성 기준
+### 9.4 후속 조치
 
-| 엔터티 | 생성 방법 | 기준 |
-|--------|-----------|------|
-| User | 수동 설계 | role 별 시나리오(consumer·merchant·operator) 직접 정의 |
-| Store | 수동 설계 | 업종 7종, A~E구역 분산, 망원시장 중심 반경 50m 이내 좌표 |
-| Merchant | 수동 설계 | Store 1개당 Merchant 1개, user_id는 merchant role User와 연결 |
-| Product | 수동 설계 | 실제 전통시장 품목명·시세(±10%) 기반, store당 4~5개 |
-| DropEvent | 수동 설계 | 오늘·내일 날짜, 07:00~11:00 시간대, 상태 비율 직접 지정 |
-| CatalogItem | 수동 설계 | 소비자 노출 문구(title_snapshot) 직접 작성, Product·DropEvent 연동 |
-| ShoppingList / Item | 수동 설계 | 실제 장보기 시나리오 3종, 단위·수량 혼용 |
-| RoutePlan | 수동 설계 | 동선 효율 고려, 인접 구역 순서 배치, 거리·시간 수동 추정 |
-| Notification | 수동 설계 | type 4종 혼합, is_read 0/1 혼합으로 시나리오 진행 표현 |
-| Preorder | 수동 설계 | Phase2 시나리오 샘플 2건 (requested / confirmed) |
-
----
-
-### KAMIS 연동 시 대체될 Product 필드
-
-`scripts/kamis_collect.py`로 수집한 농산물 시세 데이터가 확보되면 아래 필드를 실데이터로 업데이트합니다.
-
-| Product 필드 | 현재 (모킹) | KAMIS 연동 후 |
-|-------------|------------|--------------|
-| `price` | 수동 설정 시세 (정수, 원) | KAMIS 일별 도매가 기준 자동 갱신 |
-| `stock_status` | 수동 지정 | 입하량 데이터 기반 자동 판단 (P1 예정) |
-| `product_name` | 한글 품목명 직접 작성 | KAMIS `item_name` + 규격 조합으로 표준화 |
-
-> KAMIS 가격은 도매가 기준이므로 소매 마진(통상 20~40%) 적용 후 `price`에 저장하는 변환 로직이 필요합니다. 해당 변환은 `seed_real.py`에서 처리 예정.
+- API 설계 시 관리자 전용 엔드포인트 제외
+- `User.role` ENUM의 `operator` 값은 Phase 2까지 유지 (스키마 변경 없음)
+- 운영 대시보드 및 관리자 콘솔은 Phase 2 명세서 작성 시 재정의
 
 ---
 
@@ -398,4 +385,4 @@ python market-mvp/scripts/verify.py
 
 ---
 
-> 작성자: 운영팀 | 버전: v0.1.0
+> 작성자: 운영팀 | 버전: v0.2.0 (2026-04-20 — MVP 범위 확정 반영)
