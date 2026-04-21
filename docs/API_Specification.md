@@ -2,7 +2,7 @@
 
 ## 1. 문서 정보
 - 문서명: Market Info API 명세서
-- 버전: v1.2
+- 버전: v1.3
 - 작성일: 2026-04-21
 - Base URL: `/api/v1`
 - 기준 문서
@@ -112,6 +112,45 @@
       "store_name": "청정 채소점",
       "summary": "오늘의 추천 점포",
       "image_url": "https://..."
+    }
+  ]
+}
+```
+
+## 4.2 행사 상세 (SCR-C-10)
+- `GET /events/{catalog_item_id}`
+- Response `data`
+```json
+{
+  "catalog_item_id": "catalog_001",
+  "title": "전통시장 이벤트",
+  "description": "봄맞이 전통시장 특가 행사",
+  "image_url": "https://...",
+  "store_id": "store_001",
+  "store_name": "망원 과일나라",
+  "zone_label": "A구역",
+  "valid_from": "2026-04-21T00:00:00+09:00",
+  "valid_until": "2026-04-30T23:59:59+09:00"
+}
+```
+
+## 4.3 점포 스포트라이트 상세 (SCR-C-11)
+- `GET /stores/{store_id}/spotlight`
+- Response `data`
+```json
+{
+  "store_id": "store_003",
+  "store_name": "청정 채소점",
+  "summary": "오늘의 추천 점포",
+  "description": "국내산 친환경 채소 전문점",
+  "image_url": "https://...",
+  "zone_label": "B구역",
+  "products": [
+    {
+      "product_id": "product_010",
+      "product_name": "유기농 시금치",
+      "price": 3000,
+      "stock_status": "in_stock"
     }
   ]
 }
