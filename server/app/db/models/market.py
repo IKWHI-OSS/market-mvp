@@ -5,7 +5,7 @@ from app.db.session import Base
 
 
 class Market(Base):
-    __tablename__ = "market"
+    __tablename__ = "Market"
 
     market_id = Column(String(36), primary_key=True)
     market_name = Column(String(255), nullable=False)

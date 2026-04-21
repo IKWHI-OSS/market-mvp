@@ -13,12 +13,12 @@ class CatalogItemTypeEnum(str, enum.Enum):
 
 
 class CatalogItem(Base):
-    __tablename__ = "catalog_item"
+    __tablename__ = "CatalogItem"
 
     catalog_item_id = Column(String(36), primary_key=True)
-    market_id = Column(String(36), ForeignKey("market.market_id"), nullable=False)
-    store_id = Column(String(36), ForeignKey("store.store_id"), nullable=True)
-    product_id = Column(String(36), ForeignKey("product.product_id"), nullable=True)
+    market_id = Column(String(36), ForeignKey("Market.market_id"), nullable=False)
+    store_id = Column(String(36), ForeignKey("Store.store_id"), nullable=True)
+    product_id = Column(String(36), ForeignKey("Product.product_id"), nullable=True)
     item_type = Column(Enum(CatalogItemTypeEnum), nullable=False)
     title = Column(String(255), nullable=False)
     title_snapshot = Column(String(255), nullable=False)

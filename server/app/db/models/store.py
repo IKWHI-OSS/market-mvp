@@ -6,10 +6,10 @@ from app.db.session import Base
 
 
 class Store(Base):
-    __tablename__ = "store"
+    __tablename__ = "Store"
 
     store_id = Column(String(36), primary_key=True)
-    market_id = Column(String(36), ForeignKey("market.market_id"), nullable=False)
+    market_id = Column(String(36), ForeignKey("Market.market_id"), nullable=False)
     store_name = Column(String(255), nullable=False)
     zone_label = Column(String(50), nullable=False)
     lat = Column(DECIMAL(10, 7), nullable=True)

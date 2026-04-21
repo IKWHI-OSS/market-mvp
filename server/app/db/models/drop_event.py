@@ -13,11 +13,11 @@ class DropStatusEnum(str, enum.Enum):
 
 
 class DropEvent(Base):
-    __tablename__ = "drop_event"
+    __tablename__ = "DropEvent"
 
     drop_id = Column(String(36), primary_key=True)
-    product_id = Column(String(36), ForeignKey("product.product_id"), nullable=False)
-    store_id = Column(String(36), ForeignKey("store.store_id"), nullable=False)
+    product_id = Column(String(36), ForeignKey("Product.product_id"), nullable=False)
+    store_id = Column(String(36), ForeignKey("Store.store_id"), nullable=False)
     title = Column(String(255), nullable=True)
     expected_at = Column(DateTime, nullable=False)
     status = Column(Enum(DropStatusEnum), nullable=False, default=DropStatusEnum.scheduled)

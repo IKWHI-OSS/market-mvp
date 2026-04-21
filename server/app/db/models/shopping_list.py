@@ -6,10 +6,10 @@ from app.db.session import Base
 
 
 class ShoppingList(Base):
-    __tablename__ = "shopping_list"
+    __tablename__ = "ShoppingList"
 
     shopping_list_id = Column(String(36), primary_key=True)
-    user_id = Column(String(36), ForeignKey("user.user_id"), nullable=False)
+    user_id = Column(String(36), ForeignKey("User.user_id"), nullable=False)
     title = Column(String(255), nullable=False)
     total_estimated_price = Column(Integer, nullable=True)
     updated_at = Column(DateTime, onupdate=func.now())

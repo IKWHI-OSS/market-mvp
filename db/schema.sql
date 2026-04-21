@@ -32,10 +32,15 @@ CREATE TABLE IF NOT EXISTS Market (
 -- =============================================================
 CREATE TABLE IF NOT EXISTS User (
   user_id    VARCHAR(36)                              NOT NULL,
+  email      VARCHAR(255)                             NOT NULL,
+  password   VARCHAR(255)                             NOT NULL,
   role       ENUM('consumer','merchant','operator')   NOT NULL,
   name       VARCHAR(100)                             NOT NULL,
+  phone      VARCHAR(20)                              NULL,
+  home_market_id VARCHAR(36)                          NULL,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (user_id)
+  PRIMARY KEY (user_id),
+  UNIQUE KEY uq_user_email (email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- =============================================================

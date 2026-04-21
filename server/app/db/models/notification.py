@@ -6,10 +6,10 @@ from app.db.session import Base
 
 
 class Notification(Base):
-    __tablename__ = "notification"
+    __tablename__ = "Notification"
 
     notification_id = Column(String(36), primary_key=True)
-    user_id = Column(String(36), ForeignKey("user.user_id"), nullable=False)
+    user_id = Column(String(36), ForeignKey("User.user_id"), nullable=False)
     type = Column(String(50), nullable=False)
     title = Column(String(255), nullable=False)
     body = Column(Text, nullable=True)

@@ -6,11 +6,11 @@ from app.db.session import Base
 
 
 class Merchant(Base):
-    __tablename__ = "merchant"
+    __tablename__ = "Merchant"
 
     merchant_id = Column(String(36), primary_key=True)
-    store_id = Column(String(36), ForeignKey("store.store_id"), nullable=False)
-    user_id = Column(String(36), ForeignKey("user.user_id"), nullable=False)
+    store_id = Column(String(36), ForeignKey("Store.store_id"), nullable=False)
+    user_id = Column(String(36), ForeignKey("User.user_id"), nullable=False)
     display_name = Column(String(255), nullable=True)
     description = Column(Text, nullable=True)
     profile_image_url = Column(String(500), nullable=True)

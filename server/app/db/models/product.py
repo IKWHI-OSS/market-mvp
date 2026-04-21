@@ -13,10 +13,10 @@ class StockStatusEnum(str, enum.Enum):
 
 
 class Product(Base):
-    __tablename__ = "product"
+    __tablename__ = "Product"
 
     product_id = Column(String(36), primary_key=True)
-    store_id = Column(String(36), ForeignKey("store.store_id"), nullable=False)
+    store_id = Column(String(36), ForeignKey("Store.store_id"), nullable=False)
     product_name = Column(String(255), nullable=False)
     category = Column(String(100), nullable=True)
     price = Column(Integer, nullable=False)

@@ -6,13 +6,13 @@ from app.db.session import Base
 
 
 class RoutePlan(Base):
-    __tablename__ = "route_plan"
+    __tablename__ = "RoutePlan"
 
     route_plan_id = Column(String(36), primary_key=True)
-    user_id = Column(String(36), ForeignKey("user.user_id"), nullable=False)
-    market_id = Column(String(36), ForeignKey("market.market_id"), nullable=False)
+    user_id = Column(String(36), ForeignKey("User.user_id"), nullable=False)
+    market_id = Column(String(36), ForeignKey("Market.market_id"), nullable=False)
     shopping_list_id = Column(
-        String(36), ForeignKey("shopping_list.shopping_list_id"), nullable=False
+        String(36), ForeignKey("ShoppingList.shopping_list_id"), nullable=False
     )
     route_json = Column(JSON, nullable=False)
     estimated_minutes = Column(Integer, nullable=True)

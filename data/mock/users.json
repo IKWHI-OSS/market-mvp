@@ -1,26 +1,36 @@
 [
   {
     "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "email": "consumer01@market.com",
+    "password": "password123",
     "role": "consumer",
     "name": "김지연"
   },
   {
     "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "email": "consumer02@market.com",
+    "password": "password123",
     "role": "consumer",
     "name": "이민준"
   },
   {
     "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f703",
+    "email": "merchant01@market.com",
+    "password": "password123",
     "role": "merchant",
     "name": "박철수"
   },
   {
     "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f704",
+    "email": "merchant02@market.com",
+    "password": "password123",
     "role": "merchant",
     "name": "최영희"
   },
   {
     "user_id": "c1b2c3d4-e5f6-4789-a012-b3c4d5e6f705",
+    "email": "operator01@market.com",
+    "password": "password123",
     "role": "operator",
     "name": "시스템관리자"
   }

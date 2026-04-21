@@ -12,7 +12,7 @@ class RoleEnum(str, enum.Enum):
 
 
 class User(Base):
-    __tablename__ = "user"
+    __tablename__ = "User"
 
     user_id = Column(String(36), primary_key=True)
     email = Column(String(255), unique=True, nullable=False, index=True)
