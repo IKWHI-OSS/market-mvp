@@ -119,6 +119,21 @@ CREATE TABLE IF NOT EXISTS DropEvent (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- =============================================================
+-- 6-A. DropSubscription
+--      드랍 구독 (사용자 × 드랍 이벤트)
+-- =============================================================
+CREATE TABLE IF NOT EXISTS DropSubscription (
+  subscription_id VARCHAR(36)  NOT NULL,
+  drop_id         VARCHAR(36)  NOT NULL,
+  user_id         VARCHAR(36)  NOT NULL,
+  created_at      DATETIME     DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (subscription_id),
+  UNIQUE KEY uq_drop_subscription (drop_id, user_id),
+  CONSTRAINT fk_ds_drop FOREIGN KEY (drop_id) REFERENCES DropEvent (drop_id),
+  CONSTRAINT fk_ds_user FOREIGN KEY (user_id) REFERENCES User (user_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- =============================================================
 -- 7. CatalogItem
 --    시장 단위 카탈로그 (드랍/상품/이벤트 스냅샷)
 -- =============================================================
