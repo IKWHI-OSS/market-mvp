@@ -62,6 +62,14 @@ def ai_draft(db: Session, user, store_id: str, image_url=None, voice_text=None,
         return {"draft": {}, "fallback_mode": True}
 
 
+def get_price_suggestions(db: Session, user) -> list:
+    """대시보드용 가격 정책 보조 응답 (KAMIS 시세 비교)."""
+    _require_merchant(user)
+    store_ids = repo.get_store_ids_for_user(db, user.user_id)
+    from app.services.price_service import get_price_suggestion
+    return get_price_suggestion(db, store_ids)
+
+
 def update_drop_status(db: Session, user, drop_id: str, new_status: str) -> dict:
     _require_merchant(user)
     try:

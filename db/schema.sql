@@ -291,8 +291,26 @@ CREATE TABLE IF NOT EXISTS `Notification` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- -----------------------------------------------------------------------------
--- Preorder  (→ User, Store)  — Phase 2, API 비활성
+-- ProductPriceHistory  (→ Product)  — 가격 변경 이력 (Phase 2)
 -- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ProductPriceHistory` (
+  `history_id`   VARCHAR(36)  NOT NULL,
+  `product_id`   VARCHAR(36)  NOT NULL,
+  `old_price`    INT          NOT NULL,
+  `new_price`    INT          NOT NULL,
+  `reason`       ENUM('manual','kamis','system') NOT NULL DEFAULT 'manual',
+  `reference_id` VARCHAR(36)  DEFAULT NULL COMMENT 'KAMIS market_price_id 등',
+  `created_at`   DATETIME DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`history_id`),
+  KEY `fk_pph_product` (`product_id`),
+  CONSTRAINT `fk_pph_product`
+    FOREIGN KEY (`product_id`) REFERENCES `Product` (`product_id`)
+    ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+  COMMENT='상품 가격 변경 이력';
+
+-- -----------------------------------------------------------------------------
+-- Preorder  (→ User, Store)  — Phase 2 (활성화)
 CREATE TABLE IF NOT EXISTS `Preorder` (
   `preorder_id`  VARCHAR(36)  NOT NULL,
   `user_id`      VARCHAR(36)  NOT NULL,

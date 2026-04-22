@@ -10,6 +10,8 @@ from app.db.models.shopping_list import ShoppingList
 from app.db.models.shopping_list_item import ShoppingListItem
 from app.db.models.route_plan import RoutePlan
 from app.db.models.notification import Notification
+from app.db.models.market_price import MarketPrice, ProductPriceHistory, PriceChangeReasonEnum
+from app.db.models.preorder import Preorder, PreorderStatusEnum
 
 __all__ = [
     "User", "RoleEnum",
@@ -24,4 +26,7 @@ __all__ = [
     "ShoppingListItem",
     "RoutePlan",
     "Notification",
+    "MarketPrice",
+    "ProductPriceHistory", "PriceChangeReasonEnum",
+    "Preorder", "PreorderStatusEnum",
 ]
