@@ -10,7 +10,7 @@
 
 전통시장 디지털화를 목표로 하는 MVP 서비스의 핵심 데이터 구조를 정의합니다.
 소비자의 장보기 계획, 상인의 상품/드랍 관리, 운영자의 시장 관리를 지원하는
-12개 테이블로 구성됩니다.
+11개 테이블을 MVP 기준으로 운영합니다.
 
 ---
 
@@ -41,7 +41,6 @@
 | 9 | ShoppingListItem | 장보기 목록 내 개별 품목 |
 | 10 | RoutePlan | 사용자별 시장 방문 동선 계획 (JSON) |
 | 11 | Notification | 사용자 알림 (입고, 드랍, 이벤트 등) |
-| 12 | Preorder | 상품 사전 주문 / 예약 구매 요청 |
 
 ---
 
@@ -60,7 +59,6 @@
 | 9 | ShoppingListItem | 15 | - | 모킹 | 리스트당 5개 |
 | 10 | RoutePlan | 3 | - | 모킹 | 3~5개 점포 경유, JSON 경로 포함 |
 | 11 | Notification | 6 | - | 모킹 | 4가지 type, is_read 혼합 |
-| 12 | Preorder | 2 | - | 모킹 | Phase2 시나리오 샘플 |
 
 > **범례** — 모킹: `data/mock/` JSON 파일 기반 / 실데이터: 외부 API 수집 (`market_collect.py`, `kamis_collect.py`)  
 > real row 수는 `seed_real.py` 실행 후 갱신 예정.
@@ -78,7 +76,6 @@ Market (1) ───────────────────────
   │                                              │         │
   │                                              │         └──< (N) DropEvent
   │                                              │
-  │                                              └──< (N) Preorder ──> (1) User
   │
   ├──< (N) CatalogItem
   │
@@ -99,11 +96,9 @@ User (1) ──< (N) Notification
 | User | ShoppingList | 1 : N |
 | User | RoutePlan | 1 : N |
 | User | Notification | 1 : N |
-| User | Preorder | 1 : N |
 | Store | Merchant | 1 : N |
 | Store | Product | 1 : N |
 | Store | DropEvent | 1 : N |
-| Store | Preorder | 1 : N |
 | Product | DropEvent | 1 : N |
 | ShoppingList | ShoppingListItem | 1 : N |
 
@@ -163,10 +158,6 @@ User (1) ──< (N) Notification
 - **FK**: `user_id → User.user_id`
 - **주요 필드**: `type`, `target_type`, `target_id`, `is_read TINYINT(1)`
 
-### Preorder
-- **PK**: `preorder_id VARCHAR(36)`
-- **FK**: `user_id → User.user_id`, `store_id → Store.store_id`
-- **ENUM**: `status` — `requested` / `confirmed` / `ready` / `cancelled`
 
 ---
 
@@ -193,8 +184,7 @@ User (1) ──< (N) Notification
 
 ### P2 — 스키마만 준비된 항목
 
-- [ ] **Preorder**: 사전 주문 흐름 (요청 → 확인 → 준비 → 취소) 스키마 정의 완료,
-  결제·정산 연동은 P2 이후 설계 예정
+- [ ] 결제·정산 연동 및 운영 확장 스키마 검토 (현재 MVP 범위 제외)
 
 ---
 
@@ -264,7 +254,7 @@ User (1) ──< (N) Notification
 | 이미지 저장 | `image_url`은 URL 참조 방식; 실제 파일은 외부 스토리지(S3 등) 사용 필요 |
 | JSON 유효성 | `route_json` 컬럼은 MySQL JSON 타입으로 문법 검증만 수행; 스키마 검증은 앱 레이어 담당 |
 | 소프트 딜리트 | 현재 물리 삭제 방식; 향후 `deleted_at` 컬럼 추가 검토 필요 |
-| 결제 테이블 | Preorder 결제·정산을 위한 Payment 테이블은 미포함 (P2 범위) |
+| 결제 테이블 | 결제·정산을 위한 Payment 테이블은 미포함 (P2 범위) |
 | 이력 관리 | 가격 변경 이력을 위한 ProductPriceHistory 테이블 추가 검토 필요 |
 | 인덱스 | MVP 단계로 PK/FK 외 별도 인덱스 미정의; 쿼리 패턴 확정 후 추가 예정 |
 
@@ -290,7 +280,7 @@ User (1) ──< (N) Notification
 | UIUX_Speification.md | §3.2 접근 정책 | 관리자: 운영 대시보드(웹/관리 콘솔 별도) | 항목 삭제 |
 | UIUX_Speification.md | §7 SCR-M-01 연계 기능 | FR-A-03 (삭제된 기능 참조) | FR-M-01 |
 | UIUX_Speification.md | §15 오픈 이슈 4번 | 관리자 대시보드 UI 범위 확정 필요 | 항목 삭제 |
-| ERD.md | §3 엔터티 목록 | Preorder 포함 (Phase 2 표기) | Preorder 행 삭제 |
+| ERD.md | §3 엔터티 목록 | 불필요한 Phase 2 엔터티 혼재 | MVP 엔터티 중심 정리 |
 | ERD.md | §4 엔터티 정의 | DropEvent 정의 블록 누락 | 정의 블록 복원 |
 | ERD.md | §5 엔터티 관계 | Store 1:N DropEvent 관계 누락 | 관계 복원 및 번호 재정렬 |
 
@@ -298,7 +288,7 @@ User (1) ──< (N) Notification
 
 | 항목 | 영향 여부 | 비고 |
 |------|:---------:|------|
-| schema.sql | 없음 | Preorder 테이블은 이미 Phase 2로 분리 설계됨 |
+| schema.sql | 없음 | MVP 기준 엔드포인트는 Phase 2 예약 테이블 미사용 |
 | seed_mock.py | 없음 | 모킹 데이터 변경 불필요 |
 | seed_real.py | 없음 | 실데이터 적재 로직 변경 없음 |
 | User.role ENUM | 유지 결정 | `operator` ENUM 값 유지 — MVP에서는 기능 없음. Phase 2 관리자 콘솔 구현 시 활성화 예정. 스키마 변경 불필요 |

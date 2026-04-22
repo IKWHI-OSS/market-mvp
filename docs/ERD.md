@@ -3,7 +3,7 @@
 ## 1. 문서 정보
 
 - 문서명: Market Info 데이터 구조도 초안 (ERD)
-- 버전: v1.0 (MVP 개발 착수용)
+- 버전: v0.9 (MVP 개발 착수용)
 - 작성일: 2026-04-18
 - 작성자: 박래윤
 - 연계 문서
@@ -48,17 +48,15 @@
 
 ## [Entity] User
 - 설명: 인증/로그인의 주체가 되는 공통 사용자 계정 정보
-- 주요 필드: `user_id`, `email`, `password`, `role`, `name`, `phone`, `home_market_id`, `created_at`
+- 주요 필드: `user_id`, `role`, `name`, `phone`, `home_market_id`, `created_at`
 - 필수 필드
 1. `user_id`
-2. `email`
-3. `password` (hashed)
-4. `role` (`consumer`/`merchant`/`operator`)
-5. `name`
+2. `role` (`consumer`/`merchant`)
+3. `name`
 - 옵션 필드
 1. `phone`
 - 데이터 출처: 모킹 데이터
-- 비고: 이메일/비밀번호 + JWT 인증 (MVP 시연용, 소셜 로그인은 MVP 이후 추가) / 상인 역할(`role=merchant`)의 User만 Merchant 프로필을 가질 수 있음 / `operator`는 DB 유지, MVP 비활성
+- 비고: 상인 역할(`role=merchant`)의 User만 Merchant 프로필을 가질 수 있음
 
 User - Market M:N 즐겨찾기, 알림설정
 
@@ -111,13 +109,13 @@ User - Market M:N 즐겨찾기, 알림설정
 
 ## [Entity] Product
 - 설명: 점포별 판매 상품
-- 주요 필드: `product_id`, `store_id`, `product_name`, `category`, `price`, `stock_status`, `image_url`, `quality_note`, `updated_at`
+- 주요 필드: `product_id`, `store_id`, `product_name`, `category`, `price`, `stock`, `image_url`, `quality_note`, `updated_at`
 - 필수 필드
 1. `product_id`
 2. `store_id`
 3. `product_name`
 4. `price`
-5. `stock_status` (`in_stock`/`low_stock`/`out_of_stock`)
+5. `stock` (int) 재고 테이블 구분하여 조회
 - 옵션 필드
 1. `category`
 2. `image_url`
@@ -140,7 +138,7 @@ User - Market M:N 즐겨찾기, 알림설정
 2. `product_id`
 3. `store_id`
 4. `expected_at`
-5. `status` (`scheduled`/`arrived`/`sold_out`)
+5. `status` (`예정`/`확정`/`지연`/`취소`)
 - 옵션 필드
 1. `title`
 2. `subscriber_count`
@@ -205,11 +203,11 @@ User - Market M:N 즐겨찾기, 알림설정
 1. `route_plan_id`
 2. `user_id`
 3. `market_id`
-4. `shopping_list_id`
-5. `route_json`
+4. `route_json`
 - 옵션 필드
-1. `estimated_minutes`
-2. `distance_meters`
+1. `shopping_list_id`
+2. `estimated_minutes`
+3. `distance_meters`
 - 데이터 출처: 모킹 데이터
 - 비고: MVP는 룰 기반 경로(최단거리 근사), 실내 정밀 네비 제외
 
@@ -221,7 +219,7 @@ User - Market M:N 즐겨찾기, 알림설정
 2. `user_id`
 3. `type`
 4. `title`
-5. `target_type` (`product`/`drop`/`preorder`/`store`)
+5. `target_type` (`product`/`drop`/`store`)
 6. `is_read`
 - 옵션 필드
 1. `body`
