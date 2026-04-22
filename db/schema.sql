@@ -52,13 +52,11 @@ CREATE TABLE IF NOT EXISTS `MarketPrice` (
 
 -- -----------------------------------------------------------------------------
 -- User  (no FK deps)
--- NOTE: email/password DEFAULT '' is an artifact of ALTER TABLE migration on
--- Railway DB. A clean install script would omit DEFAULT here.
 -- -----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `User` (
   `user_id`        VARCHAR(36)  NOT NULL,
-  `email`          VARCHAR(255) NOT NULL DEFAULT '',
-  `password`       VARCHAR(255) NOT NULL DEFAULT '',
+  `email`          VARCHAR(255) NOT NULL,
+  `password`       VARCHAR(255) NOT NULL,
   `role`           ENUM('consumer','merchant','operator') NOT NULL,
   `name`           VARCHAR(100) NOT NULL,
   `phone`          VARCHAR(20)  DEFAULT NULL,
