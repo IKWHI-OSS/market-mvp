@@ -1,3 +1,4 @@
+import os
 import uuid
 import pytest
 from fastapi.testclient import TestClient
@@ -11,7 +12,9 @@ from app.db.session import Base, get_db
 from app.db.models import User, RoleEnum, Notification
 from app.core.security import hash_password, create_access_token
 
-TEST_DB_URL = "sqlite:///./test_notifications.db"
+_TEST_DB_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "db")
+os.makedirs(_TEST_DB_DIR, exist_ok=True)
+TEST_DB_URL = f"sqlite:///{os.path.join(_TEST_DB_DIR, 'test_notifications.db')}"
 engine = create_engine(TEST_DB_URL, connect_args={"check_same_thread": False})
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
@@ -21,9 +24,9 @@ def setup_db():
     Base.metadata.create_all(bind=engine)
     yield
     Base.metadata.drop_all(bind=engine)
-    import os
-    if os.path.exists("test_notifications.db"):
-        os.remove("test_notifications.db")
+    _db_path = os.path.join(_TEST_DB_DIR, "test_notifications.db")
+    if os.path.exists(_db_path):
+        os.remove(_db_path)
 
 
 @pytest.fixture
@@ -133,7 +136,7 @@ def test_list_notifications_read_filter(client, test_user, test_token, test_noti
 def test_list_notifications_without_token(client):
     """GET /api/v1/notifications without token — 401"""
     resp = client.get("/api/v1/notifications")
-    assert resp.status_code == 403
+    assert resp.status_code == 401
 
 
 def test_mark_notification_read(client, test_user, test_token, test_notifications):

@@ -1,3 +1,4 @@
+from typing import Optional
 from fastapi import Depends, HTTPException
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from jose import JWTError
@@ -8,7 +9,7 @@ from app.db.models.user import User
 from app.db.repositories.user_repository import get_user_by_email, get_user_by_id
 from app.db.session import get_db
 
-_bearer = HTTPBearer()
+_bearer = HTTPBearer(auto_error=False)
 
 _HOME_SCREEN = {
     "consumer": "SCR-C-01",
@@ -36,9 +37,11 @@ def login(email: str, password: str, db: Session) -> dict:
 
 
 def get_current_user(
-    credentials: HTTPAuthorizationCredentials = Depends(_bearer),
+    credentials: Optional[HTTPAuthorizationCredentials] = Depends(_bearer),
     db: Session = Depends(get_db),
 ) -> User:
+    if not credentials:
+        raise HTTPException(status_code=401, detail="인증이 필요합니다.")
     try:
         payload = decode_token(credentials.credentials)
         user_id: str = payload["user_id"]
