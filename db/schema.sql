@@ -1,283 +1,317 @@
--- =============================================================
--- 전통시장 서비스 MVP Database Schema
--- Environment : macOS Homebrew, MySQL 8.0
--- Encoding    : utf8mb4 / utf8mb4_unicode_ci
--- Engine      : InnoDB
--- Created     : 2026-04-18
--- =============================================================
-
-CREATE DATABASE IF NOT EXISTS market_mvp
-  CHARACTER SET utf8mb4
-  COLLATE utf8mb4_unicode_ci;
-
-USE market_mvp;
-
--- =============================================================
--- 1. Market
---    전통시장 기본 정보 (위치, 이름)
--- =============================================================
-CREATE TABLE IF NOT EXISTS Market (
-  market_id   VARCHAR(36)    NOT NULL,
-  market_name VARCHAR(100)   NOT NULL,
-  address     VARCHAR(255)   NOT NULL,
-  lat         DECIMAL(10,7)  NOT NULL,
-  lng         DECIMAL(10,7)  NOT NULL,
-  created_at  DATETIME       DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (market_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- =============================================================
--- 2. User
---    서비스 사용자 (소비자 / 상인 / 운영자)
--- =============================================================
-CREATE TABLE IF NOT EXISTS User (
-  user_id    VARCHAR(36)                              NOT NULL,
-  email      VARCHAR(255)                             NOT NULL,
-  password   VARCHAR(255)                             NOT NULL,
-  role       ENUM('consumer','merchant','operator')   NOT NULL,
-  name       VARCHAR(100)                             NOT NULL,
-  phone      VARCHAR(20)                              NULL,
-  home_market_id VARCHAR(36)                          NULL,
-  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (user_id),
-  UNIQUE KEY uq_user_email (email)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- =============================================================
--- 3. Store
---    시장 내 개별 점포
--- =============================================================
-CREATE TABLE IF NOT EXISTS Store (
-  store_id   VARCHAR(36)  NOT NULL,
-  market_id  VARCHAR(36)  NOT NULL,
-  store_name VARCHAR(100) NOT NULL,
-  zone_label VARCHAR(50)  NOT NULL,
-  lat        DECIMAL(10,7) NULL,
-  lng        DECIMAL(10,7) NULL,
-  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (store_id),
-  CONSTRAINT fk_store_market FOREIGN KEY (market_id)
-    REFERENCES Market (market_id)
-    ON UPDATE CASCADE ON DELETE RESTRICT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- =============================================================
--- 4. Merchant
---    점포를 운영하는 상인 (User와 Store를 연결)
--- =============================================================
-CREATE TABLE IF NOT EXISTS Merchant (
-  merchant_id  VARCHAR(36)  NOT NULL,
-  store_id     VARCHAR(36)  NOT NULL,
-  user_id      VARCHAR(36)  NOT NULL,
-  display_name VARCHAR(100) NOT NULL,
-  created_at   DATETIME DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (merchant_id),
-  CONSTRAINT fk_merchant_store FOREIGN KEY (store_id)
-    REFERENCES Store (store_id)
-    ON UPDATE CASCADE ON DELETE RESTRICT,
-  CONSTRAINT fk_merchant_user FOREIGN KEY (user_id)
-    REFERENCES User (user_id)
-    ON UPDATE CASCADE ON DELETE RESTRICT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- =============================================================
--- 5. Product
---    점포에서 판매하는 상품
--- =============================================================
-CREATE TABLE IF NOT EXISTS Product (
-  product_id   VARCHAR(36)  NOT NULL,
-  store_id     VARCHAR(36)  NOT NULL,
-  product_name VARCHAR(100) NOT NULL,
-  price        INT          NOT NULL,
-  stock_status ENUM('in_stock','low_stock','out_of_stock') NOT NULL DEFAULT 'in_stock',
-  image_url    VARCHAR(500) NULL,
-  created_at   DATETIME DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (product_id),
-  CONSTRAINT fk_product_store FOREIGN KEY (store_id)
-    REFERENCES Store (store_id)
-    ON UPDATE CASCADE ON DELETE RESTRICT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- =============================================================
--- 6. DropEvent
---    입고 예정 / 한정 판매 이벤트
--- =============================================================
-CREATE TABLE IF NOT EXISTS DropEvent (
-  drop_id     VARCHAR(36) NOT NULL,
-  product_id  VARCHAR(36) NOT NULL,
-  store_id    VARCHAR(36) NOT NULL,
-  expected_at DATETIME    NOT NULL,
-  status      ENUM('scheduled','arrived','sold_out') NOT NULL DEFAULT 'scheduled',
-  created_at  DATETIME DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (drop_id),
-  CONSTRAINT fk_drop_product FOREIGN KEY (product_id)
-    REFERENCES Product (product_id)
-    ON UPDATE CASCADE ON DELETE RESTRICT,
-  CONSTRAINT fk_drop_store FOREIGN KEY (store_id)
-    REFERENCES Store (store_id)
-    ON UPDATE CASCADE ON DELETE RESTRICT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- =============================================================
--- 6-A. DropSubscription
---      드랍 구독 (사용자 × 드랍 이벤트)
--- =============================================================
-CREATE TABLE IF NOT EXISTS DropSubscription (
-  subscription_id VARCHAR(36)  NOT NULL,
-  drop_id         VARCHAR(36)  NOT NULL,
-  user_id         VARCHAR(36)  NOT NULL,
-  created_at      DATETIME     DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (subscription_id),
-  UNIQUE KEY uq_drop_subscription (drop_id, user_id),
-  CONSTRAINT fk_ds_drop FOREIGN KEY (drop_id) REFERENCES DropEvent (drop_id),
-  CONSTRAINT fk_ds_user FOREIGN KEY (user_id) REFERENCES User (user_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- =============================================================
--- 7. CatalogItem
---    시장 단위 카탈로그 (드랍/상품/이벤트 스냅샷)
--- =============================================================
-CREATE TABLE IF NOT EXISTS CatalogItem (
-  catalog_item_id  VARCHAR(36)  NOT NULL,
-  market_id        VARCHAR(36)  NOT NULL,
-  item_type        ENUM('drop','product','event') NOT NULL,
-  title            VARCHAR(200) NOT NULL,
-  title_snapshot   VARCHAR(200) NOT NULL,
-  image_snapshot   VARCHAR(500) NULL,
-  price_snapshot   INT          NULL,
-  created_at       DATETIME DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (catalog_item_id),
-  CONSTRAINT fk_catalog_market FOREIGN KEY (market_id)
-    REFERENCES Market (market_id)
-    ON UPDATE CASCADE ON DELETE RESTRICT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- =============================================================
--- 8. ShoppingList
---    사용자 장보기 목록
--- =============================================================
-CREATE TABLE IF NOT EXISTS ShoppingList (
-  shopping_list_id VARCHAR(36)  NOT NULL,
-  user_id          VARCHAR(36)  NOT NULL,
-  title            VARCHAR(200) NOT NULL,
-  created_at       DATETIME DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (shopping_list_id),
-  CONSTRAINT fk_shoppinglist_user FOREIGN KEY (user_id)
-    REFERENCES User (user_id)
-    ON UPDATE CASCADE ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- =============================================================
--- 9. ShoppingListItem
---    장보기 목록 내 개별 항목
--- =============================================================
-CREATE TABLE IF NOT EXISTS ShoppingListItem (
-  list_item_id          VARCHAR(36)  NOT NULL,
-  shopping_list_id      VARCHAR(36)  NOT NULL,
-  product_name_snapshot VARCHAR(200) NOT NULL,
-  qty                   INT          NOT NULL,
-  unit                  VARCHAR(20)  NOT NULL,
-  checked               TINYINT(1)   NOT NULL DEFAULT 0,
-  created_at            DATETIME DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (list_item_id),
-  CONSTRAINT fk_listitem_shoppinglist FOREIGN KEY (shopping_list_id)
-    REFERENCES ShoppingList (shopping_list_id)
-    ON UPDATE CASCADE ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- =============================================================
--- 10. RoutePlan
---     사용자별 시장 동선 계획 (JSON으로 경로 저장)
--- =============================================================
-CREATE TABLE IF NOT EXISTS RoutePlan (
-  route_plan_id VARCHAR(36) NOT NULL,
-  user_id       VARCHAR(36) NOT NULL,
-  market_id     VARCHAR(36) NOT NULL,
-  route_json    JSON        NOT NULL,
-  created_at    DATETIME DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (route_plan_id),
-  CONSTRAINT fk_routeplan_user FOREIGN KEY (user_id)
-    REFERENCES User (user_id)
-    ON UPDATE CASCADE ON DELETE CASCADE,
-  CONSTRAINT fk_routeplan_market FOREIGN KEY (market_id)
-    REFERENCES Market (market_id)
-    ON UPDATE CASCADE ON DELETE RESTRICT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- =============================================================
--- 11. Notification
---     사용자 알림 (드랍, 입고, 이벤트 등)
--- =============================================================
-CREATE TABLE IF NOT EXISTS Notification (
-  notification_id VARCHAR(36)  NOT NULL,
-  user_id         VARCHAR(36)  NOT NULL,
-  type            VARCHAR(50)  NOT NULL,
-  title           VARCHAR(200) NOT NULL,
-  target_type     VARCHAR(50)  NOT NULL,
-  target_id       VARCHAR(36)  NOT NULL,
-  is_read         TINYINT(1)   NOT NULL DEFAULT 0,
-  created_at      DATETIME DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (notification_id),
-  CONSTRAINT fk_notification_user FOREIGN KEY (user_id)
-    REFERENCES User (user_id)
-    ON UPDATE CASCADE ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- =============================================================
--- 12. Preorder
---     사전 주문 / 예약 구매 요청
--- =============================================================
-CREATE TABLE IF NOT EXISTS Preorder (
-  preorder_id  VARCHAR(36)  NOT NULL,
-  user_id      VARCHAR(36)  NOT NULL,
-  store_id     VARCHAR(36)  NOT NULL,
-  product_name VARCHAR(100) NOT NULL,
-  qty          INT          NOT NULL,
-  status       ENUM('requested','confirmed','ready','cancelled') NOT NULL DEFAULT 'requested',
-  created_at   DATETIME DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (preorder_id),
-  CONSTRAINT fk_preorder_user FOREIGN KEY (user_id)
-    REFERENCES User (user_id)
-    ON UPDATE CASCADE ON DELETE RESTRICT,
-  CONSTRAINT fk_preorder_store FOREIGN KEY (store_id)
-    REFERENCES Store (store_id)
-    ON UPDATE CASCADE ON DELETE RESTRICT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-
--- =============================================================
--- FK 관계도 요약
--- =============================================================
+-- =============================================================================
+-- Market MVP — Database Schema
+-- Synced from Railway MySQL 8.0 on 2026-04-22
+-- Character set: utf8mb4 / Collation: utf8mb4_unicode_ci
 --
---  Market (1) ──────────────< (N) Store
---  Market (1) ──────────────< (N) CatalogItem
---  Market (1) ──────────────< (N) RoutePlan
+-- Table order respects FK dependency graph (parent → child).
+-- Apply with: mysql -h <host> -u <user> -p market_mvp < schema.sql
 --
---  User   (1) ──────────────< (N) Merchant
---  User   (1) ──────────────< (N) ShoppingList
---  User   (1) ──────────────< (N) RoutePlan
---  User   (1) ──────────────< (N) Notification
---  User   (1) ──────────────< (N) Preorder
---
---  Store  (1) ──────────────< (N) Merchant
---  Store  (1) ──────────────< (N) Product
---  Store  (1) ──────────────< (N) DropEvent
---  Store  (1) ──────────────< (N) Preorder
---
---  Product      (1) ────────< (N) DropEvent
---  ShoppingList (1) ────────< (N) ShoppingListItem
---
---  전체 요약:
---
---  Market (1) ──< (N) Store  (1) ──< (N) Product   (1) ──< (N) DropEvent
---                     │
---                     └──────────────< (N) Merchant ──> (1) User
---                     └──────────────< (N) Preorder ──> (1) User
---
---  Market (1) ──< (N) CatalogItem
---  Market (1) ──< (N) RoutePlan   ──> (1) User
---
---  User   (1) ──< (N) ShoppingList (1) ──< (N) ShoppingListItem
---  User   (1) ──< (N) Notification
---
--- =============================================================
+-- NOTE: Legacy lowercase tables (market, store, product, ...) also exist in
+-- Railway DB from an earlier migration. They are NOT part of the application
+-- schema and will be removed in a future cleanup migration.
+-- =============================================================================
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- -----------------------------------------------------------------------------
+-- Market  (no FK deps)
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Market` (
+  `market_id`   VARCHAR(36)    NOT NULL,
+  `market_name` VARCHAR(100)   NOT NULL,
+  `address`     VARCHAR(255)   NOT NULL,
+  `lat`         DECIMAL(10,7)  NOT NULL,
+  `lng`         DECIMAL(10,7)  NOT NULL,
+  `created_at`  DATETIME       DEFAULT CURRENT_TIMESTAMP,
+  `region_code` VARCHAR(20)    DEFAULT NULL,
+  `zoom`        DECIMAL(5,2)   NOT NULL DEFAULT '15.00',
+  `market_desc` TEXT           DEFAULT NULL,
+  `open_hours`  VARCHAR(255)   DEFAULT NULL,
+  PRIMARY KEY (`market_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- -----------------------------------------------------------------------------
+-- MarketPrice  (no FK deps — KAMIS 시세 참조 테이블)
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `MarketPrice` (
+  `market_price_id`  VARCHAR(36)  NOT NULL,
+  `item_name`        VARCHAR(100) NOT NULL COMMENT 'KAMIS 품목명 (예: 배추/포기)',
+  `kamis_item_code`  VARCHAR(20)  NOT NULL COMMENT 'KAMIS 품목 코드',
+  `unit`             VARCHAR(50)  NOT NULL COMMENT '단위 (예: 1포기, 1kg)',
+  `price_date`       DATE         NOT NULL COMMENT '가격 기준일',
+  `retail_price`     INT          DEFAULT NULL COMMENT '당일 소매가 (dpr1)',
+  `prev_day_price`   INT          DEFAULT NULL COMMENT '전일 가격 (dpr2)',
+  `prev_month_price` INT          DEFAULT NULL COMMENT '전월 가격 (dpr3)',
+  `prev_year_price`  INT          DEFAULT NULL COMMENT '전년 가격 (dpr4)',
+  `created_at`       DATETIME     DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`market_price_id`),
+  UNIQUE KEY `uq_item_date` (`kamis_item_code`, `item_name`, `price_date`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+  COMMENT='KAMIS 농산물유통정보 시세 기준 가격 (상인 판매가 비교용)';
+
+-- -----------------------------------------------------------------------------
+-- User  (no FK deps)
+-- NOTE: email/password DEFAULT '' is an artifact of ALTER TABLE migration on
+-- Railway DB. A clean install script would omit DEFAULT here.
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `User` (
+  `user_id`        VARCHAR(36)  NOT NULL,
+  `email`          VARCHAR(255) NOT NULL DEFAULT '',
+  `password`       VARCHAR(255) NOT NULL DEFAULT '',
+  `role`           ENUM('consumer','merchant','operator') NOT NULL,
+  `name`           VARCHAR(100) NOT NULL,
+  `phone`          VARCHAR(20)  DEFAULT NULL,
+  `home_market_id` VARCHAR(36)  DEFAULT NULL,
+  `created_at`     DATETIME     DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `uq_user_email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- -----------------------------------------------------------------------------
+-- Store  (→ Market)
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Store` (
+  `store_id`            VARCHAR(36)   NOT NULL,
+  `market_id`           VARCHAR(36)   NOT NULL,
+  `store_name`          VARCHAR(100)  NOT NULL,
+  `zone_label`          VARCHAR(50)   NOT NULL,
+  `lat`                 DECIMAL(10,7) DEFAULT NULL,
+  `lng`                 DECIMAL(10,7) DEFAULT NULL,
+  `phone`               VARCHAR(20)   DEFAULT NULL,
+  `status`              VARCHAR(20)   DEFAULT 'open',
+  `store_story_summary` TEXT          DEFAULT NULL,
+  `open_hours`          VARCHAR(255)  DEFAULT NULL,
+  `updated_at`          DATETIME      DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_at`          DATETIME      DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`store_id`),
+  KEY `fk_store_market` (`market_id`),
+  CONSTRAINT `fk_store_market`
+    FOREIGN KEY (`market_id`) REFERENCES `Market` (`market_id`)
+    ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- -----------------------------------------------------------------------------
+-- Merchant  (→ Store, User)
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Merchant` (
+  `merchant_id`       VARCHAR(36)  NOT NULL,
+  `store_id`          VARCHAR(36)  NOT NULL,
+  `user_id`           VARCHAR(36)  NOT NULL,
+  `display_name`      VARCHAR(100) NOT NULL,
+  `description`       TEXT         DEFAULT NULL,
+  `profile_image_url` VARCHAR(500) DEFAULT NULL,
+  `active`            TINYINT(1)   NOT NULL DEFAULT '1',
+  `created_at`        DATETIME     DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`merchant_id`),
+  KEY `fk_merchant_store` (`store_id`),
+  KEY `fk_merchant_user`  (`user_id`),
+  CONSTRAINT `fk_merchant_store`
+    FOREIGN KEY (`store_id`) REFERENCES `Store` (`store_id`)
+    ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `fk_merchant_user`
+    FOREIGN KEY (`user_id`) REFERENCES `User` (`user_id`)
+    ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- -----------------------------------------------------------------------------
+-- Product  (→ Store)
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Product` (
+  `product_id`   VARCHAR(36)  NOT NULL,
+  `store_id`     VARCHAR(36)  NOT NULL,
+  `product_name` VARCHAR(100) NOT NULL,
+  `category`     VARCHAR(100) DEFAULT NULL,
+  `price`        INT          NOT NULL,
+  `stock_status` ENUM('in_stock','low_stock','out_of_stock') NOT NULL DEFAULT 'in_stock',
+  `image_url`    VARCHAR(500) DEFAULT NULL,
+  `quality_note` TEXT         DEFAULT NULL,
+  `updated_at`   DATETIME     DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_at`   DATETIME     DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`product_id`),
+  KEY `fk_product_store` (`store_id`),
+  CONSTRAINT `fk_product_store`
+    FOREIGN KEY (`store_id`) REFERENCES `Store` (`store_id`)
+    ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- -----------------------------------------------------------------------------
+-- DropEvent  (→ Product, Store)
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `DropEvent` (
+  `drop_id`          VARCHAR(36)  NOT NULL,
+  `product_id`       VARCHAR(36)  NOT NULL,
+  `store_id`         VARCHAR(36)  NOT NULL,
+  `title`            VARCHAR(255) DEFAULT NULL,
+  `expected_at`      DATETIME     NOT NULL,
+  `status`           ENUM('scheduled','arrived','sold_out') NOT NULL DEFAULT 'scheduled',
+  `subscriber_count` INT          NOT NULL DEFAULT '0',
+  `updated_at`       DATETIME     DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_at`       DATETIME     DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`drop_id`),
+  KEY `fk_drop_product` (`product_id`),
+  KEY `fk_drop_store`   (`store_id`),
+  CONSTRAINT `fk_drop_product`
+    FOREIGN KEY (`product_id`) REFERENCES `Product` (`product_id`)
+    ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `fk_drop_store`
+    FOREIGN KEY (`store_id`) REFERENCES `Store` (`store_id`)
+    ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- -----------------------------------------------------------------------------
+-- DropSubscription  (→ DropEvent, User)
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `DropSubscription` (
+  `subscription_id` VARCHAR(36) NOT NULL,
+  `drop_id`         VARCHAR(36) NOT NULL,
+  `user_id`         VARCHAR(36) NOT NULL,
+  `created_at`      DATETIME    DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`subscription_id`),
+  UNIQUE KEY `uq_drop_subscription` (`drop_id`, `user_id`),
+  KEY `fk_ds_user` (`user_id`),
+  CONSTRAINT `fk_ds_drop`
+    FOREIGN KEY (`drop_id`) REFERENCES `DropEvent` (`drop_id`)
+    ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_ds_user`
+    FOREIGN KEY (`user_id`) REFERENCES `User` (`user_id`)
+    ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- -----------------------------------------------------------------------------
+-- CatalogItem  (→ Market)
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `CatalogItem` (
+  `catalog_item_id` VARCHAR(36)  NOT NULL,
+  `market_id`       VARCHAR(36)  NOT NULL,
+  `store_id`        VARCHAR(36)  DEFAULT NULL,
+  `product_id`      VARCHAR(36)  DEFAULT NULL,
+  `item_type`       ENUM('drop','event','store_spotlight') NOT NULL,
+  `title`           VARCHAR(200) NOT NULL,
+  `title_snapshot`  VARCHAR(200) NOT NULL,
+  `image_snapshot`  VARCHAR(500) DEFAULT NULL,
+  `price_snapshot`  INT          DEFAULT NULL,
+  `badge`           VARCHAR(100) DEFAULT NULL,
+  `start_at`        DATETIME     DEFAULT NULL,
+  `end_at`          DATETIME     DEFAULT NULL,
+  `priority`        INT          NOT NULL DEFAULT '0',
+  `created_at`      DATETIME     DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`catalog_item_id`),
+  KEY `fk_catalog_market` (`market_id`),
+  CONSTRAINT `fk_catalog_market`
+    FOREIGN KEY (`market_id`) REFERENCES `Market` (`market_id`)
+    ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- -----------------------------------------------------------------------------
+-- ShoppingList  (→ User)
+-- NOTE: total_estimated_price, updated_at were added via ALTER TABLE;
+-- column order reflects Railway DB state.
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ShoppingList` (
+  `shopping_list_id`      VARCHAR(36)  NOT NULL,
+  `user_id`               VARCHAR(36)  NOT NULL,
+  `title`                 VARCHAR(200) NOT NULL,
+  `created_at`            DATETIME     DEFAULT CURRENT_TIMESTAMP,
+  `total_estimated_price` INT          DEFAULT NULL,
+  `updated_at`            DATETIME     DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`shopping_list_id`),
+  KEY `fk_shoppinglist_user` (`user_id`),
+  CONSTRAINT `fk_shoppinglist_user`
+    FOREIGN KEY (`user_id`) REFERENCES `User` (`user_id`)
+    ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- -----------------------------------------------------------------------------
+-- ShoppingListItem  (→ ShoppingList)
+-- NOTE: product_id, estimated_price, store_id were added via ALTER TABLE;
+-- column order reflects Railway DB state.
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ShoppingListItem` (
+  `list_item_id`          VARCHAR(36)  NOT NULL,
+  `shopping_list_id`      VARCHAR(36)  NOT NULL,
+  `product_name_snapshot` VARCHAR(200) NOT NULL,
+  `qty`                   INT          NOT NULL,
+  `unit`                  VARCHAR(20)  NOT NULL,
+  `checked`               TINYINT(1)   NOT NULL DEFAULT '0',
+  `created_at`            DATETIME     DEFAULT CURRENT_TIMESTAMP,
+  `product_id`            VARCHAR(36)  DEFAULT NULL,
+  `estimated_price`       INT          DEFAULT NULL,
+  `store_id`              VARCHAR(36)  DEFAULT NULL,
+  PRIMARY KEY (`list_item_id`),
+  KEY `fk_listitem_shoppinglist` (`shopping_list_id`),
+  CONSTRAINT `fk_listitem_shoppinglist`
+    FOREIGN KEY (`shopping_list_id`) REFERENCES `ShoppingList` (`shopping_list_id`)
+    ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- -----------------------------------------------------------------------------
+-- RoutePlan  (→ User, Market)
+-- NOTE: shopping_list_id, estimated_minutes, distance_meters were added via
+-- ALTER TABLE; shopping_list_id is nullable to match Railway DB state.
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `RoutePlan` (
+  `route_plan_id`    VARCHAR(36) NOT NULL,
+  `user_id`          VARCHAR(36) NOT NULL,
+  `market_id`        VARCHAR(36) NOT NULL,
+  `route_json`       JSON        NOT NULL,
+  `created_at`       DATETIME    DEFAULT CURRENT_TIMESTAMP,
+  `shopping_list_id` VARCHAR(36) DEFAULT NULL,
+  `estimated_minutes` INT        DEFAULT NULL,
+  `distance_meters`  INT         DEFAULT NULL,
+  PRIMARY KEY (`route_plan_id`),
+  KEY `fk_routeplan_user`   (`user_id`),
+  KEY `fk_routeplan_market` (`market_id`),
+  CONSTRAINT `fk_routeplan_user`
+    FOREIGN KEY (`user_id`) REFERENCES `User` (`user_id`)
+    ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_routeplan_market`
+    FOREIGN KEY (`market_id`) REFERENCES `Market` (`market_id`)
+    ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- -----------------------------------------------------------------------------
+-- Notification  (→ User)
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Notification` (
+  `notification_id`  VARCHAR(36)  NOT NULL,
+  `user_id`          VARCHAR(36)  NOT NULL,
+  `type`             VARCHAR(50)  NOT NULL,
+  `title`            VARCHAR(200) NOT NULL,
+  `body`             TEXT         DEFAULT NULL,
+  `target_screen_id` VARCHAR(50)  DEFAULT NULL,
+  `target_type`      VARCHAR(50)  DEFAULT NULL,
+  `target_id`        VARCHAR(36)  DEFAULT NULL,
+  `is_read`          TINYINT(1)   NOT NULL DEFAULT '0',
+  `send_status`      VARCHAR(20)  DEFAULT NULL,
+  `created_at`       DATETIME     DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`notification_id`),
+  KEY `fk_notification_user` (`user_id`),
+  CONSTRAINT `fk_notification_user`
+    FOREIGN KEY (`user_id`) REFERENCES `User` (`user_id`)
+    ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- -----------------------------------------------------------------------------
+-- Preorder  (→ User, Store)  — Phase 2, API 비활성
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Preorder` (
+  `preorder_id`  VARCHAR(36)  NOT NULL,
+  `user_id`      VARCHAR(36)  NOT NULL,
+  `store_id`     VARCHAR(36)  NOT NULL,
+  `product_name` VARCHAR(100) NOT NULL,
+  `qty`          INT          NOT NULL,
+  `status`       ENUM('requested','confirmed','ready','cancelled') NOT NULL DEFAULT 'requested',
+  `created_at`   DATETIME     DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`preorder_id`),
+  KEY `fk_preorder_user`  (`user_id`),
+  KEY `fk_preorder_store` (`store_id`),
+  CONSTRAINT `fk_preorder_user`
+    FOREIGN KEY (`user_id`) REFERENCES `User` (`user_id`)
+    ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `fk_preorder_store`
+    FOREIGN KEY (`store_id`) REFERENCES `Store` (`store_id`)
+    ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+SET FOREIGN_KEY_CHECKS = 1;
