@@ -2,7 +2,7 @@
 
 ## 1. 문서 정보
 - 문서명: Market Info 백엔드 실행 계획서
-- 버전: v1.3
+- 버전: v1.2
 - 작성일: 2026-04-21
 - 기술 스택: FastAPI, Python 3.11+, MySQL 8.0
 - 기준 문서
@@ -62,10 +62,8 @@ Users/karla/server/
 
 ### Day 2
 1. 검색/상세 API 완성
-2. 행사 상세 API (`GET /events/{catalog_item_id}`, SCR-C-10)
-3. 점포 스포트라이트 상세 API (`GET /stores/{store_id}/spotlight`, SCR-C-11)
-4. 드랍 API(조회/구독) + 알림 생성 연동
-5. 알림함 API 구현
+2. 드랍 API(조회/구독) + 알림 생성 연동
+3. 알림함 API 구현
 
 ### Day 3
 1. 장보기 리스트/아이템 API 구현 (장보기 리스트 토대로 `route_json` 생성 알고리즘)
