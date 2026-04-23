@@ -36,12 +36,15 @@ def list_preorders_by_user(
     user_id: str,
     page: int = 1,
     size: int = 20,
+    status: Optional[str] = None,
 ) -> tuple[list, int]:
     q = (
         db.query(Preorder)
         .filter(Preorder.user_id == user_id)
         .order_by(Preorder.created_at.desc())
     )
+    if status:
+        q = q.filter(Preorder.status == PreorderStatusEnum(status))
     total = q.count()
     items = q.offset((page - 1) * size).limit(size).all()
     return items, total
@@ -52,12 +55,15 @@ def list_preorders_by_store(
     store_ids: list[str],
     page: int = 1,
     size: int = 20,
+    status: Optional[str] = None,
 ) -> tuple[list, int]:
     q = (
         db.query(Preorder)
         .filter(Preorder.store_id.in_(store_ids))
         .order_by(Preorder.created_at.desc())
     )
+    if status:
+        q = q.filter(Preorder.status == PreorderStatusEnum(status))
     total = q.count()
     items = q.offset((page - 1) * size).limit(size).all()
     return items, total

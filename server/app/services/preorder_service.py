@@ -2,7 +2,9 @@
 preorder_service — Preorder 비즈니스 로직
 
   create_preorder  → consumer/merchant 모두 가능
-  list_preorders   → 내 사전 주문 목록 (consumer: 본인, merchant: 담당 점포)
+  get_preorder     → 단건 조회 (consumer: 본인, merchant: 담당 점포)
+  list_preorders   → 내 사전 주문 목록
+  cancel_preorder  → consumer 전용, requested 상태일 때만 가능
   update_status    → merchant 전용, 상태 변경 시 Notification 자동 생성
 """
 import uuid
@@ -12,6 +14,7 @@ from fastapi import HTTPException
 from sqlalchemy.orm import Session
 
 from app.db.models.preorder import Preorder, PreorderStatusEnum
+from app.db.models.store import Store
 from app.db.repositories import preorder_repository as repo
 from app.db.repositories.merchant_repository import get_store_ids_for_user
 from app.db.models.notification import Notification
@@ -32,11 +35,22 @@ _NOTIF_MESSAGES: dict[PreorderStatusEnum, tuple[str, str]] = {
 }
 
 
-def _fmt_preorder(p: Preorder) -> dict:
+def _get_store_name(db: Session, store_id: str) -> Optional[str]:
+    store = db.query(Store).filter(Store.store_id == store_id).first()
+    return store.store_name if store else None
+
+
+def _get_store_name_map(db: Session, store_ids: list[str]) -> dict[str, str]:
+    stores = db.query(Store).filter(Store.store_id.in_(store_ids)).all()
+    return {s.store_id: s.store_name for s in stores}
+
+
+def _fmt_preorder(p: Preorder, store_name: Optional[str] = None) -> dict:
     return {
         "preorder_id":  p.preorder_id,
         "user_id":      p.user_id,
         "store_id":     p.store_id,
+        "store_name":   store_name,
         "product_name": p.product_name,
         "qty":          p.qty,
         "status":       p.status.value,
@@ -65,7 +79,33 @@ def create_preorder(
         product_name=product_name,
         qty=qty,
     )
-    return _fmt_preorder(p)
+    store_name = _get_store_name(db, store_id)
+    return _fmt_preorder(p, store_name)
+
+
+# ──────────────────────────────────────────────
+# 단건 조회
+# ──────────────────────────────────────────────
+
+def get_preorder(
+    db: Session,
+    user,
+    preorder_id: str,
+) -> dict:
+    preorder: Optional[Preorder] = repo.get_preorder(db, preorder_id)
+    if not preorder:
+        raise HTTPException(status_code=404, detail="사전 주문을 찾을 수 없습니다.")
+
+    if user.role.value == "merchant":
+        store_ids = get_store_ids_for_user(db, user.user_id)
+        if preorder.store_id not in store_ids:
+            raise HTTPException(status_code=403, detail="해당 주문에 대한 권한이 없습니다.")
+    else:
+        if preorder.user_id != user.user_id:
+            raise HTTPException(status_code=403, detail="해당 주문에 대한 권한이 없습니다.")
+
+    store_name = _get_store_name(db, preorder.store_id)
+    return _fmt_preorder(preorder, store_name)
 
 
 # ──────────────────────────────────────────────
@@ -77,17 +117,19 @@ def list_preorders(
     user,
     page: int = 1,
     size: int = 20,
+    status: Optional[str] = None,
 ) -> dict:
     size = min(size, 100)
 
     if user.role.value == "merchant":
         store_ids = get_store_ids_for_user(db, user.user_id)
-        items, total = repo.list_preorders_by_store(db, store_ids, page, size)
+        items, total = repo.list_preorders_by_store(db, store_ids, page, size, status)
     else:
-        items, total = repo.list_preorders_by_user(db, user.user_id, page, size)
+        items, total = repo.list_preorders_by_user(db, user.user_id, page, size, status)
 
+    store_name_map = _get_store_name_map(db, [p.store_id for p in items])
     return {
-        "items": [_fmt_preorder(p) for p in items],
+        "items": [_fmt_preorder(p, store_name_map.get(p.store_id)) for p in items],
         "pagination": {
             "page":     page,
             "size":     size,
@@ -95,6 +137,38 @@ def list_preorders(
             "has_next": (page * size) < total,
         },
     }
+
+
+# ──────────────────────────────────────────────
+# 소비자 직접 취소
+# ──────────────────────────────────────────────
+
+def cancel_preorder(
+    db: Session,
+    user,
+    preorder_id: str,
+) -> dict:
+    if user.role.value != "consumer":
+        raise HTTPException(status_code=403, detail="소비자만 직접 취소할 수 있습니다.")
+
+    preorder: Optional[Preorder] = repo.get_preorder(db, preorder_id)
+    if not preorder:
+        raise HTTPException(status_code=404, detail="사전 주문을 찾을 수 없습니다.")
+
+    if preorder.user_id != user.user_id:
+        raise HTTPException(status_code=403, detail="본인 주문만 취소할 수 있습니다.")
+
+    if preorder.status != PreorderStatusEnum.requested:
+        raise HTTPException(
+            status_code=409,
+            detail=f"'{preorder.status.value}' 상태의 주문은 취소할 수 없습니다. requested 상태만 가능합니다.",
+        )
+
+    repo.update_preorder_status(db, preorder, PreorderStatusEnum.cancelled)
+    _create_status_notification(db, preorder, PreorderStatusEnum.cancelled)
+
+    store_name = _get_store_name(db, preorder.store_id)
+    return _fmt_preorder(preorder, store_name)
 
 
 # ──────────────────────────────────────────────
@@ -140,7 +214,8 @@ def update_status(
     repo.update_preorder_status(db, preorder, new_status)
     _create_status_notification(db, preorder, new_status)
 
-    return _fmt_preorder(preorder)
+    store_name = _get_store_name(db, preorder.store_id)
+    return _fmt_preorder(preorder, store_name)
 
 
 # ──────────────────────────────────────────────
