@@ -8,6 +8,7 @@ import '../features/home/home_screen.dart';
 import '../features/merchant/merchant_dashboard_screen.dart';
 import '../features/merchant/merchant_product_form_screen.dart';
 import '../features/merchant/merchant_product_review_screen.dart';
+import '../features/merchant/merchant_story_screen.dart';
 import '../features/notification/notification_screen.dart';
 import '../features/route/route_screen.dart';
 import '../features/search/product_detail_screen.dart';
@@ -33,6 +34,7 @@ class AppRoutes {
   static const merchantDashboard = '/merchant-dashboard';
   static const merchantProductForm = '/merchant-product-form';
   static const merchantProductReview = '/merchant-product-review';
+  static const merchantStory = '/merchant-story';
   static const errorState = '/error-state';
 }
 
@@ -71,6 +73,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const MerchantProductFormScreen());
       case AppRoutes.merchantProductReview:
         return MaterialPageRoute(builder: (_) => const MerchantProductReviewScreen());
+      case AppRoutes.merchantStory:
+        return MaterialPageRoute(builder: (_) => const MerchantStoryScreen());
       case AppRoutes.errorState:
         return MaterialPageRoute(builder: (_) => const ErrorStateScreen());
       default:

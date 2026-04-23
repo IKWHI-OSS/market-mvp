@@ -14,6 +14,7 @@ POST /api/v1/merchant/stories
 """
 import os
 import logging
+import re
 from typing import Optional
 
 from fastapi import HTTPException
@@ -40,6 +41,61 @@ def _fallback_story(store_name: str, product_names: list[str]) -> str:
     product_list = ", ".join(product_names[:3]) if product_names else "다양한 상품"
     template = _FALLBACK_TEMPLATES[len(product_names) % len(_FALLBACK_TEMPLATES)]
     return template.format(store_name=store_name, product_list=product_list)
+
+
+def _mask_sensitive(text: str) -> str:
+    masked = text
+    masked = re.sub(r'([A-Za-z0-9._%+-]+)@([A-Za-z0-9.-]+\.[A-Za-z]{2,})', '[이메일]', masked)
+    masked = re.sub(r'01[016789]-?\d{3,4}-?\d{4}', '[전화번호]', masked)
+    masked = re.sub(r'\d{6}-?\d{7}', '[주민번호]', masked)
+    return masked
+
+
+def _tone_prefix(tone: str) -> str:
+    if tone == "전문적인":
+        return "신뢰할 수 있는 품질 기준과 정확한 안내를 바탕으로"
+    if tone == "정겨운":
+        return "시장 이웃처럼 따뜻한 마음으로"
+    return "친근하고 알기 쉬운 설명으로"
+
+
+def _build_story_versions(base_story: str, tone: str, interview_text: str) -> dict:
+    intro = _tone_prefix(tone)
+    interview_line = interview_text.strip()
+    short = f"{intro} {base_story}".strip()
+    if len(short) > 80:
+        short = short[:77].rstrip() + "..."
+    normal = short
+    detailed = short
+    if interview_line:
+        normal = f"{short}\n{interview_line}"
+        detailed = f"{short}\n{interview_line}\n오늘도 제철 재료와 점포만의 기준으로 장보기 경험을 더 좋게 만들겠습니다."
+    return {
+        "short": short,
+        "normal": normal,
+        "detailed": detailed,
+    }
+
+
+def _build_hashtags(keywords: Optional[list[str]], product_names: list[str]) -> list[str]:
+    tags: list[str] = []
+    if keywords:
+        for kw in keywords[:3]:
+            norm = kw.strip().replace(" ", "")
+            if norm:
+                tags.append(f"#{norm}")
+    for p in product_names[:2]:
+        norm = p.strip().replace(" ", "")
+        if norm:
+            tags.append(f"#{norm}")
+    # 중복 제거
+    unique = []
+    seen = set()
+    for tag in tags:
+        if tag not in seen:
+            unique.append(tag)
+            seen.add(tag)
+    return unique
 
 
 # ──────────────────────────────────────────────
@@ -91,6 +147,10 @@ def generate_story(
     user,
     store_id: str,
     save_to_store: bool = False,
+    interview_text: Optional[str] = None,
+    keywords: Optional[list[str]] = None,
+    tone: str = "친근한",
+    selected_length: str = "normal",
     llm_fn=None,           # 테스트용 DI
 ) -> dict:
     """
@@ -119,7 +179,8 @@ def generate_story(
     store_desc    = getattr(store, "store_story_summary", None)
 
     fallback_mode = False
-    story_text    = ""
+    story_text = ""
+    masked_interview = _mask_sensitive(interview_text or "")
 
     if llm_fn is not None:
         # 테스트용 주입
@@ -141,14 +202,25 @@ def generate_story(
             story_text    = _fallback_story(store_name, product_names)
             fallback_mode = True
 
+    story_versions = _build_story_versions(story_text, tone, masked_interview)
+    if selected_length not in story_versions:
+        selected_length = "normal"
+    selected_story = story_versions[selected_length]
+    hashtags = _build_hashtags(keywords, product_names)
+
     if save_to_store and not fallback_mode:
-        store.store_story_summary = story_text
+        store.store_story_summary = selected_story
         db.commit()
 
     return {
-        "store_id":     store_id,
-        "store_name":   store_name,
-        "story":        story_text,
+        "store_id": store_id,
+        "store_name": store_name,
+        "story": selected_story,
+        "story_versions": story_versions,
+        "selected_length": selected_length,
+        "tone": tone,
+        "hashtags": hashtags,
+        "interview_masked": masked_interview,
         "fallback_mode": fallback_mode,
         "products_used": product_names[:5],
     }

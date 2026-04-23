@@ -177,6 +177,32 @@ class SpotlightDetailData {
   final String highlightProduct;
 }
 
+class MerchantStoryData {
+  const MerchantStoryData({
+    required this.storeId,
+    required this.storeName,
+    required this.story,
+    required this.storyVersions,
+    required this.selectedLength,
+    required this.tone,
+    required this.hashtags,
+    required this.interviewMasked,
+    required this.fallbackMode,
+    required this.productsUsed,
+  });
+
+  final String storeId;
+  final String storeName;
+  final String story;
+  final Map<String, String> storyVersions;
+  final String selectedLength;
+  final String tone;
+  final List<String> hashtags;
+  final String interviewMasked;
+  final bool fallbackMode;
+  final List<String> productsUsed;
+}
+
 // ─── ApiClient ──────────────────────────────────────────────────────────────
 
 class ApiClient {
@@ -413,6 +439,48 @@ class ApiClient {
       zoneLabel: d['zone_label'] as String? ?? '',
       openHours: '',
       highlightProduct: highlight,
+    );
+  }
+
+  // ── Merchant Story Agent ─────────────────────────────────────────────────
+
+  Future<MerchantStoryData> createMerchantStory({
+    required String storeId,
+    required String interviewText,
+    required List<String> keywords,
+    required String tone,
+    required String selectedLength,
+    bool saveToStore = false,
+  }) async {
+    final res = await http.post(
+      Uri.parse('$_baseUrl/merchant/stories'),
+      headers: _headers,
+      body: jsonEncode({
+        'store_id': storeId,
+        'interview_text': interviewText,
+        'keywords': keywords,
+        'tone': tone,
+        'selected_length': selectedLength,
+        'save_to_store': saveToStore,
+      }),
+    );
+    final d = _unwrap(res);
+    final versionsRaw = d['story_versions'] as Map<String, dynamic>? ?? {};
+    return MerchantStoryData(
+      storeId: d['store_id'] as String,
+      storeName: d['store_name'] as String? ?? '',
+      story: d['story'] as String? ?? '',
+      storyVersions: {
+        'short': versionsRaw['short'] as String? ?? '',
+        'normal': versionsRaw['normal'] as String? ?? '',
+        'detailed': versionsRaw['detailed'] as String? ?? '',
+      },
+      selectedLength: d['selected_length'] as String? ?? 'normal',
+      tone: d['tone'] as String? ?? tone,
+      hashtags: (d['hashtags'] as List<dynamic>? ?? const []).map((e) => '$e').toList(growable: false),
+      interviewMasked: d['interview_masked'] as String? ?? '',
+      fallbackMode: d['fallback_mode'] as bool? ?? false,
+      productsUsed: (d['products_used'] as List<dynamic>? ?? const []).map((e) => '$e').toList(growable: false),
     );
   }
 

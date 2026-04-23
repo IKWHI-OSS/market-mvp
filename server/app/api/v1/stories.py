@@ -2,7 +2,7 @@
 상인 스토리 생성 API
   POST /merchant/stories — LLM 기반 스토리 문구 생성
 """
-from typing import Optional
+from typing import Literal, Optional
 
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel
@@ -20,6 +20,10 @@ router = APIRouter(prefix="/merchant", tags=["stories"])
 class StoryRequest(BaseModel):
     store_id: str
     save_to_store: Optional[bool] = False  # True면 Store.store_story_summary 자동 저장
+    interview_text: Optional[str] = None
+    keywords: Optional[list[str]] = None
+    tone: Optional[Literal["친근한", "전문적인", "정겨운"]] = "친근한"
+    selected_length: Optional[Literal["short", "normal", "detailed"]] = "normal"
 
 
 @router.post("/stories", response_model=BaseResponse)
@@ -37,5 +41,9 @@ def create_story(
         current_user,
         req.store_id,
         save_to_store=req.save_to_store or False,
+        interview_text=req.interview_text,
+        keywords=req.keywords,
+        tone=req.tone or "친근한",
+        selected_length=req.selected_length or "normal",
     )
     return success_response(data)

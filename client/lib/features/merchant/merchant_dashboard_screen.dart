@@ -100,11 +100,9 @@ class MerchantDashboardScreen extends StatelessWidget {
           _TaskTile(
             icon: Icons.verified_outlined,
             iconBg: const Color(0xFFE8E5DE),
-            title: '상인 정보 확인',
-            subtitle: '분기별 상인 정보 유효성 검사 필요',
-            onTap: () => ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('신원 확인 기능은 준비 중입니다.')),
-            ),
+            title: '상인 스토리 생성',
+            subtitle: '점포 소개문 자동 생성 후 검토',
+            onTap: () => Navigator.pushNamed(context, AppRoutes.merchantStory),
           ),
           const SizedBox(height: 14),
           _PromoCard(

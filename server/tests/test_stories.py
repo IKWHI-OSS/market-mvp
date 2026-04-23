@@ -118,6 +118,8 @@ def test_generate_story_llm_success(db, seed_ids):
     assert "참외가게" in result["story"]
     assert "참외" in result["story"]
     assert result["store_id"] == seed_ids["store_id"]
+    assert "story_versions" in result
+    assert result["selected_length"] == "normal"
 
 
 def test_generate_story_llm_fallback(db, seed_ids):
@@ -177,6 +179,8 @@ def test_create_story_api_fallback(client, seed_ids, merchant_headers):
     assert data["fallback_mode"] is True        # API 키 없으므로 fallback
     assert "products_used" in data
     assert data["store_id"] == seed_ids["store_id"]
+    assert "story_versions" in data
+    assert "hashtags" in data
 
 
 def test_create_story_api_consumer_forbidden(client, seed_ids, consumer_headers):
@@ -221,5 +225,26 @@ def test_create_story_response_structure(client, seed_ids, merchant_headers):
     assert "data" in body
     assert "meta" in body
     data = body["data"]
-    for key in ("store_id", "store_name", "story", "fallback_mode", "products_used"):
+    for key in ("store_id", "store_name", "story", "fallback_mode", "products_used", "story_versions", "hashtags"):
         assert key in data, f"응답에 '{key}' 누락"
+
+
+def test_create_story_with_prompt_options(client, seed_ids, merchant_headers):
+    resp = client.post(
+        "/api/v1/merchant/stories",
+        json={
+            "store_id": seed_ids["store_id"],
+            "interview_text": "010-1234-5678로 문의 주세요",
+            "keywords": ["제철", "신선", "정직"],
+            "tone": "정겨운",
+            "selected_length": "detailed",
+        },
+        headers=merchant_headers,
+    )
+    assert resp.status_code == 200
+    data = resp.json()["data"]
+    assert data["tone"] == "정겨운"
+    assert data["selected_length"] == "detailed"
+    assert "detailed" in data["story_versions"]
+    assert data["story"] == data["story_versions"]["detailed"]
+    assert "[전화번호]" in data["interview_masked"]
