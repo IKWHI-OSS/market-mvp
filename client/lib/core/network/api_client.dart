@@ -332,6 +332,20 @@ class ApiClient {
   }
 
   void logout() => _accessToken = null;
+  void clearSession() => _accessToken = null;
+
+  // ── Profile ───────────────────────────────────────────────────────────────
+
+  Future<AuthUser> getMyProfile() async {
+    final res = await http.get(Uri.parse('$_baseUrl/auth/me'), headers: _headers);
+    final d = _unwrap(res);
+    return AuthUser(
+      userId: d['user_id'] as String,
+      email: d['email'] as String,
+      name: d['name'] as String,
+      role: d['role'] as String,
+    );
+  }
 
   // ── Products ──────────────────────────────────────────────────────────────
 
@@ -514,6 +528,53 @@ class ApiClient {
       openHours: '',
       highlightProduct: highlight,
     );
+  }
+
+  // ── Preorders ─────────────────────────────────────────────────────────────
+
+  Future<Map<String, dynamic>> createPreorder({
+    required String storeId,
+    required String productName,
+    required int qty,
+  }) async {
+    final res = await http.post(
+      Uri.parse('$_baseUrl/preorders'),
+      headers: _headers,
+      body: jsonEncode({'store_id': storeId, 'product_name': productName, 'qty': qty}),
+    );
+    return _unwrap(res);
+  }
+
+  Future<List<Map<String, dynamic>>> getMyPreorders({String? status}) async {
+    final uri = Uri.parse('$_baseUrl/preorders').replace(
+      queryParameters: {if (status != null) 'status': status},
+    );
+    final res = await http.get(uri, headers: _headers);
+    return _unwrapItems(res).map((e) => e as Map<String, dynamic>).toList();
+  }
+
+  Future<void> cancelPreorder(String preorderId) async {
+    final res = await http.delete(
+      Uri.parse('$_baseUrl/preorders/$preorderId'),
+      headers: _headers,
+    );
+    if (res.statusCode < 200 || res.statusCode >= 300) {
+      final body = jsonDecode(res.body) as Map<String, dynamic>;
+      throw Exception(body['message'] as String? ?? '취소에 실패했습니다.');
+    }
+  }
+
+  // ── Price Suggestions (merchant) ──────────────────────────────────────────
+
+  Future<List<Map<String, dynamic>>> getPriceSuggestions() async {
+    final res = await http.get(
+      Uri.parse('$_baseUrl/merchant/dashboard/price-suggestions'),
+      headers: _headers,
+    );
+    final d = _unwrap(res);
+    return (d['suggestions'] as List<dynamic>? ?? [])
+        .map((e) => e as Map<String, dynamic>)
+        .toList();
   }
 
   // ── Merchant Story Agent ─────────────────────────────────────────────────

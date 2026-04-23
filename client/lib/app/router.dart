@@ -17,6 +17,7 @@ import '../features/shopping/agent_screen.dart';
 import '../features/shopping/shopping_list_screen.dart';
 import '../features/home/event_screen.dart';
 import '../features/home/spotlight_screen.dart';
+import '../features/my/my_screen.dart';
 
 class AppRoutes {
   static const login = '/login';
@@ -35,6 +36,7 @@ class AppRoutes {
   static const merchantProductForm = '/merchant-product-form';
   static const merchantProductReview = '/merchant-product-review';
   static const merchantStory = '/merchant-story';
+  static const myPage = '/my';
   static const errorState = '/error-state';
 }
 
@@ -75,6 +77,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const MerchantProductReviewScreen());
       case AppRoutes.merchantStory:
         return MaterialPageRoute(builder: (_) => const MerchantStoryScreen());
+      case AppRoutes.myPage:
+        return MaterialPageRoute(builder: (_) => const MyScreen());
       case AppRoutes.errorState:
         return MaterialPageRoute(builder: (_) => const ErrorStateScreen());
       default:

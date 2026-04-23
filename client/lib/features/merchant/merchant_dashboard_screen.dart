@@ -1,13 +1,55 @@
 import 'package:flutter/material.dart';
 
 import '../../app/router.dart';
+import '../../core/network/api_client.dart';
 import '../../shared/widgets/market_logo_title.dart';
 
-class MerchantDashboardScreen extends StatelessWidget {
+class MerchantDashboardScreen extends StatefulWidget {
   const MerchantDashboardScreen({super.key});
 
   @override
+  State<MerchantDashboardScreen> createState() => _MerchantDashboardScreenState();
+}
+
+class _MerchantDashboardScreenState extends State<MerchantDashboardScreen> {
+  bool _loading = true;
+  String _name = '';
+  int _riskCount = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _load();
+  }
+
+  Future<void> _load() async {
+    try {
+      final user = await ApiClient.instance.getMyProfile();
+      final suggestions = await ApiClient.instance.getPriceSuggestions();
+      final risk = suggestions.where((s) {
+        final pct = (s['diff_pct'] as num?)?.abs() ?? 0;
+        return pct > 10;
+      }).length;
+      if (mounted) {
+        setState(() {
+          _name = user.name;
+          _riskCount = risk;
+          _loading = false;
+        });
+      }
+    } catch (_) {
+      if (mounted) setState(() => _loading = false);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    if (_loading) {
+      return const Scaffold(
+        backgroundColor: Color(0xFFF2F7EC),
+        body: Center(child: CircularProgressIndicator()),
+      );
+    }
     return Scaffold(
       backgroundColor: const Color(0xFFF2F7EC),
       appBar: AppBar(
@@ -34,7 +76,7 @@ class MerchantDashboardScreen extends StatelessWidget {
         children: [
           const SizedBox(height: 14),
           Text(
-            '반갑습니다, 김민석님',
+            '반갑습니다, $_name님',
             style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                   fontSize: 36,
                   fontWeight: FontWeight.w800,
@@ -47,13 +89,11 @@ class MerchantDashboardScreen extends StatelessWidget {
             style: TextStyle(fontSize: 13, color: Color(0xFF625E55)),
           ),
           const SizedBox(height: 14),
-          const _PulseCard(
-            visitors: 350,
-            changeRate: 12,
-          ),
-          const SizedBox(height: 10),
-          const _AlertCard(riskCount: 3),
-          const SizedBox(height: 18),
+          if (_riskCount > 0) ...[
+            _AlertCard(riskCount: _riskCount),
+            const SizedBox(height: 10),
+          ],
+          const SizedBox(height: 8),
           Row(
             children: [
               Text(
@@ -121,59 +161,6 @@ class MerchantDashboardScreen extends StatelessWidget {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-    );
-  }
-}
-
-class _PulseCard extends StatelessWidget {
-  const _PulseCard({required this.visitors, required this.changeRate});
-
-  final int visitors;
-  final int changeRate;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(14),
-      decoration: BoxDecoration(
-        color: const Color(0xFFE8EDE3),
-        borderRadius: BorderRadius.circular(14),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Row(
-            children: [
-              Spacer(),
-              Icon(Icons.show_chart, size: 30, color: Color(0xFFA8D175)),
-            ],
-          ),
-          const SizedBox(height: 2),
-          const Text('오늘의 시장 방문자', style: TextStyle(fontSize: 12, color: Color(0xFF625E55))),
-          const SizedBox(height: 2),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Text(
-                '$visitors',
-                style: const TextStyle(
-                  fontSize: 46,
-                  fontWeight: FontWeight.w800,
-                  color: Color(0xFF000000),
-                  height: 0.95,
-                ),
-              ),
-              const Spacer(),
-              Text(
-                '↑ $changeRate%',
-                style: const TextStyle(fontSize: 12, color: Color(0xFF2F5710), fontWeight: FontWeight.w800),
-              ),
-              const SizedBox(width: 4),
-              const Text('vs yesterday', style: TextStyle(fontSize: 10, color: Color(0xFF928E84))),
-            ],
-          ),
-        ],
-      ),
     );
   }
 }
