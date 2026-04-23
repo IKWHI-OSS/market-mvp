@@ -1,0 +1,1 @@
+ /Users/karla/market-mvp/client/.dart_tool/flutter_build/fdb26a43af52c97cadd375dba09207ad/dart_build_result.json:  /Users/karla/market-mvp/client/.dart_tool/package_config.json /Users/karla/market-mvp/client/pubspec.yaml /opt/homebrew/share/flutter/bin/cache/dart-sdk/version
