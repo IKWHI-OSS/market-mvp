@@ -18,7 +18,7 @@ router = APIRouter(prefix="/merchant", tags=["stories"])
 
 
 class StoryRequest(BaseModel):
-    store_id: str
+    store_id: Optional[str] = None
     save_to_store: Optional[bool] = False  # True면 Store.store_story_summary 자동 저장
     interview_text: Optional[str] = None
     keywords: Optional[list[str]] = None

@@ -162,6 +162,19 @@ def test_generate_story_store_not_found(db):
     assert exc.value.status_code == 404
 
 
+def test_generate_story_without_store_mapping(db):
+    """store_id 미지정 + 상인-점포 매핑 없음 → 404."""
+    from fastapi import HTTPException
+
+    class FakeMerchant:
+        user_id = "merchant_without_store"
+        role = type("R", (), {"value": "merchant"})()
+
+    with pytest.raises(HTTPException) as exc:
+        story_service.generate_story(db, FakeMerchant(), None)
+    assert exc.value.status_code == 404
+
+
 # ── API 테스트 ────────────────────────────────────────────────────────
 
 def test_create_story_api_fallback(client, seed_ids, merchant_headers):
@@ -248,3 +261,15 @@ def test_create_story_with_prompt_options(client, seed_ids, merchant_headers):
     assert "detailed" in data["story_versions"]
     assert data["story"] == data["story_versions"]["detailed"]
     assert "[전화번호]" in data["interview_masked"]
+
+
+def test_create_story_without_store_id_uses_merchant_mapping(client, merchant_headers):
+    resp = client.post(
+        "/api/v1/merchant/stories",
+        json={},
+        headers=merchant_headers,
+    )
+    assert resp.status_code == 200
+    data = resp.json()["data"]
+    assert data["store_id"]
+    assert data["store_name"]
