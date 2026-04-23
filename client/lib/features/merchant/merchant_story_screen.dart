@@ -20,6 +20,7 @@ class _MerchantStoryScreenState extends State<MerchantStoryScreen> {
   String _selectedLength = 'normal';
   MerchantStoryData? _result;
   bool _loading = false;
+  bool _publishing = false;
 
   @override
   void dispose() {
@@ -45,7 +46,6 @@ class _MerchantStoryScreenState extends State<MerchantStoryScreen> {
     setState(() => _loading = true);
     try {
       final data = await ApiClient.instance.createMerchantStory(
-        storeId: 'store_001',
         interviewText: interview,
         keywords: keywords,
         tone: _tone,
@@ -64,21 +64,45 @@ class _MerchantStoryScreenState extends State<MerchantStoryScreen> {
     }
   }
 
-  void _publish() {
+  Future<void> _publish() async {
     if (_result == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('먼저 스토리를 생성해주세요.')),
       );
       return;
     }
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('스토리를 게시했어요.')),
-    );
-    Navigator.pushNamedAndRemoveUntil(
-      context,
-      AppRoutes.merchantDashboard,
-      (route) => false,
-    );
+    final interview = _interviewController.text.trim();
+    final keywords = _keywordController.text
+        .split(',')
+        .map((e) => e.trim())
+        .where((e) => e.isNotEmpty)
+        .toList(growable: false);
+    setState(() => _publishing = true);
+    try {
+      await ApiClient.instance.createMerchantStory(
+        interviewText: interview,
+        keywords: keywords,
+        tone: _tone,
+        selectedLength: _selectedLength,
+        saveToStore: true,
+      );
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('스토리를 게시했어요.')),
+      );
+      Navigator.pushNamedAndRemoveUntil(
+        context,
+        AppRoutes.merchantDashboard,
+        (route) => false,
+      );
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('게시 실패: $e')),
+      );
+    } finally {
+      if (mounted) setState(() => _publishing = false);
+    }
   }
 
   @override
@@ -129,8 +153,8 @@ class _MerchantStoryScreenState extends State<MerchantStoryScreen> {
             SizedBox(
               width: double.infinity,
               child: FilledButton(
-                onPressed: _publish,
-                child: const Text('게시하기'),
+                onPressed: _publishing ? null : _publish,
+                child: Text(_publishing ? '게시 중...' : '게시하기'),
               ),
             ),
           ],

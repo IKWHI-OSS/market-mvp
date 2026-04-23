@@ -3,7 +3,7 @@ from fastapi import APIRouter
 from app.api.v1 import (
     auth, drops, events, home, merchant, notifications,
     products, routes, shopping_lists, stores,
-    prices, stories, preorders,
+    prices, stories, preorders, shopping_agent,
 )
 
 router = APIRouter(prefix="/api/v1")
@@ -20,3 +20,4 @@ router.include_router(routes.router)
 router.include_router(prices.router)
 router.include_router(stories.router)
 router.include_router(preorders.router)
+router.include_router(shopping_agent.router)

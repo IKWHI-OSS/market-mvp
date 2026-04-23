@@ -203,6 +203,80 @@ class MerchantStoryData {
   final List<String> productsUsed;
 }
 
+class ShoppingAgentIngredient {
+  const ShoppingAgentIngredient({
+    required this.name,
+    required this.qty,
+    required this.unit,
+    required this.matchStatus,
+    required this.alternatives,
+    this.storeName,
+    this.zoneLabel,
+    this.price,
+  });
+
+  final String name;
+  final int qty;
+  final String unit;
+  final String matchStatus;
+  final List<String> alternatives;
+  final String? storeName;
+  final String? zoneLabel;
+  final int? price;
+}
+
+class ShoppingAgentStoreMatch {
+  const ShoppingAgentStoreMatch({
+    required this.storeId,
+    required this.storeName,
+    required this.zoneLabel,
+    required this.distanceM,
+    required this.priceTotal,
+    required this.stockPriority,
+    required this.matchedItems,
+  });
+
+  final String storeId;
+  final String storeName;
+  final String zoneLabel;
+  final int distanceM;
+  final int priceTotal;
+  final String stockPriority;
+  final List<String> matchedItems;
+}
+
+class ShoppingAgentData {
+  const ShoppingAgentData({
+    required this.query,
+    required this.clarificationNeeded,
+    required this.clarificationQuestion,
+    required this.menuTitle,
+    required this.menuReason,
+    required this.ragSource,
+    required this.ingredients,
+    required this.storeMatches,
+    required this.matchingFailed,
+    required this.generalListOnly,
+    required this.shoppingListId,
+    required this.fallbackMode,
+    required this.retryGuide,
+  });
+
+  final String query;
+  final bool clarificationNeeded;
+  final String? clarificationQuestion;
+  final String? menuTitle;
+  final String? menuReason;
+  final String? ragSource;
+  final List<ShoppingAgentIngredient> ingredients;
+  final List<ShoppingAgentStoreMatch> storeMatches;
+  final bool matchingFailed;
+  final bool generalListOnly;
+  final String? shoppingListId;
+  final bool fallbackMode;
+  final String? retryGuide;
+}
+
 // ─── ApiClient ──────────────────────────────────────────────────────────────
 
 class ApiClient {
@@ -445,7 +519,7 @@ class ApiClient {
   // ── Merchant Story Agent ─────────────────────────────────────────────────
 
   Future<MerchantStoryData> createMerchantStory({
-    required String storeId,
+    String? storeId,
     required String interviewText,
     required List<String> keywords,
     required String tone,
@@ -456,7 +530,7 @@ class ApiClient {
       Uri.parse('$_baseUrl/merchant/stories'),
       headers: _headers,
       body: jsonEncode({
-        'store_id': storeId,
+        if (storeId != null && storeId.isNotEmpty) 'store_id': storeId,
         'interview_text': interviewText,
         'keywords': keywords,
         'tone': tone,
@@ -481,6 +555,78 @@ class ApiClient {
       interviewMasked: d['interview_masked'] as String? ?? '',
       fallbackMode: d['fallback_mode'] as bool? ?? false,
       productsUsed: (d['products_used'] as List<dynamic>? ?? const []).map((e) => '$e').toList(growable: false),
+    );
+  }
+
+  // ── Shopping Agent (SCR-C-05) ────────────────────────────────────────────
+
+  Future<ShoppingAgentData> requestShoppingAgent({
+    required String query,
+    int? people,
+    int? budget,
+    List<String>? preferences,
+    String? marketId,
+    bool saveAsList = true,
+  }) async {
+    final res = await http.post(
+      Uri.parse('$_baseUrl/shopping-agent/recommendations'),
+      headers: _headers,
+      body: jsonEncode({
+        'query': query.trim(),
+        if (people != null) 'people': people,
+        if (budget != null) 'budget': budget,
+        if (preferences != null) 'preferences': preferences,
+        if (marketId != null && marketId.isNotEmpty) 'market_id': marketId,
+        'save_as_list': saveAsList,
+      }),
+    );
+    final d = _unwrap(res);
+    final menu = d['menu'] as Map<String, dynamic>?;
+    final ingredientsRaw = d['ingredients'] as List<dynamic>? ?? const [];
+    final storesRaw = d['store_matches'] as List<dynamic>? ?? const [];
+
+    return ShoppingAgentData(
+      query: d['query'] as String? ?? query,
+      clarificationNeeded: d['clarification_needed'] as bool? ?? false,
+      clarificationQuestion: d['clarification_question'] as String?,
+      menuTitle: menu?['title'] as String?,
+      menuReason: menu?['reason'] as String?,
+      ragSource: menu?['rag_source'] as String?,
+      ingredients: ingredientsRaw.map((e) {
+        final m = e as Map<String, dynamic>;
+        final matchedStore = m['matched_store'] as Map<String, dynamic>?;
+        return ShoppingAgentIngredient(
+          name: m['name'] as String? ?? '',
+          qty: m['qty'] as int? ?? 1,
+          unit: m['unit'] as String? ?? '',
+          matchStatus: m['match_status'] as String? ?? 'unmatched',
+          alternatives: (m['alternatives'] as List<dynamic>? ?? const [])
+              .map((x) => '$x')
+              .toList(growable: false),
+          storeName: matchedStore?['store_name'] as String?,
+          zoneLabel: matchedStore?['zone_label'] as String?,
+          price: matchedStore?['price'] as int?,
+        );
+      }).toList(growable: false),
+      storeMatches: storesRaw.map((e) {
+        final m = e as Map<String, dynamic>;
+        return ShoppingAgentStoreMatch(
+          storeId: m['store_id'] as String? ?? '',
+          storeName: m['store_name'] as String? ?? '',
+          zoneLabel: m['zone_label'] as String? ?? '',
+          distanceM: m['distance_m'] as int? ?? 0,
+          priceTotal: m['price_total'] as int? ?? 0,
+          stockPriority: m['stock_priority'] as String? ?? 'in_stock',
+          matchedItems: (m['matched_items'] as List<dynamic>? ?? const [])
+              .map((x) => '$x')
+              .toList(growable: false),
+        );
+      }).toList(growable: false),
+      matchingFailed: d['matching_failed'] as bool? ?? false,
+      generalListOnly: d['general_list_only'] as bool? ?? false,
+      shoppingListId: d['shopping_list_id'] as String?,
+      fallbackMode: d['fallback_mode'] as bool? ?? false,
+      retryGuide: d['retry_guide'] as String?,
     );
   }
 

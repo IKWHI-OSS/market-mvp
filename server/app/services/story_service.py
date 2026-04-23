@@ -22,6 +22,7 @@ from sqlalchemy.orm import Session
 
 from app.db.models.store import Store
 from app.db.models.product import Product
+from app.db.models.merchant import Merchant
 
 logger = logging.getLogger(__name__)
 
@@ -98,6 +99,21 @@ def _build_hashtags(keywords: Optional[list[str]], product_names: list[str]) -> 
     return unique
 
 
+def _resolve_store_id(db: Session, user, requested_store_id: Optional[str]) -> str:
+    if requested_store_id:
+        return requested_store_id
+
+    row = (
+        db.query(Merchant.store_id)
+        .filter(Merchant.user_id == user.user_id)
+        .order_by(Merchant.created_at.asc())
+        .first()
+    )
+    if not row or not row[0]:
+        raise HTTPException(status_code=404, detail="상인 계정에 연결된 점포가 없습니다.")
+    return row[0]
+
+
 # ──────────────────────────────────────────────
 # LLM 호출 (Anthropic Claude)
 # ──────────────────────────────────────────────
@@ -145,7 +161,7 @@ def _call_llm(store_name: str, store_desc: Optional[str], product_names: list[st
 def generate_story(
     db: Session,
     user,
-    store_id: str,
+    store_id: Optional[str],
     save_to_store: bool = False,
     interview_text: Optional[str] = None,
     keywords: Optional[list[str]] = None,
@@ -163,13 +179,15 @@ def generate_story(
     if user.role.value != "merchant":
         raise HTTPException(status_code=403, detail="상인 권한이 필요합니다.")
 
-    store: Optional[Store] = db.query(Store).filter(Store.store_id == store_id).first()
+    resolved_store_id = _resolve_store_id(db, user, store_id)
+
+    store: Optional[Store] = db.query(Store).filter(Store.store_id == resolved_store_id).first()
     if not store:
         raise HTTPException(status_code=404, detail="점포를 찾을 수 없습니다.")
 
     products = (
         db.query(Product)
-        .filter(Product.store_id == store_id)
+        .filter(Product.store_id == resolved_store_id)
         .order_by(Product.created_at.desc())
         .limit(10)
         .all()
@@ -213,7 +231,7 @@ def generate_story(
         db.commit()
 
     return {
-        "store_id": store_id,
+        "store_id": resolved_store_id,
         "store_name": store_name,
         "story": selected_story,
         "story_versions": story_versions,
