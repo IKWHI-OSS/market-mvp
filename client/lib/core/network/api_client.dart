@@ -564,6 +564,40 @@ class ApiClient {
     }
   }
 
+  // ── Merchant store/product management ────────────────────────────────────
+
+  Future<Map<String, dynamic>> getMyStore() async {
+    final res = await http.get(Uri.parse('$_baseUrl/merchant/my-store'), headers: _headers);
+    return _unwrap(res);
+  }
+
+  Future<List<Map<String, dynamic>>> getMerchantProducts(String storeId) async {
+    final res = await http.get(Uri.parse('$_baseUrl/stores/$storeId/products'), headers: _headers);
+    final d = _unwrap(res);
+    return (d['items'] as List<dynamic>? ?? []).map((e) => e as Map<String, dynamic>).toList();
+  }
+
+  Future<void> updateProduct(String productId, {int? price, String? stockStatus}) async {
+    final body = <String, dynamic>{
+      if (price != null) 'price': price,
+      if (stockStatus != null) 'stock_status': stockStatus,
+    };
+    final res = await http.patch(
+      Uri.parse('$_baseUrl/merchant/products/$productId'),
+      headers: _headers,
+      body: jsonEncode(body),
+    );
+    if (res.statusCode < 200 || res.statusCode >= 300) {
+      final b = jsonDecode(res.body) as Map<String, dynamic>;
+      throw Exception(b['message'] as String? ?? '상품 수정에 실패했습니다.');
+    }
+  }
+
+  Future<Map<String, dynamic>> getMarketPrice(String itemCode) async {
+    final res = await http.get(Uri.parse('$_baseUrl/prices/market/$itemCode'), headers: _headers);
+    return _unwrap(res);
+  }
+
   // ── Price Suggestions (merchant) ──────────────────────────────────────────
 
   Future<List<Map<String, dynamic>>> getPriceSuggestions() async {

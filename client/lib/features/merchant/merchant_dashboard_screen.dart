@@ -15,6 +15,7 @@ class _MerchantDashboardScreenState extends State<MerchantDashboardScreen> {
   bool _loading = true;
   String _name = '';
   int _riskCount = 0;
+  List<Map<String, dynamic>> _suggestions = [];
 
   @override
   void initState() {
@@ -25,21 +26,51 @@ class _MerchantDashboardScreenState extends State<MerchantDashboardScreen> {
   Future<void> _load() async {
     try {
       final user = await ApiClient.instance.getMyProfile();
-      final suggestions = await ApiClient.instance.getPriceSuggestions();
-      final risk = suggestions.where((s) {
-        final pct = (s['diff_pct'] as num?)?.abs() ?? 0;
-        return pct > 10;
+      final store = await ApiClient.instance.getMyStore();
+      final storeId = store['store_id'] as String;
+      final products = await ApiClient.instance.getMerchantProducts(storeId);
+      final risk = products.where((p) {
+        final s = p['stock_status'] as String? ?? '';
+        return s == 'low_stock' || s == 'out_of_stock';
       }).length;
+      final suggestions = await ApiClient.instance.getPriceSuggestions();
       if (mounted) {
         setState(() {
           _name = user.name;
           _riskCount = risk;
+          _suggestions = suggestions;
           _loading = false;
         });
       }
     } catch (_) {
       if (mounted) setState(() => _loading = false);
     }
+  }
+
+  void _showPriceSuggestionsSheet() {
+    showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: const Color(0xFFF2F7EC),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (_) => DraggableScrollableSheet(
+        expand: false,
+        initialChildSize: 0.6,
+        maxChildSize: 0.9,
+        builder: (_, controller) => _PriceSuggestionsSheet(
+          suggestions: _suggestions,
+          onApply: (productId, marketPrice) async {
+            await ApiClient.instance.updateProduct(productId, price: marketPrice);
+            if (mounted) {
+              Navigator.pop(context);
+              _load();
+            }
+          },
+        ),
+      ),
+    );
   }
 
   @override
@@ -131,10 +162,14 @@ class _MerchantDashboardScreenState extends State<MerchantDashboardScreen> {
             icon: Icons.sell_outlined,
             iconBg: const Color(0xFFF5CDB5),
             title: '가격 정보 갱신',
-            subtitle: '정보 변경 반영',
-            onTap: () => ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('재고/가격 관리(SCR-M-05)는 Phase 2 범위입니다.')),
-            ),
+            subtitle: _suggestions.isEmpty
+                ? '시세 기반 제안 없음'
+                : '${_suggestions.length}개 상품 가격 제안 있음',
+            onTap: _suggestions.isEmpty
+                ? () => ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('현재 가격 제안이 없습니다.')),
+                    )
+                : _showPriceSuggestionsSheet,
           ),
           const SizedBox(height: 8),
           _TaskTile(
@@ -294,6 +329,87 @@ class _PromoCard extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _PriceSuggestionsSheet extends StatelessWidget {
+  const _PriceSuggestionsSheet({required this.suggestions, required this.onApply});
+
+  final List<Map<String, dynamic>> suggestions;
+  final Future<void> Function(String productId, int marketPrice) onApply;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 32),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(
+            child: Container(
+              width: 36,
+              height: 4,
+              decoration: BoxDecoration(
+                color: const Color(0xFFCCC9BF),
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+          ),
+          const SizedBox(height: 16),
+          const Text('가격 제안', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Color(0xFF1E1D18))),
+          const SizedBox(height: 12),
+          Expanded(
+            child: ListView.separated(
+              itemCount: suggestions.length,
+              separatorBuilder: (_, __) => const SizedBox(height: 8),
+              itemBuilder: (_, i) {
+                final s = suggestions[i];
+                final productId = s['product_id'] as String;
+                final productName = s['product_name'] as String? ?? '';
+                final currentPrice = s['current_price'] as int? ?? 0;
+                final marketPrice = s['market_price'] as int? ?? 0;
+                final advice = s['advice'] as String? ?? '';
+                return Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: const Color(0xFFE8EDE3)),
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(productName, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: Color(0xFF1E1D18))),
+                            const SizedBox(height: 2),
+                            Text('현재 $currentPrice원 → 시세 $marketPrice원',
+                                style: const TextStyle(fontSize: 11, color: Color(0xFF625E55))),
+                            const SizedBox(height: 2),
+                            Text(advice, style: const TextStyle(fontSize: 11, color: Color(0xFF928E84))),
+                          ],
+                        ),
+                      ),
+                      TextButton(
+                        style: TextButton.styleFrom(
+                          foregroundColor: const Color(0xFF2F5710),
+                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                          minimumSize: Size.zero,
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                        onPressed: () => onApply(productId, marketPrice),
+                        child: const Text('적용', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700)),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
