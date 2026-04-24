@@ -1,8 +1,11 @@
+from typing import Optional
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
 from app.db.models.drop_event import DropStatusEnum
 from app.db.models.product import StockStatusEnum
+from app.db.models.market_price import PriceChangeReasonEnum
 from app.db.repositories import merchant_repository as repo
+from app.db.repositories import price_repository
 from app.services.drop_service import trigger_drop_status_notifications
 
 
@@ -68,6 +71,57 @@ def get_price_suggestions(db: Session, user) -> list:
     store_ids = repo.get_store_ids_for_user(db, user.user_id)
     from app.services.price_service import get_price_suggestion
     return get_price_suggestion(db, store_ids)
+
+
+def update_product(db: Session, user, product_id: str,
+                   price: Optional[int], stock_status: Optional[str]) -> dict:
+    _require_merchant(user)
+    product = repo.get_product_by_id(db, product_id)
+    if not product:
+        raise HTTPException(status_code=404, detail="상품을 찾을 수 없습니다.")
+    store_ids = repo.get_store_ids_for_user(db, user.user_id)
+    if product.store_id not in store_ids:
+        raise HTTPException(status_code=403, detail="해당 상품에 대한 권한이 없습니다.")
+
+    if price is not None and price != product.price:
+        price_repository.record_price_change(
+            db,
+            product_id=product_id,
+            old_price=product.price,
+            new_price=price,
+            reason=PriceChangeReasonEnum.manual,
+        )
+        product.price = price
+
+    if stock_status is not None:
+        try:
+            product.stock_status = StockStatusEnum(stock_status)
+        except ValueError:
+            raise HTTPException(status_code=422, detail="stock_status 값이 유효하지 않습니다.")
+
+    db.commit()
+    db.refresh(product)
+    return {
+        "product_id": product.product_id,
+        "store_id": product.store_id,
+        "product_name": product.product_name,
+        "price": product.price,
+        "stock_status": product.stock_status.value,
+        "updated_at": product.updated_at.isoformat() if product.updated_at else None,
+    }
+
+
+def get_my_store(db: Session, user) -> dict:
+    _require_merchant(user)
+    store = repo.get_first_store_for_user(db, user.user_id)
+    if not store:
+        raise HTTPException(status_code=404, detail="등록된 가게가 없습니다.")
+    return {
+        "store_id": store.store_id,
+        "store_name": store.store_name,
+        "zone_label": store.zone_label,
+        "market_id": store.market_id,
+    }
 
 
 def update_drop_status(db: Session, user, drop_id: str, new_status: str) -> dict:

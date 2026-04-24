@@ -60,6 +60,17 @@ def create_product(db: Session, store_id: str, product_name: str, price: int,
     return p
 
 
+def get_product_by_id(db: Session, product_id: str) -> Optional[Product]:
+    return db.query(Product).filter(Product.product_id == product_id).first()
+
+
+def get_first_store_for_user(db: Session, user_id: str) -> Optional[Store]:
+    row = db.query(Merchant).filter(Merchant.user_id == user_id).first()
+    if row is None:
+        return None
+    return db.query(Store).filter(Store.store_id == row.store_id).first()
+
+
 def get_drop_by_id(db: Session, drop_id: str) -> Optional[DropEvent]:
     return db.query(DropEvent).filter(DropEvent.drop_id == drop_id).first()
 
