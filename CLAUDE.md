@@ -93,10 +93,18 @@ server/app/
 
 | 모듈 | 엔드포인트 | 비고 |
 |---|---|---|
-| prices.py | `/prices/market/{code}`, `/merchant/dashboard/price-suggestions` | KAMIS 농산물 시세 연동 |
-| stories.py | `POST /merchant/stories` | Anthropic Claude LLM, fallback 템플릿 |
-| preorders.py | `POST/GET /preorders`, `DELETE /preorders/{id}`, `PATCH /merchant/preorders/{id}/status` | 상태머신: requested→confirmed→ready→cancelled |
-| shopping_agent.py | `POST /shopping-agent/recommendations` | 레시피 키워드 매칭 + 점포 상품 연결 |
+| prices.py | `GET /prices/market/{code}`, `POST /prices/market/{code}/sync`, `GET /merchant/dashboard/price-suggestions` | KAMIS 농산물 시세 연동 (7개 품목) |
+| stories.py | `POST /merchant/stories` | Anthropic Claude LLM, fallback 템플릿. 응답: `story`, `story_versions{short/normal/detailed}`, `hashtags`, `tone` |
+| preorders.py | `POST/GET /preorders`, `GET /preorders/{id}`, `DELETE /preorders/{id}`, `PATCH /merchant/preorders/{id}/status` | 상태머신: requested→confirmed→ready→cancelled. 응답에 `store_name` 포함 |
+| shopping_agent.py | `POST /shopping-agent/recommendations` | 레시피 키워드 매칭 + 점포 상품 연결. `_RECIPE_DATASET` 3개 하드코딩 |
+
+### Phase 2 가격/재고 고도화 (완료)
+
+- `PATCH /merchant/products/{product_id}` — 가격·재고 수정. body: `{price?, stock_status?}`. 가격 변경 시 `ProductPriceHistory` 자동 기록 (reason: manual)
+- `GET /merchant/my-store` — 로그인 상인의 점포 정보 조회 (store_id 획득용)
+- `GET /stores/{store_id}/products` — 점포 상품 목록 조회
+- Flutter `api_client.dart` 추가 메서드: `getMyStore()`, `getMerchantProducts(storeId)`, `updateProduct(productId, {price, stockStatus})`, `getMarketPrice(itemCode)`, `getPriceSuggestions()`
+- `merchant_dashboard_screen.dart`: 실데이터 연결 완료 — 상인 이름 동적 표시, 재고 부족 상품 수 실계산, 가격 제안 BottomSheet
 
 ### 환경변수 (.env)
 
