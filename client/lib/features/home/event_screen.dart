@@ -87,8 +87,8 @@ class _EventScreenState extends State<EventScreen> {
                     ),
                     const SizedBox(width: 6),
                     const SizedBox(
-                      height: 12,
-                      child: Align(
+                      height: 37,
+                    child: Align(
                         alignment: Alignment.centerLeft,
                         child: MarketLogoTitle(),
                       ),
@@ -116,7 +116,7 @@ class _EventScreenState extends State<EventScreen> {
                   children: [
                     _EventTab(label: '모든 행사', selected: _tabIndex == 0, onTap: () => setState(() => _tabIndex = 0)),
                     const SizedBox(width: 8),
-                    _EventTab(label: '수확', selected: _tabIndex == 1, onTap: () => setState(() => _tabIndex = 1)),
+                    _EventTab(label: '체험 행사', selected: _tabIndex == 1, onTap: () => setState(() => _tabIndex = 1)),
                     const SizedBox(width: 8),
                     _EventTab(label: '할인 행사', selected: _tabIndex == 2, onTap: () => setState(() => _tabIndex = 2)),
                   ],

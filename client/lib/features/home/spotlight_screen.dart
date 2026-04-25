@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../app/router.dart';
 import '../../core/network/api_client.dart';
 import '../../shared/widgets/error_state.dart';
+import '../../shared/widgets/market_logo_title.dart';
 
 class SpotlightScreen extends StatefulWidget {
   const SpotlightScreen({super.key, this.storeId});
@@ -158,7 +159,10 @@ class _SpotlightDetailView extends StatelessWidget {
                               child: const Icon(Icons.arrow_back, size: 18, color: Color(0xFF4A7D1A)),
                             ),
                             const SizedBox(width: 5),
-                            const Text('Market Info', style: TextStyle(fontSize: 12, color: Color(0xFF4A7D1A), fontWeight: FontWeight.w700)),
+                            const SizedBox(
+                              height: 37,
+                              child: MarketLogoTitle(),
+                            ),
                             const Spacer(),
                             InkWell(
                               onTap: () => Navigator.pushNamed(context, AppRoutes.notification),

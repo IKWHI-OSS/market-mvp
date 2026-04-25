@@ -89,34 +89,36 @@ class _RouteScreenState extends State<RouteScreen> {
               padding: const EdgeInsets.fromLTRB(14, 8, 14, 10),
               child: Column(
                 children: [
-                  Row(
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          if (Navigator.canPop(context)) {
-                            Navigator.pop(context);
-                            return;
-                          }
-                          Navigator.pushNamed(context, AppRoutes.home);
-                        },
-                        borderRadius: BorderRadius.circular(12),
-                        child: const Icon(Icons.arrow_back, color: Color(0xFF4A7B29)),
-                      ),
-                      const SizedBox(width: 8),
-                      const SizedBox(
-                        height: 22,
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: MarketLogoTitle(),
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF1F4EC),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Row(
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamedAndRemoveUntil(
+                              context,
+                              AppRoutes.consumerShell,
+                              (route) => false,
+                            );
+                          },
+                          borderRadius: BorderRadius.circular(12),
+                          child: const Icon(Icons.arrow_back, color: Color(0xFF4A7B29)),
                         ),
-                      ),
-                      const Spacer(),
-                      InkWell(
-                        onTap: () => Navigator.pushNamed(context, AppRoutes.notification),
-                        borderRadius: BorderRadius.circular(12),
-                        child: const Icon(Icons.notifications_none, size: 20, color: Color(0xFF4A7B29)),
-                      ),
-                    ],
+                        const SizedBox(width: 8),
+                        const MarketLogoTitle(),
+                        const Spacer(),
+                        InkWell(
+                          onTap: () => Navigator.pushNamed(context, AppRoutes.notification),
+                          borderRadius: BorderRadius.circular(12),
+                          child: const Icon(Icons.notifications_none, size: 20, color: Color(0xFF4A7B29)),
+                        ),
+                      ],
+                    ),
                   ),
                   const SizedBox(height: 8),
                   Container(
@@ -161,7 +163,7 @@ class _RouteScreenState extends State<RouteScreen> {
           DraggableScrollableSheet(
             initialChildSize: 0.38,
             minChildSize: 0.28,
-            maxChildSize: 0.88,
+            maxChildSize: 0.74,
             builder: (context, scrollController) {
               return Container(
                 width: double.infinity,

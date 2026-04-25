@@ -57,7 +57,7 @@ class MerchantDashboardScreen extends StatelessWidget {
           Row(
             children: [
               Text(
-                '오늘의 할 일',
+                '상점 관리 도구',
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                       color: const Color(0xFF1E1D18),
                     ),

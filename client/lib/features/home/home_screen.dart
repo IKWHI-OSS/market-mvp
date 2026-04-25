@@ -18,10 +18,10 @@ class HomeScreen extends StatelessWidget {
             child: Row(
               children: [
                 const SizedBox(
-                  height: 24,
-                  child: Align(
+                  height: 36,
+                    child: Align(
                     alignment: Alignment.centerLeft,
-                    child: MarketLogoTitle(),
+                    child: MarketLogoTitle(variant: MarketLogoVariant.color, height: 36),
                   ),
                 ),
                 const Spacer(),

@@ -13,16 +13,14 @@ class AgentScreen extends StatefulWidget {
 }
 
 class _AgentScreenState extends State<AgentScreen> {
-  final TextEditingController _queryController =
-      TextEditingController(text: '2인 저녁용 찌개 재료 추천해줘');
-  String _userQuery = '2인 저녁용 찌개 재료 추천해줘';
+  final TextEditingController _queryController = TextEditingController();
+  String _userQuery = '';
   bool _loading = false;
   ShoppingAgentData? _result;
 
   @override
   void initState() {
     super.initState();
-    _submitQuery();
   }
 
   @override
@@ -33,7 +31,12 @@ class _AgentScreenState extends State<AgentScreen> {
 
   Future<void> _submitQuery() async {
     final query = _queryController.text.trim();
-    if (query.isEmpty) return;
+    if (query.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('질문을 입력해 주세요.')),
+      );
+      return;
+    }
 
     setState(() {
       _userQuery = query;
@@ -87,6 +90,9 @@ class _AgentScreenState extends State<AgentScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final now = DateTime.now();
+    final dateLabel = _koreanDate(now);
+    final timeLabel = _koreanTime(now);
     final topMessage = _loading
         ? '장보기 추천을 생성하고 있어요...'
         : (_result?.clarificationNeeded ?? false)
@@ -116,7 +122,7 @@ class _AgentScreenState extends State<AgentScreen> {
                   ),
                   const SizedBox(width: 8),
                   const SizedBox(
-                    height: 24,
+                    height: 37,
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: MarketLogoTitle(),
@@ -145,9 +151,9 @@ class _AgentScreenState extends State<AgentScreen> {
                         color: const Color(0xFFE2E9DD),
                         borderRadius: BorderRadius.circular(16),
                       ),
-                      child: const Text(
-                        '2026년 4월 23일 목요일',
-                        style: TextStyle(
+                      child: Text(
+                        dateLabel,
+                        style: const TextStyle(
                             fontSize: 13,
                             color: Color(0xFF61695C),
                             fontWeight: FontWeight.w700),
@@ -155,33 +161,35 @@ class _AgentScreenState extends State<AgentScreen> {
                     ),
                   ),
                   const SizedBox(height: 14),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Container(
-                      constraints: const BoxConstraints(maxWidth: 270),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 16, vertical: 12),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF3E7C18),
-                        borderRadius: BorderRadius.circular(22),
-                      ),
-                      child: Text(
-                        _userQuery,
-                        style: const TextStyle(
-                            fontSize: 17,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w700),
+                  if (_userQuery.isNotEmpty) ...[
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Container(
+                        constraints: const BoxConstraints(maxWidth: 270),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 12),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF3E7C18),
+                          borderRadius: BorderRadius.circular(22),
+                        ),
+                        child: Text(
+                          _userQuery,
+                          style: const TextStyle(
+                              fontSize: 17,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700),
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 6),
-                  const Align(
-                    alignment: Alignment.centerRight,
-                    child: Text('오후 5:42',
-                        style: TextStyle(
-                            fontSize: 12, color: Color(0xFF7A8376))),
-                  ),
-                  const SizedBox(height: 10),
+                    const SizedBox(height: 6),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(timeLabel,
+                          style: const TextStyle(
+                              fontSize: 12, color: Color(0xFF7A8376))),
+                    ),
+                    const SizedBox(height: 10),
+                  ],
                   const Row(
                     children: [
                       CircleAvatar(
@@ -226,10 +234,10 @@ class _AgentScreenState extends State<AgentScreen> {
                       onOpenList: _openShoppingList,
                     ),
                   const SizedBox(height: 8),
-                  const Align(
+                  Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('오후 5:42',
-                        style: TextStyle(
+                    child: Text(timeLabel,
+                        style: const TextStyle(
                             fontSize: 12, color: Color(0xFF7A8376))),
                   ),
                   const SizedBox(height: 10),
@@ -265,7 +273,9 @@ class _AgentScreenState extends State<AgentScreen> {
                 child: Row(
                   children: [
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('첨부 기능은 준비 중입니다.')),
+                      ),
                       icon: const Icon(Icons.add_circle_outline,
                           color: Color(0xFF6C7467)),
                     ),
@@ -282,7 +292,9 @@ class _AgentScreenState extends State<AgentScreen> {
                       ),
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('음성 입력은 준비 중입니다.')),
+                      ),
                       icon: const Icon(Icons.mic_none,
                           color: Color(0xFF6C7467)),
                     ),
@@ -307,7 +319,7 @@ class _AgentScreenState extends State<AgentScreen> {
         ),
       ),
       bottomNavigationBar: NavigationBar(
-        selectedIndex: 1,
+        selectedIndex: 2,
         onDestinationSelected: (value) {
           switch (value) {
             case 0:
@@ -315,11 +327,14 @@ class _AgentScreenState extends State<AgentScreen> {
                   context, AppRoutes.consumerShell, (route) => false);
               break;
             case 1:
+              Navigator.pushNamed(context, AppRoutes.search);
               break;
             case 2:
-              Navigator.pushNamed(context, AppRoutes.route);
               break;
             case 3:
+              Navigator.pushNamed(context, AppRoutes.route);
+              break;
+            case 4:
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(content: Text('마이페이지는 Phase 2에서 제공돼요.')),
               );
@@ -330,22 +345,36 @@ class _AgentScreenState extends State<AgentScreen> {
           NavigationDestination(
               icon: Icon(Icons.home_outlined),
               selectedIcon: Icon(Icons.home),
-              label: 'HOME'),
+              label: '홈'),
+          NavigationDestination(
+              icon: Icon(Icons.search), label: '검색'),
           NavigationDestination(
               icon: Icon(Icons.shopping_bag_outlined),
               selectedIcon: Icon(Icons.shopping_bag),
-              label: 'SHOPPING'),
+              label: '장보기'),
           NavigationDestination(
               icon: Icon(Icons.map_outlined),
               selectedIcon: Icon(Icons.map),
-              label: 'MAP'),
+              label: '지도'),
           NavigationDestination(
               icon: Icon(Icons.person_outline),
               selectedIcon: Icon(Icons.person),
-              label: 'MY'),
+              label: '마이'),
         ],
       ),
     );
+  }
+
+  String _koreanDate(DateTime dateTime) {
+    const week = ['월', '화', '수', '목', '금', '토', '일'];
+    return '${dateTime.year}년 ${dateTime.month}월 ${dateTime.day}일 ${week[dateTime.weekday - 1]}요일';
+  }
+
+  String _koreanTime(DateTime dateTime) {
+    final isAm = dateTime.hour < 12;
+    final hour12 = dateTime.hour % 12 == 0 ? 12 : dateTime.hour % 12;
+    final minute = dateTime.minute.toString().padLeft(2, '0');
+    return '${isAm ? '오전' : '오후'} $hour12:$minute';
   }
 }
 
@@ -410,21 +439,31 @@ class _RecommendationCard extends StatelessWidget {
                         end: Alignment.bottomCenter,
                         colors: [
                           Colors.black.withValues(alpha: 0.04),
-                          Colors.black.withValues(alpha: 0.28),
+                          Colors.black.withValues(alpha: 0.36),
                         ],
                       ),
                     ),
                   ),
                 ),
                 Positioned(
-                  left: 14,
-                  bottom: 14,
-                  child: Text(
-                    title,
-                    style: const TextStyle(
-                        fontSize: 26,
-                        color: Color(0xFF1E2619),
-                        fontWeight: FontWeight.w900),
+                  left: 12,
+                  right: 12,
+                  bottom: 12,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Colors.black.withValues(alpha: 0.45),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Text(
+                      title,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                          fontSize: 24,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w900),
+                    ),
                   ),
                 ),
               ],
@@ -526,7 +565,7 @@ class _RecommendationCard extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)),
                         ),
-                        child: const Text('이 구성으로 길찾기 시작'),
+                        child: const Text('이 구성으로 길찾기'),
                       ),
                     ),
                   ],

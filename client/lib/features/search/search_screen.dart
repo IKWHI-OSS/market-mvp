@@ -21,8 +21,6 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   void initState() {
     super.initState();
-    _controller.text = '당근';
-    _future = ApiClient.instance.searchProducts(query: _controller.text);
   }
 
   @override
@@ -32,8 +30,15 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   void _submitSearch() {
+    final query = _controller.text.trim();
+    if (query.isEmpty) {
+      setState(() {
+        _future = null;
+      });
+      return;
+    }
     setState(() {
-      _future = ApiClient.instance.searchProducts(query: _controller.text);
+      _future = ApiClient.instance.searchProducts(query: query);
     });
   }
 
@@ -77,8 +82,8 @@ class _SearchScreenState extends State<SearchScreen> {
                 ),
                 const SizedBox(width: 10),
                 const SizedBox(
-                  height: 22,
-                  child: Align(
+                  height: 37,
+                    child: Align(
                     alignment: Alignment.centerLeft,
                     child: MarketLogoTitle(),
                   ),
@@ -133,7 +138,20 @@ class _SearchScreenState extends State<SearchScreen> {
               ],
             ),
             const SizedBox(height: 16),
-            FutureBuilder<List<ProductSummary>>(
+            if (_future == null)
+              Container(
+                padding: const EdgeInsets.all(18),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFE8EDE3),
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: const Text(
+                  '검색어를 입력하면 점포별 비교 결과를 보여드릴게요.',
+                  style: TextStyle(fontSize: 14, color: Color(0xFF6F766D)),
+                ),
+              )
+            else
+              FutureBuilder<List<ProductSummary>>(
               future: _future,
               builder: (context, snapshot) {
                 if (snapshot.connectionState != ConnectionState.done) {

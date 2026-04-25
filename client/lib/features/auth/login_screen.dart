@@ -97,22 +97,22 @@ class _LoginScreenState extends State<LoginScreen> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Image.asset(
-                  'assets/images/branding/icon_logo.png',
-                  height: 44,
+                  'assets/images/new_logo/icon_logo.png',
+                  height: 88,
                   fit: BoxFit.contain,
                 ),
               ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Image.asset(
-                  'assets/images/branding/typo logo.png',
-                  height: 34,
+                  'assets/images/new_logo/typo_logo_eng_black.png',
+                  height: 68,
                   fit: BoxFit.contain,
                 ),
               ),
               const SizedBox(height: 22),
               const Text(
-                '전통시장의 생동감과 장보기의 똑똑함을 담은\n마켓인포에 오신 것을 환영합니다.',
+                '전통시장의 생동감과 장보기의 똑똑함을 담은\n돗개비에 오신 것을 환영합니다.',
                 style: TextStyle(
                   fontSize: 14,
                   color: Color(0xFF5F6A58),
@@ -201,38 +201,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   child: const Text('회원가입'),
                 ),
-              ),
-              const SizedBox(height: 8),
-              Row(
-                children: [
-                  Expanded(
-                    child: OutlinedButton(
-                      onPressed: _loading
-                          ? null
-                          : () {
-                              setState(() => _selectedRole = _RoleChoice.consumer);
-                              _emailController.text = 'consumer@example.com';
-                              _passwordController.text = 'password123';
-                              _onLogin();
-                            },
-                      child: const Text('데모 소비자'),
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: OutlinedButton(
-                      onPressed: _loading
-                          ? null
-                          : () {
-                              setState(() => _selectedRole = _RoleChoice.merchant);
-                              _emailController.text = 'merchant@example.com';
-                              _passwordController.text = 'password123';
-                              _onLogin();
-                            },
-                      child: const Text('데모 상인'),
-                    ),
-                  ),
-                ],
               ),
               const SizedBox(height: 16),
               const Center(

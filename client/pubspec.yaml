@@ -1,5 +1,5 @@
 name: market_info_client
-description: Market Info MVP client
+description: Dotgaebi MVP client
 publish_to: 'none'
 version: 0.1.0+1
 
@@ -22,4 +22,5 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/branding/
+    - assets/images/new_logo/
     - assets/images/merchant/

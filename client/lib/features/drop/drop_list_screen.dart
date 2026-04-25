@@ -237,7 +237,7 @@ class _Header extends StatelessWidget {
         ),
         const SizedBox(width: 6),
         const SizedBox(
-          height: 16,
+          height: 37,
           child: Align(
             alignment: Alignment.centerLeft,
             child: MarketLogoTitle(),
@@ -313,6 +313,19 @@ class _DropCard extends StatelessWidget {
   final VoidCallback onTap;
   final VoidCallback onSubscribeTap;
 
+  String _displayDateTime(String raw) {
+    final tryParse = DateTime.tryParse(raw);
+    if (tryParse == null) {
+      return raw.replaceFirst('T', ' ').split('.').first;
+    }
+    final d = tryParse.toLocal();
+    final month = d.month.toString().padLeft(2, '0');
+    final day = d.day.toString().padLeft(2, '0');
+    final hour = d.hour.toString().padLeft(2, '0');
+    final minute = d.minute.toString().padLeft(2, '0');
+    return '${d.year}-$month-$day $hour:$minute';
+  }
+
   String _imageUrl(String productId) {
     switch (productId) {
       case 'product_002':
@@ -359,7 +372,7 @@ class _DropCard extends StatelessWidget {
                         borderRadius: BorderRadius.circular(11),
                       ),
                       child: Text(
-                        '$statusKicker · ${drop.expectedAt}',
+                        '$statusKicker · ${_displayDateTime(drop.expectedAt)}',
                         style: const TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.w700),
                       ),
                     ),
