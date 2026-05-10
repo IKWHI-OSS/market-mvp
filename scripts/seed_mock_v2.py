@@ -241,6 +241,26 @@ def seed(conn) -> None:
         )
     print(f"[OK] Story                : {len(rows):4d}건")
 
+    # 15-b. Story (LLM 생성분 — stories_llm.json, 있으면 추가 적재)
+    rows = load_json("stories_llm.json")
+    for s in rows:
+        cur.execute(
+            "INSERT IGNORE INTO Story "
+            "(story_id, store_id, merchant_id, title, content, "
+            " content_short, content_normal, content_detailed, "
+            " tone, selected_length, hashtags_json, interview_text, "
+            " fallback_mode, is_published, published_at, created_at) "
+            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+            (s["story_id"], s["store_id"], s.get("merchant_id"), s.get("title"),
+             s["content"], s.get("content_short"), s.get("content_normal"),
+             s.get("content_detailed"), s.get("tone", "친근한"),
+             s.get("selected_length", "normal"), s.get("hashtags_json"),
+             s.get("interview_text"), s.get("fallback_mode", 0),
+             s.get("is_published", 0), s.get("published_at"),
+             s.get("created_at")),
+        )
+    print(f"[OK] Story (LLM)          : {len(rows):4d}건")
+
     conn.commit()
     cur.close()
     print("\n✅ 전체 시딩 완료")
