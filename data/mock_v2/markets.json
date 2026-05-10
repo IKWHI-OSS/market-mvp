@@ -1,0 +1,72 @@
+[
+  {
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "market_name": "망원시장",
+    "address": "서울특별시 마포구 포은로8길 14",
+    "lat": 37.5556,
+    "lng": 126.9104
+  },
+  {
+    "market_id": "f2a2b3c4-d5e6-4789-a012-b3c4d5e6f702",
+    "market_name": "광장시장",
+    "address": "서울특별시 종로구 창경궁로 88",
+    "lat": 37.5708,
+    "lng": 126.9999
+  },
+  {
+    "market_id": "f3a2b3c4-d5e6-4789-a012-b3c4d5e6f703",
+    "market_name": "통인시장",
+    "address": "서울특별시 종로구 자하문로15길 18",
+    "lat": 37.5808,
+    "lng": 126.9698
+  },
+  {
+    "market_id": "f4a2b3c4-d5e6-4789-a012-b3c4d5e6f704",
+    "market_name": "남대문시장",
+    "address": "서울특별시 중구 남대문시장길 21",
+    "lat": 37.5599,
+    "lng": 126.9772
+  },
+  {
+    "market_id": "f5a2b3c4-d5e6-4789-a012-b3c4d5e6f705",
+    "market_name": "동대문시장",
+    "address": "서울특별시 중구 을지로44길 11",
+    "lat": 37.5663,
+    "lng": 127.0085
+  },
+  {
+    "market_id": "f6a2b3c4-d5e6-4789-a012-b3c4d5e6f706",
+    "market_name": "경동시장",
+    "address": "서울특별시 동대문구 고산자로 472",
+    "lat": 37.5805,
+    "lng": 127.0399
+  },
+  {
+    "market_id": "f7a2b3c4-d5e6-4789-a012-b3c4d5e6f707",
+    "market_name": "영등포시장",
+    "address": "서울특별시 영등포구 영등포로 156",
+    "lat": 37.518,
+    "lng": 126.9078
+  },
+  {
+    "market_id": "f8a2b3c4-d5e6-4789-a012-b3c4d5e6f708",
+    "market_name": "노량진수산시장",
+    "address": "서울특별시 동작구 노들로 674",
+    "lat": 37.5126,
+    "lng": 126.9418
+  },
+  {
+    "market_id": "f9a2b3c4-d5e6-4789-a012-b3c4d5e6f709",
+    "market_name": "방배시장",
+    "address": "서울특별시 서초구 방배중앙로 73",
+    "lat": 37.4815,
+    "lng": 126.9933
+  },
+  {
+    "market_id": "f10a2b3c4-d5e6-4789-a012-b3c4d5e6f710",
+    "market_name": "암사종합시장",
+    "address": "서울특별시 강동구 올림픽로98길 47",
+    "lat": 37.5519,
+    "lng": 127.1262
+  }
+]

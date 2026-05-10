@@ -1,0 +1,152 @@
+[
+  {
+    "shopping_list_id": "sl000001-e5f6-4789-a012-b3c4d5e6f701",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "title": "이번 주 반찬거리"
+  },
+  {
+    "shopping_list_id": "sl000002-e5f6-4789-a012-b3c4d5e6f702",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "title": "추석 제수 준비"
+  },
+  {
+    "shopping_list_id": "sl000003-e5f6-4789-a012-b3c4d5e6f703",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "title": "주말 바비큐 장보기"
+  },
+  {
+    "shopping_list_id": "sl000004-e5f6-4789-a012-b3c4d5e6f704",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f713",
+    "title": "한 주 식자재"
+  },
+  {
+    "shopping_list_id": "sl000005-e5f6-4789-a012-b3c4d5e6f705",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f718",
+    "title": "비빔밥 재료"
+  },
+  {
+    "shopping_list_id": "sl000006-e5f6-4789-a012-b3c4d5e6f706",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f723",
+    "title": "주말 장보기"
+  },
+  {
+    "shopping_list_id": "sl000007-e5f6-4789-a012-b3c4d5e6f707",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f714",
+    "title": "한 주 식자재"
+  },
+  {
+    "shopping_list_id": "sl000008-e5f6-4789-a012-b3c4d5e6f708",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f732",
+    "title": "주중 반찬"
+  },
+  {
+    "shopping_list_id": "sl000009-e5f6-4789-a012-b3c4d5e6f709",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f726",
+    "title": "구이용 식자재"
+  },
+  {
+    "shopping_list_id": "sl000010-e5f6-4789-a012-b3c4d5e6f710",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f728",
+    "title": "비빔밥 재료"
+  },
+  {
+    "shopping_list_id": "sl000011-e5f6-4789-a012-b3c4d5e6f711",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f716",
+    "title": "월말 장보기"
+  },
+  {
+    "shopping_list_id": "sl000012-e5f6-4789-a012-b3c4d5e6f712",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f720",
+    "title": "주말 장보기"
+  },
+  {
+    "shopping_list_id": "sl000013-e5f6-4789-a012-b3c4d5e6f713",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f728",
+    "title": "한 주 식자재"
+  },
+  {
+    "shopping_list_id": "sl000014-e5f6-4789-a012-b3c4d5e6f714",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f718",
+    "title": "구이용 식자재"
+  },
+  {
+    "shopping_list_id": "sl000015-e5f6-4789-a012-b3c4d5e6f715",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f721",
+    "title": "찌개 재료"
+  },
+  {
+    "shopping_list_id": "sl000016-e5f6-4789-a012-b3c4d5e6f716",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f713",
+    "title": "비빔밥 재료"
+  },
+  {
+    "shopping_list_id": "sl000017-e5f6-4789-a012-b3c4d5e6f717",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f731",
+    "title": "월말 장보기"
+  },
+  {
+    "shopping_list_id": "sl000018-e5f6-4789-a012-b3c4d5e6f718",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f715",
+    "title": "구이용 식자재"
+  },
+  {
+    "shopping_list_id": "sl000019-e5f6-4789-a012-b3c4d5e6f719",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f718",
+    "title": "도시락 재료"
+  },
+  {
+    "shopping_list_id": "sl000020-e5f6-4789-a012-b3c4d5e6f720",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f727",
+    "title": "구이용 식자재"
+  },
+  {
+    "shopping_list_id": "sl000021-e5f6-4789-a012-b3c4d5e6f721",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f715",
+    "title": "도시락 재료"
+  },
+  {
+    "shopping_list_id": "sl000022-e5f6-4789-a012-b3c4d5e6f722",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f731",
+    "title": "샐러드 재료"
+  },
+  {
+    "shopping_list_id": "sl000023-e5f6-4789-a012-b3c4d5e6f723",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f722",
+    "title": "도시락 재료"
+  },
+  {
+    "shopping_list_id": "sl000024-e5f6-4789-a012-b3c4d5e6f724",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f723",
+    "title": "한 주 식자재"
+  },
+  {
+    "shopping_list_id": "sl000025-e5f6-4789-a012-b3c4d5e6f725",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f731",
+    "title": "찌개 재료"
+  },
+  {
+    "shopping_list_id": "sl000026-e5f6-4789-a012-b3c4d5e6f726",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f722",
+    "title": "비빔밥 재료"
+  },
+  {
+    "shopping_list_id": "sl000027-e5f6-4789-a012-b3c4d5e6f727",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "title": "도시락 재료"
+  },
+  {
+    "shopping_list_id": "sl000028-e5f6-4789-a012-b3c4d5e6f728",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f720",
+    "title": "샐러드 재료"
+  },
+  {
+    "shopping_list_id": "sl000029-e5f6-4789-a012-b3c4d5e6f729",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "title": "주중 반찬"
+  },
+  {
+    "shopping_list_id": "sl000030-e5f6-4789-a012-b3c4d5e6f730",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f727",
+    "title": "저녁 식사 준비"
+  }
+]

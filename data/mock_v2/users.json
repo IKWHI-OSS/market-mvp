@@ -1,0 +1,352 @@
+[
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "email": "consumer01@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "김지연"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "email": "consumer02@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "이민준"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f703",
+    "email": "merchant01@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "박철수"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f704",
+    "email": "merchant02@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "최영희"
+  },
+  {
+    "user_id": "c1b2c3d4-e5f6-4789-a012-b3c4d5e6f705",
+    "email": "operator01@market.com",
+    "password": "password123",
+    "role": "operator",
+    "name": "시스템관리자"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f713",
+    "email": "consumer03@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "박서연"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f714",
+    "email": "consumer04@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "정하윤"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f715",
+    "email": "consumer05@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "최예준"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f716",
+    "email": "consumer06@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "강시우"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f717",
+    "email": "consumer07@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "윤지호"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f718",
+    "email": "consumer08@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "조하린"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f719",
+    "email": "consumer09@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "장유나"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f720",
+    "email": "consumer10@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "임채원"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f721",
+    "email": "consumer11@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "한도윤"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f722",
+    "email": "consumer12@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "오은서"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f723",
+    "email": "consumer13@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "신주원"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f724",
+    "email": "consumer14@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "권태민"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f725",
+    "email": "consumer15@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "황소율"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f726",
+    "email": "consumer16@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "백지민"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f727",
+    "email": "consumer17@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "남궁민"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f728",
+    "email": "consumer18@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "서다은"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f729",
+    "email": "consumer19@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "허지안"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f730",
+    "email": "consumer20@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "문서진"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f731",
+    "email": "consumer21@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "양수아"
+  },
+  {
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f732",
+    "email": "consumer22@market.com",
+    "password": "password123",
+    "role": "consumer",
+    "name": "노유빈"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f733",
+    "email": "merchant03@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "김상도"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f734",
+    "email": "merchant04@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "이순자"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f735",
+    "email": "merchant05@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "장만덕"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f736",
+    "email": "merchant06@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "홍금례"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f737",
+    "email": "merchant07@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "강옥자"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f738",
+    "email": "merchant08@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "정만호"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f739",
+    "email": "merchant09@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "서태식"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f740",
+    "email": "merchant10@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "조명자"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f741",
+    "email": "merchant11@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "권춘식"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f742",
+    "email": "merchant12@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "임병국"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f743",
+    "email": "merchant13@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "신점례"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f744",
+    "email": "merchant14@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "오만식"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f745",
+    "email": "merchant15@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "황복례"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f746",
+    "email": "merchant16@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "남기수"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f747",
+    "email": "merchant17@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "백상철"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f748",
+    "email": "merchant18@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "민영자"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f749",
+    "email": "merchant19@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "윤복순"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f750",
+    "email": "merchant20@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "한상필"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f751",
+    "email": "merchant21@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "유재기"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f752",
+    "email": "merchant22@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "노덕례"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f753",
+    "email": "merchant23@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "안종철"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f754",
+    "email": "merchant24@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "고만수"
+  },
+  {
+    "user_id": "b1b2c3d4-e5f6-4789-a012-b3c4d5e6f755",
+    "email": "merchant25@market.com",
+    "password": "password123",
+    "role": "merchant",
+    "name": "손분이"
+  },
+  {
+    "user_id": "c1b2c3d4-e5f6-4789-a012-b3c4d5e6f752",
+    "email": "operator02@market.com",
+    "password": "password123",
+    "role": "operator",
+    "name": "운영팀A"
+  },
+  {
+    "user_id": "c1b2c3d4-e5f6-4789-a012-b3c4d5e6f753",
+    "email": "operator03@market.com",
+    "password": "password123",
+    "role": "operator",
+    "name": "운영팀B"
+  }
+]

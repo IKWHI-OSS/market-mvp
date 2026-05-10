@@ -1,0 +1,810 @@
+[
+  {
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "store_name": "망원 신선야채",
+    "zone_label": "A구역",
+    "lat": 37.5558,
+    "lng": 126.9101
+  },
+  {
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "store_name": "망원 채소마트",
+    "zone_label": "B구역",
+    "lat": 37.5554,
+    "lng": 126.9107
+  },
+  {
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "store_name": "망원 과일나라",
+    "zone_label": "A구역",
+    "lat": 37.5559,
+    "lng": 126.9103
+  },
+  {
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "store_name": "달콤 과일",
+    "zone_label": "C구역",
+    "lat": 37.5553,
+    "lng": 126.9109
+  },
+  {
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "store_name": "망원 수산",
+    "zone_label": "B구역",
+    "lat": 37.5557,
+    "lng": 126.9099
+  },
+  {
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "store_name": "신선 해산물",
+    "zone_label": "D구역",
+    "lat": 37.5555,
+    "lng": 126.9108
+  },
+  {
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "store_name": "망원 정육",
+    "zone_label": "C구역",
+    "lat": 37.556,
+    "lng": 126.9105
+  },
+  {
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "store_name": "망원 반찬가게",
+    "zone_label": "D구역",
+    "lat": 37.5552,
+    "lng": 126.9102
+  },
+  {
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "store_name": "망원 생활잡화",
+    "zone_label": "E구역",
+    "lat": 37.5558,
+    "lng": 126.911
+  },
+  {
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "store_name": "망원 건어물",
+    "zone_label": "E구역",
+    "lat": 37.5554,
+    "lng": 126.9098
+  },
+  {
+    "store_id": "d1000011-e5f6-4789-a012-b3c4d5e6f711",
+    "market_id": "f2a2b3c4-d5e6-4789-a012-b3c4d5e6f702",
+    "store_name": "광장 신선야채",
+    "zone_label": "A구역",
+    "lat": 37.5709448,
+    "lng": 126.9991509
+  },
+  {
+    "store_id": "d1000012-e5f6-4789-a012-b3c4d5e6f712",
+    "market_id": "f2a2b3c4-d5e6-4789-a012-b3c4d5e6f702",
+    "store_name": "광장 수산",
+    "zone_label": "A구역",
+    "lat": 37.5703498,
+    "lng": 126.9999086
+  },
+  {
+    "store_id": "d1000013-e5f6-4789-a012-b3c4d5e6f713",
+    "market_id": "f2a2b3c4-d5e6-4789-a012-b3c4d5e6f702",
+    "store_name": "광장 달콤 과일",
+    "zone_label": "A구역",
+    "lat": 37.570898,
+    "lng": 127.0002456
+  },
+  {
+    "store_id": "d1000014-e5f6-4789-a012-b3c4d5e6f714",
+    "market_id": "f2a2b3c4-d5e6-4789-a012-b3c4d5e6f702",
+    "store_name": "광장 건어물",
+    "zone_label": "F구역",
+    "lat": 37.5708719,
+    "lng": 126.9994527
+  },
+  {
+    "store_id": "d1000015-e5f6-4789-a012-b3c4d5e6f715",
+    "market_id": "f2a2b3c4-d5e6-4789-a012-b3c4d5e6f702",
+    "store_name": "광장 과일나라",
+    "zone_label": "E구역",
+    "lat": 37.5704451,
+    "lng": 127.0004909
+  },
+  {
+    "store_id": "d1000016-e5f6-4789-a012-b3c4d5e6f716",
+    "market_id": "f2a2b3c4-d5e6-4789-a012-b3c4d5e6f702",
+    "store_name": "광장 해산물",
+    "zone_label": "B구역",
+    "lat": 37.571117,
+    "lng": 126.9996444
+  },
+  {
+    "store_id": "d1000017-e5f6-4789-a012-b3c4d5e6f717",
+    "market_id": "f2a2b3c4-d5e6-4789-a012-b3c4d5e6f702",
+    "store_name": "광장 분식",
+    "zone_label": "B구역",
+    "lat": 37.5703445,
+    "lng": 127.0003216
+  },
+  {
+    "store_id": "d1000018-e5f6-4789-a012-b3c4d5e6f718",
+    "market_id": "f2a2b3c4-d5e6-4789-a012-b3c4d5e6f702",
+    "store_name": "광장 떡집",
+    "zone_label": "A구역",
+    "lat": 37.5701484,
+    "lng": 126.9992547
+  },
+  {
+    "store_id": "d1000019-e5f6-4789-a012-b3c4d5e6f719",
+    "market_id": "f3a2b3c4-d5e6-4789-a012-b3c4d5e6f703",
+    "store_name": "통인 건어물",
+    "zone_label": "E구역",
+    "lat": 37.5814167,
+    "lng": 126.9695786
+  },
+  {
+    "store_id": "d1000020-e5f6-4789-a012-b3c4d5e6f720",
+    "market_id": "f3a2b3c4-d5e6-4789-a012-b3c4d5e6f703",
+    "store_name": "통인 수산",
+    "zone_label": "B구역",
+    "lat": 37.5811273,
+    "lng": 126.9690733
+  },
+  {
+    "store_id": "d1000021-e5f6-4789-a012-b3c4d5e6f721",
+    "market_id": "f3a2b3c4-d5e6-4789-a012-b3c4d5e6f703",
+    "store_name": "통인 신선야채",
+    "zone_label": "B구역",
+    "lat": 37.5812369,
+    "lng": 126.9705764
+  },
+  {
+    "store_id": "d1000022-e5f6-4789-a012-b3c4d5e6f722",
+    "market_id": "f3a2b3c4-d5e6-4789-a012-b3c4d5e6f703",
+    "store_name": "통인 반찬가게",
+    "zone_label": "B구역",
+    "lat": 37.5813864,
+    "lng": 126.9696082
+  },
+  {
+    "store_id": "d1000023-e5f6-4789-a012-b3c4d5e6f723",
+    "market_id": "f3a2b3c4-d5e6-4789-a012-b3c4d5e6f703",
+    "store_name": "통인 채소마트",
+    "zone_label": "D구역",
+    "lat": 37.5810171,
+    "lng": 126.9695837
+  },
+  {
+    "store_id": "d1000024-e5f6-4789-a012-b3c4d5e6f724",
+    "market_id": "f3a2b3c4-d5e6-4789-a012-b3c4d5e6f703",
+    "store_name": "통인 달콤 과일",
+    "zone_label": "C구역",
+    "lat": 37.5805684,
+    "lng": 126.9700723
+  },
+  {
+    "store_id": "d1000025-e5f6-4789-a012-b3c4d5e6f725",
+    "market_id": "f3a2b3c4-d5e6-4789-a012-b3c4d5e6f703",
+    "store_name": "통인 분식",
+    "zone_label": "F구역",
+    "lat": 37.5814986,
+    "lng": 126.9700369
+  },
+  {
+    "store_id": "d1000026-e5f6-4789-a012-b3c4d5e6f726",
+    "market_id": "f3a2b3c4-d5e6-4789-a012-b3c4d5e6f703",
+    "store_name": "통인 떡집",
+    "zone_label": "E구역",
+    "lat": 37.581016,
+    "lng": 126.9698546
+  },
+  {
+    "store_id": "d1000027-e5f6-4789-a012-b3c4d5e6f727",
+    "market_id": "f3a2b3c4-d5e6-4789-a012-b3c4d5e6f703",
+    "store_name": "통인 과일나라",
+    "zone_label": "B구역",
+    "lat": 37.5802614,
+    "lng": 126.9696071
+  },
+  {
+    "store_id": "d1000028-e5f6-4789-a012-b3c4d5e6f728",
+    "market_id": "f3a2b3c4-d5e6-4789-a012-b3c4d5e6f703",
+    "store_name": "통인 정육",
+    "zone_label": "F구역",
+    "lat": 37.5811011,
+    "lng": 126.9693514
+  },
+  {
+    "store_id": "d1000029-e5f6-4789-a012-b3c4d5e6f729",
+    "market_id": "f4a2b3c4-d5e6-4789-a012-b3c4d5e6f704",
+    "store_name": "남대문 신선야채",
+    "zone_label": "F구역",
+    "lat": 37.5598988,
+    "lng": 126.9778155
+  },
+  {
+    "store_id": "d1000030-e5f6-4789-a012-b3c4d5e6f730",
+    "market_id": "f4a2b3c4-d5e6-4789-a012-b3c4d5e6f704",
+    "store_name": "남대문 달콤 과일",
+    "zone_label": "F구역",
+    "lat": 37.5598342,
+    "lng": 126.9768238
+  },
+  {
+    "store_id": "d1000031-e5f6-4789-a012-b3c4d5e6f731",
+    "market_id": "f4a2b3c4-d5e6-4789-a012-b3c4d5e6f704",
+    "store_name": "남대문 분식",
+    "zone_label": "B구역",
+    "lat": 37.560292,
+    "lng": 126.9772624
+  },
+  {
+    "store_id": "d1000032-e5f6-4789-a012-b3c4d5e6f732",
+    "market_id": "f4a2b3c4-d5e6-4789-a012-b3c4d5e6f704",
+    "store_name": "남대문 해산물",
+    "zone_label": "F구역",
+    "lat": 37.5600353,
+    "lng": 126.9778365
+  },
+  {
+    "store_id": "d1000033-e5f6-4789-a012-b3c4d5e6f733",
+    "market_id": "f4a2b3c4-d5e6-4789-a012-b3c4d5e6f704",
+    "store_name": "남대문 정육",
+    "zone_label": "D구역",
+    "lat": 37.5596792,
+    "lng": 126.9779957
+  },
+  {
+    "store_id": "d1000034-e5f6-4789-a012-b3c4d5e6f734",
+    "market_id": "f4a2b3c4-d5e6-4789-a012-b3c4d5e6f704",
+    "store_name": "남대문 과일나라",
+    "zone_label": "B구역",
+    "lat": 37.5599152,
+    "lng": 126.9765455
+  },
+  {
+    "store_id": "d1000035-e5f6-4789-a012-b3c4d5e6f735",
+    "market_id": "f4a2b3c4-d5e6-4789-a012-b3c4d5e6f704",
+    "store_name": "남대문 건어물",
+    "zone_label": "A구역",
+    "lat": 37.5604778,
+    "lng": 126.9766445
+  },
+  {
+    "store_id": "d1000036-e5f6-4789-a012-b3c4d5e6f736",
+    "market_id": "f4a2b3c4-d5e6-4789-a012-b3c4d5e6f704",
+    "store_name": "남대문 채소마트",
+    "zone_label": "B구역",
+    "lat": 37.5603673,
+    "lng": 126.9770755
+  },
+  {
+    "store_id": "d1000037-e5f6-4789-a012-b3c4d5e6f737",
+    "market_id": "f4a2b3c4-d5e6-4789-a012-b3c4d5e6f704",
+    "store_name": "남대문 반찬가게",
+    "zone_label": "A구역",
+    "lat": 37.5597156,
+    "lng": 126.9773534
+  },
+  {
+    "store_id": "d1000038-e5f6-4789-a012-b3c4d5e6f738",
+    "market_id": "f4a2b3c4-d5e6-4789-a012-b3c4d5e6f704",
+    "store_name": "남대문 생활잡화",
+    "zone_label": "D구역",
+    "lat": 37.5599466,
+    "lng": 126.9779537
+  },
+  {
+    "store_id": "d1000039-e5f6-4789-a012-b3c4d5e6f739",
+    "market_id": "f5a2b3c4-d5e6-4789-a012-b3c4d5e6f705",
+    "store_name": "동대문 떡집",
+    "zone_label": "B구역",
+    "lat": 37.566226,
+    "lng": 127.0092261
+  },
+  {
+    "store_id": "d1000040-e5f6-4789-a012-b3c4d5e6f740",
+    "market_id": "f5a2b3c4-d5e6-4789-a012-b3c4d5e6f705",
+    "store_name": "동대문 채소마트",
+    "zone_label": "F구역",
+    "lat": 37.5659214,
+    "lng": 127.0085009
+  },
+  {
+    "store_id": "d1000041-e5f6-4789-a012-b3c4d5e6f741",
+    "market_id": "f5a2b3c4-d5e6-4789-a012-b3c4d5e6f705",
+    "store_name": "동대문 생활잡화",
+    "zone_label": "B구역",
+    "lat": 37.5663123,
+    "lng": 127.0078703
+  },
+  {
+    "store_id": "d1000042-e5f6-4789-a012-b3c4d5e6f742",
+    "market_id": "f5a2b3c4-d5e6-4789-a012-b3c4d5e6f705",
+    "store_name": "동대문 수산",
+    "zone_label": "F구역",
+    "lat": 37.5659775,
+    "lng": 127.0087223
+  },
+  {
+    "store_id": "d1000043-e5f6-4789-a012-b3c4d5e6f743",
+    "market_id": "f5a2b3c4-d5e6-4789-a012-b3c4d5e6f705",
+    "store_name": "동대문 해산물",
+    "zone_label": "E구역",
+    "lat": 37.5658183,
+    "lng": 127.0082983
+  },
+  {
+    "store_id": "d1000044-e5f6-4789-a012-b3c4d5e6f744",
+    "market_id": "f5a2b3c4-d5e6-4789-a012-b3c4d5e6f705",
+    "store_name": "동대문 신선야채",
+    "zone_label": "B구역",
+    "lat": 37.566363,
+    "lng": 127.0089458
+  },
+  {
+    "store_id": "d1000045-e5f6-4789-a012-b3c4d5e6f745",
+    "market_id": "f5a2b3c4-d5e6-4789-a012-b3c4d5e6f705",
+    "store_name": "동대문 과일나라",
+    "zone_label": "E구역",
+    "lat": 37.5669696,
+    "lng": 127.0086583
+  },
+  {
+    "store_id": "d1000046-e5f6-4789-a012-b3c4d5e6f746",
+    "market_id": "f5a2b3c4-d5e6-4789-a012-b3c4d5e6f705",
+    "store_name": "동대문 달콤 과일",
+    "zone_label": "D구역",
+    "lat": 37.5655312,
+    "lng": 127.0091866
+  },
+  {
+    "store_id": "d1000047-e5f6-4789-a012-b3c4d5e6f747",
+    "market_id": "f6a2b3c4-d5e6-4789-a012-b3c4d5e6f706",
+    "store_name": "경동 달콤 과일",
+    "zone_label": "F구역",
+    "lat": 37.5804605,
+    "lng": 127.0399797
+  },
+  {
+    "store_id": "d1000048-e5f6-4789-a012-b3c4d5e6f748",
+    "market_id": "f6a2b3c4-d5e6-4789-a012-b3c4d5e6f706",
+    "store_name": "경동 신선야채",
+    "zone_label": "C구역",
+    "lat": 37.5805443,
+    "lng": 127.0400706
+  },
+  {
+    "store_id": "d1000049-e5f6-4789-a012-b3c4d5e6f749",
+    "market_id": "f6a2b3c4-d5e6-4789-a012-b3c4d5e6f706",
+    "store_name": "경동 분식",
+    "zone_label": "B구역",
+    "lat": 37.5811863,
+    "lng": 127.0403084
+  },
+  {
+    "store_id": "d1000050-e5f6-4789-a012-b3c4d5e6f750",
+    "market_id": "f6a2b3c4-d5e6-4789-a012-b3c4d5e6f706",
+    "store_name": "경동 채소마트",
+    "zone_label": "F구역",
+    "lat": 37.5800218,
+    "lng": 127.0395987
+  },
+  {
+    "store_id": "d1000051-e5f6-4789-a012-b3c4d5e6f751",
+    "market_id": "f6a2b3c4-d5e6-4789-a012-b3c4d5e6f706",
+    "store_name": "경동 생활잡화",
+    "zone_label": "F구역",
+    "lat": 37.5807398,
+    "lng": 127.039801
+  },
+  {
+    "store_id": "d1000052-e5f6-4789-a012-b3c4d5e6f752",
+    "market_id": "f6a2b3c4-d5e6-4789-a012-b3c4d5e6f706",
+    "store_name": "경동 해산물",
+    "zone_label": "E구역",
+    "lat": 37.5804224,
+    "lng": 127.0394966
+  },
+  {
+    "store_id": "d1000053-e5f6-4789-a012-b3c4d5e6f753",
+    "market_id": "f6a2b3c4-d5e6-4789-a012-b3c4d5e6f706",
+    "store_name": "경동 건어물",
+    "zone_label": "A구역",
+    "lat": 37.5802409,
+    "lng": 127.0400413
+  },
+  {
+    "store_id": "d1000054-e5f6-4789-a012-b3c4d5e6f754",
+    "market_id": "f6a2b3c4-d5e6-4789-a012-b3c4d5e6f706",
+    "store_name": "경동 떡집",
+    "zone_label": "B구역",
+    "lat": 37.5806415,
+    "lng": 127.0391115
+  },
+  {
+    "store_id": "d1000055-e5f6-4789-a012-b3c4d5e6f755",
+    "market_id": "f6a2b3c4-d5e6-4789-a012-b3c4d5e6f706",
+    "store_name": "경동 반찬가게",
+    "zone_label": "F구역",
+    "lat": 37.5807098,
+    "lng": 127.0394663
+  },
+  {
+    "store_id": "d1000056-e5f6-4789-a012-b3c4d5e6f756",
+    "market_id": "f6a2b3c4-d5e6-4789-a012-b3c4d5e6f706",
+    "store_name": "경동 수산",
+    "zone_label": "A구역",
+    "lat": 37.5810754,
+    "lng": 127.0392134
+  },
+  {
+    "store_id": "d1000057-e5f6-4789-a012-b3c4d5e6f757",
+    "market_id": "f7a2b3c4-d5e6-4789-a012-b3c4d5e6f707",
+    "store_name": "영등포 수산",
+    "zone_label": "B구역",
+    "lat": 37.5184554,
+    "lng": 126.908292
+  },
+  {
+    "store_id": "d1000058-e5f6-4789-a012-b3c4d5e6f758",
+    "market_id": "f7a2b3c4-d5e6-4789-a012-b3c4d5e6f707",
+    "store_name": "영등포 떡집",
+    "zone_label": "B구역",
+    "lat": 37.5173509,
+    "lng": 126.9080544
+  },
+  {
+    "store_id": "d1000059-e5f6-4789-a012-b3c4d5e6f759",
+    "market_id": "f7a2b3c4-d5e6-4789-a012-b3c4d5e6f707",
+    "store_name": "영등포 반찬가게",
+    "zone_label": "C구역",
+    "lat": 37.5178777,
+    "lng": 126.9077472
+  },
+  {
+    "store_id": "d1000060-e5f6-4789-a012-b3c4d5e6f760",
+    "market_id": "f7a2b3c4-d5e6-4789-a012-b3c4d5e6f707",
+    "store_name": "영등포 달콤 과일",
+    "zone_label": "F구역",
+    "lat": 37.5172867,
+    "lng": 126.9080455
+  },
+  {
+    "store_id": "d1000061-e5f6-4789-a012-b3c4d5e6f761",
+    "market_id": "f7a2b3c4-d5e6-4789-a012-b3c4d5e6f707",
+    "store_name": "영등포 과일나라",
+    "zone_label": "F구역",
+    "lat": 37.5173575,
+    "lng": 126.9076442
+  },
+  {
+    "store_id": "d1000062-e5f6-4789-a012-b3c4d5e6f762",
+    "market_id": "f7a2b3c4-d5e6-4789-a012-b3c4d5e6f707",
+    "store_name": "영등포 해산물",
+    "zone_label": "C구역",
+    "lat": 37.5184809,
+    "lng": 126.9071748
+  },
+  {
+    "store_id": "d1000063-e5f6-4789-a012-b3c4d5e6f763",
+    "market_id": "f7a2b3c4-d5e6-4789-a012-b3c4d5e6f707",
+    "store_name": "영등포 분식",
+    "zone_label": "B구역",
+    "lat": 37.5175043,
+    "lng": 126.9077178
+  },
+  {
+    "store_id": "d1000064-e5f6-4789-a012-b3c4d5e6f764",
+    "market_id": "f7a2b3c4-d5e6-4789-a012-b3c4d5e6f707",
+    "store_name": "영등포 정육",
+    "zone_label": "D구역",
+    "lat": 37.5174936,
+    "lng": 126.9077402
+  },
+  {
+    "store_id": "d1000065-e5f6-4789-a012-b3c4d5e6f765",
+    "market_id": "f7a2b3c4-d5e6-4789-a012-b3c4d5e6f707",
+    "store_name": "영등포 생활잡화",
+    "zone_label": "A구역",
+    "lat": 37.517909,
+    "lng": 126.9083782
+  },
+  {
+    "store_id": "d1000066-e5f6-4789-a012-b3c4d5e6f766",
+    "market_id": "f8a2b3c4-d5e6-4789-a012-b3c4d5e6f708",
+    "store_name": "노량진수산 채소마트",
+    "zone_label": "D구역",
+    "lat": 37.5132439,
+    "lng": 126.9412634
+  },
+  {
+    "store_id": "d1000067-e5f6-4789-a012-b3c4d5e6f767",
+    "market_id": "f8a2b3c4-d5e6-4789-a012-b3c4d5e6f708",
+    "store_name": "노량진수산 신선야채",
+    "zone_label": "A구역",
+    "lat": 37.5133765,
+    "lng": 126.9414243
+  },
+  {
+    "store_id": "d1000068-e5f6-4789-a012-b3c4d5e6f768",
+    "market_id": "f8a2b3c4-d5e6-4789-a012-b3c4d5e6f708",
+    "store_name": "노량진수산 생활잡화",
+    "zone_label": "D구역",
+    "lat": 37.5122564,
+    "lng": 126.9421145
+  },
+  {
+    "store_id": "d1000069-e5f6-4789-a012-b3c4d5e6f769",
+    "market_id": "f8a2b3c4-d5e6-4789-a012-b3c4d5e6f708",
+    "store_name": "노량진수산 떡집",
+    "zone_label": "F구역",
+    "lat": 37.5133927,
+    "lng": 126.9418892
+  },
+  {
+    "store_id": "d1000070-e5f6-4789-a012-b3c4d5e6f770",
+    "market_id": "f8a2b3c4-d5e6-4789-a012-b3c4d5e6f708",
+    "store_name": "노량진수산 분식",
+    "zone_label": "F구역",
+    "lat": 37.5125787,
+    "lng": 126.9413038
+  },
+  {
+    "store_id": "d1000071-e5f6-4789-a012-b3c4d5e6f771",
+    "market_id": "f8a2b3c4-d5e6-4789-a012-b3c4d5e6f708",
+    "store_name": "노량진수산 정육",
+    "zone_label": "B구역",
+    "lat": 37.5133499,
+    "lng": 126.9419267
+  },
+  {
+    "store_id": "d1000072-e5f6-4789-a012-b3c4d5e6f772",
+    "market_id": "f8a2b3c4-d5e6-4789-a012-b3c4d5e6f708",
+    "store_name": "노량진수산 반찬가게",
+    "zone_label": "E구역",
+    "lat": 37.5118975,
+    "lng": 126.9415018
+  },
+  {
+    "store_id": "d1000073-e5f6-4789-a012-b3c4d5e6f773",
+    "market_id": "f8a2b3c4-d5e6-4789-a012-b3c4d5e6f708",
+    "store_name": "노량진수산 해산물",
+    "zone_label": "A구역",
+    "lat": 37.5127347,
+    "lng": 126.9418046
+  },
+  {
+    "store_id": "d1000074-e5f6-4789-a012-b3c4d5e6f774",
+    "market_id": "f8a2b3c4-d5e6-4789-a012-b3c4d5e6f708",
+    "store_name": "노량진수산 달콤 과일",
+    "zone_label": "E구역",
+    "lat": 37.5120519,
+    "lng": 126.9425372
+  },
+  {
+    "store_id": "d1000075-e5f6-4789-a012-b3c4d5e6f775",
+    "market_id": "f8a2b3c4-d5e6-4789-a012-b3c4d5e6f708",
+    "store_name": "노량진수산 수산",
+    "zone_label": "A구역",
+    "lat": 37.5131621,
+    "lng": 126.9411096
+  },
+  {
+    "store_id": "d1000076-e5f6-4789-a012-b3c4d5e6f776",
+    "market_id": "f8a2b3c4-d5e6-4789-a012-b3c4d5e6f708",
+    "store_name": "노량진수산 과일나라",
+    "zone_label": "A구역",
+    "lat": 37.5128803,
+    "lng": 126.9413763
+  },
+  {
+    "store_id": "d1000077-e5f6-4789-a012-b3c4d5e6f777",
+    "market_id": "f8a2b3c4-d5e6-4789-a012-b3c4d5e6f708",
+    "store_name": "노량진수산 건어물",
+    "zone_label": "A구역",
+    "lat": 37.5133066,
+    "lng": 126.9419115
+  },
+  {
+    "store_id": "d1000078-e5f6-4789-a012-b3c4d5e6f778",
+    "market_id": "f9a2b3c4-d5e6-4789-a012-b3c4d5e6f709",
+    "store_name": "방배 건어물",
+    "zone_label": "B구역",
+    "lat": 37.481125,
+    "lng": 126.9927094
+  },
+  {
+    "store_id": "d1000079-e5f6-4789-a012-b3c4d5e6f779",
+    "market_id": "f9a2b3c4-d5e6-4789-a012-b3c4d5e6f709",
+    "store_name": "방배 신선야채",
+    "zone_label": "F구역",
+    "lat": 37.48118,
+    "lng": 126.9930059
+  },
+  {
+    "store_id": "d1000080-e5f6-4789-a012-b3c4d5e6f780",
+    "market_id": "f9a2b3c4-d5e6-4789-a012-b3c4d5e6f709",
+    "store_name": "방배 분식",
+    "zone_label": "A구역",
+    "lat": 37.4807149,
+    "lng": 126.9934939
+  },
+  {
+    "store_id": "d1000081-e5f6-4789-a012-b3c4d5e6f781",
+    "market_id": "f9a2b3c4-d5e6-4789-a012-b3c4d5e6f709",
+    "store_name": "방배 채소마트",
+    "zone_label": "E구역",
+    "lat": 37.4822938,
+    "lng": 126.9926172
+  },
+  {
+    "store_id": "d1000082-e5f6-4789-a012-b3c4d5e6f782",
+    "market_id": "f9a2b3c4-d5e6-4789-a012-b3c4d5e6f709",
+    "store_name": "방배 정육",
+    "zone_label": "B구역",
+    "lat": 37.4815094,
+    "lng": 126.9927119
+  },
+  {
+    "store_id": "d1000083-e5f6-4789-a012-b3c4d5e6f783",
+    "market_id": "f9a2b3c4-d5e6-4789-a012-b3c4d5e6f709",
+    "store_name": "방배 해산물",
+    "zone_label": "C구역",
+    "lat": 37.4821094,
+    "lng": 126.9939068
+  },
+  {
+    "store_id": "d1000084-e5f6-4789-a012-b3c4d5e6f784",
+    "market_id": "f9a2b3c4-d5e6-4789-a012-b3c4d5e6f709",
+    "store_name": "방배 수산",
+    "zone_label": "C구역",
+    "lat": 37.481156,
+    "lng": 126.9932011
+  },
+  {
+    "store_id": "d1000085-e5f6-4789-a012-b3c4d5e6f785",
+    "market_id": "f9a2b3c4-d5e6-4789-a012-b3c4d5e6f709",
+    "store_name": "방배 반찬가게",
+    "zone_label": "E구역",
+    "lat": 37.4818257,
+    "lng": 126.9934787
+  },
+  {
+    "store_id": "d1000086-e5f6-4789-a012-b3c4d5e6f786",
+    "market_id": "f9a2b3c4-d5e6-4789-a012-b3c4d5e6f709",
+    "store_name": "방배 과일나라",
+    "zone_label": "F구역",
+    "lat": 37.4815463,
+    "lng": 126.9935686
+  },
+  {
+    "store_id": "d1000087-e5f6-4789-a012-b3c4d5e6f787",
+    "market_id": "f9a2b3c4-d5e6-4789-a012-b3c4d5e6f709",
+    "store_name": "방배 생활잡화",
+    "zone_label": "E구역",
+    "lat": 37.481179,
+    "lng": 126.9935614
+  },
+  {
+    "store_id": "d1000088-e5f6-4789-a012-b3c4d5e6f788",
+    "market_id": "f9a2b3c4-d5e6-4789-a012-b3c4d5e6f709",
+    "store_name": "방배 떡집",
+    "zone_label": "B구역",
+    "lat": 37.4811231,
+    "lng": 126.9939235
+  },
+  {
+    "store_id": "d1000089-e5f6-4789-a012-b3c4d5e6f789",
+    "market_id": "f9a2b3c4-d5e6-4789-a012-b3c4d5e6f709",
+    "store_name": "방배 달콤 과일",
+    "zone_label": "F구역",
+    "lat": 37.4815852,
+    "lng": 126.9929358
+  },
+  {
+    "store_id": "d1000090-e5f6-4789-a012-b3c4d5e6f790",
+    "market_id": "f10a2b3c4-d5e6-4789-a012-b3c4d5e6f710",
+    "store_name": "암사종합 달콤 과일",
+    "zone_label": "C구역",
+    "lat": 37.5523338,
+    "lng": 127.1264194
+  },
+  {
+    "store_id": "d1000091-e5f6-4789-a012-b3c4d5e6f791",
+    "market_id": "f10a2b3c4-d5e6-4789-a012-b3c4d5e6f710",
+    "store_name": "암사종합 해산물",
+    "zone_label": "C구역",
+    "lat": 37.5513585,
+    "lng": 127.1261069
+  },
+  {
+    "store_id": "d1000092-e5f6-4789-a012-b3c4d5e6f792",
+    "market_id": "f10a2b3c4-d5e6-4789-a012-b3c4d5e6f710",
+    "store_name": "암사종합 분식",
+    "zone_label": "F구역",
+    "lat": 37.5517843,
+    "lng": 127.1254155
+  },
+  {
+    "store_id": "d1000093-e5f6-4789-a012-b3c4d5e6f793",
+    "market_id": "f10a2b3c4-d5e6-4789-a012-b3c4d5e6f710",
+    "store_name": "암사종합 수산",
+    "zone_label": "A구역",
+    "lat": 37.5526121,
+    "lng": 127.1265056
+  },
+  {
+    "store_id": "d1000094-e5f6-4789-a012-b3c4d5e6f794",
+    "market_id": "f10a2b3c4-d5e6-4789-a012-b3c4d5e6f710",
+    "store_name": "암사종합 반찬가게",
+    "zone_label": "B구역",
+    "lat": 37.5519729,
+    "lng": 127.1267354
+  },
+  {
+    "store_id": "d1000095-e5f6-4789-a012-b3c4d5e6f795",
+    "market_id": "f10a2b3c4-d5e6-4789-a012-b3c4d5e6f710",
+    "store_name": "암사종합 과일나라",
+    "zone_label": "E구역",
+    "lat": 37.551984,
+    "lng": 127.1260877
+  },
+  {
+    "store_id": "d1000096-e5f6-4789-a012-b3c4d5e6f796",
+    "market_id": "f10a2b3c4-d5e6-4789-a012-b3c4d5e6f710",
+    "store_name": "암사종합 신선야채",
+    "zone_label": "A구역",
+    "lat": 37.5515932,
+    "lng": 127.1268384
+  },
+  {
+    "store_id": "d1000097-e5f6-4789-a012-b3c4d5e6f797",
+    "market_id": "f10a2b3c4-d5e6-4789-a012-b3c4d5e6f710",
+    "store_name": "암사종합 떡집",
+    "zone_label": "A구역",
+    "lat": 37.5525383,
+    "lng": 127.1257361
+  },
+  {
+    "store_id": "d1000098-e5f6-4789-a012-b3c4d5e6f798",
+    "market_id": "f10a2b3c4-d5e6-4789-a012-b3c4d5e6f710",
+    "store_name": "암사종합 건어물",
+    "zone_label": "B구역",
+    "lat": 37.5521671,
+    "lng": 127.1259659
+  },
+  {
+    "store_id": "d1000099-e5f6-4789-a012-b3c4d5e6f799",
+    "market_id": "f10a2b3c4-d5e6-4789-a012-b3c4d5e6f710",
+    "store_name": "암사종합 채소마트",
+    "zone_label": "E구역",
+    "lat": 37.5525146,
+    "lng": 127.1260502
+  },
+  {
+    "store_id": "d1000100-e5f6-4789-a012-b3c4d5e6f700",
+    "market_id": "f10a2b3c4-d5e6-4789-a012-b3c4d5e6f710",
+    "store_name": "암사종합 생활잡화",
+    "zone_label": "E구역",
+    "lat": 37.5522992,
+    "lng": 127.1268812
+  },
+  {
+    "store_id": "d1000101-e5f6-4789-a012-b3c4d5e6f701",
+    "market_id": "f10a2b3c4-d5e6-4789-a012-b3c4d5e6f710",
+    "store_name": "암사종합 정육",
+    "zone_label": "B구역",
+    "lat": 37.5524834,
+    "lng": 127.1269619
+  }
+]

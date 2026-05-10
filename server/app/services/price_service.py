@@ -26,15 +26,62 @@ logger = logging.getLogger(__name__)
 
 KAMIS_BASE_URL = "https://www.kamis.or.kr/service/price/xml.do"
 
-# 품목코드 매핑 (MVP 기준 주요 농산물)
+# 품목코드 매핑 — 30품목 (채소 8 / 과일 8 / 수산물 7 / 육류 7)
+# 코드/이름은 scripts/generate_mock_v2.py 의 KAMIS_ITEMS 와 동기화되어 있음.
 KAMIS_ITEM_MAP: dict[str, dict] = {
-    "112": {"item_name": "배추/포기", "unit": "1포기"},
-    "214": {"item_name": "사과/후지", "unit": "10개"},
-    "215": {"item_name": "배/신고",   "unit": "10개"},
-    "421": {"item_name": "감/단감",   "unit": "10개"},
-    "151": {"item_name": "무/일반",   "unit": "1개"},
-    "152": {"item_name": "당근",      "unit": "1kg"},
-    "111": {"item_name": "쌀/20kg",   "unit": "20kg"},
+    # 채소
+    "112": {"item_name": "배추/포기",     "unit": "1포기", "category": "채소"},
+    "151": {"item_name": "무/일반",       "unit": "1개",   "category": "채소"},
+    "152": {"item_name": "당근",          "unit": "1kg",   "category": "채소"},
+    "153": {"item_name": "양파",          "unit": "1.5kg", "category": "채소"},
+    "154": {"item_name": "대파",          "unit": "1단",   "category": "채소"},
+    "155": {"item_name": "마늘/깐마늘",   "unit": "1kg",   "category": "채소"},
+    "156": {"item_name": "청양고추",      "unit": "100g",  "category": "채소"},
+    "157": {"item_name": "시금치",        "unit": "200g",  "category": "채소"},
+    # 과일
+    "214": {"item_name": "사과/후지",     "unit": "10개",  "category": "과일"},
+    "215": {"item_name": "배/신고",       "unit": "10개",  "category": "과일"},
+    "216": {"item_name": "감귤/제주",     "unit": "3kg",   "category": "과일"},
+    "217": {"item_name": "샤인머스캣",    "unit": "500g",  "category": "과일"},
+    "218": {"item_name": "딸기/설향",     "unit": "500g",  "category": "과일"},
+    "219": {"item_name": "수박/일반",     "unit": "1통",   "category": "과일"},
+    "421": {"item_name": "감/단감",       "unit": "10개",  "category": "과일"},
+    "422": {"item_name": "복숭아/백도",   "unit": "5개",   "category": "과일"},
+    # 수산물
+    "601": {"item_name": "고등어/국산",   "unit": "1손",   "category": "수산물"},
+    "602": {"item_name": "갈치/국산",     "unit": "1마리", "category": "수산물"},
+    "603": {"item_name": "오징어/국산",   "unit": "1마리", "category": "수산물"},
+    "604": {"item_name": "꽃게/암꽃게",   "unit": "1kg",   "category": "수산물"},
+    "605": {"item_name": "흰다리새우",    "unit": "500g",  "category": "수산물"},
+    "606": {"item_name": "광어회/활어",   "unit": "300g",  "category": "수산물"},
+    "607": {"item_name": "굴/생굴",       "unit": "500g",  "category": "수산물"},
+    # 육류
+    "501": {"item_name": "한우/등심",     "unit": "200g",  "category": "육류"},
+    "502": {"item_name": "한우/갈비",     "unit": "600g",  "category": "육류"},
+    "503": {"item_name": "삼겹살/국산",   "unit": "600g",  "category": "육류"},
+    "504": {"item_name": "목살/국산",     "unit": "500g",  "category": "육류"},
+    "505": {"item_name": "닭다리살",      "unit": "500g",  "category": "육류"},
+    "506": {"item_name": "닭가슴살",      "unit": "500g",  "category": "육류"},
+    "507": {"item_name": "소불고기/양념", "unit": "500g",  "category": "육류"},
+}
+
+# 상품명 → KAMIS 코드 매칭 (2자 이상만 — 단음절은 오매칭 위험으로 제외)
+# '감자/감기/배 5개' 등이 '감/단감/배/신고'로 잘못 잡히는 것을 방지.
+PRODUCT_KAMIS_KEYWORDS: dict[str, str] = {
+    # 채소
+    "배추": "112", "당근": "152", "양파": "153", "대파": "154",
+    "마늘": "155", "청양고추": "156", "고추": "156", "시금치": "157",
+    # 과일
+    "사과": "214", "후지": "214", "신고배": "215", "신고": "215",
+    "감귤": "216", "샤인머스캣": "217", "샤인": "217", "머스캣": "217",
+    "딸기": "218", "수박": "219", "단감": "421", "복숭아": "422",
+    # 수산물
+    "고등어": "601", "갈치": "602", "오징어": "603", "꽃게": "604",
+    "새우": "605", "광어": "606",
+    # 육류
+    "등심": "501", "갈비": "502", "삼겹살": "503", "목살": "504",
+    "닭다리": "505", "닭가슴": "506", "닭날개": "505", "불고기": "507",
+    "한우": "501",  # 한우 단독 → 등심 (cf. '한우 갈비'는 '갈비'가 우선 매칭)
 }
 
 
@@ -260,13 +307,19 @@ def get_price_suggestion(
 
 def _build_price_suggestion(db: Session, product: Product) -> Optional[dict]:
     """품목명으로 KAMIS 코드 추정 후 시세 비교."""
-    # 품목명 → KAMIS 코드 fuzzy 매핑 (MVP 단순 키워드 매칭)
-    code_match = None
-    for code, meta in KAMIS_ITEM_MAP.items():
-        keyword = meta["item_name"].split("/")[0]
+    # 1) 우선 PRODUCT_KAMIS_KEYWORDS 사전 (긴 키부터)
+    code_match: Optional[str] = None
+    for keyword in sorted(PRODUCT_KAMIS_KEYWORDS, key=len, reverse=True):
         if keyword in product.product_name:
-            code_match = code
+            code_match = PRODUCT_KAMIS_KEYWORDS[keyword]
             break
+    # 2) fallback: KAMIS_ITEM_MAP item_name 앞부분 (단, 2자 이상만 — 오매칭 방지)
+    if not code_match:
+        for code, meta in KAMIS_ITEM_MAP.items():
+            keyword = meta["item_name"].split("/")[0]
+            if len(keyword) >= 2 and keyword in product.product_name:
+                code_match = code
+                break
 
     if not code_match:
         return None
