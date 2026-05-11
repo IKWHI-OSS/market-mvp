@@ -1,0 +1,225 @@
+{
+  "info": {
+    "name": "Market Info API v2.0",
+    "_postman_id": "market-info-v2-0",
+    "description": "Phase 2 최종 계약서 (2026-05-11). API_Specification.md 와 1:1 매핑.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url",     "value": "https://market-api-production-6e52.up.railway.app/api/v1" },
+    { "key": "access_token", "value": "" },
+    { "key": "market_id",    "value": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701" },
+    { "key": "store_id",     "value": "d1000001-e5f6-4789-a012-b3c4d5e6f701" },
+    { "key": "product_id",   "value": "p1000001-e5f6-4789-a012-b3c4d5e6f701" },
+    { "key": "story_id",     "value": "st000001-e5f6-4789-a012-b3c4d5e6f701" },
+    { "key": "drop_id",      "value": "dr000001-e5f6-4789-a012-b3c4d5e6f701" },
+    { "key": "kamis_item_code", "value": "112" }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [{ "key": "token", "value": "{{access_token}}" }]
+  },
+  "item": [
+    {
+      "name": "1. Auth",
+      "item": [
+        {
+          "name": "Login (consumer)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/auth/login",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"consumer01@market.com\",\n  \"password\": \"password123\"\n}"
+            }
+          },
+          "event": [{
+            "listen": "test",
+            "script": { "exec": [
+              "const r = pm.response.json();",
+              "if (r && r.data && r.data.access_token) {",
+              "  pm.collectionVariables.set('access_token', r.data.access_token);",
+              "}"
+            ] }
+          }]
+        },
+        {
+          "name": "Login (merchant)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/auth/login",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"merchant01@market.com\",\n  \"password\": \"password123\"\n}"
+            }
+          },
+          "event": [{
+            "listen": "test",
+            "script": { "exec": [
+              "const r = pm.response.json();",
+              "if (r && r.data && r.data.access_token) {",
+              "  pm.collectionVariables.set('access_token', r.data.access_token);",
+              "}"
+            ] }
+          }]
+        },
+        {
+          "name": "Me",
+          "request": { "method": "GET", "url": "{{base_url}}/auth/me" }
+        }
+      ]
+    },
+    {
+      "name": "2. Home / Search",
+      "item": [
+        { "name": "Home",          "request": { "method": "GET", "url": "{{base_url}}/home?market_id={{market_id}}" } },
+        { "name": "Search",        "request": { "method": "GET", "url": "{{base_url}}/products/search?q=시금치&page=1&size=20" } },
+        { "name": "Product detail","request": { "method": "GET", "url": "{{base_url}}/products/{{product_id}}" } }
+      ]
+    },
+    {
+      "name": "3. Drops",
+      "item": [
+        { "name": "List",        "request": { "method": "GET",    "url": "{{base_url}}/drops?status=scheduled&page=1&size=20" } },
+        { "name": "Subscribe",   "request": { "method": "POST",   "url": "{{base_url}}/drops/{{drop_id}}/subscribe" } },
+        { "name": "Unsubscribe", "request": { "method": "DELETE", "url": "{{base_url}}/drops/{{drop_id}}/subscribe" } }
+      ]
+    },
+    {
+      "name": "4. Stores",
+      "item": [
+        { "name": "Spotlight", "request": { "method": "GET", "url": "{{base_url}}/stores/{{store_id}}/spotlight" } },
+        { "name": "Products",  "request": { "method": "GET", "url": "{{base_url}}/stores/{{store_id}}/products" } },
+        { "name": "Story (소비자용)","request": { "method": "GET", "url": "{{base_url}}/stores/{{store_id}}/story" } }
+      ]
+    },
+    {
+      "name": "5. Merchant Stories",
+      "item": [
+        {
+          "name": "Create story",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/merchant/stories",
+            "body": { "mode": "raw", "raw": "{\n  \"store_id\":\"{{store_id}}\",\n  \"interview_text\":\"30년 동안 새벽시장에서 신선한 야채를 들여옵니다.\",\n  \"keywords\":[\"새벽\",\"신선\",\"제철\"],\n  \"tone\":\"친근한\",\n  \"selected_length\":\"normal\",\n  \"publish\": true,\n  \"persist\": true\n}" }
+          }
+        },
+        { "name": "List mine",  "request": { "method": "GET", "url": "{{base_url}}/merchant/stories?page=1&size=20" } },
+        { "name": "Get one",    "request": { "method": "GET", "url": "{{base_url}}/merchant/stories/{{story_id}}" } },
+        {
+          "name": "Patch",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/merchant/stories/{{story_id}}",
+            "body": { "mode": "raw", "raw": "{\n  \"selected_length\":\"detailed\"\n}" }
+          }
+        },
+        {
+          "name": "Toggle publish",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/merchant/stories/{{story_id}}/publish",
+            "body": { "mode": "raw", "raw": "{\n  \"publish\": false\n}" }
+          }
+        },
+        { "name": "Delete", "request": { "method": "DELETE", "url": "{{base_url}}/merchant/stories/{{story_id}}" } }
+      ]
+    },
+    {
+      "name": "6. Prices",
+      "item": [
+        { "name": "Market price",   "request": { "method": "GET",  "url": "{{base_url}}/prices/market/{{kamis_item_code}}" } },
+        { "name": "Sync KAMIS",     "request": { "method": "POST", "url": "{{base_url}}/prices/market/{{kamis_item_code}}/sync" } },
+        { "name": "Update product price (KAMIS)", "request": { "method": "POST", "url": "{{base_url}}/merchant/products/{{product_id}}/price?kamis_item_code={{kamis_item_code}}" } },
+        { "name": "Price history",  "request": { "method": "GET",  "url": "{{base_url}}/merchant/products/{{product_id}}/price-history?limit=30" } },
+        { "name": "Price suggestions","request": { "method": "GET","url": "{{base_url}}/merchant/dashboard/price-suggestions" } }
+      ]
+    },
+    {
+      "name": "7. Preorders",
+      "item": [
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/preorders",
+            "body": { "mode": "raw", "raw": "{\n  \"store_id\":\"{{store_id}}\",\n  \"product_name\":\"단감\",\n  \"qty\":2\n}" }
+          }
+        },
+        { "name": "List",       "request": { "method": "GET",    "url": "{{base_url}}/preorders?status=requested&page=1&size=20" } },
+        { "name": "Get one",    "request": { "method": "GET",    "url": "{{base_url}}/preorders/PREORDER_ID" } },
+        { "name": "Cancel",     "request": { "method": "DELETE", "url": "{{base_url}}/preorders/PREORDER_ID" } },
+        {
+          "name": "Merchant status change",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/merchant/preorders/PREORDER_ID/status",
+            "body": { "mode": "raw", "raw": "{\n  \"status\":\"confirmed\"\n}" }
+          }
+        }
+      ]
+    },
+    {
+      "name": "8. Shopping Agent",
+      "item": [
+        {
+          "name": "Recommendations",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/shopping-agent/recommendations",
+            "body": { "mode": "raw", "raw": "{\n  \"query\":\"오늘 저녁 찌개 추천해줘\",\n  \"people\":2,\n  \"budget\":15000,\n  \"market_id\":\"{{market_id}}\",\n  \"save_as_list\":true\n}" }
+          }
+        }
+      ]
+    },
+    {
+      "name": "9. Shopping Lists",
+      "item": [
+        { "name": "List",   "request": { "method": "GET",  "url": "{{base_url}}/shopping-lists" } },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/shopping-lists",
+            "body": { "mode": "raw", "raw": "{\n  \"title\":\"오늘 장보기\"\n}" }
+          }
+        },
+        {
+          "name": "Add item",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/shopping-lists/LIST_ID/items",
+            "body": { "mode": "raw", "raw": "{\n  \"product_name_snapshot\":\"시금치\",\n  \"qty\":1,\n  \"unit\":\"봉\"\n}" }
+          }
+        }
+      ]
+    },
+    {
+      "name": "10. Routes / Notifications / Merchant",
+      "item": [
+        {
+          "name": "Create route plan",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{base_url}}/routes/plans",
+            "body": { "mode": "raw", "raw": "{\n  \"market_id\":\"{{market_id}}\",\n  \"shopping_list_id\":\"LIST_ID\"\n}" }
+          }
+        },
+        { "name": "Notifications",        "request": { "method": "GET", "url": "{{base_url}}/notifications?is_read=0&page=1&size=20" } },
+        { "name": "Merchant dashboard",   "request": { "method": "GET", "url": "{{base_url}}/merchant/dashboard" } },
+        { "name": "Merchant my-store",    "request": { "method": "GET", "url": "{{base_url}}/merchant/my-store" } }
+      ]
+    }
+  ]
+}

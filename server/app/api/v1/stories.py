@@ -11,7 +11,7 @@
 """
 from typing import Literal, Optional
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Query
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
@@ -68,11 +68,13 @@ def create_story(
 
 @router.get("/merchant/stories", response_model=BaseResponse)
 def list_my_stories(
+    page: int = Query(1, ge=1),
+    size: int = Query(20, ge=1, le=100),
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
-    items = story_service.list_stories_for_merchant(db, current_user)
-    return success_response({"items": items})
+    data = story_service.list_stories_for_merchant(db, current_user, page=page, size=size)
+    return success_response(data)
 
 
 @router.get("/merchant/stories/{story_id}", response_model=BaseResponse)

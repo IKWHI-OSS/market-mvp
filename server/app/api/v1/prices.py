@@ -73,10 +73,10 @@ def get_price_history(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
-    """상품 가격 변경 이력 조회."""
+    """상품 가격 변경 이력 조회 — 본인 점포 상품만."""
     if current_user.role.value != "merchant":
         raise HTTPException(status_code=403, detail="상인 권한이 필요합니다.")
-    data = price_service.get_price_history(db, product_id, limit)
+    data = price_service.get_price_history(db, product_id, limit, user=current_user)
     return success_response(data)
 
 

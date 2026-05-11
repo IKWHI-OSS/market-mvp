@@ -217,13 +217,19 @@ def update_product_price_from_kamis(
     """
     KAMIS 소매가를 기준으로 Product.price를 업데이트하고
     ProductPriceHistory에 이력을 기록한다.
-    merchant 권한 검증은 호출 측(router/service)에서 수행한다.
+    merchant 권한 검증은 호출 측(router/service)에서 수행하며,
+    여기서는 본인 점포 상품 여부도 검증한다.
     """
     product: Optional[Product] = (
         db.query(Product).filter(Product.product_id == product_id).first()
     )
     if not product:
         raise HTTPException(status_code=404, detail="상품을 찾을 수 없습니다.")
+
+    from app.db.repositories.merchant_repository import get_store_ids_for_user
+    store_ids = get_store_ids_for_user(db, user.user_id)
+    if product.store_id not in store_ids:
+        raise HTTPException(status_code=403, detail="해당 상품에 대한 권한이 없습니다.")
 
     # 시세 동기화 (실패 시 HTTPException 또는 fallback)
     price_info = sync_kamis_price(db, kamis_item_code)
@@ -258,25 +264,36 @@ def update_product_price_from_kamis(
     }
 
 
-def get_price_history(db: Session, product_id: str, limit: int = 30) -> dict:
+def get_price_history(db: Session, product_id: str, limit: int = 30, user=None) -> dict:
     product = db.query(Product).filter(Product.product_id == product_id).first()
     if not product:
         raise HTTPException(status_code=404, detail="상품을 찾을 수 없습니다.")
 
+    if user is not None:
+        from app.db.repositories.merchant_repository import get_store_ids_for_user
+        store_ids = get_store_ids_for_user(db, user.user_id)
+        if product.store_id not in store_ids:
+            raise HTTPException(status_code=403, detail="해당 상품에 대한 권한이 없습니다.")
+
     histories = repo.get_price_history(db, product_id, limit)
+    def _item(h):
+        change_amount = (h.new_price or 0) - (h.old_price or 0)
+        change_rate = None
+        if h.old_price:
+            change_rate = round(change_amount / h.old_price * 100, 1)
+        return {
+            "history_id":    h.history_id,
+            "old_price":     h.old_price,
+            "new_price":     h.new_price,
+            "change_amount": change_amount,
+            "change_rate":   change_rate,
+            "reason":        h.reason.value,
+            "reference_id":  h.reference_id,
+            "created_at":    h.created_at.isoformat() if h.created_at else None,
+        }
     return {
         "product_id": product_id,
-        "items": [
-            {
-                "history_id":   h.history_id,
-                "old_price":    h.old_price,
-                "new_price":    h.new_price,
-                "reason":       h.reason.value,
-                "reference_id": h.reference_id,
-                "created_at":   h.created_at.isoformat() if h.created_at else None,
-            }
-            for h in histories
-        ],
+        "items": [_item(h) for h in histories],
     }
 
 

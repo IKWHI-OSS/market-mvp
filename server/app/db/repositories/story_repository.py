@@ -73,6 +73,32 @@ def list_by_store(
     return q.order_by(Story.created_at.desc()).limit(limit).all()
 
 
+def list_by_stores_paged(
+    db: Session,
+    store_ids: list[str],
+    page: int = 1,
+    size: int = 20,
+    only_published: bool = False,
+) -> tuple[list[Story], int]:
+    """페이지네이션이 적용된 점포-그룹 스토리 조회. 게시 우선·최신순."""
+    if not store_ids:
+        return [], 0
+    q = db.query(Story).filter(
+        Story.store_id.in_(store_ids),
+        Story.deleted_at.is_(None),
+    )
+    if only_published:
+        q = q.filter(Story.is_published == 1)
+    total = q.count()
+    items = (
+        q.order_by(Story.is_published.desc(), Story.created_at.desc())
+        .offset((page - 1) * size)
+        .limit(size)
+        .all()
+    )
+    return items, total
+
+
 def list_by_merchant(
     db: Session, merchant_id: str, limit: int = 100
 ) -> list[Story]:

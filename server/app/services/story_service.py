@@ -247,6 +247,8 @@ def generate_story(
         db.commit()
 
     story_id = None
+    published_at_iso: Optional[str] = None
+    created_at_iso: Optional[str] = None
     if persist:
         merchant_id = _resolve_merchant_id(db, user, resolved_store_id)
         story_row = story_repo.create_story(
@@ -263,6 +265,8 @@ def generate_story(
             is_published    = publish,
         )
         story_id = story_row.story_id
+        published_at_iso = story_row.published_at.isoformat() if story_row.published_at else None
+        created_at_iso   = story_row.created_at.isoformat() if story_row.created_at else None
 
     return {
         "store_id": resolved_store_id,
@@ -276,6 +280,8 @@ def generate_story(
         "interview_masked": masked_interview,
         "fallback_mode": fallback_mode,
         "is_published": publish,
+        "published_at": published_at_iso,
+        "created_at": created_at_iso,
         "products_used": product_names[:5],
     }
 
@@ -284,22 +290,30 @@ def generate_story(
 # 조회 / 게시 / 수정 / 삭제
 # ──────────────────────────────────────────────
 
-def list_stories_for_merchant(db: Session, user) -> list[dict]:
+def list_stories_for_merchant(
+    db: Session, user, page: int = 1, size: int = 20
+) -> dict:
+    """공통 규약: items + pagination 으로 반환."""
     if user.role.value != "merchant":
         raise HTTPException(status_code=403, detail="상인 권한이 필요합니다.")
     rows = (
-        db.query(Merchant.merchant_id, Merchant.store_id)
+        db.query(Merchant.store_id)
         .filter(Merchant.user_id == user.user_id)
         .all()
     )
-    if not rows:
-        return []
-    store_ids = [r[1] for r in rows]
-    out: list[dict] = []
-    for sid in store_ids:
-        for s in story_repo.list_by_store(db, sid, only_published=False):
-            out.append(story_repo.to_dict(s))
-    return out
+    store_ids = [r[0] for r in rows]
+    items, total = story_repo.list_by_stores_paged(
+        db, store_ids, page=page, size=size, only_published=False
+    )
+    return {
+        "items": [story_repo.to_dict(s) for s in items],
+        "pagination": {
+            "page": page,
+            "size": size,
+            "total": total,
+            "has_next": (page * size) < total,
+        },
+    }
 
 
 def get_story(db: Session, story_id: str) -> dict:
