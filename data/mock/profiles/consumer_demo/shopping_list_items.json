@@ -1,0 +1,42 @@
+[
+  {
+    "list_item_id": "li900001-e5f6-4789-a012-b3c4d5e6f901",
+    "shopping_list_id": "sl900001-e5f6-4789-a012-b3c4d5e6f901",
+    "product_name_snapshot": "돼지고기",
+    "qty": 300,
+    "unit": "g",
+    "checked": 0
+  },
+  {
+    "list_item_id": "li900002-e5f6-4789-a012-b3c4d5e6f902",
+    "shopping_list_id": "sl900001-e5f6-4789-a012-b3c4d5e6f901",
+    "product_name_snapshot": "감자",
+    "qty": 2,
+    "unit": "개",
+    "checked": 0
+  },
+  {
+    "list_item_id": "li900003-e5f6-4789-a012-b3c4d5e6f903",
+    "shopping_list_id": "sl900001-e5f6-4789-a012-b3c4d5e6f901",
+    "product_name_snapshot": "애호박",
+    "qty": 1,
+    "unit": "개",
+    "checked": 0
+  },
+  {
+    "list_item_id": "li900004-e5f6-4789-a012-b3c4d5e6f904",
+    "shopping_list_id": "sl900001-e5f6-4789-a012-b3c4d5e6f901",
+    "product_name_snapshot": "대파",
+    "qty": 1,
+    "unit": "단",
+    "checked": 0
+  },
+  {
+    "list_item_id": "li900005-e5f6-4789-a012-b3c4d5e6f905",
+    "shopping_list_id": "sl900002-e5f6-4789-a012-b3c4d5e6f902",
+    "product_name_snapshot": "제주 감귤",
+    "qty": 1,
+    "unit": "박스",
+    "checked": 0
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "catalog_item_id": "ca900001-e5f6-4789-a012-b3c4d5e6f901",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "event",
+    "title": "오늘 저녁 6시, 시장 야시장 라이브",
+    "title_snapshot": "오늘 저녁 6시, 시장 야시장 라이브",
+    "image_snapshot": null,
+    "price_snapshot": null
+  },
+  {
+    "catalog_item_id": "ca900002-e5f6-4789-a012-b3c4d5e6f902",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "item_type": "event",
+    "title": "주말 제철 채소 시식 이벤트",
+    "title_snapshot": "주말 제철 채소 시식 이벤트",
+    "image_snapshot": null,
+    "price_snapshot": null
+  }
+]

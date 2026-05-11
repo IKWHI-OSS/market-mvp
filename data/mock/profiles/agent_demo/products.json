@@ -1,0 +1,2002 @@
+[
+  {
+    "product_id": "9fbd5896-5303-404c-b10c-aa04f6e21b65",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "국내산 로메인(일반) 1팩",
+    "price": 2100,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "7b1c9809-e63d-40ca-908f-a0e969e44ce9",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "신선 사과 홍로 1팩",
+    "price": 15000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "b2d16751-fd73-4e17-84a1-e391a154ce0a",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "프리미엄 오이맛고추 1kg",
+    "price": 3300,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "75d8dd88-146a-401e-9dd8-6b6e5bd297a1",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "프리미엄 미나리 1팩",
+    "price": 6800,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "628b604d-0247-45e2-a5d6-154c99b64ade",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "제철 레드 치커리 1팩",
+    "price": 7600,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "bf380141-854f-4a11-a7fc-2b5df91aa59a",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "특가 사과 시나노스위트 1팩",
+    "price": 15100,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "c8c29ab1-512f-47cc-bbf3-187950bfef54",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "신선 청초 1팩",
+    "price": 3700,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "b6cb933a-14eb-40fd-b135-105192bc340a",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "제철 양파(햇) 1팩",
+    "price": 13700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "86f1b4f5-0017-4817-be43-425998a666c6",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "특가 양파 수입 1kg",
+    "price": 1500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "46e617aa-e802-4363-87c8-148a4421f6e9",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "신선 사과 시나노스위트 1팩",
+    "price": 8800,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "4eab3f68-2f75-41c0-8e92-31db93279513",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "신선 쌈배추 1kg",
+    "price": 2200,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "15fa1cb7-e2bc-4502-b136-010c1914096b",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "특가 사과 요까 1팩",
+    "price": 10200,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "3c720f1c-2941-447b-b287-9d0766a68650",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "특가 빨간양배추 국산 1kg",
+    "price": 1400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "b67ec0c6-a7d1-4cfa-beeb-62f08ea8b0a6",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "신선 토마토 완숙 1kg",
+    "price": 1500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "c4f33daf-df70-4c3c-b313-e55225d16052",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "프리미엄 토마토 완숙 1kg",
+    "price": 2000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "bc256bf8-2d33-40be-a160-0a9196fc0ae3",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "제철 양상추(일반) 1봉",
+    "price": 700,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "3140f9c3-54aa-4f1a-93fc-2f6b75d9db90",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "특가 사과 양광 1팩",
+    "price": 2400,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "623e0508-73cd-4f74-9b95-e846cb051d61",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "특가 시금치 섬초 1팩",
+    "price": 2700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "1f4ad960-fd73-4807-8172-50ffd50c0db0",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "신선 사과 양광 1팩",
+    "price": 7900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "ca84cb7e-7173-4b82-a1fb-9b53866743f5",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "특가 쑥갓 1봉",
+    "price": 700,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "f85b8644-df91-4c5c-81fe-e80db3d4799c",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "국내산 생강 재강 1팩",
+    "price": 15300,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "95de9a56-47cc-49c0-9aee-bab87fe21934",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "국내산 저장 양파 1팩",
+    "price": 7100,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "e36c7052-ff75-4ce7-bb84-784c0f051239",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "국내산 깻잎순 1봉",
+    "price": 4300,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "dec2f131-ee20-4f2c-9121-47eed31e5ec4",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "특가 쑥갓 1봉",
+    "price": 800,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "1832d6d9-b229-4788-a723-b68b9fa7f01d",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "제철 딸기 육보 1팩",
+    "price": 5100,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "869143f1-8942-4c30-9e3e-331d9f6bae8d",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "국내산 노각오이 1kg",
+    "price": 1600,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "e8936c49-5b69-4947-a952-39f8bddd532b",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "국내산 무 1kg",
+    "price": 900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "1612f53f-94f1-4943-8a9e-6b253ce9c01c",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "제철 청경채 1팩",
+    "price": 700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "27b0027d-c4f1-4c55-b0c2-aaf8c39acc6f",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "특가 다발무 1팩",
+    "price": 11100,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "7d1cd540-a473-49e0-a63d-5eb06f45c5b2",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "신선 양배추 1kg",
+    "price": 800,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "8a7e5c26-b58d-46ac-83a3-ae2a0fb4e01a",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "특가 생표고 1팩",
+    "price": 4700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "7a65204a-6d0f-4586-b34b-328a49ffb108",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "제철 쫑상추 1봉",
+    "price": 1800,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "77eaaa8b-6860-4863-923d-ae0a1a6f5607",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "국내산 고수 1팩",
+    "price": 1000,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "aee26269-5f0a-4dc3-9499-9c5a89d3839c",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "국내산 포장수박 1팩",
+    "price": 11900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "9ffd55f0-4be7-44db-addf-5fe65c49b481",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "프리미엄 자주양파 1kg",
+    "price": 1200,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "e58cddb8-1c5c-41b8-aae4-5c8411342dea",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "신선 냉이 1팩",
+    "price": 4400,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "6cd09f1e-14e6-4ff6-bd41-f428e0c1b6f6",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "프리미엄 사과 미시마 1팩",
+    "price": 15700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "57baf1a4-8b3d-4be5-83c0-d04505432a9f",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "프리미엄 달래(일반) 1팩",
+    "price": 13400,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "2b3f8d6d-0860-40c8-b6c6-c10966c07fdb",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "신선 생표고 수입 1팩",
+    "price": 6700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "97ee1fa9-269b-4ba9-9860-259e842d9caa",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "프리미엄 적근대 1팩",
+    "price": 3700,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "db66f1cc-8282-4d65-9fea-ac96ddd584a8",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "신선 꽃느타리버섯 1팩",
+    "price": 2100,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "10b3a8b7-cbfc-4b6e-a5c1-50549c54f07a",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "신선 수삼 5년근 1팩",
+    "price": 6900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "dc3b5115-a579-4e5c-bb2e-5519879b79d0",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "제철 양상추 수입 1팩",
+    "price": 4600,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "457fbf23-76b2-4165-b985-06fa8c3e63ce",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "특가 사과 히로사끼 1팩",
+    "price": 13400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "e02c5332-e32b-470c-83ce-cf67b6a1549a",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "국내산 생표고 1팩",
+    "price": 10000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "59286305-9f56-41dc-bc20-0884606ca2d2",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "특가 사과 로얄부사 1kg",
+    "price": 4200,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "d8f9f4f8-7a38-4758-903e-f25d603d5431",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "특가 애호박 1kg",
+    "price": 1300,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "b5280468-88ca-4e44-b71c-c597a9d538c7",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "프리미엄 생취나물 1팩",
+    "price": 2400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "ccd2162e-7e20-4d87-83e5-d266214f504f",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "특가 햇마늘 남도 1팩",
+    "price": 3300,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "6213d362-77b9-41c0-a19f-88dbd82e879c",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "특가 홍감자 1팩",
+    "price": 12900,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "db14a16c-1b80-4780-9349-5cf33e3600c2",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "신선 양파 1kg",
+    "price": 700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "ec9a37ee-372e-4895-a0e0-d6cf5911f019",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "제철 알배기배추 1kg",
+    "price": 2500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "94ab8697-ef44-40f7-b86d-fcd6a2328925",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "제철 양상추 수입 1팩",
+    "price": 3700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "a6ef257c-8806-4053-a6b7-5cb5d43c8bc7",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "프리미엄 아스파라거스 국산 1팩",
+    "price": 12400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "03664f3f-45e6-4965-b769-98b846175c0b",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "프리미엄 저장 양파 1팩",
+    "price": 3300,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "60779dda-745d-4469-adb5-a2c3886bd52d",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "특가 사과 부사 1kg",
+    "price": 12400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "6e37119b-ce09-4224-9818-4105ffd3694e",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "신선 저장 양파 1팩",
+    "price": 1400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "402e0be7-ff44-4e86-9ee3-346b444506d0",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "프리미엄 양파(햇) 1팩",
+    "price": 11900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "d18c3699-a317-40c8-b167-da861bff21b4",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "프리미엄 비트 국산 1팩",
+    "price": 2400,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "a718c949-4913-4761-a80f-bc890ed71613",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "국내산 사과 시나노스위트 1팩",
+    "price": 15400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "bebd1b6d-d30b-41bb-a4f7-475c6d759093",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "국내산 양상추 수입 1팩",
+    "price": 12200,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "3f03a6be-a17b-478d-a971-0ebd89a7d28c",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "제철 아욱 1팩",
+    "price": 1300,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "8f8920bf-6dd2-4d6d-abca-4ba53667c362",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "국내산 수박(일반) 1개",
+    "price": 2700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "96e90da7-a850-48cb-9ab5-41469285bed8",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "국내산 녹광고추 1팩",
+    "price": 5300,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "74cdbfaa-b207-4578-a9ac-06304ef0e47c",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "프리미엄 초당옥수수 1팩",
+    "price": 12000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "1244805a-4eb2-465b-968b-4dc9f7b0e702",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "국내산 백다다기오이 1kg",
+    "price": 700,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "4c3f1301-92e9-45d7-8dc8-720f7bc99c3a",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "국내산 꽃느타리버섯 1팩",
+    "price": 2300,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "77e2a553-7fa3-47c0-8f9c-f4ba8e8998c9",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "특가 포장수박 1팩",
+    "price": 4700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "fe60a005-8ff9-4172-9b08-4c652574e948",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "국내산 저장 양파 1팩",
+    "price": 6100,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "241bda56-d19a-4a7f-a9ca-650093acdff3",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "특가 적겨자잎 1팩",
+    "price": 9500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "5817e269-208a-4bb7-b141-383a7c218efb",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "특가 사과 홍장군 1팩",
+    "price": 15200,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "4566ccf4-cf39-4304-b480-99d2ac9a6dc5",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "특가 사과 1kg",
+    "price": 4000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "3e770fd7-722f-4715-aadc-6b90f0b9b73c",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "프리미엄 미나리 1팩",
+    "price": 14900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "eec8c652-0c2c-4602-8221-4cdb04d2d640",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "특가 가시오이 1팩",
+    "price": 11300,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "d9256eee-318f-4812-983c-95552f6dc104",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "국내산 백다다기오이 1kg",
+    "price": 700,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "37f569e9-6c30-49a3-899b-fe901ca454c0",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "제철 참외(일반) 1개",
+    "price": 4600,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "e9c4498c-0600-40c9-8f3f-1c323bb9f98e",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "프리미엄 빨간양배추 국산 1팩",
+    "price": 3500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "31d12150-b4f2-438e-ae0d-f4f5236f5919",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "프리미엄 콜라비(일반) 1팩",
+    "price": 1100,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "482621cd-1efb-4271-a168-3d4975ef7e1e",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "국내산 양파 조생 1kg",
+    "price": 700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "f117426f-dc53-4fc4-88b7-0a8da878a543",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "특가 무 1kg",
+    "price": 700,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "db08924f-f277-4646-8750-ac1ef68d985f",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "특가 감자 1kg",
+    "price": 2900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "3850ee0a-3d5d-4572-be4d-268287fdefea",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "제철 호박밤 고구마 1kg",
+    "price": 4100,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "13a91f99-20e5-46fd-96d7-0a9f413944dc",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "프리미엄 만가닥버섯 1팩",
+    "price": 10400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "044deb24-beb4-4c4e-b900-458b47ab6ba6",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "신선 죽순 국산 1팩",
+    "price": 11200,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "94a14f19-bcf4-479b-9895-ac936c6548d2",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "국내산 둥근 애호박 1kg",
+    "price": 3200,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "523c1c8a-dc2b-4ee2-9139-21971ee33372",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "프리미엄 파슬리 1팩",
+    "price": 1800,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "29e88fd7-bfb3-488b-8c8d-4e721ba260c8",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "신선 생표고 1팩",
+    "price": 8200,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "db715b04-59fb-4cd6-a31c-ac4e6834c6fc",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "특가 양파 1팩",
+    "price": 2100,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "b4d5c298-b8c0-4809-99ca-0843349898c1",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "신선 감자 조풍 1팩",
+    "price": 3000,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "ab31231e-84f8-4c3f-af2d-ff9e46d94c92",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "프리미엄 수박(일반) 1개",
+    "price": 2500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "6aef119c-cdd7-4419-80db-0c7a6825fa22",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "프리미엄 연근(일반) 1팩",
+    "price": 6600,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "b3df02b3-b411-4e3a-b47a-6638c6b335b4",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "국내산 사과 홍장군 1팩",
+    "price": 7900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "759b8174-9e3b-4a2b-a546-a2bac0745cc0",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "제철 냉이 1팩",
+    "price": 9200,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "d279d6b1-4361-498d-9391-785c6e9fc928",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "국내산 알배기배추 1kg",
+    "price": 1200,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "0a800021-5d7f-4c1b-9013-2c899f65ed32",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "국내산 사과 홍장군 1팩",
+    "price": 5200,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "c2c9c1db-dfc6-40cf-ac00-2f14ae7bcc29",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "국내산 백다다기오이 1kg",
+    "price": 700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "7c32fa07-3af7-4930-b174-d487695d6ac4",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "제철 포장수박 1팩",
+    "price": 9600,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "94fca362-a7b3-44c2-9c72-7da52c2efe6c",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "신선 대파 수입 1팩",
+    "price": 14500,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "f5271745-9bb6-465d-b949-9dc2d468e76a",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "제철 시금치 보물초 1팩",
+    "price": 9700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "69cdaec6-8a94-4726-a77e-cc5d1f5da1ac",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "신선 사과 부사 1팩",
+    "price": 7500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "a60b0d1f-ea47-49f9-8363-9cbdd9cc3e21",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "제철 브로콜리 국산 1팩",
+    "price": 11000,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "896095c9-a519-4f17-9da4-ee6b4a69f94a",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "특가 실파 1팩",
+    "price": 4900,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "b272ccee-cfc9-47dd-bcc2-83e5a3b24d2d",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "제철 딸기 육보 1팩",
+    "price": 10100,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "a5901928-e20d-4fc2-9d08-3f1ad147187b",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "프리미엄 양상추(일반) 1팩",
+    "price": 6300,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "c8a88d84-6aeb-4d75-873b-b6becf56d332",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "제철 시금치 포항초 1봉",
+    "price": 2200,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "e949f229-ee63-4468-8718-13bf1a74129c",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "신선 새송이버섯 1팩",
+    "price": 1700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "b4b0e170-03ee-459c-869b-c7700ba3a220",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "제철 곰취나물 1팩",
+    "price": 6200,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "45cafba9-36ab-4753-b8bd-dc0326aa49f6",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "프리미엄 사과 아오리 1팩",
+    "price": 11000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "59c6be51-c52d-405b-98ca-7aecaa51f8f9",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "제철 생취나물 1팩",
+    "price": 3300,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "a32c69d5-b8d6-47d2-87ba-21fa86425e22",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "제철 새송이버섯 1팩",
+    "price": 2200,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "cef425b2-a9d3-4b6d-88e1-ef0c271ee340",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "특가 백다다기오이 1kg",
+    "price": 700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "bfde10f2-9cb5-42d8-821e-3031758b35e5",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "프리미엄 멜론 머스크 1팩",
+    "price": 6400,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "2ccdd290-f000-45e1-86e8-6f5b1852b715",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "제철 수박(일반) 1개",
+    "price": 2800,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "4ec86be5-62c4-4019-a234-377dc084e890",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "제철 딸기 육보 1팩",
+    "price": 6600,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "480a1b7b-6448-4071-929a-87eb0eed9599",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "프리미엄 깐마늘 남도 1팩",
+    "price": 4200,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "0e3887aa-9e0b-49ba-958c-d9dd2fbff75b",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "프리미엄 근대 1팩",
+    "price": 1300,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "4fd7c0b3-f91d-4864-a67d-4d058c4e571e",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "국내산 롱그린고추 1팩",
+    "price": 3600,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "f33d3ba9-c45d-4cf0-a3c7-3c0b31102f6e",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "제철 포장수박 1팩",
+    "price": 8500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "4feaf850-5118-4cf9-aa09-dd954053e018",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "제철 딸기 메리퀸 1팩",
+    "price": 9400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "20acf14f-f377-4153-ad87-4226f5e5a6c8",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "프리미엄 땅두릅(재배산) 1팩",
+    "price": 10100,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "60f79eca-5231-428e-aeaa-a47fe5373b6a",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "신선 노각오이 1kg",
+    "price": 1400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "bb23d889-acf5-49e9-ae28-ca489fe14bf6",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "신선 땅두릅(재배산) 1kg",
+    "price": 8300,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "8248a91e-7c7b-41eb-90f3-e48e26557430",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "특가 참두릅(자연산) 1팩",
+    "price": 12400,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "7a54c56e-9ddd-4867-8605-6baabcbb0353",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "국내산 양파 1팩",
+    "price": 10700,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "cbc882fd-95dc-4100-8921-5439327852aa",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "신선 단호박 수입 1kg",
+    "price": 1400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "56a0ccbd-19cb-4a64-b1fc-c3941edadf17",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "제철 콜라비(일반) 1팩",
+    "price": 800,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "96041ee3-93e9-4e7c-be34-dbf22f9fb0c4",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "신선 봄동배추 1팩",
+    "price": 10000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "ad39a4fb-31ae-41d6-b245-23528c0e2462",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "국내산 아욱 1팩",
+    "price": 2200,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "7feb7a44-8f39-4638-8e5a-7e36d3a47244",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "제철 청양고추 1팩",
+    "price": 1700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "092f14ec-2b8c-4401-97a6-649dd62856e5",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "프리미엄 배추 1kg",
+    "price": 700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "4f306a78-bf49-4958-a132-81d249327474",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "국내산 쌈배추 1kg",
+    "price": 3500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "c5bcb1c9-9beb-4a85-81e7-e0f92add11d3",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "특가 브로콜리 1팩",
+    "price": 2200,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "ec124392-8f8d-4c43-a14b-1cde05cd5097",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "프리미엄 빨간양배추 수입 1팩",
+    "price": 5100,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "ceda2d14-fe5f-4a65-8776-030c5599ed34",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "특가 고수 1팩",
+    "price": 6400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "b37bed80-f765-4236-9889-ab2f9c33e587",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "특가 사과 부사 1팩",
+    "price": 8300,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "232c8bcd-2006-480e-83c9-ee7ecc5c519e",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "국내산 방울토마토(일반) 1kg",
+    "price": 2900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "eaea44ce-77ab-4636-924a-6e2a0c45017b",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "신선 참두릅(자연산) 1팩",
+    "price": 18200,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "e3c75225-7595-45b7-a036-116822f560f3",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "신선 쥬키니호박 1kg",
+    "price": 700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "6ea88ea8-7572-4503-93b6-470f36fe283e",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "프리미엄 저장 양파 1팩",
+    "price": 2500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "17d1c5f2-4698-4e0a-9077-1f3cb8addce6",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "국내산 쪽파 1단",
+    "price": 1900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "6a9cdbfe-14e2-4ffb-80af-29ce1cd0b8ac",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "프리미엄 콜라비(일반) 1팩",
+    "price": 1100,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "5d2386c9-7d97-44c8-96a7-2d0920955649",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "특가 참외(일반) 1개",
+    "price": 4400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "4e8a4965-1f35-40db-8eb8-07e719866f7e",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "특가 사과 양광 1팩",
+    "price": 4700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "c26674f5-aef4-4a99-9820-bffd0ce87190",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "신선 돌산갓 1팩",
+    "price": 1500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "12b13675-6c28-4045-b8cd-ad4d1d291f8a",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "특가 미나리 1단",
+    "price": 3300,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "93af0f8d-b661-45ff-b408-eae1b0556268",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "프리미엄 자주양파 1kg",
+    "price": 1100,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "87f63396-956c-4f4d-9fcf-4e3653f482ab",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "제철 브로콜리 국산 1팩",
+    "price": 6800,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "fed12798-af4b-4bae-b7f4-e1cbfc521529",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "특가 홍고추 1팩",
+    "price": 14000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "df40f1a7-b5b1-4538-a9da-967e6fd25b56",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "제철 다발무 1팩",
+    "price": 13000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "921fb482-95eb-402c-ad09-01f882faed13",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "특가 애플수박 1팩",
+    "price": 13600,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "ca5f84fb-e8f6-4dc8-b674-53290f0ce9ad",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "제철 감자 1kg",
+    "price": 3600,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "76133cf3-028c-4de5-a479-c192e6878216",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "프리미엄 돗나물 1팩",
+    "price": 700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "d1be4b70-b5dc-472e-b4e8-a3d685c3b9a0",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "특가 다발무 1팩",
+    "price": 5600,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "ddae8330-2879-48d8-ae59-1f903c3c4c11",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "국내산 머위잎 1팩",
+    "price": 3400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "3334ecc4-3593-47a4-a579-df550676c09f",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "국내산 멜론 파파야 1팩",
+    "price": 6700,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "5b979bdc-6066-4a97-a8fb-dbe21b7e32a0",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "프리미엄 딸기 1팩",
+    "price": 3900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "89097910-670c-4d1d-867e-4cd3caa59ce9",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "특가 사과 요까 1팩",
+    "price": 8700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "221a81f5-b2ff-4bba-8031-e0d7b0b20cd8",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "제철 시금치 1봉",
+    "price": 1900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "98cb8f9f-dab5-4495-a884-2dddd3270b35",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "특가 참나물 1팩",
+    "price": 3600,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "52a7ecf1-57d9-44f5-8004-71daa2d141fe",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "특가 고구마 1kg",
+    "price": 3700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "5547a86b-0daf-4c61-b762-9517e6f95dec",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "특가 봄동배추 1팩",
+    "price": 4600,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "674d5d20-374b-4fd7-b99d-f4d5af772062",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "국내산 빨강 파프리카 1팩",
+    "price": 3600,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "a6993681-3667-4c36-8958-05f9cf22f559",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "프리미엄 저장 양파 1팩",
+    "price": 4000,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "30f37548-0a77-494c-b0bb-dc2ddbc0e1bd",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "특가 청초 1팩",
+    "price": 3100,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "c6b6fea7-3c40-4556-a9c3-42e7619de8cf",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "특가 바실 1팩",
+    "price": 10300,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "f9828722-b7b0-4126-a6c4-4dbb7fb03fad",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "국내산 멜론 파파야 1팩",
+    "price": 2800,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "4a16b5cc-9bcb-4b7e-b1ee-500d70db4a6f",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "신선 청상추 1봉",
+    "price": 2200,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "42fa7316-c278-4605-9f92-348c91fbf8dd",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "제철 딜 1팩",
+    "price": 3200,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "6d19ac56-dc17-4120-8655-74571cfaaf28",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "신선 오이맛고추 1kg",
+    "price": 3100,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "62a40699-9b7c-484e-9e45-50ce0d6bee99",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "특가 청갓 1팩",
+    "price": 7200,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "a063383d-d168-48fb-904b-d760596cb50c",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "제철 찰옥수수 1팩",
+    "price": 4100,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "233f5d82-3f1c-4704-b65d-e3806c61a67a",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "특가 만가닥버섯 1팩",
+    "price": 5900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "d25f6fd5-88fe-41db-adec-b7a6ab82fa9a",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "제철 고구마 1kg",
+    "price": 5200,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "0a30bc29-49d2-4e41-a422-e3ef6e405cb9",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "신선 양파(햇) 1팩",
+    "price": 12300,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "2509525b-c136-492d-88a0-a331e03f8a2e",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "특가 오이맛고추 1kg",
+    "price": 1900,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "ab9a1b5c-f801-4802-b42c-24eba8e7ec93",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "제철 딸기 금실 1팩",
+    "price": 8000,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "3a89be77-633e-4392-b89f-6f7df4a3d97e",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "프리미엄 케일 1팩",
+    "price": 1700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "beda87ed-1839-4755-ae7e-4bb81a139421",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "제철 무순 1kg",
+    "price": 700,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "e8a937df-b99a-4d36-89ba-93022b02d665",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "신선 콜라비(일반) 1팩",
+    "price": 14400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "0fdd1901-84b8-4870-bf9a-ba52144e0604",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "특가 감자 두백 1kg",
+    "price": 2800,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "4f94d7a5-e968-4b8e-9357-662a6399d104",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "프리미엄 시금치 섬초 1팩",
+    "price": 7900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "7aa74c71-ea42-4d87-bfd5-b891e1f2337c",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "신선 청갓 1팩",
+    "price": 8900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "cbad2d67-c150-4892-82d8-0a608007ee3c",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "프리미엄 겨자잎 1팩",
+    "price": 5600,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "a38537aa-cd53-4f99-842a-07e1c5da1356",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "특가 만가닥버섯 1팩",
+    "price": 10800,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "193e6735-0df5-48a6-bb46-b2b12be7e902",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "프리미엄 토마토 대저 1팩",
+    "price": 12400,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "5245315e-c0fb-49b6-8302-d156e68264ce",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "신선 감자 두백 1kg",
+    "price": 2700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "613dd09b-edb8-4555-9a80-25ecfad0c936",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "국내산 사과 홍로 1팩",
+    "price": 6900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "4acc74f9-bc3e-4d5a-ba31-6f4441bba966",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "국내산 시금치 섬초 1팩",
+    "price": 14400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "01e2cbc8-7642-4220-81b0-c6fbfa285d55",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "국내산 브로콜리 수입 1팩",
+    "price": 2800,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "2a0803b3-d226-46f1-b457-4f6978278069",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "제철 고수 1팩",
+    "price": 800,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "dd2460a3-eb79-4cdb-8c0b-1089ec84c7eb",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "특가 청갓 1팩",
+    "price": 5500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "e40631d6-da0e-4d0d-b1a6-58e40978190e",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "국내산 수박(일반) 1개",
+    "price": 3800,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "db34383d-a8ee-4f14-a9fd-317f0c712d4f",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "신선 멜론 머스크 1팩",
+    "price": 7100,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "91da16ad-86c2-4ddb-bc85-720d30bc90b7",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "프리미엄 양파 수입 1kg",
+    "price": 1400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "d2650dbe-6011-475c-9fe2-19afa2ba51b5",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "프리미엄 수삼 5년근 1팩",
+    "price": 5900,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "8f7ce9d9-7f6b-4ada-b189-6a76cf9b3ca5",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "국내산 셀러리 1팩",
+    "price": 1300,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "1d51422b-4b4e-44a7-a891-889572e0ed4e",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "프리미엄 딸기 육보 1팩",
+    "price": 10600,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "77623257-c7c1-4abc-b60e-f869311ff049",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "프리미엄 수삼 5년근 1팩",
+    "price": 6000,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "b2fb7917-ea75-44d8-b0b2-59d2d8cd2568",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "특가 시금치 포항초 1봉",
+    "price": 1300,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "c0f32c3a-7c84-4f5f-b217-0b7d648f73d0",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "제철 단호박 수입 1kg",
+    "price": 1800,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "94b22f13-425c-4bac-a7f5-a3c3813126b5",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "제철 새송이버섯 1팩",
+    "price": 2500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "848fc59b-4b15-40e2-843d-005ad876c934",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "국내산 생표고 수입 1팩",
+    "price": 6300,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "db563609-249d-4509-b310-93e4fcc02672",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "제철 땅두릅(재배산) 1팩",
+    "price": 10400,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "c43be791-a43e-46bd-88b9-5721dcb490fe",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "제철 참외(일반) 1개",
+    "price": 2400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "c1de051d-9a02-477a-a3d9-edbf349a161e",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "신선 수박(일반) 1개",
+    "price": 3800,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "89b92a9f-84aa-4455-80f4-ecbfeaadd152",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "국내산 사과 부사 1kg",
+    "price": 6700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "a7984c2b-e723-47ed-8beb-0c2e40df4909",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "신선 다발무 1팩",
+    "price": 2100,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "79e49ff6-9fcb-4ca2-b73f-076ea2932bc4",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "프리미엄 단호박 수입 1kg",
+    "price": 1500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "2a16dc28-5538-4f68-b2eb-de811784e21b",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "제철 깻잎순 1봉",
+    "price": 3600,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "e482f73a-0ea5-4f00-bc8c-3743f8c8cd4f",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "제철 사과 아오리 1팩",
+    "price": 6400,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "a62053e8-23dd-4705-94d2-c774f18214dd",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "제철 사과 요까 1팩",
+    "price": 10400,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "c06c4c65-0637-4449-886b-0fb0f275da34",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "프리미엄 딸기 장희 1팩",
+    "price": 6300,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "ab0402eb-1eed-4705-8cdf-9c4aa6d3354f",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "신선 영양부추 1단",
+    "price": 800,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "0dbb0c30-0b11-4c2a-915c-65dc174c0fd2",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "특가 건고구마순 수입 1팩",
+    "price": 14000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "a49f153d-30e7-4182-98c3-a413f452d290",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "제철 고수 1팩",
+    "price": 6000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "f21cc2f6-fedf-4997-8875-243ac5a989da",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "제철 연근(일반) 1팩",
+    "price": 7900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "70931b21-44cb-4b13-8a86-647f520d3e28",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "제철 양송이 1팩",
+    "price": 2500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "bb260696-5408-4f9a-92a4-8ab661013e8c",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "특가 참외(일반) 1개",
+    "price": 4000,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "b2c55591-107d-4bfa-a870-be250a65c40e",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "특가 자주양파 1kg",
+    "price": 1000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "fe577280-5425-4c2d-aeef-6541f92c1058",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "프리미엄 쌈배추 1kg",
+    "price": 1800,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "b0ddc3da-785a-4d8e-a23e-5a8826daf860",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "국내산 토마토 1kg",
+    "price": 2200,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "563e69eb-2769-48de-94be-0e9e96f1440e",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "프리미엄 사과 요까 1팩",
+    "price": 2000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "a8dabdff-5a5c-4503-ab60-2d4a28840ba7",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "신선 참외(일반) 1개",
+    "price": 5400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "d13c0925-00ff-45ea-bf6e-9b8d5e2fa6b1",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "특가 딸기 메리퀸 1팩",
+    "price": 13800,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "2e86b72c-b316-431d-8c35-37cc53964e26",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "프리미엄 땅두릅(재배산) 1kg",
+    "price": 8600,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "2af190e9-96af-414f-87b5-cee16ec2b35f",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "프리미엄 생표고 1팩",
+    "price": 7300,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "8350352c-ded4-4213-948c-b2e4db56b849",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "신선 단호박(일반) 1팩",
+    "price": 2100,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "af2a1554-fab6-448f-8042-094a8736f269",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "국내산 사과 홍장군 1팩",
+    "price": 5800,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "75642eb4-6179-47a8-b828-3d84c17d412b",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "제철 딸기 메리퀸 1팩",
+    "price": 11400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "9a0ffb12-aad4-40d6-a59e-0dd35d9e44c1",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "국내산 둥근 애호박 1kg",
+    "price": 2700,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "471ea22f-ecb9-419f-a348-9a73421962ad",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "신선 새송이버섯 1팩",
+    "price": 2200,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "129f7142-2194-4622-9472-df06d5af7cb5",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "국내산 쪽파 1단",
+    "price": 1300,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "d722f943-52c2-4db1-9226-c86f7996112f",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "특가 백다다기오이 1kg",
+    "price": 800,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "1d07d34a-634b-4285-af82-4020e547a28f",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "신선 새송이버섯 1팩",
+    "price": 2600,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "4b773975-9169-4e36-a20a-fdb18460b4fa",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "제철 머위잎 1팩",
+    "price": 5000,
+    "stock_status": "low_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "684d8c51-058c-4c4f-aea5-4514fe0ae4ea",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "국내산 적근대 1팩",
+    "price": 2300,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "81b85fed-bcb0-4a37-bca3-1509ee509058",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "신선 청갓 1팩",
+    "price": 3700,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "3f4f9c0d-477f-4618-aad4-137dfcd5ef3f",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "국내산 완두콩 1팩",
+    "price": 4900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "48fa0967-6451-4b48-b6e9-46237ff3e78f",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "제철 적근대 1팩",
+    "price": 2000,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "9a712abe-3037-4e15-82d3-52caf9b8c245",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "프리미엄 애호박 1kg",
+    "price": 1300,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "86ac71d3-7fe6-4d77-a0c0-c95dc35f8501",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "제철 땅두릅(재배산) 1팩",
+    "price": 2500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "4ae8342d-5312-4e75-8684-964c4416c408",
+    "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_name": "특가 시금치 보물초 1팩",
+    "price": 8900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "fbebaaf4-c486-4dae-bdc9-8dc2037487ec",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "특가 레드 치커리 1팩",
+    "price": 7800,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "a839c646-ec40-4504-94d6-306e52fa8fd6",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "국내산 양상추(일반) 1봉",
+    "price": 1100,
+    "stock_status": "out_of_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "aab3eda4-7beb-445c-b616-bc61c7ef4a1e",
+    "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_name": "국내산 팽이버섯 1팩",
+    "price": 1100,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "368dfa5f-a3a8-467a-80ec-9b57e1d9ee24",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "국내산 사과 부사 1팩",
+    "price": 7900,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "48eca68a-e064-4ed8-8a46-d9fcf8e6dc81",
+    "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_name": "제철 돌산갓 1팩",
+    "price": 800,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "57aaab5a-f916-49ac-9129-538e3a5c6b02",
+    "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_name": "제철 양파 수입 1kg",
+    "price": 1500,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "e2cd0f1d-ac4b-47f8-b041-9a4aac482f1b",
+    "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_name": "프리미엄 쪽파 1단",
+    "price": 1200,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "88287ec6-b3b5-44d4-92bb-a28a2ca22391",
+    "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_name": "국내산 다발무 1팩",
+    "price": 3300,
+    "stock_status": "low_stock",
+    "image_url": null
+  }
+]

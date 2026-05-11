@@ -5,7 +5,7 @@
     "product_name": "국내산 시금치 200g",
     "price": 2500,
     "stock_status": "in_stock",
-    "image_url": null
+    "image_url": "assets/images/mock/products/prod_spinach_200g.jpeg"
   },
   {
     "product_id": "p1000002-e5f6-4789-a012-b3c4d5e6f702",
@@ -13,7 +13,7 @@
     "product_name": "강원도 감자 1kg",
     "price": 3000,
     "stock_status": "in_stock",
-    "image_url": null
+    "image_url": "assets/images/mock/products/prod_zucchini_1.jpeg"
   },
   {
     "product_id": "p1000003-e5f6-4789-a012-b3c4d5e6f703",
@@ -45,7 +45,7 @@
     "product_name": "청양고추 500g",
     "price": 3500,
     "stock_status": "in_stock",
-    "image_url": null
+    "image_url": "assets/images/mock/products/prod_hotpepper_500g.jpeg"
   },
   {
     "product_id": "p1000007-e5f6-4789-a012-b3c4d5e6f707",
@@ -61,7 +61,7 @@
     "product_name": "대파 1단",
     "price": 2500,
     "stock_status": "low_stock",
-    "image_url": null
+    "image_url": "assets/images/mock/products/prod_greenonion_1dan.jpeg"
   },
   {
     "product_id": "p1000009-e5f6-4789-a012-b3c4d5e6f709",
@@ -85,7 +85,7 @@
     "product_name": "제주 감귤 3kg",
     "price": 12000,
     "stock_status": "in_stock",
-    "image_url": null
+    "image_url": "assets/images/mock/products/prod_tangerine_3kg.jpeg"
   },
   {
     "product_id": "p1000012-e5f6-4789-a012-b3c4d5e6f712",
@@ -117,7 +117,7 @@
     "product_name": "국내산 딸기 500g",
     "price": 9000,
     "stock_status": "out_of_stock",
-    "image_url": null
+    "image_url": "assets/images/mock/products/prod_strawberry_500g.jpeg"
   },
   {
     "product_id": "p1000016-e5f6-4789-a012-b3c4d5e6f716",
@@ -125,7 +125,7 @@
     "product_name": "샤인머스캣 500g",
     "price": 12000,
     "stock_status": "in_stock",
-    "image_url": null
+    "image_url": "assets/images/mock/products/prod_shine_500g.jpeg"
   },
   {
     "product_id": "p1000017-e5f6-4789-a012-b3c4d5e6f717",
@@ -133,7 +133,7 @@
     "product_name": "제주 한라봉 3kg",
     "price": 16000,
     "stock_status": "in_stock",
-    "image_url": null
+    "image_url": "assets/images/mock/products/prod_hallabong_3kg.jpeg"
   },
   {
     "product_id": "p1000018-e5f6-4789-a012-b3c4d5e6f718",
@@ -165,7 +165,7 @@
     "product_name": "국내산 고등어 1손",
     "price": 6000,
     "stock_status": "in_stock",
-    "image_url": null
+    "image_url": "assets/images/mock/products/prod_mackerel_1son.jpeg"
   },
   {
     "product_id": "p1000022-e5f6-4789-a012-b3c4d5e6f722",
@@ -173,7 +173,7 @@
     "product_name": "생물 갈치 1마리",
     "price": 12000,
     "stock_status": "in_stock",
-    "image_url": null
+    "image_url": "assets/images/mock/products/prod_hairtail_1.jpeg"
   },
   {
     "product_id": "p1000023-e5f6-4789-a012-b3c4d5e6f723",
@@ -205,7 +205,7 @@
     "product_name": "광어 회 300g",
     "price": 22000,
     "stock_status": "in_stock",
-    "image_url": null
+    "image_url": "assets/images/mock/products/prod_flatfish_300g.jpeg"
   },
   {
     "product_id": "p1000027-e5f6-4789-a012-b3c4d5e6f727",
@@ -237,7 +237,7 @@
     "product_name": "국내산 삼겹살 600g",
     "price": 18000,
     "stock_status": "in_stock",
-    "image_url": null
+    "image_url": "assets/images/mock/products/prod_porkbelly_600g.jpeg"
   },
   {
     "product_id": "p1000031-e5f6-4789-a012-b3c4d5e6f731",
@@ -245,7 +245,7 @@
     "product_name": "한우 불고기용 300g",
     "price": 22000,
     "stock_status": "in_stock",
-    "image_url": null
+    "image_url": "assets/images/mock/products/prod_hanwoo_300g.jpeg"
   },
   {
     "product_id": "p1000032-e5f6-4789-a012-b3c4d5e6f732",
@@ -349,7 +349,7 @@
     "product_name": "국내산 멸치 중멸 500g",
     "price": 12000,
     "stock_status": "in_stock",
-    "image_url": null
+    "image_url": "assets/images/mock/products/prod_anchovy_500g.jpeg"
   },
   {
     "product_id": "p1000045-e5f6-4789-a012-b3c4d5e6f745",
