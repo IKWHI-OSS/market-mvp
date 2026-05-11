@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/router.dart';
+import '../../core/network/api_client.dart';
 import '../../shared/widgets/market_logo_title.dart';
 
 class MerchantDashboardScreen extends StatelessWidget {
@@ -8,6 +9,7 @@ class MerchantDashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final merchantName = ApiClient.instance.currentUser?.name ?? '상인';
     return Scaffold(
       backgroundColor: const Color(0xFFF2F7EC),
       appBar: AppBar(
@@ -34,7 +36,7 @@ class MerchantDashboardScreen extends StatelessWidget {
         children: [
           const SizedBox(height: 14),
           Text(
-            '반갑습니다, 김민석님',
+            '반갑습니다, $merchantName님',
             style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                   fontSize: 36,
                   fontWeight: FontWeight.w800,
@@ -92,8 +94,10 @@ class MerchantDashboardScreen extends StatelessWidget {
             iconBg: const Color(0xFFF5CDB5),
             title: '가격 정보 갱신',
             subtitle: '정보 변경 반영',
-            onTap: () => ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('재고/가격 관리(SCR-M-05)는 Phase 2 범위입니다.')),
+            onTap: () => Navigator.pushNamed(
+              context,
+              AppRoutes.merchantPriceHistory,
+              arguments: 'product_001',
             ),
           ),
           const SizedBox(height: 8),

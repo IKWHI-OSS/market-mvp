@@ -134,7 +134,7 @@ class _EventScreenState extends State<EventScreen> {
                 _BannerCard(
                   title: '한가위 햇채소 대전',
                   subtitle: '가을 장보기에 딱 맞는 신선 채소를 통해\n30% 할인된 행사로 만나보세요.',
-                  image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80',
+                  image: 'assets/images/events/event_fruit_special.jpeg',
                   onTap: () => Navigator.pushNamed(context, AppRoutes.notification),
                 ),
                 const SizedBox(height: 10),
@@ -169,10 +169,10 @@ class _EventScreenState extends State<EventScreen> {
                 _BannerCard(
                   title: '전통 도자기 장인 박람회',
                   subtitle: '지역 장인 부스와 공예 체험 프로그램 운영',
-                  image: 'https://images.unsplash.com/photo-1510166089176-b57564a542b1?auto=format&fit=crop&w=1200&q=80',
+                  image: 'assets/images/events/event_ceramic_fair.jpeg',
                   onTap: () => Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => const SpotlightScreen(storeId: 'store_003')),
+                    MaterialPageRoute(builder: (_) => const SpotlightScreen(storeId: 'd1000003-e5f6-4789-a012-b3c4d5e6f703')),
                   ),
                 ),
               ],
@@ -216,6 +216,13 @@ class _EventDetailView extends StatelessWidget {
               Text('${detail.periodText} · ${detail.zoneLabel}', style: const TextStyle(color: Color(0xFF7A8376))),
               const SizedBox(height: 10),
               Text(detail.description, style: const TextStyle(color: Color(0xFF3D3B34), height: 1.45)),
+              const SizedBox(height: 18),
+              _BannerCard(
+                title: '전통 도자기 장인 박람회',
+                subtitle: '전통 공예 체험과 장인 토크 세션 운영',
+                image: 'assets/images/events/event_ceramic_fair.jpeg',
+                onTap: () {},
+              ),
               const SizedBox(height: 18),
               Row(
                 children: [
@@ -291,12 +298,19 @@ class _HeroEventCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: Image.network(
-              'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80',
-              height: 140,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
+            child: event.imageUrl.startsWith('assets/')
+                ? Image.asset(
+                    event.imageUrl,
+                    height: 140,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  )
+                : Image.network(
+                    event.imageUrl,
+                    height: 140,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
           ),
           const SizedBox(height: 8),
           Row(
@@ -403,12 +417,19 @@ class _BannerCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(14),
         child: Stack(
           children: [
-            Image.network(
-              image,
-              height: 168,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
+            image.startsWith('assets/')
+                ? Image.asset(
+                    image,
+                    height: 168,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  )
+                : Image.network(
+                    image,
+                    height: 168,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
             Positioned.fill(
               child: DecoratedBox(
                 decoration: BoxDecoration(

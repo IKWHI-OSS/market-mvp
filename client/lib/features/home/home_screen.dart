@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../app/router.dart';
+import '../../core/network/api_client.dart';
+import '../../shared/utils/mock_image_mapper.dart';
 import '../../shared/widgets/market_logo_title.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -37,7 +39,7 @@ class HomeScreen extends StatelessWidget {
                       Icon(Icons.location_on, size: 14, color: Color(0xFF5F7A4F)),
                       SizedBox(width: 4),
                       Text(
-                        '중곡제일도깨비시장',
+                        '망원시장',
                         style: TextStyle(fontSize: 11, color: Color(0xFF5F7A4F), fontWeight: FontWeight.w600),
                       ),
                     ],
@@ -78,77 +80,93 @@ class HomeScreen extends StatelessWidget {
             onTap: () => Navigator.pushNamed(context, AppRoutes.drop),
           ),
           const SizedBox(height: 8),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(16),
-            child: Stack(
-              children: [
-                Image.network(
-                  'https://images.unsplash.com/photo-1605027990121-cbae9e0642df?auto=format&fit=crop&w=900&q=80',
-                  height: 320,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
-                Positioned.fill(
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          Colors.black.withValues(alpha: 0.06),
-                          Colors.black.withValues(alpha: 0.56),
-                        ],
-                      ),
+          FutureBuilder<List<DropData>>(
+            future: ApiClient.instance.getDrops(),
+            builder: (context, snapshot) {
+              final drops = snapshot.data ?? const <DropData>[];
+              final drop = drops.isNotEmpty ? drops.first : null;
+              final title = drop?.productName ?? '오늘 입고 예정 상품';
+              final status = drop?.status == 'arrived' ? '판매중' : '예정';
+              final timeText = (drop?.expectedAt ?? '').replaceFirst('T', ' ').split(':').take(2).join(':');
+              final badge = timeText.isNotEmpty ? '$status | $timeText' : status;
+              final imageAsset = drop == null
+                  ? 'assets/images/mock/products/prod_tangerine_3kg.jpeg'
+                  : (MockImageMapper.productAssetByName(drop.productName) ??
+                      MockImageMapper.storeAssetByName(drop.storeName) ??
+                      'assets/images/mock/products/prod_tangerine_3kg.jpeg');
+              return ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: Stack(
+                  children: [
+                    Image.asset(
+                      imageAsset,
+                      height: 320,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
                     ),
-                  ),
-                ),
-                const Positioned(
-                  left: 14,
-                  top: 12,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      color: Color(0xCC181818),
-                      borderRadius: BorderRadius.all(Radius.circular(14)),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                      child: Text(
-                        '예정 | 09:00',
-                        style: TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  left: 14,
-                  bottom: 68,
-                  child: Text(
-                    '하동에서 온 꿀맛 단감',
-                    style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                          color: Colors.white,
-                          height: 1.03,
+                    Positioned.fill(
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Colors.black.withValues(alpha: 0.06),
+                              Colors.black.withValues(alpha: 0.56),
+                            ],
+                          ),
                         ),
-                  ),
-                ),
-                Positioned(
-                  left: 14,
-                  right: 14,
-                  bottom: 14,
-                  child: SizedBox(
-                    height: 40,
-                    child: FilledButton.icon(
-                      style: FilledButton.styleFrom(
-                        backgroundColor: const Color(0xFF4B8A2A),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                       ),
-                      onPressed: () => Navigator.pushNamed(context, AppRoutes.drop),
-                      icon: const Icon(Icons.notifications_none, size: 18),
-                      label: const Text('알림 받기'),
                     ),
-                  ),
+                    Positioned(
+                      left: 14,
+                      top: 12,
+                      child: DecoratedBox(
+                        decoration: const BoxDecoration(
+                          color: Color(0xCC181818),
+                          borderRadius: BorderRadius.all(Radius.circular(14)),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                          child: Text(
+                            badge,
+                            style: const TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 14,
+                      bottom: 68,
+                      child: Text(
+                        title,
+                        style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                              color: Colors.white,
+                              height: 1.03,
+                            ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 14,
+                      right: 14,
+                      bottom: 14,
+                      child: SizedBox(
+                        height: 40,
+                        child: FilledButton.icon(
+                          style: FilledButton.styleFrom(
+                            backgroundColor: const Color(0xFF4B8A2A),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                          ),
+                          onPressed: () => Navigator.pushNamed(context, AppRoutes.drop),
+                          icon: const Icon(Icons.notifications_none, size: 18),
+                          label: const Text('알림 받기'),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              );
+            },
           ),
           const SizedBox(height: 14),
           Row(
@@ -194,13 +212,13 @@ class HomeScreen extends StatelessWidget {
                 _EventCard(
                   title: '전통시장 이벤트',
                   subtitle: '이번 주말, 봄 프로모션 5개 테마가 준비돼요',
-                  imageUrl: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80',
+                  imageUrl: 'assets/images/events/event_market_main.jpeg',
                   onTap: () => Navigator.pushNamed(context, AppRoutes.event),
                 ),
                 _EventCard(
                   title: '청과 특별전',
                   subtitle: '제철 과일 시식과 라이브 특가를 만나보세요',
-                  imageUrl: 'https://images.unsplash.com/photo-1519996521439-75b6d4d6f2f2?auto=format&fit=crop&w=900&q=80',
+                  imageUrl: 'assets/images/events/event_fruit_special.jpeg',
                   onTap: () => Navigator.pushNamed(context, AppRoutes.event),
                 ),
               ],
@@ -214,16 +232,18 @@ class HomeScreen extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           _SpotlightCard(
-            storeName: '중앙 채소점',
+            storeName: '망원신선야채',
             category: '청과/채소',
             description: '“매일 새벽 선별해 신선한 채소만 판매하고 있습니다.”',
+            imageUrl: 'assets/images/mock/stores/store_mangwon_fresh_veg.jpeg',
             onTap: () => Navigator.pushNamed(context, AppRoutes.spotlight),
           ),
           const SizedBox(height: 10),
           _SpotlightCard(
-            storeName: '연서 베이커리',
-            category: '간편식/빵',
-            description: '“시장표 베이커리의 진짜 매력, 매일 아침 직접 굽습니다.”',
+            storeName: '망원과일나라',
+            category: '과일',
+            description: '“당일 입고 과일 위주로 구성해 계절의 맛을 전합니다.”',
+            imageUrl: 'assets/images/mock/stores/store_mangwon_fruitnara.jpeg',
             onTap: () => Navigator.pushNamed(context, AppRoutes.spotlight),
           ),
         ],
@@ -330,10 +350,9 @@ class _EventCard extends StatelessWidget {
               SizedBox(
                 height: 106,
                 width: double.infinity,
-                child: Image.network(
-                  imageUrl,
-                  fit: BoxFit.cover,
-                ),
+                child: imageUrl.startsWith('assets/')
+                    ? Image.asset(imageUrl, fit: BoxFit.cover)
+                    : Image.network(imageUrl, fit: BoxFit.cover),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(12, 10, 12, 12),
@@ -359,12 +378,14 @@ class _SpotlightCard extends StatelessWidget {
     required this.storeName,
     required this.category,
     required this.description,
+    required this.imageUrl,
     required this.onTap,
   });
 
   final String storeName;
   final String category;
   final String description;
+  final String imageUrl;
   final VoidCallback onTap;
 
   @override
@@ -382,12 +403,19 @@ class _SpotlightCard extends StatelessWidget {
           Row(
             children: [
               ClipOval(
-                child: Image.network(
-                  'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=120&q=80',
-                  width: 34,
-                  height: 34,
-                  fit: BoxFit.cover,
-                ),
+                child: imageUrl.startsWith('assets/')
+                    ? Image.asset(
+                        imageUrl,
+                        width: 34,
+                        height: 34,
+                        fit: BoxFit.cover,
+                      )
+                    : Image.network(
+                        imageUrl,
+                        width: 34,
+                        height: 34,
+                        fit: BoxFit.cover,
+                      ),
               ),
               const SizedBox(width: 10),
               Column(

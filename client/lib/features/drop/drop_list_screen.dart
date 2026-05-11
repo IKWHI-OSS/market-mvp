@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/router.dart';
 import '../../core/network/api_client.dart';
+import '../../shared/utils/mock_image_mapper.dart';
 import '../../shared/widgets/error_state.dart';
 import '../../shared/widgets/market_logo_title.dart';
 import '../search/product_detail_screen.dart';
@@ -203,6 +204,7 @@ class _DropListScreenState extends State<DropListScreen> {
                       AppRoutes.productDetail,
                       arguments: ProductDetailArgs(productId: drop.productId),
                     ),
+                    onOpenSettingsTap: () => Navigator.pushNamed(context, AppRoutes.notification),
                     onSubscribeTap: () => _toggleSubscription(drop),
                   ),
                 ),
@@ -303,6 +305,7 @@ class _DropCard extends StatelessWidget {
     required this.statusKicker,
     required this.statusColor,
     required this.onTap,
+    required this.onOpenSettingsTap,
     required this.onSubscribeTap,
   });
 
@@ -311,6 +314,7 @@ class _DropCard extends StatelessWidget {
   final String statusKicker;
   final Color statusColor;
   final VoidCallback onTap;
+  final VoidCallback onOpenSettingsTap;
   final VoidCallback onSubscribeTap;
 
   String _displayDateTime(String raw) {
@@ -326,20 +330,10 @@ class _DropCard extends StatelessWidget {
     return '${d.year}-$month-$day $hour:$minute';
   }
 
-  String _imageUrl(String productId) {
-    switch (productId) {
-      case 'product_002':
-        return 'https://images.unsplash.com/photo-1607305387299-a3d9611cd469?auto=format&fit=crop&w=1200&q=80';
-      case 'product_003':
-        return 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80';
-      default:
-        return 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=1200&q=80';
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final subscribed = drop.isSubscribed;
+    final productAsset = MockImageMapper.productAssetByName(drop.productName);
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
@@ -356,12 +350,20 @@ class _DropCard extends StatelessWidget {
               borderRadius: const BorderRadius.vertical(top: Radius.circular(14)),
               child: Stack(
                 children: [
-                  Image.network(
-                    _imageUrl(drop.productId),
-                    width: double.infinity,
-                    height: 165,
-                    fit: BoxFit.cover,
-                  ),
+                  if (productAsset != null)
+                    Image.asset(
+                      productAsset,
+                      width: double.infinity,
+                      height: 165,
+                      fit: BoxFit.cover,
+                    )
+                  else
+                    Image.network(
+                      'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=1200&q=80',
+                      width: double.infinity,
+                      height: 165,
+                      fit: BoxFit.cover,
+                    ),
                   Positioned(
                     left: 8,
                     top: 8,
@@ -408,6 +410,18 @@ class _DropCard extends StatelessWidget {
                       const SizedBox(width: 4),
                       Text(subscribed ? '알림 설정됨' : '알림 설정', style: const TextStyle(fontSize: 11, color: Color(0xFF6A7465))),
                       const Spacer(),
+                      OutlinedButton(
+                        onPressed: onOpenSettingsTap,
+                        style: OutlinedButton.styleFrom(
+                          side: const BorderSide(color: Color(0xFFC6D1BC)),
+                          foregroundColor: const Color(0xFF5C6A54),
+                          minimumSize: const Size(88, 30),
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                        ),
+                        child: const Text('알림 설정'),
+                      ),
+                      const SizedBox(width: 8),
                       FilledButton.tonal(
                         onPressed: onSubscribeTap,
                         style: FilledButton.styleFrom(

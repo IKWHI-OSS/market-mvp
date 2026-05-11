@@ -57,7 +57,7 @@ class _MerchantStoryScreenState extends State<MerchantStoryScreen> {
     } catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('스토리 생성 실패: $e')),
+        SnackBar(content: Text('스토리 생성 실패: ${_normalizeError(e)}')),
       );
     } finally {
       if (mounted) setState(() => _loading = false);
@@ -71,21 +71,27 @@ class _MerchantStoryScreenState extends State<MerchantStoryScreen> {
       );
       return;
     }
-    final interview = _interviewController.text.trim();
-    final keywords = _keywordController.text
-        .split(',')
-        .map((e) => e.trim())
-        .where((e) => e.isNotEmpty)
-        .toList(growable: false);
+    final storyId = _result?.storyId;
     setState(() => _publishing = true);
     try {
-      await ApiClient.instance.createMerchantStory(
-        interviewText: interview,
-        keywords: keywords,
-        tone: _tone,
-        selectedLength: _selectedLength,
-        saveToStore: true,
-      );
+      if (storyId != null && storyId.isNotEmpty) {
+        await ApiClient.instance.publishStory(storyId, publish: true);
+      } else {
+        // Backward compatibility: story_id 미포함 응답 환경에서는 기존 저장 플로우로 게시 처리
+        final interview = _interviewController.text.trim();
+        final keywords = _keywordController.text
+            .split(',')
+            .map((e) => e.trim())
+            .where((e) => e.isNotEmpty)
+            .toList(growable: false);
+        await ApiClient.instance.createMerchantStory(
+          interviewText: interview,
+          keywords: keywords,
+          tone: _tone,
+          selectedLength: _selectedLength,
+          saveToStore: true,
+        );
+      }
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('스토리를 게시했어요.')),
@@ -98,11 +104,22 @@ class _MerchantStoryScreenState extends State<MerchantStoryScreen> {
     } catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('게시 실패: $e')),
+        SnackBar(content: Text('게시 실패: ${_normalizeError(e)}')),
       );
     } finally {
       if (mounted) setState(() => _publishing = false);
     }
+  }
+
+  String _normalizeError(Object error) {
+    final raw = error.toString().replaceFirst('Exception: ', '').trim();
+    if (raw.contains('SocketException') ||
+        raw.contains('ClientException') ||
+        raw.contains('Failed host lookup') ||
+        raw.contains('XMLHttpRequest')) {
+      return '네트워크 연결을 확인해주세요.';
+    }
+    return raw.isEmpty ? '알 수 없는 오류가 발생했습니다.' : raw;
   }
 
   @override
@@ -367,12 +384,6 @@ class _PreviewCard extends StatelessWidget {
             result.story,
             style: const TextStyle(fontSize: 14, color: Color(0xFF35322C), height: 1.45),
           ),
-          const SizedBox(height: 10),
-          if (result.interviewMasked.isNotEmpty)
-            Text(
-              '마스킹 적용: ${result.interviewMasked}',
-              style: const TextStyle(fontSize: 12, color: Color(0xFF7C6B62)),
-            ),
           if (result.hashtags.isNotEmpty) ...[
             const SizedBox(height: 10),
             Wrap(
@@ -391,13 +402,6 @@ class _PreviewCard extends StatelessWidget {
                         ),
                       ))
                   .toList(growable: false),
-            ),
-          ],
-          if (result.fallbackMode) ...[
-            const SizedBox(height: 10),
-            const Text(
-              'AI 응답 실패로 기본 템플릿을 사용했습니다.',
-              style: TextStyle(fontSize: 12, color: Color(0xFFA55A36), fontWeight: FontWeight.w700),
             ),
           ],
         ],

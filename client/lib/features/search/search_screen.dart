@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/router.dart';
 import '../../core/network/api_client.dart';
+import '../../shared/utils/mock_image_mapper.dart';
 import '../../shared/widgets/error_state.dart';
 import '../../shared/widgets/market_logo_title.dart';
 import 'product_detail_screen.dart';
@@ -56,6 +57,26 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   String _priceText(int value) => '₩${value.toString()}';
+
+  bool _isStoreRelevant(String query, String storeName) {
+    final q = query.toLowerCase();
+    final s = storeName.toLowerCase();
+
+    final fruitVegQuery = ['딸기', '과일', '채소', '야채', '과채', '샤인머스', '감귤', '한라봉', '대파', '시금치'];
+    final fishQuery = ['고등어', '수산', '생선', '해산물', '갈치', '광어', '오징어', '멸치'];
+    final meatQuery = ['삼겹', '한우', '정육', '돼지', '소고기', '불고기'];
+
+    if (fruitVegQuery.any((k) => q.contains(k))) {
+      return s.contains('과일') || s.contains('채소') || s.contains('야채');
+    }
+    if (fishQuery.any((k) => q.contains(k))) {
+      return s.contains('수산') || s.contains('해산물') || s.contains('건어물');
+    }
+    if (meatQuery.any((k) => q.contains(k))) {
+      return s.contains('정육');
+    }
+    return true;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -167,7 +188,10 @@ class _SearchScreenState extends State<SearchScreen> {
                   );
                 }
                 final items = snapshot.data ?? const <ProductSummary>[];
-                if (items.isEmpty) {
+                final queryText = _controller.text.trim();
+                final filteredItems = items.where((e) => _isStoreRelevant(queryText, e.storeName)).toList(growable: false);
+                final displayItems = filteredItems.isNotEmpty ? filteredItems : items;
+                if (displayItems.isEmpty) {
                   return ErrorStateWidget(
                     title: '검색 결과가 없어요',
                     description: '유사 상품으로 다시 찾아볼 수 있어요.',
@@ -189,16 +213,42 @@ class _SearchScreenState extends State<SearchScreen> {
                           style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: const Color(0xFF1F1F1F)),
                         ),
                         const SizedBox(width: 8),
-                        Text('${items.length}개 매장', style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Color(0xFF4F8A2E))),
+                        Text('${displayItems.length}개 매장', style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Color(0xFF4F8A2E))),
                         const Spacer(),
                         const Text('최근 업데이트 순', style: TextStyle(fontSize: 11, color: Color(0xFF929A8E))),
                       ],
                     ),
                     const SizedBox(height: 12),
-                    ...items.asMap().entries.map((entry) {
+                    ...() {
+                      final queryLower = _controller.text.trim().toLowerCase();
+                      final bestIndex = queryLower.isEmpty
+                          ? 0
+                          : displayItems.indexWhere((e) => e.productName.toLowerCase().contains(queryLower));
+                      final bestItem = displayItems[bestIndex >= 0 ? bestIndex : 0];
+                      final bestImage = MockImageMapper.productAssetByName(bestItem.productName) ??
+                          MockImageMapper.storeAssetByName(bestItem.storeName) ??
+                          '';
+                      return [
+                        _BestChoiceCard(
+                          item: bestItem,
+                          imageUrl: bestImage,
+                          onAddRoute: () => Navigator.pushNamed(context, AppRoutes.route),
+                          onTap: () => Navigator.pushNamed(
+                            context,
+                            AppRoutes.productDetail,
+                            arguments: ProductDetailArgs(productId: bestItem.productId),
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                      ];
+                    }(),
+                    ...displayItems.asMap().entries.map((entry) {
                       final index = entry.key;
                       final item = entry.value;
                       final isSoldOut = item.stockStatus == 'out_of_stock';
+                      final imagePath = MockImageMapper.productAssetByName(item.productName) ??
+                          MockImageMapper.storeAssetByName(item.storeName) ??
+                          '';
                       return Padding(
                         padding: const EdgeInsets.only(bottom: 10),
                         child: _CompareCard(
@@ -208,11 +258,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           statusText: _stockLabel(item.stockStatus),
                           subText: index == 0 ? '2시간 전  ·  450m' : index == 1 ? '1시간 전  ·  1.2km' : '30분 전  ·  800m',
                           disabled: isSoldOut,
-                          imageUrl: index == 0
-                              ? 'https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=200&q=80'
-                              : index == 1
-                                  ? 'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=200&q=80'
-                                  : 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=200&q=80',
+                          imageUrl: imagePath,
                           onTap: () => Navigator.pushNamed(
                             context,
                             AppRoutes.productDetail,
@@ -222,17 +268,6 @@ class _SearchScreenState extends State<SearchScreen> {
                         ),
                       );
                     }),
-                    const SizedBox(height: 12),
-                    _BestChoiceCard(
-                      item: items.first,
-                      imageUrl: 'https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=500&q=80',
-                      onAddRoute: () => Navigator.pushNamed(context, AppRoutes.route),
-                      onTap: () => Navigator.pushNamed(
-                        context,
-                        AppRoutes.productDetail,
-                        arguments: ProductDetailArgs(productId: items.first.productId),
-                      ),
-                    ),
                   ],
                 );
               },
@@ -333,7 +368,9 @@ class _CompareCard extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.network(imageUrl, width: 78, height: 78, fit: BoxFit.cover),
+                child: imageUrl.startsWith('assets/')
+                    ? Image.asset(imageUrl, width: 78, height: 78, fit: BoxFit.cover)
+                    : Image.network(imageUrl, width: 78, height: 78, fit: BoxFit.cover),
               ),
               const SizedBox(width: 10),
               Expanded(
@@ -440,7 +477,7 @@ class _BestChoiceCard extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      '서울 파머스 마켓',
+                      item.storeName,
                       style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                             color: Colors.white,
                             fontSize: 30,
@@ -450,12 +487,9 @@ class _BestChoiceCard extends StatelessWidget {
                   const SizedBox(width: 10),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(12),
-                    child: Image.network(
-                      imageUrl,
-                      width: 89,
-                      height: 89,
-                      fit: BoxFit.cover,
-                    ),
+                    child: imageUrl.startsWith('assets/')
+                        ? Image.asset(imageUrl, width: 89, height: 89, fit: BoxFit.cover)
+                        : Image.network(imageUrl, width: 89, height: 89, fit: BoxFit.cover),
                   ),
                 ],
               ),

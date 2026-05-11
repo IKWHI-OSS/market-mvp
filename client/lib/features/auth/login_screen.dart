@@ -70,17 +70,32 @@ class _LoginScreenState extends State<LoginScreen> {
       }
     } catch (e) {
       if (!mounted) return;
-      final raw = e.toString();
-      final message = raw.replaceFirst('Exception: ', '');
+      final message = _normalizeLoginError(e);
       await _showAuthDialog(
         title: '로그인 실패',
-        message: message == '아이디 또는 비밀번호를 확인해주세요.'
-            ? '등록되지 않은 계정이거나 비밀번호가 일치하지 않습니다.\n아이디와 비밀번호를 다시 확인해주세요.'
-            : message,
+        message: message,
       );
     } finally {
       if (mounted) setState(() => _loading = false);
     }
+  }
+
+  String _normalizeLoginError(Object error) {
+    final raw = error.toString().replaceFirst('Exception: ', '').trim();
+    if (raw.isEmpty) {
+      return '로그인 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.';
+    }
+    if (raw.contains('이메일 또는 비밀번호가 올바르지 않습니다') ||
+        raw.contains('아이디 또는 비밀번호')) {
+      return '등록되지 않은 계정이거나 비밀번호가 일치하지 않습니다.\n아이디와 비밀번호를 다시 확인해주세요.';
+    }
+    if (raw.contains('SocketException') ||
+        raw.contains('ClientException') ||
+        raw.contains('Failed host lookup') ||
+        raw.contains('XMLHttpRequest')) {
+      return '네트워크 연결이 원활하지 않습니다.\n인터넷 연결 또는 서버 상태를 확인해주세요.';
+    }
+    return '로그인 중 오류가 발생했습니다.\n$raw';
   }
 
   @override

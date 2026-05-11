@@ -1,47 +1,87 @@
 import 'package:flutter/material.dart';
 
 import '../../app/router.dart';
+import '../../shared/utils/mock_image_mapper.dart';
 import '../../shared/widgets/market_logo_title.dart';
 import '../search/product_detail_screen.dart';
+import 'widgets/market_map_panel.dart';
+
+class RouteScreenArgs {
+  const RouteScreenArgs({required this.stops});
+  final List<RouteStopSeed> stops;
+}
+
+class RouteStopSeed {
+  const RouteStopSeed({
+    required this.storeName,
+    required this.zoneLabel,
+    required this.distanceM,
+  });
+
+  final String storeName;
+  final String zoneLabel;
+  final int distanceM;
+}
 
 class RouteScreen extends StatefulWidget {
-  const RouteScreen({super.key});
+  const RouteScreen({super.key, this.args});
+  final RouteScreenArgs? args;
 
   @override
   State<RouteScreen> createState() => _RouteScreenState();
 }
 
 class _RouteScreenState extends State<RouteScreen> {
-  final List<_RouteStop> _stops = [
+  late final List<_RouteStop> _stops = _buildStops();
+
+  List<_RouteStop> _buildStops() {
+    final seeded = widget.args?.stops ?? const <RouteStopSeed>[];
+    if (seeded.isNotEmpty) {
+      return seeded.asMap().entries.map((e) {
+        final idx = e.key;
+        final s = e.value;
+        final image = MockImageMapper.storeAssetByName(s.storeName) ??
+            'assets/images/mock/stores/store_mangwon_vegmart.jpeg';
+        return _RouteStop(
+          title: s.storeName,
+          distance: idx == 0 ? '현재 위치에서 ${s.distanceM}m' : '+${s.distanceM}m',
+          zone: s.zoneLabel,
+          productId: 'product_001',
+          imageUrl: image,
+        );
+      }).toList(growable: false);
+    }
+    return [
     const _RouteStop(
       title: '정선 할머니 한과',
       distance: '현재 위치에서 80m',
       zone: 'A구역 12호',
       productId: 'product_001',
-      imageUrl: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=200&q=80',
+      imageUrl: 'assets/images/mock/stores/store_jeongseon_halmeoni_hangwa.jpeg',
     ),
     const _RouteStop(
       title: '원조 마약김밥 2호점',
       distance: '+150m',
       zone: 'B구역 05호',
       productId: 'product_002',
-      imageUrl: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=200&q=80',
+      imageUrl: 'assets/images/mock/stores/store_mangwon_banchan.jpeg',
     ),
     const _RouteStop(
       title: '대성 축산물 도매',
       distance: '+220m',
       zone: 'C구역 08호',
       productId: 'product_001',
-      imageUrl: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=200&q=80',
+      imageUrl: 'assets/images/mock/stores/store_mangwon_meat.jpeg',
     ),
     const _RouteStop(
       title: '청정 채소 달래상회',
       distance: '+320m',
       zone: 'A구역 20호',
       productId: 'product_003',
-      imageUrl: 'https://images.unsplash.com/photo-1518843875459-f738682238a6?auto=format&fit=crop&w=200&q=80',
+      imageUrl: 'assets/images/mock/stores/store_mangwon_fresh_veg.jpeg',
     ),
   ];
+  }
 
   int _currentIndex = 0;
   final Set<int> _visited = <int>{};
@@ -72,9 +112,10 @@ class _RouteScreenState extends State<RouteScreen> {
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.network(
-              'https://images.unsplash.com/photo-1577086664693-894d8405334a?auto=format&fit=crop&w=1200&q=80',
-              fit: BoxFit.cover,
+            child: MarketMapPanel(
+              centerLat: 37.55727742,
+              centerLng: 126.9059507,
+              radiusMeters: 113,
             ),
           ),
           Positioned.fill(
@@ -287,12 +328,19 @@ class _NextStoreCard extends StatelessWidget {
               ),
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.network(
-                  stop.imageUrl,
-                  width: 72,
-                  height: 72,
-                  fit: BoxFit.cover,
-                ),
+                child: stop.imageUrl.startsWith('assets/')
+                    ? Image.asset(
+                        stop.imageUrl,
+                        width: 72,
+                        height: 72,
+                        fit: BoxFit.cover,
+                      )
+                    : Image.network(
+                        stop.imageUrl,
+                        width: 72,
+                        height: 72,
+                        fit: BoxFit.cover,
+                      ),
               ),
             ],
           ),

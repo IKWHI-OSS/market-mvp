@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/router.dart';
 import '../../core/network/api_client.dart';
+import '../route/route_screen.dart';
 import '../../shared/widgets/market_logo_title.dart';
 import '../home/spotlight_screen.dart';
 
@@ -38,15 +39,18 @@ class _AgentScreenState extends State<AgentScreen> {
       return;
     }
 
+    final people = _extractPeople(query);
+    final budget = _extractBudget(query);
     setState(() {
       _userQuery = query;
       _loading = true;
     });
+    _queryController.clear();
     try {
       final data = await ApiClient.instance.requestShoppingAgent(
         query: query,
-        people: 2,
-        budget: 20000,
+        people: people,
+        budget: budget,
         saveAsList: true,
       );
       if (!mounted) return;
@@ -54,7 +58,7 @@ class _AgentScreenState extends State<AgentScreen> {
     } catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('추천 생성 실패: $e')),
+        SnackBar(content: Text('추천 생성 실패: ${_normalizeError(e)}')),
       );
     } finally {
       if (mounted) setState(() => _loading = false);
@@ -79,13 +83,25 @@ class _AgentScreenState extends State<AgentScreen> {
   }
 
   void _startRoute() {
-    if ((_result?.shoppingListId ?? '').isEmpty) {
+    final stores = _result?.storeMatches ?? const <ShoppingAgentStoreMatch>[];
+    if ((_result?.shoppingListId ?? '').isEmpty || stores.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('리스트 생성 후 동선을 시작할 수 있어요.')),
       );
       return;
     }
-    Navigator.pushNamed(context, AppRoutes.route);
+    final args = RouteScreenArgs(
+      stops: stores
+          .map(
+            (s) => RouteStopSeed(
+              storeName: s.storeName,
+              zoneLabel: s.zoneLabel,
+              distanceM: s.distanceM,
+            ),
+          )
+          .toList(growable: false),
+    );
+    Navigator.pushNamed(context, AppRoutes.route, arguments: args);
   }
 
   @override
@@ -223,6 +239,22 @@ class _AgentScreenState extends State<AgentScreen> {
                           height: 1.35),
                     ),
                   ),
+                  if (_result != null) ...[
+                    const SizedBox(height: 8),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        _result!.llmAssisted
+                            ? 'AI 보강 응답 사용'
+                            : '기본 추천 로직 사용',
+                        style: const TextStyle(
+                          fontSize: 12,
+                          color: Color(0xFF6E7569),
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ],
                   const SizedBox(height: 14),
                   if (_loading)
                     const Center(child: CircularProgressIndicator())
@@ -375,6 +407,37 @@ class _AgentScreenState extends State<AgentScreen> {
     final hour12 = dateTime.hour % 12 == 0 ? 12 : dateTime.hour % 12;
     final minute = dateTime.minute.toString().padLeft(2, '0');
     return '${isAm ? '오전' : '오후'} $hour12:$minute';
+  }
+
+  int? _extractPeople(String query) {
+    final regex = RegExp(r'(\\d+)\\s*인');
+    final match = regex.firstMatch(query);
+    if (match == null) return null;
+    return int.tryParse(match.group(1) ?? '');
+  }
+
+  int? _extractBudget(String query) {
+    final manwon = RegExp(r'(\\d+)\\s*만\\s*원?').firstMatch(query);
+    if (manwon != null) {
+      final value = int.tryParse(manwon.group(1) ?? '');
+      if (value != null) return value * 10000;
+    }
+    final won = RegExp(r'(\\d{4,7})\\s*원').firstMatch(query);
+    if (won != null) {
+      return int.tryParse(won.group(1) ?? '');
+    }
+    return null;
+  }
+
+  String _normalizeError(Object error) {
+    final raw = error.toString().replaceFirst('Exception: ', '').trim();
+    if (raw.contains('SocketException') ||
+        raw.contains('ClientException') ||
+        raw.contains('Failed host lookup') ||
+        raw.contains('XMLHttpRequest')) {
+      return '네트워크 연결을 확인해주세요.';
+    }
+    return raw.isEmpty ? '알 수 없는 오류가 발생했습니다.' : raw;
   }
 }
 

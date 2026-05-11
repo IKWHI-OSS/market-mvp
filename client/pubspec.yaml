@@ -24,3 +24,7 @@ flutter:
     - assets/images/branding/
     - assets/images/new_logo/
     - assets/images/merchant/
+    - assets/images/mock/stores/
+    - assets/images/mock/products/
+    - assets/images/mock/merchants/
+    - assets/images/events/

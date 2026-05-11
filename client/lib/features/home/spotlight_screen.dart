@@ -75,12 +75,29 @@ class _SpotlightScreenState extends State<SpotlightScreen> {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(14),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(store.storeName, style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: const Color(0xFF2F5710))),
-                        const SizedBox(height: 6),
-                        Text(store.summary, style: const TextStyle(color: Color(0xFF4D5A43), height: 1.4)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: store.imageUrl.startsWith('assets/')
+                                ? Image.asset(
+                                    store.imageUrl,
+                                    width: double.infinity,
+                                    height: 120,
+                                    fit: BoxFit.cover,
+                                  )
+                                : Image.network(
+                                    store.imageUrl,
+                                    width: double.infinity,
+                                    height: 120,
+                                    fit: BoxFit.cover,
+                                  ),
+                          ),
+                          const SizedBox(height: 10),
+                          Text(store.storeName, style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: const Color(0xFF2F5710))),
+                          const SizedBox(height: 6),
+                          Text(store.summary, style: const TextStyle(color: Color(0xFF4D5A43), height: 1.4)),
                         const SizedBox(height: 10),
                         FilledButton.tonal(
                           onPressed: () => Navigator.push(
@@ -109,12 +126,14 @@ class _SpotlightDetailView extends StatelessWidget {
 
   String _heroImage(String storeId) {
     switch (storeId) {
-      case 'store_003':
-        return 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80';
-      case 'store_004':
-        return 'https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1200&q=80';
+      case 'd1000001-e5f6-4789-a012-b3c4d5e6f701':
+        return 'assets/images/mock/stores/store_mangwon_fresh_veg.jpeg';
+      case 'd1000003-e5f6-4789-a012-b3c4d5e6f703':
+        return 'assets/images/mock/stores/store_mangwon_fruitnara.jpeg';
+      case 'd1000005-e5f6-4789-a012-b3c4d5e6f705':
+        return 'assets/images/mock/stores/store_mangwon_fish.jpeg';
       default:
-        return 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80';
+        return 'assets/images/mock/stores/store_mangwon_vegmart.jpeg';
     }
   }
 
@@ -175,12 +194,19 @@ class _SpotlightDetailView extends StatelessWidget {
                     ),
                     ClipRRect(
                       borderRadius: const BorderRadius.vertical(bottom: Radius.circular(16)),
-                      child: Image.network(
-                        _heroImage(detail.storeId),
-                        height: 220,
-                        width: double.infinity,
-                        fit: BoxFit.cover,
-                      ),
+                      child: _heroImage(detail.storeId).startsWith('assets/')
+                          ? Image.asset(
+                              _heroImage(detail.storeId),
+                              height: 220,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            )
+                          : Image.network(
+                              _heroImage(detail.storeId),
+                              height: 220,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            ),
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(12, 10, 12, 12),
@@ -197,7 +223,7 @@ class _SpotlightDetailView extends StatelessWidget {
                           ),
                           const SizedBox(height: 6),
                           Text(
-                            '청년 과일 상점',
+                            detail.storeName,
                             style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: const Color(0xFF2F5710)),
                           ),
                           const SizedBox(height: 8),
@@ -209,6 +235,56 @@ class _SpotlightDetailView extends StatelessWidget {
                           const Text(
                             '매일 아침 제철 과일을 선별해 소개합니다. 신선한 품질과 합리적 가격을 함께 전하고 있어요.',
                             style: TextStyle(fontSize: 13, color: Color(0xFF5E5B53), height: 1.5),
+                          ),
+                          const SizedBox(height: 12),
+                          FutureBuilder<Map<String, dynamic>?>(
+                            future: ApiClient.instance.getPublishedStoryForStore(detail.storeId),
+                            builder: (context, storySnapshot) {
+                              if (storySnapshot.connectionState != ConnectionState.done) {
+                                return const SizedBox.shrink();
+                              }
+                              final story = storySnapshot.data;
+                              if (story == null || story.isEmpty) {
+                                return const SizedBox.shrink();
+                              }
+                              return Container(
+                                width: double.infinity,
+                                padding: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFEEF6E7),
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(color: const Color(0xFFD8E9CB)),
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      '점포 스토리',
+                                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: Color(0xFF4A7D1A)),
+                                    ),
+                                    const SizedBox(height: 4),
+                                    Text(
+                                      (story['story'] as String? ?? '').trim(),
+                                      maxLines: 3,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: const TextStyle(fontSize: 13, height: 1.4),
+                                    ),
+                                    const SizedBox(height: 8),
+                                    Align(
+                                      alignment: Alignment.centerRight,
+                                      child: TextButton(
+                                        onPressed: () => Navigator.pushNamed(
+                                          context,
+                                          AppRoutes.storePublicStory,
+                                          arguments: detail.storeId,
+                                        ),
+                                        child: const Text('전체 스토리 보기'),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
                           ),
                           const SizedBox(height: 10),
                           _InfoRow(title: '상호', value: detail.storeName),
