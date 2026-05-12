@@ -162,7 +162,7 @@ class _MerchantDashboardScreenState extends State<MerchantDashboardScreen> {
             onTap: () => Navigator.pushNamed(
               context,
               AppRoutes.merchantPriceHistory,
-              arguments: 'product_001',
+              arguments: 'p1000468-e5f6-4789-a012-b3c4d5e6f768',
             ),
           ),
           const SizedBox(height: 8),
