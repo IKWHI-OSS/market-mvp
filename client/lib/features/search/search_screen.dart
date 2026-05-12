@@ -6,6 +6,7 @@ import '../../shared/utils/mock_image_mapper.dart';
 import '../../shared/widgets/error_state.dart';
 import '../../shared/widgets/market_logo_title.dart';
 import 'product_detail_screen.dart';
+import '../../core/repositories/repository_provider.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -39,7 +40,7 @@ class _SearchScreenState extends State<SearchScreen> {
       return;
     }
     setState(() {
-      _future = ApiClient.instance.searchProducts(query: query);
+      _future = context.marketRepository.searchProducts(query: query);
     });
   }
 

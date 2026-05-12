@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../core/network/api_client.dart';
 import '../../shared/widgets/market_logo_title.dart';
+import '../../core/repositories/repository_provider.dart';
 
 class StorePublicStoryScreen extends StatefulWidget {
   const StorePublicStoryScreen({super.key, required this.storeId});
@@ -18,7 +18,7 @@ class _StorePublicStoryScreenState extends State<StorePublicStoryScreen> {
   @override
   void initState() {
     super.initState();
-    _future = ApiClient.instance.getPublishedStoryForStore(widget.storeId);
+    _future = context.marketRepository.getPublishedStoryForStore(widget.storeId);
   }
 
   @override

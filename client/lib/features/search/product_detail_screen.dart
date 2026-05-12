@@ -5,6 +5,7 @@ import '../../core/network/api_client.dart';
 import '../../shared/widgets/error_state.dart';
 import '../../shared/widgets/market_logo_title.dart';
 import '../home/spotlight_screen.dart';
+import '../../core/repositories/repository_provider.dart';
 
 class ProductDetailArgs {
   const ProductDetailArgs({required this.productId});
@@ -27,7 +28,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
   @override
   void initState() {
     super.initState();
-    _future = ApiClient.instance.getProductDetail(widget.args.productId);
+    _future = context.marketRepository.getProductDetail(widget.args.productId);
   }
 
   String _imageForProduct(String productId) {
@@ -72,7 +73,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               description: '잠시 후 다시 시도해주세요.',
               onRetry: () {
                 setState(() {
-                  _future = ApiClient.instance.getProductDetail(widget.args.productId);
+                  _future = context.marketRepository.getProductDetail(widget.args.productId);
                 });
               },
               onSecondary: () => Navigator.pop(context),

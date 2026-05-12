@@ -5,6 +5,7 @@ import '../../core/network/api_client.dart';
 import '../../shared/widgets/error_state.dart';
 import '../../shared/widgets/market_logo_title.dart';
 import 'spotlight_screen.dart';
+import '../../core/repositories/repository_provider.dart';
 
 class EventScreen extends StatefulWidget {
   const EventScreen({super.key, this.eventId});
@@ -23,9 +24,9 @@ class _EventScreenState extends State<EventScreen> {
   @override
   void initState() {
     super.initState();
-    _listFuture = ApiClient.instance.getEvents();
+    _listFuture = context.marketRepository.getEvents();
     if (widget.eventId != null) {
-      _detailFuture = ApiClient.instance.getEventDetail(widget.eventId!);
+      _detailFuture = context.marketRepository.getEventDetail(widget.eventId!);
     }
   }
 
@@ -53,7 +54,7 @@ class _EventScreenState extends State<EventScreen> {
               return ErrorStateWidget(
                 title: '행사 정보를 불러오지 못했어요',
                 description: '잠시 후 다시 시도해주세요.',
-                onRetry: () => setState(() => _listFuture = ApiClient.instance.getEvents()),
+                onRetry: () => setState(() => _listFuture = context.marketRepository.getEvents()),
                 onSecondary: () => Navigator.pushNamed(context, AppRoutes.home),
                 secondaryLabel: '운영 공지 보기',
               );
@@ -63,7 +64,7 @@ class _EventScreenState extends State<EventScreen> {
               return ErrorStateWidget(
                 title: '행사가 없어요',
                 description: '인근 시장 행사 추천을 확인해보세요.',
-                onRetry: () => setState(() => _listFuture = ApiClient.instance.getEvents()),
+                onRetry: () => setState(() => _listFuture = context.marketRepository.getEvents()),
                 onSecondary: () => Navigator.pushNamed(context, AppRoutes.home),
                 secondaryLabel: '인근 시장 행사 추천',
               );

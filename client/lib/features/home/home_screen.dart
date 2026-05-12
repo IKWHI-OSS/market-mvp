@@ -4,6 +4,7 @@ import '../../app/router.dart';
 import '../../core/network/api_client.dart';
 import '../../shared/utils/mock_image_mapper.dart';
 import '../../shared/widgets/market_logo_title.dart';
+import '../../core/repositories/repository_provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -81,7 +82,7 @@ class HomeScreen extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           FutureBuilder<List<DropData>>(
-            future: ApiClient.instance.getDrops(),
+            future: context.marketRepository.getDrops(),
             builder: (context, snapshot) {
               final drops = snapshot.data ?? const <DropData>[];
               final drop = drops.isNotEmpty ? drops.first : null;

@@ -6,6 +6,7 @@ import '../../shared/utils/mock_image_mapper.dart';
 import '../../shared/widgets/error_state.dart';
 import '../../shared/widgets/market_logo_title.dart';
 import '../search/product_detail_screen.dart';
+import '../../core/repositories/repository_provider.dart';
 
 class DropListScreen extends StatefulWidget {
   const DropListScreen({super.key});
@@ -21,12 +22,12 @@ class _DropListScreenState extends State<DropListScreen> {
   @override
   void initState() {
     super.initState();
-    _future = ApiClient.instance.getDrops();
+    _future = context.marketRepository.getDrops();
   }
 
   Future<void> _reload() async {
     setState(() {
-      _future = ApiClient.instance.getDrops();
+      _future = context.marketRepository.getDrops();
     });
   }
 
@@ -81,7 +82,7 @@ class _DropListScreenState extends State<DropListScreen> {
   }
 
   Future<void> _toggleSubscription(DropData drop) async {
-    await ApiClient.instance.setDropSubscription(dropId: drop.dropId, subscribe: !drop.isSubscribed);
+    await context.marketRepository.setDropSubscription(dropId: drop.dropId, subscribe: !drop.isSubscribed);
     if (!mounted) {
       return;
     }

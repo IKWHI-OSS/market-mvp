@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 import '../../app/router.dart';
-import '../../core/network/api_client.dart';
 import '../../shared/widgets/market_logo_title.dart';
+import '../../core/repositories/repository_provider.dart';
 
 class MerchantDashboardScreen extends StatelessWidget {
   const MerchantDashboardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final merchantName = ApiClient.instance.currentUser?.name ?? '상인';
+    final merchantName = context.marketRepository.currentUser?.name ?? '상인';
     return Scaffold(
       backgroundColor: const Color(0xFFF2F7EC),
       appBar: AppBar(

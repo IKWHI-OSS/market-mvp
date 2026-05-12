@@ -5,6 +5,7 @@ import '../../core/network/api_client.dart';
 import '../route/route_screen.dart';
 import '../../shared/widgets/market_logo_title.dart';
 import '../home/spotlight_screen.dart';
+import '../../core/repositories/repository_provider.dart';
 
 class AgentScreen extends StatefulWidget {
   const AgentScreen({super.key});
@@ -47,7 +48,7 @@ class _AgentScreenState extends State<AgentScreen> {
     });
     _queryController.clear();
     try {
-      final data = await ApiClient.instance.requestShoppingAgent(
+      final data = await context.marketRepository.requestShoppingAgent(
         query: query,
         people: people,
         budget: budget,

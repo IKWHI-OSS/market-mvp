@@ -4,6 +4,7 @@ import '../../app/router.dart';
 import '../../core/network/api_client.dart';
 import '../../shared/widgets/error_state.dart';
 import '../../shared/widgets/market_logo_title.dart';
+import '../../core/repositories/repository_provider.dart';
 
 class SpotlightScreen extends StatefulWidget {
   const SpotlightScreen({super.key, this.storeId});
@@ -21,9 +22,9 @@ class _SpotlightScreenState extends State<SpotlightScreen> {
   @override
   void initState() {
     super.initState();
-    _listFuture = ApiClient.instance.getSpotlights();
+    _listFuture = context.marketRepository.getSpotlights();
     if (widget.storeId != null) {
-      _detailFuture = ApiClient.instance.getSpotlightDetail(widget.storeId!);
+      _detailFuture = context.marketRepository.getSpotlightDetail(widget.storeId!);
     }
   }
 
@@ -45,7 +46,7 @@ class _SpotlightScreenState extends State<SpotlightScreen> {
             return ErrorStateWidget(
               title: '점포 정보를 불러오지 못했어요',
               description: '잠시 후 다시 시도해주세요.',
-              onRetry: () => setState(() => _listFuture = ApiClient.instance.getSpotlights()),
+              onRetry: () => setState(() => _listFuture = context.marketRepository.getSpotlights()),
               onSecondary: () => Navigator.pushNamed(context, AppRoutes.route),
               secondaryLabel: '인근 시장 안내',
             );
@@ -55,7 +56,7 @@ class _SpotlightScreenState extends State<SpotlightScreen> {
             return ErrorStateWidget(
               title: '스포트라이트 점포가 없어요',
               description: '기본 점포 프로필을 확인해보세요.',
-              onRetry: () => setState(() => _listFuture = ApiClient.instance.getSpotlights()),
+              onRetry: () => setState(() => _listFuture = context.marketRepository.getSpotlights()),
             );
           }
           return ListView.separated(
@@ -238,7 +239,7 @@ class _SpotlightDetailView extends StatelessWidget {
                           ),
                           const SizedBox(height: 12),
                           FutureBuilder<Map<String, dynamic>?>(
-                            future: ApiClient.instance.getPublishedStoryForStore(detail.storeId),
+                            future: context.marketRepository.getPublishedStoryForStore(detail.storeId),
                             builder: (context, storySnapshot) {
                               if (storySnapshot.connectionState != ConnectionState.done) {
                                 return const SizedBox.shrink();

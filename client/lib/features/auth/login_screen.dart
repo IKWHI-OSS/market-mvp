@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/router.dart';
-import '../../core/network/api_client.dart';
+import '../../core/repositories/repository_provider.dart';
 
 enum _RoleChoice { consumer, merchant }
 
@@ -50,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     setState(() => _loading = true);
     try {
-      final session = await ApiClient.instance.login(
+      final session = await context.marketRepository.login(
         email: email,
         password: password,
       );

@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 const _baseUrl = String.fromEnvironment(
   'API_BASE_URL',
-  defaultValue: 'https://market-api-production-6e52.up.railway.app/api/v1',
+  defaultValue: 'http://54.180.102.166/api/v1',
 );
 const _defaultMarketId = 'f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701';
 

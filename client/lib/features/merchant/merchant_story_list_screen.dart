@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../core/network/api_client.dart';
 import '../../shared/widgets/market_logo_title.dart';
+import '../../core/repositories/repository_provider.dart';
 
 class MerchantStoryListScreen extends StatefulWidget {
   const MerchantStoryListScreen({super.key});
@@ -16,24 +16,24 @@ class _MerchantStoryListScreenState extends State<MerchantStoryListScreen> {
   @override
   void initState() {
     super.initState();
-    _future = ApiClient.instance.listMyStories();
+    _future = context.marketRepository.listMyStories();
   }
 
   Future<void> _togglePublish(Map<String, dynamic> story, bool value) async {
     final storyId = story['story_id'] as String?;
     if (storyId == null || storyId.isEmpty) return;
-    await ApiClient.instance.publishStory(storyId, publish: value);
+    await context.marketRepository.publishStory(storyId, publish: value);
     if (!mounted) return;
     setState(() {
-      _future = ApiClient.instance.listMyStories();
+      _future = context.marketRepository.listMyStories();
     });
   }
 
   Future<void> _deleteStory(String storyId) async {
-    await ApiClient.instance.deleteStory(storyId);
+    await context.marketRepository.deleteStory(storyId);
     if (!mounted) return;
     setState(() {
-      _future = ApiClient.instance.listMyStories();
+      _future = context.marketRepository.listMyStories();
     });
   }
 

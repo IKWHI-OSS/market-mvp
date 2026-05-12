@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../app/router.dart';
 import '../../core/network/api_client.dart';
 import '../../shared/widgets/market_logo_title.dart';
+import '../../core/repositories/repository_provider.dart';
 
 class MerchantStoryScreen extends StatefulWidget {
   const MerchantStoryScreen({super.key});
@@ -45,7 +46,7 @@ class _MerchantStoryScreenState extends State<MerchantStoryScreen> {
 
     setState(() => _loading = true);
     try {
-      final data = await ApiClient.instance.createMerchantStory(
+      final data = await context.marketRepository.createMerchantStory(
         interviewText: interview,
         keywords: keywords,
         tone: _tone,
@@ -75,7 +76,7 @@ class _MerchantStoryScreenState extends State<MerchantStoryScreen> {
     setState(() => _publishing = true);
     try {
       if (storyId != null && storyId.isNotEmpty) {
-        await ApiClient.instance.publishStory(storyId, publish: true);
+        await context.marketRepository.publishStory(storyId, publish: true);
       } else {
         // Backward compatibility: story_id 미포함 응답 환경에서는 기존 저장 플로우로 게시 처리
         final interview = _interviewController.text.trim();
@@ -84,7 +85,7 @@ class _MerchantStoryScreenState extends State<MerchantStoryScreen> {
             .map((e) => e.trim())
             .where((e) => e.isNotEmpty)
             .toList(growable: false);
-        await ApiClient.instance.createMerchantStory(
+        await context.marketRepository.createMerchantStory(
           interviewText: interview,
           keywords: keywords,
           tone: _tone,

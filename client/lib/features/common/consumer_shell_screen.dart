@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../core/network/api_client.dart';
 import '../home/home_screen.dart';
 import '../route/route_screen.dart';
 import '../search/search_screen.dart';
 import '../shopping/shopping_list_screen.dart';
+import '../../core/repositories/repository_provider.dart';
 
 class ConsumerShellScreen extends StatefulWidget {
   const ConsumerShellScreen({super.key, this.initialIndex = 0});
@@ -56,7 +56,7 @@ class _MyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final userName = ApiClient.instance.currentUser?.name ?? '사용자';
+    final userName = context.marketRepository.currentUser?.name ?? '사용자';
     return Scaffold(
       backgroundColor: const Color(0xFFF1F7EA),
       body: SafeArea(

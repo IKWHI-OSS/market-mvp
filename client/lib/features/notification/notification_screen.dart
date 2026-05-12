@@ -6,6 +6,7 @@ import '../../shared/widgets/error_state.dart';
 import '../home/event_screen.dart';
 import '../home/spotlight_screen.dart';
 import '../search/product_detail_screen.dart';
+import '../../core/repositories/repository_provider.dart';
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({super.key});
@@ -21,18 +22,18 @@ class _NotificationScreenState extends State<NotificationScreen> {
   @override
   void initState() {
     super.initState();
-    _future = ApiClient.instance.getNotifications();
+    _future = context.marketRepository.getNotifications();
   }
 
   Future<void> _refresh() async {
     setState(() {
-      _future = ApiClient.instance.getNotifications();
+      _future = context.marketRepository.getNotifications();
     });
   }
 
   Future<void> _markAllRead(List<NotificationData> items) async {
     for (final item in items.where((e) => !e.isRead)) {
-      await ApiClient.instance.markNotificationRead(item.notificationId);
+      await context.marketRepository.markNotificationRead(item.notificationId);
     }
     if (!mounted) {
       return;
@@ -54,7 +55,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
   }
 
   Future<void> _openNotification(NotificationData item) async {
-    await ApiClient.instance.markNotificationRead(item.notificationId);
+    await context.marketRepository.markNotificationRead(item.notificationId);
     if (!mounted) {
       return;
     }

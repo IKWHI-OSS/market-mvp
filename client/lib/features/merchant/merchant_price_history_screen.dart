@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../core/network/api_client.dart';
 import '../../shared/widgets/market_logo_title.dart';
+import '../../core/repositories/repository_provider.dart';
 
 class MerchantPriceHistoryScreen extends StatefulWidget {
   const MerchantPriceHistoryScreen({super.key, required this.productId});
@@ -18,7 +18,7 @@ class _MerchantPriceHistoryScreenState extends State<MerchantPriceHistoryScreen>
   @override
   void initState() {
     super.initState();
-    _future = ApiClient.instance.getProductPriceHistory(widget.productId);
+    _future = context.marketRepository.getProductPriceHistory(widget.productId);
   }
 
   @override
