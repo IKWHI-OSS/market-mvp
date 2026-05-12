@@ -23,6 +23,7 @@ from app.db.models.store import Store
 from app.db.models.product import Product
 from app.db.models.merchant import Merchant
 from app.core.config import settings
+from app.db.repositories import story_repository as story_repo
 
 logger = logging.getLogger(__name__)
 
@@ -257,6 +258,18 @@ def _call_llm(
 # 서비스 메인
 # ──────────────────────────────────────────────
 
+def _resolve_merchant_id(db: Session, user, store_id: str) -> Optional[str]:
+    user_id = getattr(user, "user_id", None)
+    if not user_id:
+        return None
+    row = (
+        db.query(Merchant.merchant_id)
+        .filter(Merchant.user_id == user_id, Merchant.store_id == store_id)
+        .first()
+    )
+    return row[0] if row else None
+
+
 def generate_story(
     db: Session,
     user,
@@ -266,6 +279,8 @@ def generate_story(
     keywords: Optional[list[str]] = None,
     tone: str = "친근한",
     selected_length: str = "normal",
+    publish: bool = False,
+    persist: bool = True,
     llm_fn=None,           # 테스트용 DI
 ) -> dict:
     """
@@ -273,7 +288,9 @@ def generate_story(
     - merchant 권한 검증
     - Store + Product 로드
     - LLM 호출 (실패 시 fallback)
+    - persist=True 면 Story 테이블에 저장 (기본 ON, ADR-04)
     - save_to_store=True면 Store.store_story_summary 업데이트
+    - publish=True면 생성과 동시에 게시 (소비자 노출)
     """
     if user.role.value != "merchant":
         raise HTTPException(status_code=403, detail="상인 권한이 필요합니다.")
@@ -313,7 +330,6 @@ def generate_story(
     masked_interview = _mask_sensitive(interview_text or "")
 
     if llm_fn is not None:
-        # 테스트용 주입
         try:
             story_text = llm_fn(
                 store_name=store_name,
@@ -353,9 +369,32 @@ def generate_story(
         store.store_story_summary = selected_story
         db.commit()
 
+    story_id = None
+    published_at_iso: Optional[str] = None
+    created_at_iso: Optional[str] = None
+    if persist:
+        merchant_id = _resolve_merchant_id(db, user, resolved_store_id)
+        story_row = story_repo.create_story(
+            db,
+            store_id        = resolved_store_id,
+            merchant_id     = merchant_id,
+            content         = selected_story,
+            versions        = story_versions,
+            tone            = tone,
+            selected_length = selected_length,
+            hashtags        = hashtags,
+            interview_text  = masked_interview or None,
+            fallback_mode   = fallback_mode,
+            is_published    = publish,
+        )
+        story_id = story_row.story_id
+        published_at_iso = story_row.published_at.isoformat() if story_row.published_at else None
+        created_at_iso   = story_row.created_at.isoformat() if story_row.created_at else None
+
     return {
         "store_id": resolved_store_id,
         "store_name": store_name,
+        "story_id": story_id,
         "story": selected_story,
         "story_versions": story_versions,
         "selected_length": selected_length,
@@ -363,5 +402,93 @@ def generate_story(
         "hashtags": hashtags,
         "interview_masked": masked_interview,
         "fallback_mode": fallback_mode,
+        "is_published": publish,
+        "published_at": published_at_iso,
+        "created_at": created_at_iso,
         "products_used": product_names[:5],
     }
+
+
+# ──────────────────────────────────────────────
+# 조회 / 게시 / 수정 / 삭제
+# ──────────────────────────────────────────────
+
+def list_stories_for_merchant(
+    db: Session, user, page: int = 1, size: int = 20
+) -> dict:
+    """공통 규약: items + pagination 으로 반환."""
+    if user.role.value != "merchant":
+        raise HTTPException(status_code=403, detail="상인 권한이 필요합니다.")
+    rows = (
+        db.query(Merchant.store_id)
+        .filter(Merchant.user_id == user.user_id)
+        .all()
+    )
+    store_ids = [r[0] for r in rows]
+    items, total = story_repo.list_by_stores_paged(
+        db, store_ids, page=page, size=size, only_published=False
+    )
+    return {
+        "items": [story_repo.to_dict(s) for s in items],
+        "pagination": {
+            "page": page,
+            "size": size,
+            "total": total,
+            "has_next": (page * size) < total,
+        },
+    }
+
+
+def get_story(db: Session, story_id: str) -> dict:
+    s = story_repo.get_by_id(db, story_id)
+    if not s:
+        raise HTTPException(status_code=404, detail="스토리를 찾을 수 없습니다.")
+    return story_repo.to_dict(s)
+
+
+def get_published_story_for_store(db: Session, store_id: str) -> Optional[dict]:
+    s = story_repo.get_latest_published_for_store(db, store_id)
+    return story_repo.to_dict(s) if s else None
+
+
+def _check_owner(db: Session, user, story) -> None:
+    if user.role.value != "merchant":
+        raise HTTPException(status_code=403, detail="상인 권한이 필요합니다.")
+    owns = (
+        db.query(Merchant)
+        .filter(Merchant.user_id == user.user_id, Merchant.store_id == story.store_id)
+        .first()
+    )
+    if not owns:
+        raise HTTPException(status_code=403, detail="본인 점포 스토리만 관리할 수 있습니다.")
+
+
+def set_publish(db: Session, user, story_id: str, publish: bool) -> dict:
+    s = story_repo.get_by_id(db, story_id)
+    if not s:
+        raise HTTPException(status_code=404, detail="스토리를 찾을 수 없습니다.")
+    _check_owner(db, user, s)
+    story_repo.update_publish(db, s, publish)
+    return story_repo.to_dict(s)
+
+
+def update_story(
+    db: Session, user, story_id: str,
+    selected_length: Optional[str] = None,
+    title: Optional[str] = None,
+) -> dict:
+    s = story_repo.get_by_id(db, story_id)
+    if not s:
+        raise HTTPException(status_code=404, detail="스토리를 찾을 수 없습니다.")
+    _check_owner(db, user, s)
+    story_repo.update_content(db, s, selected_length=selected_length, title=title)
+    return story_repo.to_dict(s)
+
+
+def delete_story(db: Session, user, story_id: str) -> dict:
+    s = story_repo.get_by_id(db, story_id)
+    if not s:
+        raise HTTPException(status_code=404, detail="스토리를 찾을 수 없습니다.")
+    _check_owner(db, user, s)
+    story_repo.soft_delete(db, s)
+    return {"story_id": story_id, "deleted": True}

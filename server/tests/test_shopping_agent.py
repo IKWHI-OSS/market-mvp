@@ -13,7 +13,7 @@ from app.db.models.product import StockStatusEnum
 from app.db.session import Base, get_db
 from app.main import app
 
-TEST_DB_URL = "sqlite:///./test_shopping_agent.db"
+TEST_DB_URL = "sqlite:////tmp/test_shopping_agent.db"
 engine = create_engine(TEST_DB_URL, connect_args={"check_same_thread": False})
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
@@ -23,8 +23,8 @@ def setup_db():
     Base.metadata.create_all(bind=engine)
     yield
     Base.metadata.drop_all(bind=engine)
-    if os.path.exists("test_shopping_agent.db"):
-        os.remove("test_shopping_agent.db")
+    if os.path.exists("/tmp/test_shopping_agent.db"):
+        os.remove("/tmp/test_shopping_agent.db")
 
 
 @pytest.fixture

@@ -1,0 +1,542 @@
+[
+  {
+    "notification_id": "nt000001-e5f6-4789-a012-b3c4d5e6f701",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "type": "drop_alert",
+    "title": "제주 감귤 3kg 새벽 직송 입고 알림",
+    "target_type": "drop",
+    "target_id": "dr000001-e5f6-4789-a012-b3c4d5e6f701",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000002-e5f6-4789-a012-b3c4d5e6f702",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "type": "drop_alert",
+    "title": "고등어 1손 새벽 경매 입고! 지금 바로 확인하세요",
+    "target_type": "drop",
+    "target_id": "dr000002-e5f6-4789-a012-b3c4d5e6f702",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000003-e5f6-4789-a012-b3c4d5e6f703",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "type": "price_change",
+    "title": "청양고추 500g 가격이 4,000원 → 3,500원으로 인하됐어요",
+    "target_type": "product",
+    "target_id": "p1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000004-e5f6-4789-a012-b3c4d5e6f704",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "type": "event_start",
+    "title": "망원시장 봄 맞이 특가전이 시작됐어요!",
+    "target_type": "event",
+    "target_id": "ca000016-e5f6-4789-a012-b3c4d5e6f716",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000005-e5f6-4789-a012-b3c4d5e6f705",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "type": "system",
+    "title": "장보기 목록 '주말 바비큐 장보기'가 저장되었습니다",
+    "target_type": "market",
+    "target_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000006-e5f6-4789-a012-b3c4d5e6f706",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "type": "drop_alert",
+    "title": "내일 새벽 한우 불고기용 300g 특가 입고 예정 — 사전 알림",
+    "target_type": "drop",
+    "target_id": "dr000010-e5f6-4789-a012-b3c4d5e6f710",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000007-e5f6-4789-a012-b3c4d5e6f707",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f726",
+    "type": "system",
+    "title": "이번 주 인기 상품 리포트가 도착했어요",
+    "target_type": "market",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000008-e5f6-4789-a012-b3c4d5e6f708",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f716",
+    "type": "system",
+    "title": "이번 주 인기 상품 리포트가 도착했어요",
+    "target_type": "market",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000009-e5f6-4789-a012-b3c4d5e6f709",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f719",
+    "type": "price_change",
+    "title": "대파 1단 가격 5,500원 → 4,500원으로 인하",
+    "target_type": "product",
+    "target_id": "p1000144-e5f6-4789-a012-b3c4d5e6f744",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000010-e5f6-4789-a012-b3c4d5e6f710",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f730",
+    "type": "drop_alert",
+    "title": "바다장어 1마리 입고 예정",
+    "target_type": "drop",
+    "target_id": "dr000080-e5f6-4789-a012-b3c4d5e6f780",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000011-e5f6-4789-a012-b3c4d5e6f711",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f726",
+    "type": "event_start",
+    "title": "망원시장 봄 맞이 특가전 시작",
+    "target_type": "event",
+    "target_id": "ca000016-e5f6-4789-a012-b3c4d5e6f716",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000012-e5f6-4789-a012-b3c4d5e6f712",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f726",
+    "type": "preorder_status",
+    "title": "예약 상품이 준비되었습니다",
+    "target_type": "preorder",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000013-e5f6-4789-a012-b3c4d5e6f713",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f723",
+    "type": "event_start",
+    "title": "망원시장 봄 맞이 특가전 시작",
+    "target_type": "event",
+    "target_id": "ca000016-e5f6-4789-a012-b3c4d5e6f716",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000014-e5f6-4789-a012-b3c4d5e6f714",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f731",
+    "type": "price_change",
+    "title": "김밥 1줄 가격 8,000원 → 7,500원으로 인하",
+    "target_type": "product",
+    "target_id": "p1000453-e5f6-4789-a012-b3c4d5e6f753",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000015-e5f6-4789-a012-b3c4d5e6f715",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "type": "preorder_status",
+    "title": "예약 상품이 준비되었습니다",
+    "target_type": "preorder",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000016-e5f6-4789-a012-b3c4d5e6f716",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f726",
+    "type": "event_start",
+    "title": "망원시장 봄 맞이 특가전 시작",
+    "target_type": "event",
+    "target_id": "ca000016-e5f6-4789-a012-b3c4d5e6f716",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000017-e5f6-4789-a012-b3c4d5e6f717",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f722",
+    "type": "system",
+    "title": "이번 주 인기 상품 리포트가 도착했어요",
+    "target_type": "market",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000018-e5f6-4789-a012-b3c4d5e6f718",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f721",
+    "type": "preorder_status",
+    "title": "예약 상품이 준비되었습니다",
+    "target_type": "preorder",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000019-e5f6-4789-a012-b3c4d5e6f719",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "type": "price_change",
+    "title": "단감 5개 가격 12,500원 → 12,000원으로 인하",
+    "target_type": "product",
+    "target_id": "p1000164-e5f6-4789-a012-b3c4d5e6f764",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000020-e5f6-4789-a012-b3c4d5e6f720",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "type": "event_start",
+    "title": "망원시장 봄 맞이 특가전 시작",
+    "target_type": "event",
+    "target_id": "ca000016-e5f6-4789-a012-b3c4d5e6f716",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000021-e5f6-4789-a012-b3c4d5e6f721",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f727",
+    "type": "system",
+    "title": "이번 주 인기 상품 리포트가 도착했어요",
+    "target_type": "market",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000022-e5f6-4789-a012-b3c4d5e6f722",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f718",
+    "type": "preorder_status",
+    "title": "예약 상품이 준비되었습니다",
+    "target_type": "preorder",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000023-e5f6-4789-a012-b3c4d5e6f723",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f718",
+    "type": "drop_alert",
+    "title": "충남 당근 500g 입고됨",
+    "target_type": "drop",
+    "target_id": "dr000085-e5f6-4789-a012-b3c4d5e6f785",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000024-e5f6-4789-a012-b3c4d5e6f724",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "type": "preorder_status",
+    "title": "예약 상품이 준비되었습니다",
+    "target_type": "preorder",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000025-e5f6-4789-a012-b3c4d5e6f725",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f729",
+    "type": "price_change",
+    "title": "가래떡 1kg 가격 10,500원 → 9,500원으로 인하",
+    "target_type": "product",
+    "target_id": "p1000434-e5f6-4789-a012-b3c4d5e6f734",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000026-e5f6-4789-a012-b3c4d5e6f726",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f716",
+    "type": "price_change",
+    "title": "쫄면 1인분 가격 15,800원 → 15,000원으로 인하",
+    "target_type": "product",
+    "target_id": "p1000122-e5f6-4789-a012-b3c4d5e6f722",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000027-e5f6-4789-a012-b3c4d5e6f727",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f729",
+    "type": "event_start",
+    "title": "망원시장 봄 맞이 특가전 시작",
+    "target_type": "event",
+    "target_id": "ca000016-e5f6-4789-a012-b3c4d5e6f716",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000028-e5f6-4789-a012-b3c4d5e6f728",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f729",
+    "type": "event_start",
+    "title": "망원시장 봄 맞이 특가전 시작",
+    "target_type": "event",
+    "target_id": "ca000016-e5f6-4789-a012-b3c4d5e6f716",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000029-e5f6-4789-a012-b3c4d5e6f729",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f717",
+    "type": "preorder_status",
+    "title": "예약 상품이 준비되었습니다",
+    "target_type": "preorder",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000030-e5f6-4789-a012-b3c4d5e6f730",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f728",
+    "type": "system",
+    "title": "이번 주 인기 상품 리포트가 도착했어요",
+    "target_type": "market",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000031-e5f6-4789-a012-b3c4d5e6f731",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "type": "system",
+    "title": "이번 주 인기 상품 리포트가 도착했어요",
+    "target_type": "market",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000032-e5f6-4789-a012-b3c4d5e6f732",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f730",
+    "type": "price_change",
+    "title": "콩나물 300g 가격 18,300원 → 18,000원으로 인하",
+    "target_type": "product",
+    "target_id": "p1000113-e5f6-4789-a012-b3c4d5e6f713",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000033-e5f6-4789-a012-b3c4d5e6f733",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f721",
+    "type": "drop_alert",
+    "title": "건미역 100g 입고 예정",
+    "target_type": "drop",
+    "target_id": "dr000118-e5f6-4789-a012-b3c4d5e6f718",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000034-e5f6-4789-a012-b3c4d5e6f734",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f721",
+    "type": "price_change",
+    "title": "낙지 2마리 가격 2,000원 → 1,500원으로 인하",
+    "target_type": "product",
+    "target_id": "p1000368-e5f6-4789-a012-b3c4d5e6f768",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000035-e5f6-4789-a012-b3c4d5e6f735",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "type": "event_start",
+    "title": "망원시장 봄 맞이 특가전 시작",
+    "target_type": "event",
+    "target_id": "ca000016-e5f6-4789-a012-b3c4d5e6f716",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000036-e5f6-4789-a012-b3c4d5e6f736",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f715",
+    "type": "preorder_status",
+    "title": "예약 상품이 준비되었습니다",
+    "target_type": "preorder",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000037-e5f6-4789-a012-b3c4d5e6f737",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f722",
+    "type": "preorder_status",
+    "title": "예약 상품이 준비되었습니다",
+    "target_type": "preorder",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000038-e5f6-4789-a012-b3c4d5e6f738",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f732",
+    "type": "event_start",
+    "title": "망원시장 봄 맞이 특가전 시작",
+    "target_type": "event",
+    "target_id": "ca000016-e5f6-4789-a012-b3c4d5e6f716",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000039-e5f6-4789-a012-b3c4d5e6f739",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f721",
+    "type": "drop_alert",
+    "title": "국내산 깻잎 100g 입고 예정",
+    "target_type": "drop",
+    "target_id": "dr000039-e5f6-4789-a012-b3c4d5e6f739",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000040-e5f6-4789-a012-b3c4d5e6f740",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f724",
+    "type": "price_change",
+    "title": "연어회 250g 가격 5,500원 → 4,500원으로 인하",
+    "target_type": "product",
+    "target_id": "p1000406-e5f6-4789-a012-b3c4d5e6f706",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000041-e5f6-4789-a012-b3c4d5e6f741",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f728",
+    "type": "price_change",
+    "title": "콩자반 200g 가격 10,300원 → 9,500원으로 인하",
+    "target_type": "product",
+    "target_id": "p1000356-e5f6-4789-a012-b3c4d5e6f756",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000042-e5f6-4789-a012-b3c4d5e6f742",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f716",
+    "type": "preorder_status",
+    "title": "예약 상품이 준비되었습니다",
+    "target_type": "preorder",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000043-e5f6-4789-a012-b3c4d5e6f743",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f715",
+    "type": "event_start",
+    "title": "망원시장 봄 맞이 특가전 시작",
+    "target_type": "event",
+    "target_id": "ca000016-e5f6-4789-a012-b3c4d5e6f716",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000044-e5f6-4789-a012-b3c4d5e6f744",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f729",
+    "type": "drop_alert",
+    "title": "떡볶이 1인분 입고 예정",
+    "target_type": "drop",
+    "target_id": "dr000051-e5f6-4789-a012-b3c4d5e6f751",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000045-e5f6-4789-a012-b3c4d5e6f745",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "type": "preorder_status",
+    "title": "예약 상품이 준비되었습니다",
+    "target_type": "preorder",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000046-e5f6-4789-a012-b3c4d5e6f746",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f730",
+    "type": "event_start",
+    "title": "망원시장 봄 맞이 특가전 시작",
+    "target_type": "event",
+    "target_id": "ca000016-e5f6-4789-a012-b3c4d5e6f716",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000047-e5f6-4789-a012-b3c4d5e6f747",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f714",
+    "type": "preorder_status",
+    "title": "예약 상품이 준비되었습니다",
+    "target_type": "preorder",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000048-e5f6-4789-a012-b3c4d5e6f748",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f721",
+    "type": "price_change",
+    "title": "다시마 100g 가격 15,300원 → 15,000원으로 인하",
+    "target_type": "product",
+    "target_id": "p1000382-e5f6-4789-a012-b3c4d5e6f782",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000049-e5f6-4789-a012-b3c4d5e6f749",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f716",
+    "type": "event_start",
+    "title": "망원시장 봄 맞이 특가전 시작",
+    "target_type": "event",
+    "target_id": "ca000016-e5f6-4789-a012-b3c4d5e6f716",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000050-e5f6-4789-a012-b3c4d5e6f750",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f732",
+    "type": "drop_alert",
+    "title": "멸치볶음 200g 입고 예정",
+    "target_type": "drop",
+    "target_id": "dr000082-e5f6-4789-a012-b3c4d5e6f782",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000051-e5f6-4789-a012-b3c4d5e6f751",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f725",
+    "type": "event_start",
+    "title": "망원시장 봄 맞이 특가전 시작",
+    "target_type": "event",
+    "target_id": "ca000016-e5f6-4789-a012-b3c4d5e6f716",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000052-e5f6-4789-a012-b3c4d5e6f752",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f718",
+    "type": "price_change",
+    "title": "멸치볶음 200g 가격 15,300원 → 15,000원으로 인하",
+    "target_type": "product",
+    "target_id": "p1000355-e5f6-4789-a012-b3c4d5e6f755",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000053-e5f6-4789-a012-b3c4d5e6f753",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "type": "drop_alert",
+    "title": "국내산 멸치 중멸 500g 입고됨",
+    "target_type": "drop",
+    "target_id": "dr000007-e5f6-4789-a012-b3c4d5e6f707",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000054-e5f6-4789-a012-b3c4d5e6f754",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f716",
+    "type": "system",
+    "title": "이번 주 인기 상품 리포트가 도착했어요",
+    "target_type": "market",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000055-e5f6-4789-a012-b3c4d5e6f755",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f723",
+    "type": "system",
+    "title": "이번 주 인기 상품 리포트가 도착했어요",
+    "target_type": "market",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000056-e5f6-4789-a012-b3c4d5e6f756",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f714",
+    "type": "system",
+    "title": "이번 주 인기 상품 리포트가 도착했어요",
+    "target_type": "market",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000057-e5f6-4789-a012-b3c4d5e6f757",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f731",
+    "type": "preorder_status",
+    "title": "예약 상품이 준비되었습니다",
+    "target_type": "preorder",
+    "target_id": "00000000-0000-0000-0000-000000000000",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000058-e5f6-4789-a012-b3c4d5e6f758",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f716",
+    "type": "price_change",
+    "title": "망고 3개 가격 25,300원 → 25,000원으로 인하",
+    "target_type": "product",
+    "target_id": "p1000232-e5f6-4789-a012-b3c4d5e6f732",
+    "is_read": 1
+  },
+  {
+    "notification_id": "nt000059-e5f6-4789-a012-b3c4d5e6f759",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f720",
+    "type": "drop_alert",
+    "title": "국내산 삼겹살 600g 입고됨",
+    "target_type": "drop",
+    "target_id": "dr000003-e5f6-4789-a012-b3c4d5e6f703",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt000060-e5f6-4789-a012-b3c4d5e6f760",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f713",
+    "type": "drop_alert",
+    "title": "단감 5개 입고 예정",
+    "target_type": "drop",
+    "target_id": "dr000044-e5f6-4789-a012-b3c4d5e6f744",
+    "is_read": 0
+  }
+]

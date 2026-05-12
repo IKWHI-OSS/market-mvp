@@ -1,0 +1,1118 @@
+[
+  {
+    "route_plan_id": "rp000001-e5f6-4789-a012-b3c4d5e6f701",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "route_json": {
+      "steps": [
+        {
+          "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+          "store_name": "망원 과일나라",
+          "lat": 37.5559,
+          "lng": 126.9103,
+          "order": 1
+        },
+        {
+          "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+          "store_name": "망원 수산",
+          "lat": 37.5557,
+          "lng": 126.9099,
+          "order": 2
+        },
+        {
+          "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+          "store_name": "망원 정육",
+          "lat": 37.556,
+          "lng": 126.9105,
+          "order": 3
+        }
+      ],
+      "total_distance_m": 180,
+      "estimated_time_min": 12
+    }
+  },
+  {
+    "route_plan_id": "rp000002-e5f6-4789-a012-b3c4d5e6f702",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "route_json": {
+      "steps": [
+        {
+          "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+          "store_name": "망원 신선야채",
+          "lat": 37.5558,
+          "lng": 126.9101,
+          "order": 1
+        },
+        {
+          "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+          "store_name": "망원 과일나라",
+          "lat": 37.5559,
+          "lng": 126.9103,
+          "order": 2
+        },
+        {
+          "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+          "store_name": "망원 반찬가게",
+          "lat": 37.5552,
+          "lng": 126.9102,
+          "order": 3
+        },
+        {
+          "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+          "store_name": "망원 건어물",
+          "lat": 37.5554,
+          "lng": 126.9098,
+          "order": 4
+        }
+      ],
+      "total_distance_m": 220,
+      "estimated_time_min": 18
+    }
+  },
+  {
+    "route_plan_id": "rp000003-e5f6-4789-a012-b3c4d5e6f703",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "route_json": {
+      "steps": [
+        {
+          "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+          "store_name": "망원 채소마트",
+          "lat": 37.5554,
+          "lng": 126.9107,
+          "order": 1
+        },
+        {
+          "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+          "store_name": "달콤 과일",
+          "lat": 37.5553,
+          "lng": 126.9109,
+          "order": 2
+        },
+        {
+          "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+          "store_name": "망원 수산",
+          "lat": 37.5557,
+          "lng": 126.9099,
+          "order": 3
+        },
+        {
+          "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+          "store_name": "망원 정육",
+          "lat": 37.556,
+          "lng": 126.9105,
+          "order": 4
+        },
+        {
+          "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+          "store_name": "망원 생활잡화",
+          "lat": 37.5558,
+          "lng": 126.911,
+          "order": 5
+        }
+      ],
+      "total_distance_m": 310,
+      "estimated_time_min": 25
+    }
+  },
+  {
+    "route_plan_id": "rp000004-e5f6-4789-a012-b3c4d5e6f704",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f729",
+    "market_id": "f2a2b3c4-d5e6-4789-a012-b3c4d5e6f702",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000011-e5f6-4789-a012-b3c4d5e6f711",
+          "store_name": "광장 신선야채",
+          "zone": "A구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000018-e5f6-4789-a012-b3c4d5e6f718",
+          "store_name": "광장 떡집",
+          "zone": "A구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000017-e5f6-4789-a012-b3c4d5e6f717",
+          "store_name": "광장 분식",
+          "zone": "B구역"
+        }
+      ],
+      "total_stores": 3,
+      "total_estimated_minutes": 21
+    },
+    "estimated_minutes": 21,
+    "distance_meters": 240
+  },
+  {
+    "route_plan_id": "rp000005-e5f6-4789-a012-b3c4d5e6f705",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f718",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+          "store_name": "신선 해산물",
+          "zone": "D구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+          "store_name": "망원 정육",
+          "zone": "C구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
+          "store_name": "망원 과일나라",
+          "zone": "A구역"
+        },
+        {
+          "step": 4,
+          "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
+          "store_name": "망원 채소마트",
+          "zone": "B구역"
+        }
+      ],
+      "total_stores": 4,
+      "total_estimated_minutes": 28
+    },
+    "estimated_minutes": 28,
+    "distance_meters": 320
+  },
+  {
+    "route_plan_id": "rp000006-e5f6-4789-a012-b3c4d5e6f706",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "market_id": "f9a2b3c4-d5e6-4789-a012-b3c4d5e6f709",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000089-e5f6-4789-a012-b3c4d5e6f789",
+          "store_name": "방배 달콤 과일",
+          "zone": "F구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000088-e5f6-4789-a012-b3c4d5e6f788",
+          "store_name": "방배 떡집",
+          "zone": "B구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000084-e5f6-4789-a012-b3c4d5e6f784",
+          "store_name": "방배 수산",
+          "zone": "C구역"
+        },
+        {
+          "step": 4,
+          "store_id": "d1000081-e5f6-4789-a012-b3c4d5e6f781",
+          "store_name": "방배 채소마트",
+          "zone": "E구역"
+        },
+        {
+          "step": 5,
+          "store_id": "d1000083-e5f6-4789-a012-b3c4d5e6f783",
+          "store_name": "방배 해산물",
+          "zone": "C구역"
+        }
+      ],
+      "total_stores": 5,
+      "total_estimated_minutes": 35
+    },
+    "estimated_minutes": 35,
+    "distance_meters": 400
+  },
+  {
+    "route_plan_id": "rp000007-e5f6-4789-a012-b3c4d5e6f707",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f718",
+    "market_id": "f7a2b3c4-d5e6-4789-a012-b3c4d5e6f707",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000062-e5f6-4789-a012-b3c4d5e6f762",
+          "store_name": "영등포 해산물",
+          "zone": "C구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000061-e5f6-4789-a012-b3c4d5e6f761",
+          "store_name": "영등포 과일나라",
+          "zone": "F구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000063-e5f6-4789-a012-b3c4d5e6f763",
+          "store_name": "영등포 분식",
+          "zone": "B구역"
+        },
+        {
+          "step": 4,
+          "store_id": "d1000057-e5f6-4789-a012-b3c4d5e6f757",
+          "store_name": "영등포 수산",
+          "zone": "B구역"
+        },
+        {
+          "step": 5,
+          "store_id": "d1000064-e5f6-4789-a012-b3c4d5e6f764",
+          "store_name": "영등포 정육",
+          "zone": "D구역"
+        }
+      ],
+      "total_stores": 5,
+      "total_estimated_minutes": 35
+    },
+    "estimated_minutes": 35,
+    "distance_meters": 400
+  },
+  {
+    "route_plan_id": "rp000008-e5f6-4789-a012-b3c4d5e6f708",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f722",
+    "market_id": "f2a2b3c4-d5e6-4789-a012-b3c4d5e6f702",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000011-e5f6-4789-a012-b3c4d5e6f711",
+          "store_name": "광장 신선야채",
+          "zone": "A구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000012-e5f6-4789-a012-b3c4d5e6f712",
+          "store_name": "광장 수산",
+          "zone": "A구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000017-e5f6-4789-a012-b3c4d5e6f717",
+          "store_name": "광장 분식",
+          "zone": "B구역"
+        },
+        {
+          "step": 4,
+          "store_id": "d1000015-e5f6-4789-a012-b3c4d5e6f715",
+          "store_name": "광장 과일나라",
+          "zone": "E구역"
+        },
+        {
+          "step": 5,
+          "store_id": "d1000018-e5f6-4789-a012-b3c4d5e6f718",
+          "store_name": "광장 떡집",
+          "zone": "A구역"
+        }
+      ],
+      "total_stores": 5,
+      "total_estimated_minutes": 35
+    },
+    "estimated_minutes": 35,
+    "distance_meters": 400
+  },
+  {
+    "route_plan_id": "rp000009-e5f6-4789-a012-b3c4d5e6f709",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f723",
+    "market_id": "f2a2b3c4-d5e6-4789-a012-b3c4d5e6f702",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000015-e5f6-4789-a012-b3c4d5e6f715",
+          "store_name": "광장 과일나라",
+          "zone": "E구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000017-e5f6-4789-a012-b3c4d5e6f717",
+          "store_name": "광장 분식",
+          "zone": "B구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000013-e5f6-4789-a012-b3c4d5e6f713",
+          "store_name": "광장 달콤 과일",
+          "zone": "A구역"
+        },
+        {
+          "step": 4,
+          "store_id": "d1000016-e5f6-4789-a012-b3c4d5e6f716",
+          "store_name": "광장 해산물",
+          "zone": "B구역"
+        }
+      ],
+      "total_stores": 4,
+      "total_estimated_minutes": 28
+    },
+    "estimated_minutes": 28,
+    "distance_meters": 320
+  },
+  {
+    "route_plan_id": "rp000010-e5f6-4789-a012-b3c4d5e6f710",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f713",
+    "market_id": "f9a2b3c4-d5e6-4789-a012-b3c4d5e6f709",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000078-e5f6-4789-a012-b3c4d5e6f778",
+          "store_name": "방배 건어물",
+          "zone": "B구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000083-e5f6-4789-a012-b3c4d5e6f783",
+          "store_name": "방배 해산물",
+          "zone": "C구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000081-e5f6-4789-a012-b3c4d5e6f781",
+          "store_name": "방배 채소마트",
+          "zone": "E구역"
+        },
+        {
+          "step": 4,
+          "store_id": "d1000082-e5f6-4789-a012-b3c4d5e6f782",
+          "store_name": "방배 정육",
+          "zone": "B구역"
+        }
+      ],
+      "total_stores": 4,
+      "total_estimated_minutes": 28
+    },
+    "estimated_minutes": 28,
+    "distance_meters": 320
+  },
+  {
+    "route_plan_id": "rp000011-e5f6-4789-a012-b3c4d5e6f711",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f729",
+    "market_id": "f5a2b3c4-d5e6-4789-a012-b3c4d5e6f705",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000042-e5f6-4789-a012-b3c4d5e6f742",
+          "store_name": "동대문 수산",
+          "zone": "F구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000046-e5f6-4789-a012-b3c4d5e6f746",
+          "store_name": "동대문 달콤 과일",
+          "zone": "D구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000041-e5f6-4789-a012-b3c4d5e6f741",
+          "store_name": "동대문 생활잡화",
+          "zone": "B구역"
+        },
+        {
+          "step": 4,
+          "store_id": "d1000043-e5f6-4789-a012-b3c4d5e6f743",
+          "store_name": "동대문 해산물",
+          "zone": "E구역"
+        },
+        {
+          "step": 5,
+          "store_id": "d1000045-e5f6-4789-a012-b3c4d5e6f745",
+          "store_name": "동대문 과일나라",
+          "zone": "E구역"
+        }
+      ],
+      "total_stores": 5,
+      "total_estimated_minutes": 35
+    },
+    "estimated_minutes": 35,
+    "distance_meters": 400
+  },
+  {
+    "route_plan_id": "rp000012-e5f6-4789-a012-b3c4d5e6f712",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f717",
+    "market_id": "f9a2b3c4-d5e6-4789-a012-b3c4d5e6f709",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000080-e5f6-4789-a012-b3c4d5e6f780",
+          "store_name": "방배 분식",
+          "zone": "A구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000078-e5f6-4789-a012-b3c4d5e6f778",
+          "store_name": "방배 건어물",
+          "zone": "B구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000084-e5f6-4789-a012-b3c4d5e6f784",
+          "store_name": "방배 수산",
+          "zone": "C구역"
+        }
+      ],
+      "total_stores": 3,
+      "total_estimated_minutes": 21
+    },
+    "estimated_minutes": 21,
+    "distance_meters": 240
+  },
+  {
+    "route_plan_id": "rp000013-e5f6-4789-a012-b3c4d5e6f713",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "market_id": "f4a2b3c4-d5e6-4789-a012-b3c4d5e6f704",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000034-e5f6-4789-a012-b3c4d5e6f734",
+          "store_name": "남대문 과일나라",
+          "zone": "B구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000029-e5f6-4789-a012-b3c4d5e6f729",
+          "store_name": "남대문 신선야채",
+          "zone": "F구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000038-e5f6-4789-a012-b3c4d5e6f738",
+          "store_name": "남대문 생활잡화",
+          "zone": "D구역"
+        },
+        {
+          "step": 4,
+          "store_id": "d1000037-e5f6-4789-a012-b3c4d5e6f737",
+          "store_name": "남대문 반찬가게",
+          "zone": "A구역"
+        },
+        {
+          "step": 5,
+          "store_id": "d1000036-e5f6-4789-a012-b3c4d5e6f736",
+          "store_name": "남대문 채소마트",
+          "zone": "B구역"
+        }
+      ],
+      "total_stores": 5,
+      "total_estimated_minutes": 35
+    },
+    "estimated_minutes": 35,
+    "distance_meters": 400
+  },
+  {
+    "route_plan_id": "rp000014-e5f6-4789-a012-b3c4d5e6f714",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f723",
+    "market_id": "f5a2b3c4-d5e6-4789-a012-b3c4d5e6f705",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000042-e5f6-4789-a012-b3c4d5e6f742",
+          "store_name": "동대문 수산",
+          "zone": "F구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000043-e5f6-4789-a012-b3c4d5e6f743",
+          "store_name": "동대문 해산물",
+          "zone": "E구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000040-e5f6-4789-a012-b3c4d5e6f740",
+          "store_name": "동대문 채소마트",
+          "zone": "F구역"
+        }
+      ],
+      "total_stores": 3,
+      "total_estimated_minutes": 21
+    },
+    "estimated_minutes": 21,
+    "distance_meters": 240
+  },
+  {
+    "route_plan_id": "rp000015-e5f6-4789-a012-b3c4d5e6f715",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f724",
+    "market_id": "f8a2b3c4-d5e6-4789-a012-b3c4d5e6f708",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000068-e5f6-4789-a012-b3c4d5e6f768",
+          "store_name": "노량진수산 생활잡화",
+          "zone": "D구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000070-e5f6-4789-a012-b3c4d5e6f770",
+          "store_name": "노량진수산 분식",
+          "zone": "F구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000067-e5f6-4789-a012-b3c4d5e6f767",
+          "store_name": "노량진수산 신선야채",
+          "zone": "A구역"
+        }
+      ],
+      "total_stores": 3,
+      "total_estimated_minutes": 21
+    },
+    "estimated_minutes": 21,
+    "distance_meters": 240
+  },
+  {
+    "route_plan_id": "rp000016-e5f6-4789-a012-b3c4d5e6f716",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "market_id": "f4a2b3c4-d5e6-4789-a012-b3c4d5e6f704",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000035-e5f6-4789-a012-b3c4d5e6f735",
+          "store_name": "남대문 건어물",
+          "zone": "A구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000034-e5f6-4789-a012-b3c4d5e6f734",
+          "store_name": "남대문 과일나라",
+          "zone": "B구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000036-e5f6-4789-a012-b3c4d5e6f736",
+          "store_name": "남대문 채소마트",
+          "zone": "B구역"
+        },
+        {
+          "step": 4,
+          "store_id": "d1000037-e5f6-4789-a012-b3c4d5e6f737",
+          "store_name": "남대문 반찬가게",
+          "zone": "A구역"
+        },
+        {
+          "step": 5,
+          "store_id": "d1000029-e5f6-4789-a012-b3c4d5e6f729",
+          "store_name": "남대문 신선야채",
+          "zone": "F구역"
+        }
+      ],
+      "total_stores": 5,
+      "total_estimated_minutes": 35
+    },
+    "estimated_minutes": 35,
+    "distance_meters": 400
+  },
+  {
+    "route_plan_id": "rp000017-e5f6-4789-a012-b3c4d5e6f717",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f729",
+    "market_id": "f2a2b3c4-d5e6-4789-a012-b3c4d5e6f702",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000013-e5f6-4789-a012-b3c4d5e6f713",
+          "store_name": "광장 달콤 과일",
+          "zone": "A구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000016-e5f6-4789-a012-b3c4d5e6f716",
+          "store_name": "광장 해산물",
+          "zone": "B구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000014-e5f6-4789-a012-b3c4d5e6f714",
+          "store_name": "광장 건어물",
+          "zone": "F구역"
+        },
+        {
+          "step": 4,
+          "store_id": "d1000011-e5f6-4789-a012-b3c4d5e6f711",
+          "store_name": "광장 신선야채",
+          "zone": "A구역"
+        },
+        {
+          "step": 5,
+          "store_id": "d1000015-e5f6-4789-a012-b3c4d5e6f715",
+          "store_name": "광장 과일나라",
+          "zone": "E구역"
+        }
+      ],
+      "total_stores": 5,
+      "total_estimated_minutes": 35
+    },
+    "estimated_minutes": 35,
+    "distance_meters": 400
+  },
+  {
+    "route_plan_id": "rp000018-e5f6-4789-a012-b3c4d5e6f718",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f724",
+    "market_id": "f3a2b3c4-d5e6-4789-a012-b3c4d5e6f703",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000023-e5f6-4789-a012-b3c4d5e6f723",
+          "store_name": "통인 채소마트",
+          "zone": "D구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000028-e5f6-4789-a012-b3c4d5e6f728",
+          "store_name": "통인 정육",
+          "zone": "F구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000024-e5f6-4789-a012-b3c4d5e6f724",
+          "store_name": "통인 달콤 과일",
+          "zone": "C구역"
+        }
+      ],
+      "total_stores": 3,
+      "total_estimated_minutes": 21
+    },
+    "estimated_minutes": 21,
+    "distance_meters": 240
+  },
+  {
+    "route_plan_id": "rp000019-e5f6-4789-a012-b3c4d5e6f719",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f723",
+    "market_id": "f6a2b3c4-d5e6-4789-a012-b3c4d5e6f706",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000054-e5f6-4789-a012-b3c4d5e6f754",
+          "store_name": "경동 떡집",
+          "zone": "B구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000051-e5f6-4789-a012-b3c4d5e6f751",
+          "store_name": "경동 생활잡화",
+          "zone": "F구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000050-e5f6-4789-a012-b3c4d5e6f750",
+          "store_name": "경동 채소마트",
+          "zone": "F구역"
+        },
+        {
+          "step": 4,
+          "store_id": "d1000047-e5f6-4789-a012-b3c4d5e6f747",
+          "store_name": "경동 달콤 과일",
+          "zone": "F구역"
+        }
+      ],
+      "total_stores": 4,
+      "total_estimated_minutes": 28
+    },
+    "estimated_minutes": 28,
+    "distance_meters": 320
+  },
+  {
+    "route_plan_id": "rp000020-e5f6-4789-a012-b3c4d5e6f720",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f717",
+    "market_id": "f3a2b3c4-d5e6-4789-a012-b3c4d5e6f703",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000020-e5f6-4789-a012-b3c4d5e6f720",
+          "store_name": "통인 수산",
+          "zone": "B구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000021-e5f6-4789-a012-b3c4d5e6f721",
+          "store_name": "통인 신선야채",
+          "zone": "B구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000028-e5f6-4789-a012-b3c4d5e6f728",
+          "store_name": "통인 정육",
+          "zone": "F구역"
+        },
+        {
+          "step": 4,
+          "store_id": "d1000026-e5f6-4789-a012-b3c4d5e6f726",
+          "store_name": "통인 떡집",
+          "zone": "E구역"
+        },
+        {
+          "step": 5,
+          "store_id": "d1000022-e5f6-4789-a012-b3c4d5e6f722",
+          "store_name": "통인 반찬가게",
+          "zone": "B구역"
+        }
+      ],
+      "total_stores": 5,
+      "total_estimated_minutes": 35
+    },
+    "estimated_minutes": 35,
+    "distance_meters": 400
+  },
+  {
+    "route_plan_id": "rp000021-e5f6-4789-a012-b3c4d5e6f721",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f725",
+    "market_id": "f6a2b3c4-d5e6-4789-a012-b3c4d5e6f706",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000048-e5f6-4789-a012-b3c4d5e6f748",
+          "store_name": "경동 신선야채",
+          "zone": "C구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000055-e5f6-4789-a012-b3c4d5e6f755",
+          "store_name": "경동 반찬가게",
+          "zone": "F구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000052-e5f6-4789-a012-b3c4d5e6f752",
+          "store_name": "경동 해산물",
+          "zone": "E구역"
+        },
+        {
+          "step": 4,
+          "store_id": "d1000053-e5f6-4789-a012-b3c4d5e6f753",
+          "store_name": "경동 건어물",
+          "zone": "A구역"
+        }
+      ],
+      "total_stores": 4,
+      "total_estimated_minutes": 28
+    },
+    "estimated_minutes": 28,
+    "distance_meters": 320
+  },
+  {
+    "route_plan_id": "rp000022-e5f6-4789-a012-b3c4d5e6f722",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f717",
+    "market_id": "f8a2b3c4-d5e6-4789-a012-b3c4d5e6f708",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000073-e5f6-4789-a012-b3c4d5e6f773",
+          "store_name": "노량진수산 해산물",
+          "zone": "A구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000070-e5f6-4789-a012-b3c4d5e6f770",
+          "store_name": "노량진수산 분식",
+          "zone": "F구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000067-e5f6-4789-a012-b3c4d5e6f767",
+          "store_name": "노량진수산 신선야채",
+          "zone": "A구역"
+        },
+        {
+          "step": 4,
+          "store_id": "d1000075-e5f6-4789-a012-b3c4d5e6f775",
+          "store_name": "노량진수산 수산",
+          "zone": "A구역"
+        }
+      ],
+      "total_stores": 4,
+      "total_estimated_minutes": 28
+    },
+    "estimated_minutes": 28,
+    "distance_meters": 320
+  },
+  {
+    "route_plan_id": "rp000023-e5f6-4789-a012-b3c4d5e6f723",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f716",
+    "market_id": "f5a2b3c4-d5e6-4789-a012-b3c4d5e6f705",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000039-e5f6-4789-a012-b3c4d5e6f739",
+          "store_name": "동대문 떡집",
+          "zone": "B구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000040-e5f6-4789-a012-b3c4d5e6f740",
+          "store_name": "동대문 채소마트",
+          "zone": "F구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000041-e5f6-4789-a012-b3c4d5e6f741",
+          "store_name": "동대문 생활잡화",
+          "zone": "B구역"
+        },
+        {
+          "step": 4,
+          "store_id": "d1000045-e5f6-4789-a012-b3c4d5e6f745",
+          "store_name": "동대문 과일나라",
+          "zone": "E구역"
+        },
+        {
+          "step": 5,
+          "store_id": "d1000046-e5f6-4789-a012-b3c4d5e6f746",
+          "store_name": "동대문 달콤 과일",
+          "zone": "D구역"
+        }
+      ],
+      "total_stores": 5,
+      "total_estimated_minutes": 35
+    },
+    "estimated_minutes": 35,
+    "distance_meters": 400
+  },
+  {
+    "route_plan_id": "rp000024-e5f6-4789-a012-b3c4d5e6f724",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f718",
+    "market_id": "f6a2b3c4-d5e6-4789-a012-b3c4d5e6f706",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000055-e5f6-4789-a012-b3c4d5e6f755",
+          "store_name": "경동 반찬가게",
+          "zone": "F구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000047-e5f6-4789-a012-b3c4d5e6f747",
+          "store_name": "경동 달콤 과일",
+          "zone": "F구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000051-e5f6-4789-a012-b3c4d5e6f751",
+          "store_name": "경동 생활잡화",
+          "zone": "F구역"
+        },
+        {
+          "step": 4,
+          "store_id": "d1000049-e5f6-4789-a012-b3c4d5e6f749",
+          "store_name": "경동 분식",
+          "zone": "B구역"
+        }
+      ],
+      "total_stores": 4,
+      "total_estimated_minutes": 28
+    },
+    "estimated_minutes": 28,
+    "distance_meters": 320
+  },
+  {
+    "route_plan_id": "rp000025-e5f6-4789-a012-b3c4d5e6f725",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f716",
+    "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+          "store_name": "망원 반찬가게",
+          "zone": "D구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
+          "store_name": "망원 생활잡화",
+          "zone": "E구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
+          "store_name": "달콤 과일",
+          "zone": "C구역"
+        },
+        {
+          "step": 4,
+          "store_id": "d1000001-e5f6-4789-a012-b3c4d5e6f701",
+          "store_name": "망원 신선야채",
+          "zone": "A구역"
+        }
+      ],
+      "total_stores": 4,
+      "total_estimated_minutes": 28
+    },
+    "estimated_minutes": 28,
+    "distance_meters": 320
+  },
+  {
+    "route_plan_id": "rp000026-e5f6-4789-a012-b3c4d5e6f726",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f725",
+    "market_id": "f2a2b3c4-d5e6-4789-a012-b3c4d5e6f702",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000012-e5f6-4789-a012-b3c4d5e6f712",
+          "store_name": "광장 수산",
+          "zone": "A구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000011-e5f6-4789-a012-b3c4d5e6f711",
+          "store_name": "광장 신선야채",
+          "zone": "A구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000017-e5f6-4789-a012-b3c4d5e6f717",
+          "store_name": "광장 분식",
+          "zone": "B구역"
+        }
+      ],
+      "total_stores": 3,
+      "total_estimated_minutes": 21
+    },
+    "estimated_minutes": 21,
+    "distance_meters": 240
+  },
+  {
+    "route_plan_id": "rp000027-e5f6-4789-a012-b3c4d5e6f727",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f718",
+    "market_id": "f3a2b3c4-d5e6-4789-a012-b3c4d5e6f703",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000025-e5f6-4789-a012-b3c4d5e6f725",
+          "store_name": "통인 분식",
+          "zone": "F구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000024-e5f6-4789-a012-b3c4d5e6f724",
+          "store_name": "통인 달콤 과일",
+          "zone": "C구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000020-e5f6-4789-a012-b3c4d5e6f720",
+          "store_name": "통인 수산",
+          "zone": "B구역"
+        }
+      ],
+      "total_stores": 3,
+      "total_estimated_minutes": 21
+    },
+    "estimated_minutes": 21,
+    "distance_meters": 240
+  },
+  {
+    "route_plan_id": "rp000028-e5f6-4789-a012-b3c4d5e6f728",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f729",
+    "market_id": "f10a2b3c4-d5e6-4789-a012-b3c4d5e6f710",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000091-e5f6-4789-a012-b3c4d5e6f791",
+          "store_name": "암사종합 해산물",
+          "zone": "C구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000090-e5f6-4789-a012-b3c4d5e6f790",
+          "store_name": "암사종합 달콤 과일",
+          "zone": "C구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000101-e5f6-4789-a012-b3c4d5e6f701",
+          "store_name": "암사종합 정육",
+          "zone": "B구역"
+        },
+        {
+          "step": 4,
+          "store_id": "d1000093-e5f6-4789-a012-b3c4d5e6f793",
+          "store_name": "암사종합 수산",
+          "zone": "A구역"
+        }
+      ],
+      "total_stores": 4,
+      "total_estimated_minutes": 28
+    },
+    "estimated_minutes": 28,
+    "distance_meters": 320
+  },
+  {
+    "route_plan_id": "rp000029-e5f6-4789-a012-b3c4d5e6f729",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f731",
+    "market_id": "f8a2b3c4-d5e6-4789-a012-b3c4d5e6f708",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000067-e5f6-4789-a012-b3c4d5e6f767",
+          "store_name": "노량진수산 신선야채",
+          "zone": "A구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000071-e5f6-4789-a012-b3c4d5e6f771",
+          "store_name": "노량진수산 정육",
+          "zone": "B구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000077-e5f6-4789-a012-b3c4d5e6f777",
+          "store_name": "노량진수산 건어물",
+          "zone": "A구역"
+        }
+      ],
+      "total_stores": 3,
+      "total_estimated_minutes": 21
+    },
+    "estimated_minutes": 21,
+    "distance_meters": 240
+  },
+  {
+    "route_plan_id": "rp000030-e5f6-4789-a012-b3c4d5e6f730",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "market_id": "f8a2b3c4-d5e6-4789-a012-b3c4d5e6f708",
+    "route_json": {
+      "route": [
+        {
+          "step": 1,
+          "store_id": "d1000068-e5f6-4789-a012-b3c4d5e6f768",
+          "store_name": "노량진수산 생활잡화",
+          "zone": "D구역"
+        },
+        {
+          "step": 2,
+          "store_id": "d1000075-e5f6-4789-a012-b3c4d5e6f775",
+          "store_name": "노량진수산 수산",
+          "zone": "A구역"
+        },
+        {
+          "step": 3,
+          "store_id": "d1000072-e5f6-4789-a012-b3c4d5e6f772",
+          "store_name": "노량진수산 반찬가게",
+          "zone": "E구역"
+        }
+      ],
+      "total_stores": 3,
+      "total_estimated_minutes": 21
+    },
+    "estimated_minutes": 21,
+    "distance_meters": 240
+  }
+]

@@ -59,6 +59,31 @@ def ai_draft(
     return success_response(data)
 
 
+class ProductUpdate(BaseModel):
+    price: Optional[int] = None
+    stock_status: Optional[str] = None
+
+
+@router.patch("/products/{product_id}", response_model=BaseResponse)
+def update_product(
+    product_id: str,
+    req: ProductUpdate,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    data = merchant_service.update_product(db, current_user, product_id, req.price, req.stock_status)
+    return success_response(data)
+
+
+@router.get("/my-store", response_model=BaseResponse)
+def get_my_store(
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    data = merchant_service.get_my_store(db, current_user)
+    return success_response(data)
+
+
 class DropStatusUpdate(BaseModel):
     status: str
 

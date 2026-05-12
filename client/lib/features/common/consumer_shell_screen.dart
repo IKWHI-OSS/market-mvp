@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../home/home_screen.dart';
+import '../my/my_screen.dart';
 import '../route/route_screen.dart';
 import '../search/search_screen.dart';
 import '../shopping/shopping_list_screen.dart';
@@ -23,7 +24,7 @@ class _ConsumerShellScreenState extends State<ConsumerShellScreen> {
     SearchScreen(),
     ShoppingListScreen(),
     RouteScreen(),
-    _MyPage(),
+    MyScreen(),
   ];
 
   @override

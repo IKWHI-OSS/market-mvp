@@ -1,0 +1,103 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: market-mvp-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-rootpass}
+      MYSQL_DATABASE: ${DB_NAME:-market_mvp}
+      TZ: Asia/Seoul
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./db/add_market_price.sql:/docker-entrypoint-initdb.d/02-market-price.sql:ro
+      - ./db/add_story_table.sql:/docker-entrypoint-initdb.d/03-story.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASSWORD:-rootpass}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  api:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: market-mvp-api
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: mysql+pymysql://root:${DB_PASSWORD:-rootpass}@db:3306/${DB_NAME:-market_mvp}?charset=utf8mb4
+      SECRET_KEY: ${SECRET_KEY:-dev-secret-change-me}
+      ALGORITHM: HS256
+      ACCESS_TOKEN_EXPIRE_MINUTES: 1440
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: ${DB_PASSWORD:-rootpass}
+      DB_NAME: ${DB_NAME:-market_mvp}
+      KAMIS_API_KEY: ${KAMIS_API_KEY:-}
+      KAMIS_API_ID: ${KAMIS_API_ID:-}
+      KAMIS_CERT_ID: ${KAMIS_CERT_ID:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      SEOUL_API_KEY: ${SEOUL_API_KEY:-}
+      TZ: Asia/Seoul
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./server:/app
+      - ./data:/data:ro
+      - ./scripts:/scripts:ro
+
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: market-mvp-nginx
+    restart: unless-stopped
+    depends_on:
+      - api
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost/nginx-health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # seed:
+  #   build:
+  #     context: ./server
+  #     dockerfile: Dockerfile
+  #   container_name: market-mvp-seed
+  #   profiles: ["seed"]
+  #   depends_on:
+  #     db:
+  #       condition: service_healthy
+  #   environment:
+  #     DB_HOST: db
+  #     DB_PORT: 3306
+  #     DB_USER: root
+  #     DB_PASSWORD: ${DB_PASSWORD:-rootpass}
+  #     DB_NAME: ${DB_NAME:-market_mvp}
+  #     MOCK_DIR: data/mock_v2
+  #   volumes:
+  #     - ./data:/app/data:ro
+  #     - ./scripts:/app/scripts:ro
+  #   working_dir: /app
+  #   command: ["python", "scripts/seed_mock_v2.py"]
+
+volumes:
+  mysql_data:
+    name: market-mvp-mysql-data

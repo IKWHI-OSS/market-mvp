@@ -1,0 +1,2729 @@
+[
+  {
+    "history_id": "ph000001-e5f6-4789-a012-b3c4d5e6f701",
+    "product_id": "p1000463-e5f6-4789-a012-b3c4d5e6f763",
+    "old_price": 1920,
+    "new_price": 1800,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-03 00:00:00"
+  },
+  {
+    "history_id": "ph000002-e5f6-4789-a012-b3c4d5e6f702",
+    "product_id": "p1000351-e5f6-4789-a012-b3c4d5e6f751",
+    "old_price": 16220,
+    "new_price": 15000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-19 00:00:00"
+  },
+  {
+    "history_id": "ph000003-e5f6-4789-a012-b3c4d5e6f703",
+    "product_id": "p1000309-e5f6-4789-a012-b3c4d5e6f709",
+    "old_price": 1673,
+    "new_price": 1500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-14 00:00:00"
+  },
+  {
+    "history_id": "ph000004-e5f6-4789-a012-b3c4d5e6f704",
+    "product_id": "p1000068-e5f6-4789-a012-b3c4d5e6f768",
+    "old_price": 2696,
+    "new_price": 2500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-25 00:00:00"
+  },
+  {
+    "history_id": "ph000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_id": "p1000068-e5f6-4789-a012-b3c4d5e6f768",
+    "old_price": 2890,
+    "new_price": 2696,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-01 00:00:00"
+  },
+  {
+    "history_id": "ph000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_id": "p1000068-e5f6-4789-a012-b3c4d5e6f768",
+    "old_price": 3106,
+    "new_price": 2890,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-07 00:00:00"
+  },
+  {
+    "history_id": "ph000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_id": "p1000184-e5f6-4789-a012-b3c4d5e6f784",
+    "old_price": 14334,
+    "new_price": 12000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-12 00:00:00"
+  },
+  {
+    "history_id": "ph000008-e5f6-4789-a012-b3c4d5e6f708",
+    "product_id": "p1000184-e5f6-4789-a012-b3c4d5e6f784",
+    "old_price": 16017,
+    "new_price": 14334,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-25 00:00:00"
+  },
+  {
+    "history_id": "ph000009-e5f6-4789-a012-b3c4d5e6f709",
+    "product_id": "p1000341-e5f6-4789-a012-b3c4d5e6f741",
+    "old_price": 4110,
+    "new_price": 3500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-29 00:00:00"
+  },
+  {
+    "history_id": "ph000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_id": "p1000341-e5f6-4789-a012-b3c4d5e6f741",
+    "old_price": 4320,
+    "new_price": 4110,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-12 00:00:00"
+  },
+  {
+    "history_id": "ph000011-e5f6-4789-a012-b3c4d5e6f711",
+    "product_id": "p1000341-e5f6-4789-a012-b3c4d5e6f741",
+    "old_price": 4815,
+    "new_price": 4320,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-14 00:00:00"
+  },
+  {
+    "history_id": "ph000012-e5f6-4789-a012-b3c4d5e6f712",
+    "product_id": "p1000050-e5f6-4789-a012-b3c4d5e6f750",
+    "old_price": 2841,
+    "new_price": 2500,
+    "reason": "kamis",
+    "reference_id": "mp000070-e5f6-4789-a012-b3c4d5e6f769",
+    "created_at": "2026-05-08 00:00:00"
+  },
+  {
+    "history_id": "ph000013-e5f6-4789-a012-b3c4d5e6f713",
+    "product_id": "p1000050-e5f6-4789-a012-b3c4d5e6f750",
+    "old_price": 3190,
+    "new_price": 2841,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-16 00:00:00"
+  },
+  {
+    "history_id": "ph000014-e5f6-4789-a012-b3c4d5e6f714",
+    "product_id": "p1000050-e5f6-4789-a012-b3c4d5e6f750",
+    "old_price": 3696,
+    "new_price": 3190,
+    "reason": "kamis",
+    "reference_id": "mp000089-e5f6-4789-a012-b3c4d5e6f788",
+    "created_at": "2026-04-03 00:00:00"
+  },
+  {
+    "history_id": "ph000015-e5f6-4789-a012-b3c4d5e6f715",
+    "product_id": "p1000427-e5f6-4789-a012-b3c4d5e6f727",
+    "old_price": 13017,
+    "new_price": 12000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-09 00:00:00"
+  },
+  {
+    "history_id": "ph000016-e5f6-4789-a012-b3c4d5e6f716",
+    "product_id": "p1000427-e5f6-4789-a012-b3c4d5e6f727",
+    "old_price": 14491,
+    "new_price": 13017,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-02 00:00:00"
+  },
+  {
+    "history_id": "ph000017-e5f6-4789-a012-b3c4d5e6f717",
+    "product_id": "p1000189-e5f6-4789-a012-b3c4d5e6f789",
+    "old_price": 6511,
+    "new_price": 5500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-24 00:00:00"
+  },
+  {
+    "history_id": "ph000018-e5f6-4789-a012-b3c4d5e6f718",
+    "product_id": "p1000189-e5f6-4789-a012-b3c4d5e6f789",
+    "old_price": 6950,
+    "new_price": 6511,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-14 00:00:00"
+  },
+  {
+    "history_id": "ph000019-e5f6-4789-a012-b3c4d5e6f719",
+    "product_id": "p1000263-e5f6-4789-a012-b3c4d5e6f763",
+    "old_price": 3910,
+    "new_price": 3500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-04 00:00:00"
+  },
+  {
+    "history_id": "ph000020-e5f6-4789-a012-b3c4d5e6f720",
+    "product_id": "p1000263-e5f6-4789-a012-b3c4d5e6f763",
+    "old_price": 4274,
+    "new_price": 3910,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-23 00:00:00"
+  },
+  {
+    "history_id": "ph000021-e5f6-4789-a012-b3c4d5e6f721",
+    "product_id": "p1000103-e5f6-4789-a012-b3c4d5e6f703",
+    "old_price": 19526,
+    "new_price": 18000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-10 00:00:00"
+  },
+  {
+    "history_id": "ph000022-e5f6-4789-a012-b3c4d5e6f722",
+    "product_id": "p1000103-e5f6-4789-a012-b3c4d5e6f703",
+    "old_price": 22508,
+    "new_price": 19526,
+    "reason": "kamis",
+    "reference_id": "mp000118-e5f6-4789-a012-b3c4d5e6f717",
+    "created_at": "2026-04-08 00:00:00"
+  },
+  {
+    "history_id": "ph000023-e5f6-4789-a012-b3c4d5e6f723",
+    "product_id": "p1000251-e5f6-4789-a012-b3c4d5e6f751",
+    "old_price": 3445,
+    "new_price": 3000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-30 00:00:00"
+  },
+  {
+    "history_id": "ph000024-e5f6-4789-a012-b3c4d5e6f724",
+    "product_id": "p1000251-e5f6-4789-a012-b3c4d5e6f751",
+    "old_price": 3990,
+    "new_price": 3445,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-21 00:00:00"
+  },
+  {
+    "history_id": "ph000025-e5f6-4789-a012-b3c4d5e6f725",
+    "product_id": "p1000251-e5f6-4789-a012-b3c4d5e6f751",
+    "old_price": 4688,
+    "new_price": 3990,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-06 00:00:00"
+  },
+  {
+    "history_id": "ph000026-e5f6-4789-a012-b3c4d5e6f726",
+    "product_id": "p1000229-e5f6-4789-a012-b3c4d5e6f729",
+    "old_price": 5262,
+    "new_price": 4500,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-12 00:00:00"
+  },
+  {
+    "history_id": "ph000027-e5f6-4789-a012-b3c4d5e6f727",
+    "product_id": "p1000229-e5f6-4789-a012-b3c4d5e6f729",
+    "old_price": 5652,
+    "new_price": 5262,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-12 00:00:00"
+  },
+  {
+    "history_id": "ph000028-e5f6-4789-a012-b3c4d5e6f728",
+    "product_id": "p1000454-e5f6-4789-a012-b3c4d5e6f754",
+    "old_price": 1594,
+    "new_price": 1500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-04 00:00:00"
+  },
+  {
+    "history_id": "ph000029-e5f6-4789-a012-b3c4d5e6f729",
+    "product_id": "p1000454-e5f6-4789-a012-b3c4d5e6f754",
+    "old_price": 1721,
+    "new_price": 1594,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-01 00:00:00"
+  },
+  {
+    "history_id": "ph000030-e5f6-4789-a012-b3c4d5e6f730",
+    "product_id": "p1000454-e5f6-4789-a012-b3c4d5e6f754",
+    "old_price": 2011,
+    "new_price": 1721,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-14 00:00:00"
+  },
+  {
+    "history_id": "ph000031-e5f6-4789-a012-b3c4d5e6f731",
+    "product_id": "p1000199-e5f6-4789-a012-b3c4d5e6f799",
+    "old_price": 16278,
+    "new_price": 15000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-09 00:00:00"
+  },
+  {
+    "history_id": "ph000032-e5f6-4789-a012-b3c4d5e6f732",
+    "product_id": "p1000199-e5f6-4789-a012-b3c4d5e6f799",
+    "old_price": 17967,
+    "new_price": 16278,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-13 00:00:00"
+  },
+  {
+    "history_id": "ph000033-e5f6-4789-a012-b3c4d5e6f733",
+    "product_id": "p1000244-e5f6-4789-a012-b3c4d5e6f744",
+    "old_price": 3766,
+    "new_price": 3500,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-23 00:00:00"
+  },
+  {
+    "history_id": "ph000034-e5f6-4789-a012-b3c4d5e6f734",
+    "product_id": "p1000138-e5f6-4789-a012-b3c4d5e6f738",
+    "old_price": 6440,
+    "new_price": 5500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-06 00:00:00"
+  },
+  {
+    "history_id": "ph000035-e5f6-4789-a012-b3c4d5e6f735",
+    "product_id": "p1000289-e5f6-4789-a012-b3c4d5e6f789",
+    "old_price": 8130,
+    "new_price": 7500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-24 00:00:00"
+  },
+  {
+    "history_id": "ph000036-e5f6-4789-a012-b3c4d5e6f736",
+    "product_id": "p1000289-e5f6-4789-a012-b3c4d5e6f789",
+    "old_price": 8850,
+    "new_price": 8130,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-23 00:00:00"
+  },
+  {
+    "history_id": "ph000037-e5f6-4789-a012-b3c4d5e6f737",
+    "product_id": "p1000289-e5f6-4789-a012-b3c4d5e6f789",
+    "old_price": 10313,
+    "new_price": 8850,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-12 00:00:00"
+  },
+  {
+    "history_id": "ph000038-e5f6-4789-a012-b3c4d5e6f738",
+    "product_id": "p1000308-e5f6-4789-a012-b3c4d5e6f708",
+    "old_price": 3553,
+    "new_price": 3000,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-12 00:00:00"
+  },
+  {
+    "history_id": "ph000039-e5f6-4789-a012-b3c4d5e6f739",
+    "product_id": "p1000308-e5f6-4789-a012-b3c4d5e6f708",
+    "old_price": 4005,
+    "new_price": 3553,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-12 00:00:00"
+  },
+  {
+    "history_id": "ph000040-e5f6-4789-a012-b3c4d5e6f740",
+    "product_id": "p1000217-e5f6-4789-a012-b3c4d5e6f717",
+    "old_price": 3566,
+    "new_price": 3000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-25 00:00:00"
+  },
+  {
+    "history_id": "ph000041-e5f6-4789-a012-b3c4d5e6f741",
+    "product_id": "p1000047-e5f6-4789-a012-b3c4d5e6f747",
+    "old_price": 9569,
+    "new_price": 8000,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-20 00:00:00"
+  },
+  {
+    "history_id": "ph000042-e5f6-4789-a012-b3c4d5e6f742",
+    "product_id": "p1000388-e5f6-4789-a012-b3c4d5e6f788",
+    "old_price": 8801,
+    "new_price": 7500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-06 00:00:00"
+  },
+  {
+    "history_id": "ph000043-e5f6-4789-a012-b3c4d5e6f743",
+    "product_id": "p1000478-e5f6-4789-a012-b3c4d5e6f778",
+    "old_price": 6294,
+    "new_price": 5500,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-10 00:00:00"
+  },
+  {
+    "history_id": "ph000044-e5f6-4789-a012-b3c4d5e6f744",
+    "product_id": "p1000416-e5f6-4789-a012-b3c4d5e6f716",
+    "old_price": 26838,
+    "new_price": 25000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-25 00:00:00"
+  },
+  {
+    "history_id": "ph000045-e5f6-4789-a012-b3c4d5e6f745",
+    "product_id": "p1000416-e5f6-4789-a012-b3c4d5e6f716",
+    "old_price": 31247,
+    "new_price": 26838,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-07 00:00:00"
+  },
+  {
+    "history_id": "ph000046-e5f6-4789-a012-b3c4d5e6f746",
+    "product_id": "p1000489-e5f6-4789-a012-b3c4d5e6f789",
+    "old_price": 5902,
+    "new_price": 5500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-13 00:00:00"
+  },
+  {
+    "history_id": "ph000047-e5f6-4789-a012-b3c4d5e6f747",
+    "product_id": "p1000315-e5f6-4789-a012-b3c4d5e6f715",
+    "old_price": 2671,
+    "new_price": 2500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-26 00:00:00"
+  },
+  {
+    "history_id": "ph000048-e5f6-4789-a012-b3c4d5e6f748",
+    "product_id": "p1000096-e5f6-4789-a012-b3c4d5e6f796",
+    "old_price": 1630,
+    "new_price": 1500,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-29 00:00:00"
+  },
+  {
+    "history_id": "ph000049-e5f6-4789-a012-b3c4d5e6f749",
+    "product_id": "p1000223-e5f6-4789-a012-b3c4d5e6f723",
+    "old_price": 5065,
+    "new_price": 4500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-28 00:00:00"
+  },
+  {
+    "history_id": "ph000050-e5f6-4789-a012-b3c4d5e6f750",
+    "product_id": "p1000223-e5f6-4789-a012-b3c4d5e6f723",
+    "old_price": 5861,
+    "new_price": 5065,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-14 00:00:00"
+  },
+  {
+    "history_id": "ph000051-e5f6-4789-a012-b3c4d5e6f751",
+    "product_id": "p1000323-e5f6-4789-a012-b3c4d5e6f723",
+    "old_price": 5977,
+    "new_price": 5500,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-23 00:00:00"
+  },
+  {
+    "history_id": "ph000052-e5f6-4789-a012-b3c4d5e6f752",
+    "product_id": "p1000323-e5f6-4789-a012-b3c4d5e6f723",
+    "old_price": 6653,
+    "new_price": 5977,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-09 00:00:00"
+  },
+  {
+    "history_id": "ph000053-e5f6-4789-a012-b3c4d5e6f753",
+    "product_id": "p1000323-e5f6-4789-a012-b3c4d5e6f723",
+    "old_price": 7413,
+    "new_price": 6653,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-01 00:00:00"
+  },
+  {
+    "history_id": "ph000054-e5f6-4789-a012-b3c4d5e6f754",
+    "product_id": "p1000219-e5f6-4789-a012-b3c4d5e6f719",
+    "old_price": 3578,
+    "new_price": 3000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-18 00:00:00"
+  },
+  {
+    "history_id": "ph000055-e5f6-4789-a012-b3c4d5e6f755",
+    "product_id": "p1000219-e5f6-4789-a012-b3c4d5e6f719",
+    "old_price": 3951,
+    "new_price": 3578,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-30 00:00:00"
+  },
+  {
+    "history_id": "ph000056-e5f6-4789-a012-b3c4d5e6f756",
+    "product_id": "p1000048-e5f6-4789-a012-b3c4d5e6f748",
+    "old_price": 8103,
+    "new_price": 7000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-07 00:00:00"
+  },
+  {
+    "history_id": "ph000057-e5f6-4789-a012-b3c4d5e6f757",
+    "product_id": "p1000021-e5f6-4789-a012-b3c4d5e6f721",
+    "old_price": 6604,
+    "new_price": 6000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-15 00:00:00"
+  },
+  {
+    "history_id": "ph000058-e5f6-4789-a012-b3c4d5e6f758",
+    "product_id": "p1000488-e5f6-4789-a012-b3c4d5e6f788",
+    "old_price": 5017,
+    "new_price": 4500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-08 00:00:00"
+  },
+  {
+    "history_id": "ph000059-e5f6-4789-a012-b3c4d5e6f759",
+    "product_id": "p1000175-e5f6-4789-a012-b3c4d5e6f775",
+    "old_price": 11289,
+    "new_price": 9500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-21 00:00:00"
+  },
+  {
+    "history_id": "ph000060-e5f6-4789-a012-b3c4d5e6f760",
+    "product_id": "p1000175-e5f6-4789-a012-b3c4d5e6f775",
+    "old_price": 11951,
+    "new_price": 11289,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-12 00:00:00"
+  },
+  {
+    "history_id": "ph000061-e5f6-4789-a012-b3c4d5e6f761",
+    "product_id": "p1000175-e5f6-4789-a012-b3c4d5e6f775",
+    "old_price": 13981,
+    "new_price": 11951,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-20 00:00:00"
+  },
+  {
+    "history_id": "ph000062-e5f6-4789-a012-b3c4d5e6f762",
+    "product_id": "p1000238-e5f6-4789-a012-b3c4d5e6f738",
+    "old_price": 1665,
+    "new_price": 1500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-22 00:00:00"
+  },
+  {
+    "history_id": "ph000063-e5f6-4789-a012-b3c4d5e6f763",
+    "product_id": "p1000238-e5f6-4789-a012-b3c4d5e6f738",
+    "old_price": 1966,
+    "new_price": 1665,
+    "reason": "kamis",
+    "reference_id": "mp000071-e5f6-4789-a012-b3c4d5e6f770",
+    "created_at": "2026-04-05 00:00:00"
+  },
+  {
+    "history_id": "ph000064-e5f6-4789-a012-b3c4d5e6f764",
+    "product_id": "p1000347-e5f6-4789-a012-b3c4d5e6f747",
+    "old_price": 18921,
+    "new_price": 18000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-23 00:00:00"
+  },
+  {
+    "history_id": "ph000065-e5f6-4789-a012-b3c4d5e6f765",
+    "product_id": "p1000347-e5f6-4789-a012-b3c4d5e6f747",
+    "old_price": 21599,
+    "new_price": 18921,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-22 00:00:00"
+  },
+  {
+    "history_id": "ph000066-e5f6-4789-a012-b3c4d5e6f766",
+    "product_id": "p1000115-e5f6-4789-a012-b3c4d5e6f715",
+    "old_price": 13758,
+    "new_price": 12000,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-20 00:00:00"
+  },
+  {
+    "history_id": "ph000067-e5f6-4789-a012-b3c4d5e6f767",
+    "product_id": "p1000115-e5f6-4789-a012-b3c4d5e6f715",
+    "old_price": 16072,
+    "new_price": 13758,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-12 00:00:00"
+  },
+  {
+    "history_id": "ph000068-e5f6-4789-a012-b3c4d5e6f768",
+    "product_id": "p1000332-e5f6-4789-a012-b3c4d5e6f732",
+    "old_price": 5324,
+    "new_price": 4500,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-27 00:00:00"
+  },
+  {
+    "history_id": "ph000069-e5f6-4789-a012-b3c4d5e6f769",
+    "product_id": "p1000332-e5f6-4789-a012-b3c4d5e6f732",
+    "old_price": 6209,
+    "new_price": 5324,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-05-02 00:00:00"
+  },
+  {
+    "history_id": "ph000070-e5f6-4789-a012-b3c4d5e6f770",
+    "product_id": "p1000352-e5f6-4789-a012-b3c4d5e6f752",
+    "old_price": 3391,
+    "new_price": 3000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-16 00:00:00"
+  },
+  {
+    "history_id": "ph000071-e5f6-4789-a012-b3c4d5e6f771",
+    "product_id": "p1000366-e5f6-4789-a012-b3c4d5e6f766",
+    "old_price": 21275,
+    "new_price": 18000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-22 00:00:00"
+  },
+  {
+    "history_id": "ph000072-e5f6-4789-a012-b3c4d5e6f772",
+    "product_id": "p1000366-e5f6-4789-a012-b3c4d5e6f766",
+    "old_price": 23244,
+    "new_price": 21275,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-17 00:00:00"
+  },
+  {
+    "history_id": "ph000073-e5f6-4789-a012-b3c4d5e6f773",
+    "product_id": "p1000366-e5f6-4789-a012-b3c4d5e6f766",
+    "old_price": 25494,
+    "new_price": 23244,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-09 00:00:00"
+  },
+  {
+    "history_id": "ph000074-e5f6-4789-a012-b3c4d5e6f774",
+    "product_id": "p1000080-e5f6-4789-a012-b3c4d5e6f780",
+    "old_price": 1896,
+    "new_price": 1800,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-22 00:00:00"
+  },
+  {
+    "history_id": "ph000075-e5f6-4789-a012-b3c4d5e6f775",
+    "product_id": "p1000254-e5f6-4789-a012-b3c4d5e6f754",
+    "old_price": 16332,
+    "new_price": 15000,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-30 00:00:00"
+  },
+  {
+    "history_id": "ph000076-e5f6-4789-a012-b3c4d5e6f776",
+    "product_id": "p1000254-e5f6-4789-a012-b3c4d5e6f754",
+    "old_price": 18928,
+    "new_price": 16332,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-05-01 00:00:00"
+  },
+  {
+    "history_id": "ph000077-e5f6-4789-a012-b3c4d5e6f777",
+    "product_id": "p1000254-e5f6-4789-a012-b3c4d5e6f754",
+    "old_price": 21952,
+    "new_price": 18928,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-21 00:00:00"
+  },
+  {
+    "history_id": "ph000078-e5f6-4789-a012-b3c4d5e6f778",
+    "product_id": "p1000270-e5f6-4789-a012-b3c4d5e6f770",
+    "old_price": 3378,
+    "new_price": 3000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-15 00:00:00"
+  },
+  {
+    "history_id": "ph000079-e5f6-4789-a012-b3c4d5e6f779",
+    "product_id": "p1000270-e5f6-4789-a012-b3c4d5e6f770",
+    "old_price": 3876,
+    "new_price": 3378,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-25 00:00:00"
+  },
+  {
+    "history_id": "ph000080-e5f6-4789-a012-b3c4d5e6f780",
+    "product_id": "p1000270-e5f6-4789-a012-b3c4d5e6f770",
+    "old_price": 4402,
+    "new_price": 3876,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-19 00:00:00"
+  },
+  {
+    "history_id": "ph000081-e5f6-4789-a012-b3c4d5e6f781",
+    "product_id": "p1000469-e5f6-4789-a012-b3c4d5e6f769",
+    "old_price": 21074,
+    "new_price": 18000,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-21 00:00:00"
+  },
+  {
+    "history_id": "ph000082-e5f6-4789-a012-b3c4d5e6f782",
+    "product_id": "p1000460-e5f6-4789-a012-b3c4d5e6f760",
+    "old_price": 29603,
+    "new_price": 25000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-22 00:00:00"
+  },
+  {
+    "history_id": "ph000083-e5f6-4789-a012-b3c4d5e6f783",
+    "product_id": "p1000460-e5f6-4789-a012-b3c4d5e6f760",
+    "old_price": 34833,
+    "new_price": 29603,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-25 00:00:00"
+  },
+  {
+    "history_id": "ph000084-e5f6-4789-a012-b3c4d5e6f784",
+    "product_id": "p1000460-e5f6-4789-a012-b3c4d5e6f760",
+    "old_price": 38061,
+    "new_price": 34833,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-07 00:00:00"
+  },
+  {
+    "history_id": "ph000085-e5f6-4789-a012-b3c4d5e6f785",
+    "product_id": "p1000269-e5f6-4789-a012-b3c4d5e6f769",
+    "old_price": 2071,
+    "new_price": 1800,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-23 00:00:00"
+  },
+  {
+    "history_id": "ph000086-e5f6-4789-a012-b3c4d5e6f786",
+    "product_id": "p1000269-e5f6-4789-a012-b3c4d5e6f769",
+    "old_price": 2403,
+    "new_price": 2071,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-18 00:00:00"
+  },
+  {
+    "history_id": "ph000087-e5f6-4789-a012-b3c4d5e6f787",
+    "product_id": "p1000269-e5f6-4789-a012-b3c4d5e6f769",
+    "old_price": 2733,
+    "new_price": 2403,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-18 00:00:00"
+  },
+  {
+    "history_id": "ph000088-e5f6-4789-a012-b3c4d5e6f788",
+    "product_id": "p1000043-e5f6-4789-a012-b3c4d5e6f743",
+    "old_price": 12776,
+    "new_price": 12000,
+    "reason": "kamis",
+    "reference_id": "mp000057-e5f6-4789-a012-b3c4d5e6f756",
+    "created_at": "2026-04-26 00:00:00"
+  },
+  {
+    "history_id": "ph000089-e5f6-4789-a012-b3c4d5e6f789",
+    "product_id": "p1000043-e5f6-4789-a012-b3c4d5e6f743",
+    "old_price": 13571,
+    "new_price": 12776,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-06 00:00:00"
+  },
+  {
+    "history_id": "ph000090-e5f6-4789-a012-b3c4d5e6f790",
+    "product_id": "p1000149-e5f6-4789-a012-b3c4d5e6f749",
+    "old_price": 5046,
+    "new_price": 4500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-28 00:00:00"
+  },
+  {
+    "history_id": "ph000091-e5f6-4789-a012-b3c4d5e6f791",
+    "product_id": "p1000240-e5f6-4789-a012-b3c4d5e6f740",
+    "old_price": 6209,
+    "new_price": 5500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-23 00:00:00"
+  },
+  {
+    "history_id": "ph000092-e5f6-4789-a012-b3c4d5e6f792",
+    "product_id": "p1000240-e5f6-4789-a012-b3c4d5e6f740",
+    "old_price": 7244,
+    "new_price": 6209,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-16 00:00:00"
+  },
+  {
+    "history_id": "ph000093-e5f6-4789-a012-b3c4d5e6f793",
+    "product_id": "p1000240-e5f6-4789-a012-b3c4d5e6f740",
+    "old_price": 8148,
+    "new_price": 7244,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-15 00:00:00"
+  },
+  {
+    "history_id": "ph000094-e5f6-4789-a012-b3c4d5e6f794",
+    "product_id": "p1000224-e5f6-4789-a012-b3c4d5e6f724",
+    "old_price": 8922,
+    "new_price": 7500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-26 00:00:00"
+  },
+  {
+    "history_id": "ph000095-e5f6-4789-a012-b3c4d5e6f795",
+    "product_id": "p1000224-e5f6-4789-a012-b3c4d5e6f724",
+    "old_price": 10470,
+    "new_price": 8922,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-30 00:00:00"
+  },
+  {
+    "history_id": "ph000096-e5f6-4789-a012-b3c4d5e6f796",
+    "product_id": "p1000224-e5f6-4789-a012-b3c4d5e6f724",
+    "old_price": 11754,
+    "new_price": 10470,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-07 00:00:00"
+  },
+  {
+    "history_id": "ph000097-e5f6-4789-a012-b3c4d5e6f797",
+    "product_id": "p1000041-e5f6-4789-a012-b3c4d5e6f741",
+    "old_price": 2358,
+    "new_price": 2000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-03 00:00:00"
+  },
+  {
+    "history_id": "ph000098-e5f6-4789-a012-b3c4d5e6f798",
+    "product_id": "p1000041-e5f6-4789-a012-b3c4d5e6f741",
+    "old_price": 2636,
+    "new_price": 2358,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-29 00:00:00"
+  },
+  {
+    "history_id": "ph000099-e5f6-4789-a012-b3c4d5e6f799",
+    "product_id": "p1000041-e5f6-4789-a012-b3c4d5e6f741",
+    "old_price": 3141,
+    "new_price": 2636,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-26 00:00:00"
+  },
+  {
+    "history_id": "ph000100-e5f6-4789-a012-b3c4d5e6f700",
+    "product_id": "p1000411-e5f6-4789-a012-b3c4d5e6f711",
+    "old_price": 17667,
+    "new_price": 15000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-28 00:00:00"
+  },
+  {
+    "history_id": "ph000101-e5f6-4789-a012-b3c4d5e6f701",
+    "product_id": "p1000411-e5f6-4789-a012-b3c4d5e6f711",
+    "old_price": 20065,
+    "new_price": 17667,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-30 00:00:00"
+  },
+  {
+    "history_id": "ph000102-e5f6-4789-a012-b3c4d5e6f702",
+    "product_id": "p1000411-e5f6-4789-a012-b3c4d5e6f711",
+    "old_price": 21422,
+    "new_price": 20065,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-18 00:00:00"
+  },
+  {
+    "history_id": "ph000103-e5f6-4789-a012-b3c4d5e6f703",
+    "product_id": "p1000245-e5f6-4789-a012-b3c4d5e6f745",
+    "old_price": 16411,
+    "new_price": 15000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-05 00:00:00"
+  },
+  {
+    "history_id": "ph000104-e5f6-4789-a012-b3c4d5e6f704",
+    "product_id": "p1000245-e5f6-4789-a012-b3c4d5e6f745",
+    "old_price": 17581,
+    "new_price": 16411,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-03 00:00:00"
+  },
+  {
+    "history_id": "ph000105-e5f6-4789-a012-b3c4d5e6f705",
+    "product_id": "p1000154-e5f6-4789-a012-b3c4d5e6f754",
+    "old_price": 1775,
+    "new_price": 1500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-13 00:00:00"
+  },
+  {
+    "history_id": "ph000106-e5f6-4789-a012-b3c4d5e6f706",
+    "product_id": "p1000154-e5f6-4789-a012-b3c4d5e6f754",
+    "old_price": 2060,
+    "new_price": 1775,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-17 00:00:00"
+  },
+  {
+    "history_id": "ph000107-e5f6-4789-a012-b3c4d5e6f707",
+    "product_id": "p1000077-e5f6-4789-a012-b3c4d5e6f777",
+    "old_price": 10071,
+    "new_price": 9500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-24 00:00:00"
+  },
+  {
+    "history_id": "ph000108-e5f6-4789-a012-b3c4d5e6f708",
+    "product_id": "p1000077-e5f6-4789-a012-b3c4d5e6f777",
+    "old_price": 11440,
+    "new_price": 10071,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-06 00:00:00"
+  },
+  {
+    "history_id": "ph000109-e5f6-4789-a012-b3c4d5e6f709",
+    "product_id": "p1000066-e5f6-4789-a012-b3c4d5e6f766",
+    "old_price": 29180,
+    "new_price": 25000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-16 00:00:00"
+  },
+  {
+    "history_id": "ph000110-e5f6-4789-a012-b3c4d5e6f710",
+    "product_id": "p1000066-e5f6-4789-a012-b3c4d5e6f766",
+    "old_price": 34288,
+    "new_price": 29180,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-30 00:00:00"
+  },
+  {
+    "history_id": "ph000111-e5f6-4789-a012-b3c4d5e6f711",
+    "product_id": "p1000496-e5f6-4789-a012-b3c4d5e6f796",
+    "old_price": 1718,
+    "new_price": 1500,
+    "reason": "kamis",
+    "reference_id": "mp000802-e5f6-4789-a012-b3c4d5e6f701",
+    "created_at": "2026-04-25 00:00:00"
+  },
+  {
+    "history_id": "ph000112-e5f6-4789-a012-b3c4d5e6f712",
+    "product_id": "p1000496-e5f6-4789-a012-b3c4d5e6f796",
+    "old_price": 1842,
+    "new_price": 1718,
+    "reason": "kamis",
+    "reference_id": "mp000783-e5f6-4789-a012-b3c4d5e6f782",
+    "created_at": "2026-04-09 00:00:00"
+  },
+  {
+    "history_id": "ph000113-e5f6-4789-a012-b3c4d5e6f713",
+    "product_id": "p1000496-e5f6-4789-a012-b3c4d5e6f796",
+    "old_price": 2106,
+    "new_price": 1842,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-17 00:00:00"
+  },
+  {
+    "history_id": "ph000114-e5f6-4789-a012-b3c4d5e6f714",
+    "product_id": "p1000444-e5f6-4789-a012-b3c4d5e6f744",
+    "old_price": 4147,
+    "new_price": 3500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-08 00:00:00"
+  },
+  {
+    "history_id": "ph000115-e5f6-4789-a012-b3c4d5e6f715",
+    "product_id": "p1000431-e5f6-4789-a012-b3c4d5e6f731",
+    "old_price": 17752,
+    "new_price": 15000,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-19 00:00:00"
+  },
+  {
+    "history_id": "ph000116-e5f6-4789-a012-b3c4d5e6f716",
+    "product_id": "p1000431-e5f6-4789-a012-b3c4d5e6f731",
+    "old_price": 18875,
+    "new_price": 17752,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-04 00:00:00"
+  },
+  {
+    "history_id": "ph000117-e5f6-4789-a012-b3c4d5e6f717",
+    "product_id": "p1000431-e5f6-4789-a012-b3c4d5e6f731",
+    "old_price": 21438,
+    "new_price": 18875,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-07 00:00:00"
+  },
+  {
+    "history_id": "ph000118-e5f6-4789-a012-b3c4d5e6f718",
+    "product_id": "p1000128-e5f6-4789-a012-b3c4d5e6f728",
+    "old_price": 17012,
+    "new_price": 15000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-22 00:00:00"
+  },
+  {
+    "history_id": "ph000119-e5f6-4789-a012-b3c4d5e6f719",
+    "product_id": "p1000128-e5f6-4789-a012-b3c4d5e6f728",
+    "old_price": 18079,
+    "new_price": 17012,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-17 00:00:00"
+  },
+  {
+    "history_id": "ph000120-e5f6-4789-a012-b3c4d5e6f720",
+    "product_id": "p1000268-e5f6-4789-a012-b3c4d5e6f768",
+    "old_price": 29091,
+    "new_price": 25000,
+    "reason": "kamis",
+    "reference_id": "mp000047-e5f6-4789-a012-b3c4d5e6f746",
+    "created_at": "2026-05-03 00:00:00"
+  },
+  {
+    "history_id": "ph000121-e5f6-4789-a012-b3c4d5e6f721",
+    "product_id": "p1000268-e5f6-4789-a012-b3c4d5e6f768",
+    "old_price": 33820,
+    "new_price": 29091,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-04 00:00:00"
+  },
+  {
+    "history_id": "ph000122-e5f6-4789-a012-b3c4d5e6f722",
+    "product_id": "p1000268-e5f6-4789-a012-b3c4d5e6f768",
+    "old_price": 36121,
+    "new_price": 33820,
+    "reason": "kamis",
+    "reference_id": "mp000036-e5f6-4789-a012-b3c4d5e6f735",
+    "created_at": "2026-04-29 00:00:00"
+  },
+  {
+    "history_id": "ph000123-e5f6-4789-a012-b3c4d5e6f723",
+    "product_id": "p1000468-e5f6-4789-a012-b3c4d5e6f768",
+    "old_price": 29200,
+    "new_price": 25000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-17 00:00:00"
+  },
+  {
+    "history_id": "ph000124-e5f6-4789-a012-b3c4d5e6f724",
+    "product_id": "p1000468-e5f6-4789-a012-b3c4d5e6f768",
+    "old_price": 34334,
+    "new_price": 29200,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-02 00:00:00"
+  },
+  {
+    "history_id": "ph000125-e5f6-4789-a012-b3c4d5e6f725",
+    "product_id": "p1000152-e5f6-4789-a012-b3c4d5e6f752",
+    "old_price": 2852,
+    "new_price": 2500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-08 00:00:00"
+  },
+  {
+    "history_id": "ph000126-e5f6-4789-a012-b3c4d5e6f726",
+    "product_id": "p1000152-e5f6-4789-a012-b3c4d5e6f752",
+    "old_price": 3204,
+    "new_price": 2852,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-24 00:00:00"
+  },
+  {
+    "history_id": "ph000127-e5f6-4789-a012-b3c4d5e6f727",
+    "product_id": "p1000152-e5f6-4789-a012-b3c4d5e6f752",
+    "old_price": 3574,
+    "new_price": 3204,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-02 00:00:00"
+  },
+  {
+    "history_id": "ph000128-e5f6-4789-a012-b3c4d5e6f728",
+    "product_id": "p1000292-e5f6-4789-a012-b3c4d5e6f792",
+    "old_price": 8232,
+    "new_price": 7500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-06 00:00:00"
+  },
+  {
+    "history_id": "ph000129-e5f6-4789-a012-b3c4d5e6f729",
+    "product_id": "p1000292-e5f6-4789-a012-b3c4d5e6f792",
+    "old_price": 9853,
+    "new_price": 8232,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-25 00:00:00"
+  },
+  {
+    "history_id": "ph000130-e5f6-4789-a012-b3c4d5e6f730",
+    "product_id": "p1000292-e5f6-4789-a012-b3c4d5e6f792",
+    "old_price": 10558,
+    "new_price": 9853,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-27 00:00:00"
+  },
+  {
+    "history_id": "ph000131-e5f6-4789-a012-b3c4d5e6f731",
+    "product_id": "p1000025-e5f6-4789-a012-b3c4d5e6f725",
+    "old_price": 5480,
+    "new_price": 5000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-04 00:00:00"
+  },
+  {
+    "history_id": "ph000132-e5f6-4789-a012-b3c4d5e6f732",
+    "product_id": "p1000283-e5f6-4789-a012-b3c4d5e6f783",
+    "old_price": 10850,
+    "new_price": 9500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-09 00:00:00"
+  },
+  {
+    "history_id": "ph000133-e5f6-4789-a012-b3c4d5e6f733",
+    "product_id": "p1000040-e5f6-4789-a012-b3c4d5e6f740",
+    "old_price": 8470,
+    "new_price": 8000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-29 00:00:00"
+  },
+  {
+    "history_id": "ph000134-e5f6-4789-a012-b3c4d5e6f734",
+    "product_id": "p1000040-e5f6-4789-a012-b3c4d5e6f740",
+    "old_price": 9074,
+    "new_price": 8470,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-26 00:00:00"
+  },
+  {
+    "history_id": "ph000135-e5f6-4789-a012-b3c4d5e6f735",
+    "product_id": "p1000040-e5f6-4789-a012-b3c4d5e6f740",
+    "old_price": 10038,
+    "new_price": 9074,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-26 00:00:00"
+  },
+  {
+    "history_id": "ph000136-e5f6-4789-a012-b3c4d5e6f736",
+    "product_id": "p1000024-e5f6-4789-a012-b3c4d5e6f724",
+    "old_price": 27009,
+    "new_price": 25000,
+    "reason": "kamis",
+    "reference_id": "mp000589-e5f6-4789-a012-b3c4d5e6f788",
+    "created_at": "2026-05-02 00:00:00"
+  },
+  {
+    "history_id": "ph000137-e5f6-4789-a012-b3c4d5e6f737",
+    "product_id": "p1000465-e5f6-4789-a012-b3c4d5e6f765",
+    "old_price": 2027,
+    "new_price": 1800,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-06 00:00:00"
+  },
+  {
+    "history_id": "ph000138-e5f6-4789-a012-b3c4d5e6f738",
+    "product_id": "p1000465-e5f6-4789-a012-b3c4d5e6f765",
+    "old_price": 2210,
+    "new_price": 2027,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-17 00:00:00"
+  },
+  {
+    "history_id": "ph000139-e5f6-4789-a012-b3c4d5e6f739",
+    "product_id": "p1000056-e5f6-4789-a012-b3c4d5e6f756",
+    "old_price": 15897,
+    "new_price": 15000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-19 00:00:00"
+  },
+  {
+    "history_id": "ph000140-e5f6-4789-a012-b3c4d5e6f740",
+    "product_id": "p1000056-e5f6-4789-a012-b3c4d5e6f756",
+    "old_price": 17249,
+    "new_price": 15897,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-26 00:00:00"
+  },
+  {
+    "history_id": "ph000141-e5f6-4789-a012-b3c4d5e6f741",
+    "product_id": "p1000262-e5f6-4789-a012-b3c4d5e6f762",
+    "old_price": 2986,
+    "new_price": 2500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-02 00:00:00"
+  },
+  {
+    "history_id": "ph000142-e5f6-4789-a012-b3c4d5e6f742",
+    "product_id": "p1000262-e5f6-4789-a012-b3c4d5e6f762",
+    "old_price": 3477,
+    "new_price": 2986,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-30 00:00:00"
+  },
+  {
+    "history_id": "ph000143-e5f6-4789-a012-b3c4d5e6f743",
+    "product_id": "p1000262-e5f6-4789-a012-b3c4d5e6f762",
+    "old_price": 3809,
+    "new_price": 3477,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-27 00:00:00"
+  },
+  {
+    "history_id": "ph000144-e5f6-4789-a012-b3c4d5e6f744",
+    "product_id": "p1000218-e5f6-4789-a012-b3c4d5e6f718",
+    "old_price": 3375,
+    "new_price": 3000,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-05-05 00:00:00"
+  },
+  {
+    "history_id": "ph000145-e5f6-4789-a012-b3c4d5e6f745",
+    "product_id": "p1000218-e5f6-4789-a012-b3c4d5e6f718",
+    "old_price": 3732,
+    "new_price": 3375,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-09 00:00:00"
+  },
+  {
+    "history_id": "ph000146-e5f6-4789-a012-b3c4d5e6f746",
+    "product_id": "p1000218-e5f6-4789-a012-b3c4d5e6f718",
+    "old_price": 4055,
+    "new_price": 3732,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-03-31 00:00:00"
+  },
+  {
+    "history_id": "ph000147-e5f6-4789-a012-b3c4d5e6f747",
+    "product_id": "p1000212-e5f6-4789-a012-b3c4d5e6f712",
+    "old_price": 1676,
+    "new_price": 1500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-25 00:00:00"
+  },
+  {
+    "history_id": "ph000148-e5f6-4789-a012-b3c4d5e6f748",
+    "product_id": "p1000212-e5f6-4789-a012-b3c4d5e6f712",
+    "old_price": 2001,
+    "new_price": 1676,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-14 00:00:00"
+  },
+  {
+    "history_id": "ph000149-e5f6-4789-a012-b3c4d5e6f749",
+    "product_id": "p1000212-e5f6-4789-a012-b3c4d5e6f712",
+    "old_price": 2392,
+    "new_price": 2001,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-03-31 00:00:00"
+  },
+  {
+    "history_id": "ph000150-e5f6-4789-a012-b3c4d5e6f750",
+    "product_id": "p1000049-e5f6-4789-a012-b3c4d5e6f749",
+    "old_price": 6000,
+    "new_price": 5500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-18 00:00:00"
+  },
+  {
+    "history_id": "ph000151-e5f6-4789-a012-b3c4d5e6f751",
+    "product_id": "p1000049-e5f6-4789-a012-b3c4d5e6f749",
+    "old_price": 6642,
+    "new_price": 6000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-14 00:00:00"
+  },
+  {
+    "history_id": "ph000152-e5f6-4789-a012-b3c4d5e6f752",
+    "product_id": "p1000497-e5f6-4789-a012-b3c4d5e6f797",
+    "old_price": 17066,
+    "new_price": 15000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-08 00:00:00"
+  },
+  {
+    "history_id": "ph000153-e5f6-4789-a012-b3c4d5e6f753",
+    "product_id": "p1000339-e5f6-4789-a012-b3c4d5e6f739",
+    "old_price": 11028,
+    "new_price": 9500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-30 00:00:00"
+  },
+  {
+    "history_id": "ph000154-e5f6-4789-a012-b3c4d5e6f754",
+    "product_id": "p1000369-e5f6-4789-a012-b3c4d5e6f769",
+    "old_price": 2773,
+    "new_price": 2500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-05 00:00:00"
+  },
+  {
+    "history_id": "ph000155-e5f6-4789-a012-b3c4d5e6f755",
+    "product_id": "p1000434-e5f6-4789-a012-b3c4d5e6f734",
+    "old_price": 10767,
+    "new_price": 9500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-26 00:00:00"
+  },
+  {
+    "history_id": "ph000156-e5f6-4789-a012-b3c4d5e6f756",
+    "product_id": "p1000434-e5f6-4789-a012-b3c4d5e6f734",
+    "old_price": 11645,
+    "new_price": 10767,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-09 00:00:00"
+  },
+  {
+    "history_id": "ph000157-e5f6-4789-a012-b3c4d5e6f757",
+    "product_id": "p1000434-e5f6-4789-a012-b3c4d5e6f734",
+    "old_price": 12783,
+    "new_price": 11645,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-19 00:00:00"
+  },
+  {
+    "history_id": "ph000158-e5f6-4789-a012-b3c4d5e6f758",
+    "product_id": "p1000417-e5f6-4789-a012-b3c4d5e6f717",
+    "old_price": 27230,
+    "new_price": 25000,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-25 00:00:00"
+  },
+  {
+    "history_id": "ph000159-e5f6-4789-a012-b3c4d5e6f759",
+    "product_id": "p1000417-e5f6-4789-a012-b3c4d5e6f717",
+    "old_price": 29706,
+    "new_price": 27230,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-24 00:00:00"
+  },
+  {
+    "history_id": "ph000160-e5f6-4789-a012-b3c4d5e6f760",
+    "product_id": "p1000417-e5f6-4789-a012-b3c4d5e6f717",
+    "old_price": 32713,
+    "new_price": 29706,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-10 00:00:00"
+  },
+  {
+    "history_id": "ph000161-e5f6-4789-a012-b3c4d5e6f761",
+    "product_id": "p1000130-e5f6-4789-a012-b3c4d5e6f730",
+    "old_price": 4735,
+    "new_price": 4500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-19 00:00:00"
+  },
+  {
+    "history_id": "ph000162-e5f6-4789-a012-b3c4d5e6f762",
+    "product_id": "p1000130-e5f6-4789-a012-b3c4d5e6f730",
+    "old_price": 5626,
+    "new_price": 4735,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-04 00:00:00"
+  },
+  {
+    "history_id": "ph000163-e5f6-4789-a012-b3c4d5e6f763",
+    "product_id": "p1000182-e5f6-4789-a012-b3c4d5e6f782",
+    "old_price": 2071,
+    "new_price": 1800,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-11 00:00:00"
+  },
+  {
+    "history_id": "ph000164-e5f6-4789-a012-b3c4d5e6f764",
+    "product_id": "p1000131-e5f6-4789-a012-b3c4d5e6f731",
+    "old_price": 13865,
+    "new_price": 12000,
+    "reason": "kamis",
+    "reference_id": "mp000438-e5f6-4789-a012-b3c4d5e6f737",
+    "created_at": "2026-05-07 00:00:00"
+  },
+  {
+    "history_id": "ph000165-e5f6-4789-a012-b3c4d5e6f765",
+    "product_id": "p1000131-e5f6-4789-a012-b3c4d5e6f731",
+    "old_price": 16195,
+    "new_price": 13865,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-02 00:00:00"
+  },
+  {
+    "history_id": "ph000166-e5f6-4789-a012-b3c4d5e6f766",
+    "product_id": "p1000131-e5f6-4789-a012-b3c4d5e6f731",
+    "old_price": 18313,
+    "new_price": 16195,
+    "reason": "kamis",
+    "reference_id": "mp000447-e5f6-4789-a012-b3c4d5e6f746",
+    "created_at": "2026-04-08 00:00:00"
+  },
+  {
+    "history_id": "ph000167-e5f6-4789-a012-b3c4d5e6f767",
+    "product_id": "p1000300-e5f6-4789-a012-b3c4d5e6f700",
+    "old_price": 13810,
+    "new_price": 12000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-13 00:00:00"
+  },
+  {
+    "history_id": "ph000168-e5f6-4789-a012-b3c4d5e6f768",
+    "product_id": "p1000300-e5f6-4789-a012-b3c4d5e6f700",
+    "old_price": 15280,
+    "new_price": 13810,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-22 00:00:00"
+  },
+  {
+    "history_id": "ph000169-e5f6-4789-a012-b3c4d5e6f769",
+    "product_id": "p1000042-e5f6-4789-a012-b3c4d5e6f742",
+    "old_price": 5879,
+    "new_price": 5000,
+    "reason": "kamis",
+    "reference_id": "mp000031-e5f6-4789-a012-b3c4d5e6f730",
+    "created_at": "2026-05-06 00:00:00"
+  },
+  {
+    "history_id": "ph000170-e5f6-4789-a012-b3c4d5e6f770",
+    "product_id": "p1000394-e5f6-4789-a012-b3c4d5e6f794",
+    "old_price": 1658,
+    "new_price": 1500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-09 00:00:00"
+  },
+  {
+    "history_id": "ph000171-e5f6-4789-a012-b3c4d5e6f771",
+    "product_id": "p1000394-e5f6-4789-a012-b3c4d5e6f794",
+    "old_price": 1795,
+    "new_price": 1658,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-26 00:00:00"
+  },
+  {
+    "history_id": "ph000172-e5f6-4789-a012-b3c4d5e6f772",
+    "product_id": "p1000258-e5f6-4789-a012-b3c4d5e6f758",
+    "old_price": 29705,
+    "new_price": 25000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-07 00:00:00"
+  },
+  {
+    "history_id": "ph000173-e5f6-4789-a012-b3c4d5e6f773",
+    "product_id": "p1000258-e5f6-4789-a012-b3c4d5e6f758",
+    "old_price": 34827,
+    "new_price": 29705,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-09 00:00:00"
+  },
+  {
+    "history_id": "ph000174-e5f6-4789-a012-b3c4d5e6f774",
+    "product_id": "p1000258-e5f6-4789-a012-b3c4d5e6f758",
+    "old_price": 40318,
+    "new_price": 34827,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-14 00:00:00"
+  },
+  {
+    "history_id": "ph000175-e5f6-4789-a012-b3c4d5e6f775",
+    "product_id": "p1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "old_price": 4222,
+    "new_price": 4000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-17 00:00:00"
+  },
+  {
+    "history_id": "ph000176-e5f6-4789-a012-b3c4d5e6f776",
+    "product_id": "p1000009-e5f6-4789-a012-b3c4d5e6f709",
+    "old_price": 4880,
+    "new_price": 4222,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-28 00:00:00"
+  },
+  {
+    "history_id": "ph000177-e5f6-4789-a012-b3c4d5e6f777",
+    "product_id": "p1000059-e5f6-4789-a012-b3c4d5e6f759",
+    "old_price": 27735,
+    "new_price": 25000,
+    "reason": "kamis",
+    "reference_id": "mp000529-e5f6-4789-a012-b3c4d5e6f728",
+    "created_at": "2026-04-23 00:00:00"
+  },
+  {
+    "history_id": "ph000178-e5f6-4789-a012-b3c4d5e6f778",
+    "product_id": "p1000059-e5f6-4789-a012-b3c4d5e6f759",
+    "old_price": 31176,
+    "new_price": 27735,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-13 00:00:00"
+  },
+  {
+    "history_id": "ph000179-e5f6-4789-a012-b3c4d5e6f779",
+    "product_id": "p1000059-e5f6-4789-a012-b3c4d5e6f759",
+    "old_price": 36189,
+    "new_price": 31176,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-10 00:00:00"
+  },
+  {
+    "history_id": "ph000180-e5f6-4789-a012-b3c4d5e6f780",
+    "product_id": "p1000380-e5f6-4789-a012-b3c4d5e6f780",
+    "old_price": 26908,
+    "new_price": 25000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-16 00:00:00"
+  },
+  {
+    "history_id": "ph000181-e5f6-4789-a012-b3c4d5e6f781",
+    "product_id": "p1000380-e5f6-4789-a012-b3c4d5e6f780",
+    "old_price": 28515,
+    "new_price": 26908,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-16 00:00:00"
+  },
+  {
+    "history_id": "ph000182-e5f6-4789-a012-b3c4d5e6f782",
+    "product_id": "p1000380-e5f6-4789-a012-b3c4d5e6f780",
+    "old_price": 33599,
+    "new_price": 28515,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-06 00:00:00"
+  },
+  {
+    "history_id": "ph000183-e5f6-4789-a012-b3c4d5e6f783",
+    "product_id": "p1000422-e5f6-4789-a012-b3c4d5e6f722",
+    "old_price": 5933,
+    "new_price": 5500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-17 00:00:00"
+  },
+  {
+    "history_id": "ph000184-e5f6-4789-a012-b3c4d5e6f784",
+    "product_id": "p1000422-e5f6-4789-a012-b3c4d5e6f722",
+    "old_price": 6832,
+    "new_price": 5933,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-13 00:00:00"
+  },
+  {
+    "history_id": "ph000185-e5f6-4789-a012-b3c4d5e6f785",
+    "product_id": "p1000237-e5f6-4789-a012-b3c4d5e6f737",
+    "old_price": 21284,
+    "new_price": 18000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-26 00:00:00"
+  },
+  {
+    "history_id": "ph000186-e5f6-4789-a012-b3c4d5e6f786",
+    "product_id": "p1000237-e5f6-4789-a012-b3c4d5e6f737",
+    "old_price": 24394,
+    "new_price": 21284,
+    "reason": "kamis",
+    "reference_id": "mp000092-e5f6-4789-a012-b3c4d5e6f791",
+    "created_at": "2026-04-07 00:00:00"
+  },
+  {
+    "history_id": "ph000187-e5f6-4789-a012-b3c4d5e6f787",
+    "product_id": "p1000237-e5f6-4789-a012-b3c4d5e6f737",
+    "old_price": 29048,
+    "new_price": 24394,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-16 00:00:00"
+  },
+  {
+    "history_id": "ph000188-e5f6-4789-a012-b3c4d5e6f788",
+    "product_id": "p1000092-e5f6-4789-a012-b3c4d5e6f792",
+    "old_price": 5875,
+    "new_price": 5500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-24 00:00:00"
+  },
+  {
+    "history_id": "ph000189-e5f6-4789-a012-b3c4d5e6f789",
+    "product_id": "p1000092-e5f6-4789-a012-b3c4d5e6f792",
+    "old_price": 6487,
+    "new_price": 5875,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-06 00:00:00"
+  },
+  {
+    "history_id": "ph000190-e5f6-4789-a012-b3c4d5e6f790",
+    "product_id": "p1000403-e5f6-4789-a012-b3c4d5e6f703",
+    "old_price": 16255,
+    "new_price": 15000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-26 00:00:00"
+  },
+  {
+    "history_id": "ph000191-e5f6-4789-a012-b3c4d5e6f791",
+    "product_id": "p1000403-e5f6-4789-a012-b3c4d5e6f703",
+    "old_price": 18365,
+    "new_price": 16255,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-22 00:00:00"
+  },
+  {
+    "history_id": "ph000192-e5f6-4789-a012-b3c4d5e6f792",
+    "product_id": "p1000403-e5f6-4789-a012-b3c4d5e6f703",
+    "old_price": 19819,
+    "new_price": 18365,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-11 00:00:00"
+  },
+  {
+    "history_id": "ph000193-e5f6-4789-a012-b3c4d5e6f793",
+    "product_id": "p1000094-e5f6-4789-a012-b3c4d5e6f794",
+    "old_price": 1797,
+    "new_price": 1500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-17 00:00:00"
+  },
+  {
+    "history_id": "ph000194-e5f6-4789-a012-b3c4d5e6f794",
+    "product_id": "p1000202-e5f6-4789-a012-b3c4d5e6f702",
+    "old_price": 14323,
+    "new_price": 12000,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-05-03 00:00:00"
+  },
+  {
+    "history_id": "ph000195-e5f6-4789-a012-b3c4d5e6f795",
+    "product_id": "p1000202-e5f6-4789-a012-b3c4d5e6f702",
+    "old_price": 15392,
+    "new_price": 14323,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-14 00:00:00"
+  },
+  {
+    "history_id": "ph000196-e5f6-4789-a012-b3c4d5e6f796",
+    "product_id": "p1000430-e5f6-4789-a012-b3c4d5e6f730",
+    "old_price": 10112,
+    "new_price": 9500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-14 00:00:00"
+  },
+  {
+    "history_id": "ph000197-e5f6-4789-a012-b3c4d5e6f797",
+    "product_id": "p1000430-e5f6-4789-a012-b3c4d5e6f730",
+    "old_price": 10654,
+    "new_price": 10112,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-05 00:00:00"
+  },
+  {
+    "history_id": "ph000198-e5f6-4789-a012-b3c4d5e6f798",
+    "product_id": "p1000430-e5f6-4789-a012-b3c4d5e6f730",
+    "old_price": 11720,
+    "new_price": 10654,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-26 00:00:00"
+  },
+  {
+    "history_id": "ph000199-e5f6-4789-a012-b3c4d5e6f799",
+    "product_id": "p1000451-e5f6-4789-a012-b3c4d5e6f751",
+    "old_price": 13029,
+    "new_price": 12000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-08 00:00:00"
+  },
+  {
+    "history_id": "ph000200-e5f6-4789-a012-b3c4d5e6f700",
+    "product_id": "p1000451-e5f6-4789-a012-b3c4d5e6f751",
+    "old_price": 15286,
+    "new_price": 13029,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-27 00:00:00"
+  },
+  {
+    "history_id": "ph000201-e5f6-4789-a012-b3c4d5e6f701",
+    "product_id": "p1000214-e5f6-4789-a012-b3c4d5e6f714",
+    "old_price": 13996,
+    "new_price": 12000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-15 00:00:00"
+  },
+  {
+    "history_id": "ph000202-e5f6-4789-a012-b3c4d5e6f702",
+    "product_id": "p1000361-e5f6-4789-a012-b3c4d5e6f761",
+    "old_price": 20588,
+    "new_price": 18000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-07 00:00:00"
+  },
+  {
+    "history_id": "ph000203-e5f6-4789-a012-b3c4d5e6f703",
+    "product_id": "p1000153-e5f6-4789-a012-b3c4d5e6f753",
+    "old_price": 29687,
+    "new_price": 25000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-11 00:00:00"
+  },
+  {
+    "history_id": "ph000204-e5f6-4789-a012-b3c4d5e6f704",
+    "product_id": "p1000161-e5f6-4789-a012-b3c4d5e6f761",
+    "old_price": 5828,
+    "new_price": 5500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-10 00:00:00"
+  },
+  {
+    "history_id": "ph000205-e5f6-4789-a012-b3c4d5e6f705",
+    "product_id": "p1000161-e5f6-4789-a012-b3c4d5e6f761",
+    "old_price": 6820,
+    "new_price": 5828,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-15 00:00:00"
+  },
+  {
+    "history_id": "ph000206-e5f6-4789-a012-b3c4d5e6f706",
+    "product_id": "p1000161-e5f6-4789-a012-b3c4d5e6f761",
+    "old_price": 7801,
+    "new_price": 6820,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-08 00:00:00"
+  },
+  {
+    "history_id": "ph000207-e5f6-4789-a012-b3c4d5e6f707",
+    "product_id": "p1000301-e5f6-4789-a012-b3c4d5e6f701",
+    "old_price": 2834,
+    "new_price": 2500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-27 00:00:00"
+  },
+  {
+    "history_id": "ph000208-e5f6-4789-a012-b3c4d5e6f708",
+    "product_id": "p1000371-e5f6-4789-a012-b3c4d5e6f771",
+    "old_price": 5854,
+    "new_price": 5500,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-05-02 00:00:00"
+  },
+  {
+    "history_id": "ph000209-e5f6-4789-a012-b3c4d5e6f709",
+    "product_id": "p1000371-e5f6-4789-a012-b3c4d5e6f771",
+    "old_price": 6905,
+    "new_price": 5854,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-15 00:00:00"
+  },
+  {
+    "history_id": "ph000210-e5f6-4789-a012-b3c4d5e6f710",
+    "product_id": "p1000233-e5f6-4789-a012-b3c4d5e6f733",
+    "old_price": 3354,
+    "new_price": 3000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-26 00:00:00"
+  },
+  {
+    "history_id": "ph000211-e5f6-4789-a012-b3c4d5e6f711",
+    "product_id": "p1000476-e5f6-4789-a012-b3c4d5e6f776",
+    "old_price": 17143,
+    "new_price": 15000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-18 00:00:00"
+  },
+  {
+    "history_id": "ph000212-e5f6-4789-a012-b3c4d5e6f712",
+    "product_id": "p1000476-e5f6-4789-a012-b3c4d5e6f776",
+    "old_price": 20013,
+    "new_price": 17143,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-24 00:00:00"
+  },
+  {
+    "history_id": "ph000213-e5f6-4789-a012-b3c4d5e6f713",
+    "product_id": "p1000476-e5f6-4789-a012-b3c4d5e6f776",
+    "old_price": 22778,
+    "new_price": 20013,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-29 00:00:00"
+  },
+  {
+    "history_id": "ph000214-e5f6-4789-a012-b3c4d5e6f714",
+    "product_id": "p1000344-e5f6-4789-a012-b3c4d5e6f744",
+    "old_price": 20825,
+    "new_price": 18000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-13 00:00:00"
+  },
+  {
+    "history_id": "ph000215-e5f6-4789-a012-b3c4d5e6f715",
+    "product_id": "p1000344-e5f6-4789-a012-b3c4d5e6f744",
+    "old_price": 22471,
+    "new_price": 20825,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-14 00:00:00"
+  },
+  {
+    "history_id": "ph000216-e5f6-4789-a012-b3c4d5e6f716",
+    "product_id": "p1000344-e5f6-4789-a012-b3c4d5e6f744",
+    "old_price": 25309,
+    "new_price": 22471,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-14 00:00:00"
+  },
+  {
+    "history_id": "ph000217-e5f6-4789-a012-b3c4d5e6f717",
+    "product_id": "p1000231-e5f6-4789-a012-b3c4d5e6f731",
+    "old_price": 5144,
+    "new_price": 4500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-05 00:00:00"
+  },
+  {
+    "history_id": "ph000218-e5f6-4789-a012-b3c4d5e6f718",
+    "product_id": "p1000231-e5f6-4789-a012-b3c4d5e6f731",
+    "old_price": 6016,
+    "new_price": 5144,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-25 00:00:00"
+  },
+  {
+    "history_id": "ph000219-e5f6-4789-a012-b3c4d5e6f719",
+    "product_id": "p1000231-e5f6-4789-a012-b3c4d5e6f731",
+    "old_price": 6844,
+    "new_price": 6016,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-09 00:00:00"
+  },
+  {
+    "history_id": "ph000220-e5f6-4789-a012-b3c4d5e6f720",
+    "product_id": "p1000320-e5f6-4789-a012-b3c4d5e6f720",
+    "old_price": 16450,
+    "new_price": 15000,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-15 00:00:00"
+  },
+  {
+    "history_id": "ph000221-e5f6-4789-a012-b3c4d5e6f721",
+    "product_id": "p1000320-e5f6-4789-a012-b3c4d5e6f720",
+    "old_price": 17631,
+    "new_price": 16450,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-15 00:00:00"
+  },
+  {
+    "history_id": "ph000222-e5f6-4789-a012-b3c4d5e6f722",
+    "product_id": "p1000136-e5f6-4789-a012-b3c4d5e6f736",
+    "old_price": 8202,
+    "new_price": 7500,
+    "reason": "kamis",
+    "reference_id": "mp000827-e5f6-4789-a012-b3c4d5e6f726",
+    "created_at": "2026-04-21 00:00:00"
+  },
+  {
+    "history_id": "ph000223-e5f6-4789-a012-b3c4d5e6f723",
+    "product_id": "p1000136-e5f6-4789-a012-b3c4d5e6f736",
+    "old_price": 9421,
+    "new_price": 8202,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-27 00:00:00"
+  },
+  {
+    "history_id": "ph000224-e5f6-4789-a012-b3c4d5e6f724",
+    "product_id": "p1000464-e5f6-4789-a012-b3c4d5e6f764",
+    "old_price": 21111,
+    "new_price": 18000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-08 00:00:00"
+  },
+  {
+    "history_id": "ph000225-e5f6-4789-a012-b3c4d5e6f725",
+    "product_id": "p1000464-e5f6-4789-a012-b3c4d5e6f764",
+    "old_price": 23503,
+    "new_price": 21111,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-28 00:00:00"
+  },
+  {
+    "history_id": "ph000226-e5f6-4789-a012-b3c4d5e6f726",
+    "product_id": "p1000464-e5f6-4789-a012-b3c4d5e6f764",
+    "old_price": 26936,
+    "new_price": 23503,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-27 00:00:00"
+  },
+  {
+    "history_id": "ph000227-e5f6-4789-a012-b3c4d5e6f727",
+    "product_id": "p1000471-e5f6-4789-a012-b3c4d5e6f771",
+    "old_price": 1617,
+    "new_price": 1500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-17 00:00:00"
+  },
+  {
+    "history_id": "ph000228-e5f6-4789-a012-b3c4d5e6f728",
+    "product_id": "p1000471-e5f6-4789-a012-b3c4d5e6f771",
+    "old_price": 1936,
+    "new_price": 1617,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-24 00:00:00"
+  },
+  {
+    "history_id": "ph000229-e5f6-4789-a012-b3c4d5e6f729",
+    "product_id": "p1000109-e5f6-4789-a012-b3c4d5e6f709",
+    "old_price": 3972,
+    "new_price": 3500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-30 00:00:00"
+  },
+  {
+    "history_id": "ph000230-e5f6-4789-a012-b3c4d5e6f730",
+    "product_id": "p1000109-e5f6-4789-a012-b3c4d5e6f709",
+    "old_price": 4420,
+    "new_price": 3972,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-20 00:00:00"
+  },
+  {
+    "history_id": "ph000231-e5f6-4789-a012-b3c4d5e6f731",
+    "product_id": "p1000109-e5f6-4789-a012-b3c4d5e6f709",
+    "old_price": 5221,
+    "new_price": 4420,
+    "reason": "kamis",
+    "reference_id": "mp000166-e5f6-4789-a012-b3c4d5e6f765",
+    "created_at": "2026-04-22 00:00:00"
+  },
+  {
+    "history_id": "ph000232-e5f6-4789-a012-b3c4d5e6f732",
+    "product_id": "p1000095-e5f6-4789-a012-b3c4d5e6f795",
+    "old_price": 13749,
+    "new_price": 12000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-25 00:00:00"
+  },
+  {
+    "history_id": "ph000233-e5f6-4789-a012-b3c4d5e6f733",
+    "product_id": "p1000447-e5f6-4789-a012-b3c4d5e6f747",
+    "old_price": 2704,
+    "new_price": 2500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-15 00:00:00"
+  },
+  {
+    "history_id": "ph000234-e5f6-4789-a012-b3c4d5e6f734",
+    "product_id": "p1000447-e5f6-4789-a012-b3c4d5e6f747",
+    "old_price": 3225,
+    "new_price": 2704,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-11 00:00:00"
+  },
+  {
+    "history_id": "ph000235-e5f6-4789-a012-b3c4d5e6f735",
+    "product_id": "p1000447-e5f6-4789-a012-b3c4d5e6f747",
+    "old_price": 3568,
+    "new_price": 3225,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-03 00:00:00"
+  },
+  {
+    "history_id": "ph000236-e5f6-4789-a012-b3c4d5e6f736",
+    "product_id": "p1000383-e5f6-4789-a012-b3c4d5e6f783",
+    "old_price": 2761,
+    "new_price": 2500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-09 00:00:00"
+  },
+  {
+    "history_id": "ph000237-e5f6-4789-a012-b3c4d5e6f737",
+    "product_id": "p1000310-e5f6-4789-a012-b3c4d5e6f710",
+    "old_price": 16009,
+    "new_price": 15000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-03 00:00:00"
+  },
+  {
+    "history_id": "ph000238-e5f6-4789-a012-b3c4d5e6f738",
+    "product_id": "p1000310-e5f6-4789-a012-b3c4d5e6f710",
+    "old_price": 18325,
+    "new_price": 16009,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-23 00:00:00"
+  },
+  {
+    "history_id": "ph000239-e5f6-4789-a012-b3c4d5e6f739",
+    "product_id": "p1000310-e5f6-4789-a012-b3c4d5e6f710",
+    "old_price": 19361,
+    "new_price": 18325,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-23 00:00:00"
+  },
+  {
+    "history_id": "ph000240-e5f6-4789-a012-b3c4d5e6f740",
+    "product_id": "p1000133-e5f6-4789-a012-b3c4d5e6f733",
+    "old_price": 10223,
+    "new_price": 9500,
+    "reason": "kamis",
+    "reference_id": "mp000474-e5f6-4789-a012-b3c4d5e6f773",
+    "created_at": "2026-05-04 00:00:00"
+  },
+  {
+    "history_id": "ph000241-e5f6-4789-a012-b3c4d5e6f741",
+    "product_id": "p1000133-e5f6-4789-a012-b3c4d5e6f733",
+    "old_price": 11255,
+    "new_price": 10223,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-29 00:00:00"
+  },
+  {
+    "history_id": "ph000242-e5f6-4789-a012-b3c4d5e6f742",
+    "product_id": "p1000345-e5f6-4789-a012-b3c4d5e6f745",
+    "old_price": 1579,
+    "new_price": 1500,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-10 00:00:00"
+  },
+  {
+    "history_id": "ph000243-e5f6-4789-a012-b3c4d5e6f743",
+    "product_id": "p1000055-e5f6-4789-a012-b3c4d5e6f755",
+    "old_price": 26328,
+    "new_price": 25000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-27 00:00:00"
+  },
+  {
+    "history_id": "ph000244-e5f6-4789-a012-b3c4d5e6f744",
+    "product_id": "p1000470-e5f6-4789-a012-b3c4d5e6f770",
+    "old_price": 2920,
+    "new_price": 2500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-10 00:00:00"
+  },
+  {
+    "history_id": "ph000245-e5f6-4789-a012-b3c4d5e6f745",
+    "product_id": "p1000470-e5f6-4789-a012-b3c4d5e6f770",
+    "old_price": 3158,
+    "new_price": 2920,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-23 00:00:00"
+  },
+  {
+    "history_id": "ph000246-e5f6-4789-a012-b3c4d5e6f746",
+    "product_id": "p1000470-e5f6-4789-a012-b3c4d5e6f770",
+    "old_price": 3699,
+    "new_price": 3158,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-13 00:00:00"
+  },
+  {
+    "history_id": "ph000247-e5f6-4789-a012-b3c4d5e6f747",
+    "product_id": "p1000274-e5f6-4789-a012-b3c4d5e6f774",
+    "old_price": 17733,
+    "new_price": 15000,
+    "reason": "kamis",
+    "reference_id": "mp000513-e5f6-4789-a012-b3c4d5e6f712",
+    "created_at": "2026-05-06 00:00:00"
+  },
+  {
+    "history_id": "ph000248-e5f6-4789-a012-b3c4d5e6f748",
+    "product_id": "p1000274-e5f6-4789-a012-b3c4d5e6f774",
+    "old_price": 19003,
+    "new_price": 17733,
+    "reason": "kamis",
+    "reference_id": "mp000536-e5f6-4789-a012-b3c4d5e6f735",
+    "created_at": "2026-04-28 00:00:00"
+  },
+  {
+    "history_id": "ph000249-e5f6-4789-a012-b3c4d5e6f749",
+    "product_id": "p1000274-e5f6-4789-a012-b3c4d5e6f774",
+    "old_price": 20499,
+    "new_price": 19003,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-18 00:00:00"
+  },
+  {
+    "history_id": "ph000250-e5f6-4789-a012-b3c4d5e6f750",
+    "product_id": "p1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "old_price": 3419,
+    "new_price": 3000,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-05-02 00:00:00"
+  },
+  {
+    "history_id": "ph000251-e5f6-4789-a012-b3c4d5e6f751",
+    "product_id": "p1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "old_price": 4062,
+    "new_price": 3419,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-16 00:00:00"
+  },
+  {
+    "history_id": "ph000252-e5f6-4789-a012-b3c4d5e6f752",
+    "product_id": "p1000003-e5f6-4789-a012-b3c4d5e6f703",
+    "old_price": 1767,
+    "new_price": 1500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-05 00:00:00"
+  },
+  {
+    "history_id": "ph000253-e5f6-4789-a012-b3c4d5e6f753",
+    "product_id": "p1000203-e5f6-4789-a012-b3c4d5e6f703",
+    "old_price": 19567,
+    "new_price": 18000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-01 00:00:00"
+  },
+  {
+    "history_id": "ph000254-e5f6-4789-a012-b3c4d5e6f754",
+    "product_id": "p1000203-e5f6-4789-a012-b3c4d5e6f703",
+    "old_price": 23107,
+    "new_price": 19567,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-16 00:00:00"
+  },
+  {
+    "history_id": "ph000255-e5f6-4789-a012-b3c4d5e6f755",
+    "product_id": "p1000060-e5f6-4789-a012-b3c4d5e6f760",
+    "old_price": 3244,
+    "new_price": 3000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-24 00:00:00"
+  },
+  {
+    "history_id": "ph000256-e5f6-4789-a012-b3c4d5e6f756",
+    "product_id": "p1000060-e5f6-4789-a012-b3c4d5e6f760",
+    "old_price": 3791,
+    "new_price": 3244,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-29 00:00:00"
+  },
+  {
+    "history_id": "ph000257-e5f6-4789-a012-b3c4d5e6f757",
+    "product_id": "p1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "old_price": 1662,
+    "new_price": 1500,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-15 00:00:00"
+  },
+  {
+    "history_id": "ph000258-e5f6-4789-a012-b3c4d5e6f758",
+    "product_id": "p1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "old_price": 1872,
+    "new_price": 1662,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-20 00:00:00"
+  },
+  {
+    "history_id": "ph000259-e5f6-4789-a012-b3c4d5e6f759",
+    "product_id": "p1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "old_price": 2015,
+    "new_price": 1872,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-13 00:00:00"
+  },
+  {
+    "history_id": "ph000260-e5f6-4789-a012-b3c4d5e6f760",
+    "product_id": "p1000088-e5f6-4789-a012-b3c4d5e6f788",
+    "old_price": 8418,
+    "new_price": 7500,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-24 00:00:00"
+  },
+  {
+    "history_id": "ph000261-e5f6-4789-a012-b3c4d5e6f761",
+    "product_id": "p1000088-e5f6-4789-a012-b3c4d5e6f788",
+    "old_price": 9177,
+    "new_price": 8418,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-05 00:00:00"
+  },
+  {
+    "history_id": "ph000262-e5f6-4789-a012-b3c4d5e6f762",
+    "product_id": "p1000088-e5f6-4789-a012-b3c4d5e6f788",
+    "old_price": 10724,
+    "new_price": 9177,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-23 00:00:00"
+  },
+  {
+    "history_id": "ph000263-e5f6-4789-a012-b3c4d5e6f763",
+    "product_id": "p1000336-e5f6-4789-a012-b3c4d5e6f736",
+    "old_price": 11250,
+    "new_price": 9500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-02 00:00:00"
+  },
+  {
+    "history_id": "ph000264-e5f6-4789-a012-b3c4d5e6f764",
+    "product_id": "p1000445-e5f6-4789-a012-b3c4d5e6f745",
+    "old_price": 8120,
+    "new_price": 7500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-27 00:00:00"
+  },
+  {
+    "history_id": "ph000265-e5f6-4789-a012-b3c4d5e6f765",
+    "product_id": "p1000445-e5f6-4789-a012-b3c4d5e6f745",
+    "old_price": 9221,
+    "new_price": 8120,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-23 00:00:00"
+  },
+  {
+    "history_id": "ph000266-e5f6-4789-a012-b3c4d5e6f766",
+    "product_id": "p1000236-e5f6-4789-a012-b3c4d5e6f736",
+    "old_price": 2038,
+    "new_price": 1800,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-07 00:00:00"
+  },
+  {
+    "history_id": "ph000267-e5f6-4789-a012-b3c4d5e6f767",
+    "product_id": "p1000236-e5f6-4789-a012-b3c4d5e6f736",
+    "old_price": 2230,
+    "new_price": 2038,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-27 00:00:00"
+  },
+  {
+    "history_id": "ph000268-e5f6-4789-a012-b3c4d5e6f768",
+    "product_id": "p1000355-e5f6-4789-a012-b3c4d5e6f755",
+    "old_price": 15842,
+    "new_price": 15000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-29 00:00:00"
+  },
+  {
+    "history_id": "ph000269-e5f6-4789-a012-b3c4d5e6f769",
+    "product_id": "p1000355-e5f6-4789-a012-b3c4d5e6f755",
+    "old_price": 17646,
+    "new_price": 15842,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-21 00:00:00"
+  },
+  {
+    "history_id": "ph000270-e5f6-4789-a012-b3c4d5e6f770",
+    "product_id": "p1000355-e5f6-4789-a012-b3c4d5e6f755",
+    "old_price": 19501,
+    "new_price": 17646,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-21 00:00:00"
+  },
+  {
+    "history_id": "ph000271-e5f6-4789-a012-b3c4d5e6f771",
+    "product_id": "p1000208-e5f6-4789-a012-b3c4d5e6f708",
+    "old_price": 7902,
+    "new_price": 7500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-01 00:00:00"
+  },
+  {
+    "history_id": "ph000272-e5f6-4789-a012-b3c4d5e6f772",
+    "product_id": "p1000208-e5f6-4789-a012-b3c4d5e6f708",
+    "old_price": 9062,
+    "new_price": 7902,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-02 00:00:00"
+  },
+  {
+    "history_id": "ph000273-e5f6-4789-a012-b3c4d5e6f773",
+    "product_id": "p1000337-e5f6-4789-a012-b3c4d5e6f737",
+    "old_price": 29409,
+    "new_price": 25000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-19 00:00:00"
+  },
+  {
+    "history_id": "ph000274-e5f6-4789-a012-b3c4d5e6f774",
+    "product_id": "p1000337-e5f6-4789-a012-b3c4d5e6f737",
+    "old_price": 31224,
+    "new_price": 29409,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-27 00:00:00"
+  },
+  {
+    "history_id": "ph000275-e5f6-4789-a012-b3c4d5e6f775",
+    "product_id": "p1000495-e5f6-4789-a012-b3c4d5e6f795",
+    "old_price": 5872,
+    "new_price": 5500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-22 00:00:00"
+  },
+  {
+    "history_id": "ph000276-e5f6-4789-a012-b3c4d5e6f776",
+    "product_id": "p1000250-e5f6-4789-a012-b3c4d5e6f750",
+    "old_price": 8250,
+    "new_price": 7500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-01 00:00:00"
+  },
+  {
+    "history_id": "ph000277-e5f6-4789-a012-b3c4d5e6f777",
+    "product_id": "p1000156-e5f6-4789-a012-b3c4d5e6f756",
+    "old_price": 8713,
+    "new_price": 7500,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-12 00:00:00"
+  },
+  {
+    "history_id": "ph000278-e5f6-4789-a012-b3c4d5e6f778",
+    "product_id": "p1000156-e5f6-4789-a012-b3c4d5e6f756",
+    "old_price": 9507,
+    "new_price": 8713,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-30 00:00:00"
+  },
+  {
+    "history_id": "ph000279-e5f6-4789-a012-b3c4d5e6f779",
+    "product_id": "p1000317-e5f6-4789-a012-b3c4d5e6f717",
+    "old_price": 13931,
+    "new_price": 12000,
+    "reason": "kamis",
+    "reference_id": "mp000871-e5f6-4789-a012-b3c4d5e6f770",
+    "created_at": "2026-04-15 00:00:00"
+  },
+  {
+    "history_id": "ph000280-e5f6-4789-a012-b3c4d5e6f780",
+    "product_id": "p1000317-e5f6-4789-a012-b3c4d5e6f717",
+    "old_price": 15253,
+    "new_price": 13931,
+    "reason": "kamis",
+    "reference_id": "mp000896-e5f6-4789-a012-b3c4d5e6f795",
+    "created_at": "2026-04-22 00:00:00"
+  },
+  {
+    "history_id": "ph000281-e5f6-4789-a012-b3c4d5e6f781",
+    "product_id": "p1000317-e5f6-4789-a012-b3c4d5e6f717",
+    "old_price": 18179,
+    "new_price": 15253,
+    "reason": "kamis",
+    "reference_id": "mp000895-e5f6-4789-a012-b3c4d5e6f794",
+    "created_at": "2026-04-09 00:00:00"
+  },
+  {
+    "history_id": "ph000282-e5f6-4789-a012-b3c4d5e6f782",
+    "product_id": "p1000316-e5f6-4789-a012-b3c4d5e6f716",
+    "old_price": 3922,
+    "new_price": 3500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-15 00:00:00"
+  },
+  {
+    "history_id": "ph000283-e5f6-4789-a012-b3c4d5e6f783",
+    "product_id": "p1000185-e5f6-4789-a012-b3c4d5e6f785",
+    "old_price": 1769,
+    "new_price": 1500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-16 00:00:00"
+  },
+  {
+    "history_id": "ph000284-e5f6-4789-a012-b3c4d5e6f784",
+    "product_id": "p1000354-e5f6-4789-a012-b3c4d5e6f754",
+    "old_price": 1946,
+    "new_price": 1800,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-21 00:00:00"
+  },
+  {
+    "history_id": "ph000285-e5f6-4789-a012-b3c4d5e6f785",
+    "product_id": "p1000354-e5f6-4789-a012-b3c4d5e6f754",
+    "old_price": 2272,
+    "new_price": 1946,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-11 00:00:00"
+  },
+  {
+    "history_id": "ph000286-e5f6-4789-a012-b3c4d5e6f786",
+    "product_id": "p1000354-e5f6-4789-a012-b3c4d5e6f754",
+    "old_price": 2663,
+    "new_price": 2272,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-27 00:00:00"
+  },
+  {
+    "history_id": "ph000287-e5f6-4789-a012-b3c4d5e6f787",
+    "product_id": "p1000409-e5f6-4789-a012-b3c4d5e6f709",
+    "old_price": 21183,
+    "new_price": 18000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-17 00:00:00"
+  },
+  {
+    "history_id": "ph000288-e5f6-4789-a012-b3c4d5e6f788",
+    "product_id": "p1000409-e5f6-4789-a012-b3c4d5e6f709",
+    "old_price": 23569,
+    "new_price": 21183,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-07 00:00:00"
+  },
+  {
+    "history_id": "ph000289-e5f6-4789-a012-b3c4d5e6f789",
+    "product_id": "p1000358-e5f6-4789-a012-b3c4d5e6f758",
+    "old_price": 3163,
+    "new_price": 3000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-12 00:00:00"
+  },
+  {
+    "history_id": "ph000290-e5f6-4789-a012-b3c4d5e6f790",
+    "product_id": "p1000358-e5f6-4789-a012-b3c4d5e6f758",
+    "old_price": 3382,
+    "new_price": 3163,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-05-04 00:00:00"
+  },
+  {
+    "history_id": "ph000291-e5f6-4789-a012-b3c4d5e6f791",
+    "product_id": "p1000358-e5f6-4789-a012-b3c4d5e6f758",
+    "old_price": 3804,
+    "new_price": 3382,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-18 00:00:00"
+  },
+  {
+    "history_id": "ph000292-e5f6-4789-a012-b3c4d5e6f792",
+    "product_id": "p1000346-e5f6-4789-a012-b3c4d5e6f746",
+    "old_price": 10296,
+    "new_price": 9500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-15 00:00:00"
+  },
+  {
+    "history_id": "ph000293-e5f6-4789-a012-b3c4d5e6f793",
+    "product_id": "p1000346-e5f6-4789-a012-b3c4d5e6f746",
+    "old_price": 11433,
+    "new_price": 10296,
+    "reason": "kamis",
+    "reference_id": null,
+    "created_at": "2026-04-17 00:00:00"
+  },
+  {
+    "history_id": "ph000294-e5f6-4789-a012-b3c4d5e6f794",
+    "product_id": "p1000374-e5f6-4789-a012-b3c4d5e6f774",
+    "old_price": 3296,
+    "new_price": 3000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-14 00:00:00"
+  },
+  {
+    "history_id": "ph000295-e5f6-4789-a012-b3c4d5e6f795",
+    "product_id": "p1000374-e5f6-4789-a012-b3c4d5e6f774",
+    "old_price": 3476,
+    "new_price": 3296,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-24 00:00:00"
+  },
+  {
+    "history_id": "ph000296-e5f6-4789-a012-b3c4d5e6f796",
+    "product_id": "p1000155-e5f6-4789-a012-b3c4d5e6f755",
+    "old_price": 4005,
+    "new_price": 3500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-20 00:00:00"
+  },
+  {
+    "history_id": "ph000297-e5f6-4789-a012-b3c4d5e6f797",
+    "product_id": "p1000155-e5f6-4789-a012-b3c4d5e6f755",
+    "old_price": 4550,
+    "new_price": 4005,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-22 00:00:00"
+  },
+  {
+    "history_id": "ph000298-e5f6-4789-a012-b3c4d5e6f798",
+    "product_id": "p1000155-e5f6-4789-a012-b3c4d5e6f755",
+    "old_price": 4916,
+    "new_price": 4550,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-12 00:00:00"
+  },
+  {
+    "history_id": "ph000299-e5f6-4789-a012-b3c4d5e6f799",
+    "product_id": "p1000045-e5f6-4789-a012-b3c4d5e6f745",
+    "old_price": 9704,
+    "new_price": 9000,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-21 00:00:00"
+  },
+  {
+    "history_id": "ph000300-e5f6-4789-a012-b3c4d5e6f700",
+    "product_id": "p1000045-e5f6-4789-a012-b3c4d5e6f745",
+    "old_price": 11589,
+    "new_price": 9704,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-04-25 00:00:00"
+  },
+  {
+    "history_id": "ph000301-e5f6-4789-a012-b3c4d5e6f701",
+    "product_id": "p1000065-e5f6-4789-a012-b3c4d5e6f765",
+    "old_price": 1613,
+    "new_price": 1500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-04 00:00:00"
+  },
+  {
+    "history_id": "ph000302-e5f6-4789-a012-b3c4d5e6f702",
+    "product_id": "p1000070-e5f6-4789-a012-b3c4d5e6f770",
+    "old_price": 2934,
+    "new_price": 2500,
+    "reason": "manual",
+    "reference_id": null,
+    "created_at": "2026-05-09 00:00:00"
+  },
+  {
+    "history_id": "ph000303-e5f6-4789-a012-b3c4d5e6f703",
+    "product_id": "p1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "old_price": 2699,
+    "new_price": 2500,
+    "reason": "kamis",
+    "reference_id": "mp000133-e5f6-4789-a012-b3c4d5e6f732",
+    "created_at": "2026-04-30 00:00:00"
+  }
+]

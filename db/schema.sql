@@ -310,6 +310,37 @@ CREATE TABLE IF NOT EXISTS `ProductPriceHistory` (
   COMMENT='상품 가격 변경 이력';
 
 -- -----------------------------------------------------------------------------
+-- Story  (→ Store)  — Phase 2 ADR-04 (상인 스토리 영구 저장)
+-- -----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Story` (
+  `story_id`         VARCHAR(36)  NOT NULL,
+  `store_id`         VARCHAR(36)  NOT NULL,
+  `merchant_id`      VARCHAR(36)  DEFAULT NULL,
+  `title`            VARCHAR(200) DEFAULT NULL,
+  `content`          TEXT         NOT NULL,
+  `content_short`    TEXT         DEFAULT NULL,
+  `content_normal`   TEXT         DEFAULT NULL,
+  `content_detailed` TEXT         DEFAULT NULL,
+  `tone`             VARCHAR(50)  DEFAULT '친근한',
+  `selected_length`  ENUM('short','normal','detailed') NOT NULL DEFAULT 'normal',
+  `hashtags_json`    TEXT         DEFAULT NULL,
+  `interview_text`   TEXT         DEFAULT NULL,
+  `fallback_mode`    TINYINT(1)   NOT NULL DEFAULT '0',
+  `is_published`     TINYINT(1)   NOT NULL DEFAULT '0',
+  `published_at`     DATETIME     DEFAULT NULL,
+  `deleted_at`       DATETIME     DEFAULT NULL,
+  `updated_at`       DATETIME     DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_at`       DATETIME     DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`story_id`),
+  KEY `ix_story_store`    (`store_id`, `deleted_at`, `is_published`),
+  KEY `ix_story_merchant` (`merchant_id`),
+  CONSTRAINT `fk_story_store`
+    FOREIGN KEY (`store_id`) REFERENCES `Store` (`store_id`)
+    ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+  COMMENT='상인 스토리 (LLM 생성 결과 + 게시 상태)';
+
+-- -----------------------------------------------------------------------------
 -- Preorder  (→ User, Store)  — Phase 2 (활성화)
 CREATE TABLE IF NOT EXISTS `Preorder` (
   `preorder_id`  VARCHAR(36)  NOT NULL,

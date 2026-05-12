@@ -1,0 +1,162 @@
+[
+  {
+    "preorder_id": "po000001-e5f6-4789-a012-b3c4d5e6f701",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
+    "product_name": "한우 갈비 600g",
+    "qty": 2,
+    "status": "requested"
+  },
+  {
+    "preorder_id": "po000002-e5f6-4789-a012-b3c4d5e6f702",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
+    "product_name": "꽃게 1kg",
+    "qty": 1,
+    "status": "confirmed"
+  },
+  {
+    "preorder_id": "po000003-e5f6-4789-a012-b3c4d5e6f703",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f723",
+    "store_id": "d1000017-e5f6-4789-a012-b3c4d5e6f717",
+    "product_name": "호떡 5개",
+    "qty": 1,
+    "status": "confirmed"
+  },
+  {
+    "preorder_id": "po000004-e5f6-4789-a012-b3c4d5e6f704",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f713",
+    "store_id": "d1000036-e5f6-4789-a012-b3c4d5e6f736",
+    "product_name": "애호박 2개",
+    "qty": 4,
+    "status": "confirmed"
+  },
+  {
+    "preorder_id": "po000005-e5f6-4789-a012-b3c4d5e6f705",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f724",
+    "store_id": "d1000098-e5f6-4789-a012-b3c4d5e6f798",
+    "product_name": "마른새우 100g",
+    "qty": 2,
+    "status": "confirmed"
+  },
+  {
+    "preorder_id": "po000006-e5f6-4789-a012-b3c4d5e6f706",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f724",
+    "store_id": "d1000017-e5f6-4789-a012-b3c4d5e6f717",
+    "product_name": "쫄면 1인분",
+    "qty": 1,
+    "status": "requested"
+  },
+  {
+    "preorder_id": "po000007-e5f6-4789-a012-b3c4d5e6f707",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f717",
+    "store_id": "d1000020-e5f6-4789-a012-b3c4d5e6f720",
+    "product_name": "새우 500g",
+    "qty": 4,
+    "status": "confirmed"
+  },
+  {
+    "preorder_id": "po000008-e5f6-4789-a012-b3c4d5e6f708",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f728",
+    "store_id": "d1000028-e5f6-4789-a012-b3c4d5e6f728",
+    "product_name": "닭날개 500g",
+    "qty": 3,
+    "status": "requested"
+  },
+  {
+    "preorder_id": "po000009-e5f6-4789-a012-b3c4d5e6f709",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f714",
+    "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
+    "product_name": "광어 회 300g",
+    "qty": 4,
+    "status": "confirmed"
+  },
+  {
+    "preorder_id": "po000010-e5f6-4789-a012-b3c4d5e6f710",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f726",
+    "store_id": "d1000016-e5f6-4789-a012-b3c4d5e6f716",
+    "product_name": "건어물 모듬 200g",
+    "qty": 1,
+    "status": "requested"
+  },
+  {
+    "preorder_id": "po000011-e5f6-4789-a012-b3c4d5e6f711",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f724",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "황태채 200g",
+    "qty": 3,
+    "status": "ready"
+  },
+  {
+    "preorder_id": "po000012-e5f6-4789-a012-b3c4d5e6f712",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f731",
+    "store_id": "d1000063-e5f6-4789-a012-b3c4d5e6f763",
+    "product_name": "오뎅탕 500ml",
+    "qty": 4,
+    "status": "requested"
+  },
+  {
+    "preorder_id": "po000013-e5f6-4789-a012-b3c4d5e6f713",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "store_id": "d1000022-e5f6-4789-a012-b3c4d5e6f722",
+    "product_name": "김치 1kg",
+    "qty": 2,
+    "status": "confirmed"
+  },
+  {
+    "preorder_id": "po000014-e5f6-4789-a012-b3c4d5e6f714",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f713",
+    "store_id": "d1000050-e5f6-4789-a012-b3c4d5e6f750",
+    "product_name": "가지 3개",
+    "qty": 1,
+    "status": "requested"
+  },
+  {
+    "preorder_id": "po000015-e5f6-4789-a012-b3c4d5e6f715",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f723",
+    "store_id": "d1000049-e5f6-4789-a012-b3c4d5e6f749",
+    "product_name": "튀김 모듬",
+    "qty": 4,
+    "status": "ready"
+  },
+  {
+    "preorder_id": "po000016-e5f6-4789-a012-b3c4d5e6f716",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f719",
+    "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
+    "product_name": "건홍합 200g",
+    "qty": 4,
+    "status": "requested"
+  },
+  {
+    "preorder_id": "po000017-e5f6-4789-a012-b3c4d5e6f717",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f723",
+    "store_id": "d1000039-e5f6-4789-a012-b3c4d5e6f739",
+    "product_name": "인절미 500g",
+    "qty": 2,
+    "status": "confirmed"
+  },
+  {
+    "preorder_id": "po000018-e5f6-4789-a012-b3c4d5e6f718",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f719",
+    "store_id": "d1000046-e5f6-4789-a012-b3c4d5e6f746",
+    "product_name": "체리 500g",
+    "qty": 4,
+    "status": "requested"
+  },
+  {
+    "preorder_id": "po000019-e5f6-4789-a012-b3c4d5e6f719",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f719",
+    "store_id": "d1000059-e5f6-4789-a012-b3c4d5e6f759",
+    "product_name": "잡채 300g",
+    "qty": 1,
+    "status": "requested"
+  },
+  {
+    "preorder_id": "po000020-e5f6-4789-a012-b3c4d5e6f720",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f732",
+    "store_id": "d1000011-e5f6-4789-a012-b3c4d5e6f711",
+    "product_name": "충남 당근 500g",
+    "qty": 1,
+    "status": "confirmed"
+  }
+]
