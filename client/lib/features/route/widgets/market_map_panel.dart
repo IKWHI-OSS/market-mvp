@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'market_map_panel_stub.dart'
+    if (dart.library.io) 'market_map_panel_native.dart'
     if (dart.library.html) 'market_map_panel_web.dart' as impl;
 
 class MarketMapPanel extends StatelessWidget {
@@ -24,4 +25,3 @@ class MarketMapPanel extends StatelessWidget {
     );
   }
 }
-
