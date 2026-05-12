@@ -13,7 +13,7 @@ class MarketInfoApp extends StatelessWidget {
     final juaFamily = GoogleFonts.jua().fontFamily;
 
     return MaterialApp(
-      title: 'Market Info',
+      title: '돗개비',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: const ColorScheme.light(

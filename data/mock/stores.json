@@ -5,7 +5,8 @@
     "store_name": "망원 신선야채",
     "zone_label": "A구역",
     "lat": 37.5558,
-    "lng": 126.9101
+    "lng": 126.9101,
+    "image_url": "assets/images/mock/stores/store_mangwon_fresh_veg.jpeg"
   },
   {
     "store_id": "d1000002-e5f6-4789-a012-b3c4d5e6f702",
@@ -13,7 +14,8 @@
     "store_name": "망원 채소마트",
     "zone_label": "B구역",
     "lat": 37.5554,
-    "lng": 126.9107
+    "lng": 126.9107,
+    "image_url": "assets/images/mock/stores/store_mangwon_vegmart.jpeg"
   },
   {
     "store_id": "d1000003-e5f6-4789-a012-b3c4d5e6f703",
@@ -21,7 +23,8 @@
     "store_name": "망원 과일나라",
     "zone_label": "A구역",
     "lat": 37.5559,
-    "lng": 126.9103
+    "lng": 126.9103,
+    "image_url": "assets/images/mock/stores/store_mangwon_fruitnara.jpeg"
   },
   {
     "store_id": "d1000004-e5f6-4789-a012-b3c4d5e6f704",
@@ -29,7 +32,8 @@
     "store_name": "달콤 과일",
     "zone_label": "C구역",
     "lat": 37.5553,
-    "lng": 126.9109
+    "lng": 126.9109,
+    "image_url": "assets/images/mock/stores/store_dalkom_fruit.jpeg"
   },
   {
     "store_id": "d1000005-e5f6-4789-a012-b3c4d5e6f705",
@@ -37,7 +41,8 @@
     "store_name": "망원 수산",
     "zone_label": "B구역",
     "lat": 37.5557,
-    "lng": 126.9099
+    "lng": 126.9099,
+    "image_url": "assets/images/mock/stores/store_mangwon_fish.jpeg"
   },
   {
     "store_id": "d1000006-e5f6-4789-a012-b3c4d5e6f706",
@@ -45,15 +50,17 @@
     "store_name": "신선 해산물",
     "zone_label": "D구역",
     "lat": 37.5555,
-    "lng": 126.9108
+    "lng": 126.9108,
+    "image_url": "assets/images/mock/stores/store_fresh_seafood.jpeg"
   },
   {
     "store_id": "d1000007-e5f6-4789-a012-b3c4d5e6f707",
     "market_id": "f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701",
     "store_name": "망원 정육",
     "zone_label": "C구역",
-    "lat": 37.5560,
-    "lng": 126.9105
+    "lat": 37.556,
+    "lng": 126.9105,
+    "image_url": "assets/images/mock/stores/store_mangwon_meat.jpeg"
   },
   {
     "store_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
@@ -61,7 +68,8 @@
     "store_name": "망원 반찬가게",
     "zone_label": "D구역",
     "lat": 37.5552,
-    "lng": 126.9102
+    "lng": 126.9102,
+    "image_url": "assets/images/mock/stores/store_mangwon_banchan.jpeg"
   },
   {
     "store_id": "d1000009-e5f6-4789-a012-b3c4d5e6f709",
@@ -69,7 +77,8 @@
     "store_name": "망원 생활잡화",
     "zone_label": "E구역",
     "lat": 37.5558,
-    "lng": 126.9110
+    "lng": 126.911,
+    "image_url": "assets/images/mock/stores/store_mangwon_goods.jpeg"
   },
   {
     "store_id": "d1000010-e5f6-4789-a012-b3c4d5e6f710",
@@ -77,6 +86,7 @@
     "store_name": "망원 건어물",
     "zone_label": "E구역",
     "lat": 37.5554,
-    "lng": 126.9098
+    "lng": 126.9098,
+    "image_url": "assets/images/mock/stores/store_mangwon_dryfish.jpeg"
   }
 ]

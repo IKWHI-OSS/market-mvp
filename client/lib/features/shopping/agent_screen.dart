@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../app/router.dart';
 import '../../core/network/api_client.dart';
+import '../route/route_screen.dart';
 import '../../shared/widgets/market_logo_title.dart';
 import '../home/spotlight_screen.dart';
+import '../../core/repositories/repository_provider.dart';
 
 class AgentScreen extends StatefulWidget {
   const AgentScreen({super.key});
@@ -13,16 +15,14 @@ class AgentScreen extends StatefulWidget {
 }
 
 class _AgentScreenState extends State<AgentScreen> {
-  final TextEditingController _queryController =
-      TextEditingController(text: '2인 저녁용 찌개 재료 추천해줘');
-  String _userQuery = '2인 저녁용 찌개 재료 추천해줘';
+  final TextEditingController _queryController = TextEditingController();
+  String _userQuery = '';
   bool _loading = false;
   ShoppingAgentData? _result;
 
   @override
   void initState() {
     super.initState();
-    _submitQuery();
   }
 
   @override
@@ -33,17 +33,25 @@ class _AgentScreenState extends State<AgentScreen> {
 
   Future<void> _submitQuery() async {
     final query = _queryController.text.trim();
-    if (query.isEmpty) return;
+    if (query.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('질문을 입력해 주세요.')),
+      );
+      return;
+    }
 
+    final people = _extractPeople(query);
+    final budget = _extractBudget(query);
     setState(() {
       _userQuery = query;
       _loading = true;
     });
+    _queryController.clear();
     try {
-      final data = await ApiClient.instance.requestShoppingAgent(
+      final data = await context.marketRepository.requestShoppingAgent(
         query: query,
-        people: 2,
-        budget: 20000,
+        people: people,
+        budget: budget,
         saveAsList: true,
       );
       if (!mounted) return;
@@ -51,7 +59,7 @@ class _AgentScreenState extends State<AgentScreen> {
     } catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('추천 생성 실패: $e')),
+        SnackBar(content: Text('추천 생성 실패: ${_normalizeError(e)}')),
       );
     } finally {
       if (mounted) setState(() => _loading = false);
@@ -76,17 +84,32 @@ class _AgentScreenState extends State<AgentScreen> {
   }
 
   void _startRoute() {
-    if ((_result?.shoppingListId ?? '').isEmpty) {
+    final stores = _result?.storeMatches ?? const <ShoppingAgentStoreMatch>[];
+    if ((_result?.shoppingListId ?? '').isEmpty || stores.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('리스트 생성 후 동선을 시작할 수 있어요.')),
       );
       return;
     }
-    Navigator.pushNamed(context, AppRoutes.route);
+    final args = RouteScreenArgs(
+      stops: stores
+          .map(
+            (s) => RouteStopSeed(
+              storeName: s.storeName,
+              zoneLabel: s.zoneLabel,
+              distanceM: s.distanceM,
+            ),
+          )
+          .toList(growable: false),
+    );
+    Navigator.pushNamed(context, AppRoutes.route, arguments: args);
   }
 
   @override
   Widget build(BuildContext context) {
+    final now = DateTime.now();
+    final dateLabel = _koreanDate(now);
+    final timeLabel = _koreanTime(now);
     final topMessage = _loading
         ? '장보기 추천을 생성하고 있어요...'
         : (_result?.clarificationNeeded ?? false)
@@ -116,7 +139,7 @@ class _AgentScreenState extends State<AgentScreen> {
                   ),
                   const SizedBox(width: 8),
                   const SizedBox(
-                    height: 24,
+                    height: 37,
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: MarketLogoTitle(),
@@ -145,9 +168,9 @@ class _AgentScreenState extends State<AgentScreen> {
                         color: const Color(0xFFE2E9DD),
                         borderRadius: BorderRadius.circular(16),
                       ),
-                      child: const Text(
-                        '2026년 4월 23일 목요일',
-                        style: TextStyle(
+                      child: Text(
+                        dateLabel,
+                        style: const TextStyle(
                             fontSize: 13,
                             color: Color(0xFF61695C),
                             fontWeight: FontWeight.w700),
@@ -155,33 +178,35 @@ class _AgentScreenState extends State<AgentScreen> {
                     ),
                   ),
                   const SizedBox(height: 14),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Container(
-                      constraints: const BoxConstraints(maxWidth: 270),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 16, vertical: 12),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF3E7C18),
-                        borderRadius: BorderRadius.circular(22),
-                      ),
-                      child: Text(
-                        _userQuery,
-                        style: const TextStyle(
-                            fontSize: 17,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w700),
+                  if (_userQuery.isNotEmpty) ...[
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Container(
+                        constraints: const BoxConstraints(maxWidth: 270),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 12),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF3E7C18),
+                          borderRadius: BorderRadius.circular(22),
+                        ),
+                        child: Text(
+                          _userQuery,
+                          style: const TextStyle(
+                              fontSize: 17,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700),
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 6),
-                  const Align(
-                    alignment: Alignment.centerRight,
-                    child: Text('오후 5:42',
-                        style: TextStyle(
-                            fontSize: 12, color: Color(0xFF7A8376))),
-                  ),
-                  const SizedBox(height: 10),
+                    const SizedBox(height: 6),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(timeLabel,
+                          style: const TextStyle(
+                              fontSize: 12, color: Color(0xFF7A8376))),
+                    ),
+                    const SizedBox(height: 10),
+                  ],
                   const Row(
                     children: [
                       CircleAvatar(
@@ -215,6 +240,22 @@ class _AgentScreenState extends State<AgentScreen> {
                           height: 1.35),
                     ),
                   ),
+                  if (_result != null) ...[
+                    const SizedBox(height: 8),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        _result!.llmAssisted
+                            ? 'AI 보강 응답 사용'
+                            : '기본 추천 로직 사용',
+                        style: const TextStyle(
+                          fontSize: 12,
+                          color: Color(0xFF6E7569),
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ],
                   const SizedBox(height: 14),
                   if (_loading)
                     const Center(child: CircularProgressIndicator())
@@ -226,10 +267,10 @@ class _AgentScreenState extends State<AgentScreen> {
                       onOpenList: _openShoppingList,
                     ),
                   const SizedBox(height: 8),
-                  const Align(
+                  Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('오후 5:42',
-                        style: TextStyle(
+                    child: Text(timeLabel,
+                        style: const TextStyle(
                             fontSize: 12, color: Color(0xFF7A8376))),
                   ),
                   const SizedBox(height: 10),
@@ -265,7 +306,9 @@ class _AgentScreenState extends State<AgentScreen> {
                 child: Row(
                   children: [
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('첨부 기능은 준비 중입니다.')),
+                      ),
                       icon: const Icon(Icons.add_circle_outline,
                           color: Color(0xFF6C7467)),
                     ),
@@ -282,7 +325,9 @@ class _AgentScreenState extends State<AgentScreen> {
                       ),
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('음성 입력은 준비 중입니다.')),
+                      ),
                       icon: const Icon(Icons.mic_none,
                           color: Color(0xFF6C7467)),
                     ),
@@ -307,7 +352,7 @@ class _AgentScreenState extends State<AgentScreen> {
         ),
       ),
       bottomNavigationBar: NavigationBar(
-        selectedIndex: 1,
+        selectedIndex: 2,
         onDestinationSelected: (value) {
           switch (value) {
             case 0:
@@ -315,11 +360,14 @@ class _AgentScreenState extends State<AgentScreen> {
                   context, AppRoutes.consumerShell, (route) => false);
               break;
             case 1:
+              Navigator.pushNamed(context, AppRoutes.search);
               break;
             case 2:
-              Navigator.pushNamed(context, AppRoutes.route);
               break;
             case 3:
+              Navigator.pushNamed(context, AppRoutes.route);
+              break;
+            case 4:
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(content: Text('마이페이지는 Phase 2에서 제공돼요.')),
               );
@@ -330,22 +378,67 @@ class _AgentScreenState extends State<AgentScreen> {
           NavigationDestination(
               icon: Icon(Icons.home_outlined),
               selectedIcon: Icon(Icons.home),
-              label: 'HOME'),
+              label: '홈'),
+          NavigationDestination(
+              icon: Icon(Icons.search), label: '검색'),
           NavigationDestination(
               icon: Icon(Icons.shopping_bag_outlined),
               selectedIcon: Icon(Icons.shopping_bag),
-              label: 'SHOPPING'),
+              label: '장보기'),
           NavigationDestination(
               icon: Icon(Icons.map_outlined),
               selectedIcon: Icon(Icons.map),
-              label: 'MAP'),
+              label: '지도'),
           NavigationDestination(
               icon: Icon(Icons.person_outline),
               selectedIcon: Icon(Icons.person),
-              label: 'MY'),
+              label: '마이'),
         ],
       ),
     );
+  }
+
+  String _koreanDate(DateTime dateTime) {
+    const week = ['월', '화', '수', '목', '금', '토', '일'];
+    return '${dateTime.year}년 ${dateTime.month}월 ${dateTime.day}일 ${week[dateTime.weekday - 1]}요일';
+  }
+
+  String _koreanTime(DateTime dateTime) {
+    final isAm = dateTime.hour < 12;
+    final hour12 = dateTime.hour % 12 == 0 ? 12 : dateTime.hour % 12;
+    final minute = dateTime.minute.toString().padLeft(2, '0');
+    return '${isAm ? '오전' : '오후'} $hour12:$minute';
+  }
+
+  int? _extractPeople(String query) {
+    final regex = RegExp(r'(\\d+)\\s*인');
+    final match = regex.firstMatch(query);
+    if (match == null) return null;
+    return int.tryParse(match.group(1) ?? '');
+  }
+
+  int? _extractBudget(String query) {
+    final manwon = RegExp(r'(\\d+)\\s*만\\s*원?').firstMatch(query);
+    if (manwon != null) {
+      final value = int.tryParse(manwon.group(1) ?? '');
+      if (value != null) return value * 10000;
+    }
+    final won = RegExp(r'(\\d{4,7})\\s*원').firstMatch(query);
+    if (won != null) {
+      return int.tryParse(won.group(1) ?? '');
+    }
+    return null;
+  }
+
+  String _normalizeError(Object error) {
+    final raw = error.toString().replaceFirst('Exception: ', '').trim();
+    if (raw.contains('SocketException') ||
+        raw.contains('ClientException') ||
+        raw.contains('Failed host lookup') ||
+        raw.contains('XMLHttpRequest')) {
+      return '네트워크 연결을 확인해주세요.';
+    }
+    return raw.isEmpty ? '알 수 없는 오류가 발생했습니다.' : raw;
   }
 }
 
@@ -410,21 +503,31 @@ class _RecommendationCard extends StatelessWidget {
                         end: Alignment.bottomCenter,
                         colors: [
                           Colors.black.withValues(alpha: 0.04),
-                          Colors.black.withValues(alpha: 0.28),
+                          Colors.black.withValues(alpha: 0.36),
                         ],
                       ),
                     ),
                   ),
                 ),
                 Positioned(
-                  left: 14,
-                  bottom: 14,
-                  child: Text(
-                    title,
-                    style: const TextStyle(
-                        fontSize: 26,
-                        color: Color(0xFF1E2619),
-                        fontWeight: FontWeight.w900),
+                  left: 12,
+                  right: 12,
+                  bottom: 12,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Colors.black.withValues(alpha: 0.45),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Text(
+                      title,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                          fontSize: 24,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w900),
+                    ),
                   ),
                 ),
               ],
@@ -526,7 +629,7 @@ class _RecommendationCard extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)),
                         ),
-                        child: const Text('이 구성으로 길찾기 시작'),
+                        child: const Text('이 구성으로 길찾기'),
                       ),
                     ),
                   ],

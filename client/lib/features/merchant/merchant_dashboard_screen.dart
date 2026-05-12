@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../app/router.dart';
 import '../../core/network/api_client.dart';
 import '../../shared/widgets/market_logo_title.dart';
+import '../../core/repositories/repository_provider.dart';
 
 class MerchantDashboardScreen extends StatefulWidget {
   const MerchantDashboardScreen({super.key});
@@ -75,12 +76,7 @@ class _MerchantDashboardScreenState extends State<MerchantDashboardScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (_loading) {
-      return const Scaffold(
-        backgroundColor: Color(0xFFF2F7EC),
-        body: Center(child: CircularProgressIndicator()),
-      );
-    }
+    final merchantName = context.marketRepository.currentUser?.name ?? '상인';
     return Scaffold(
       backgroundColor: const Color(0xFFF2F7EC),
       appBar: AppBar(
@@ -107,7 +103,7 @@ class _MerchantDashboardScreenState extends State<MerchantDashboardScreen> {
         children: [
           const SizedBox(height: 14),
           Text(
-            '반갑습니다, $_name님',
+            '반갑습니다, $merchantName님',
             style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                   fontSize: 36,
                   fontWeight: FontWeight.w800,
@@ -128,7 +124,7 @@ class _MerchantDashboardScreenState extends State<MerchantDashboardScreen> {
           Row(
             children: [
               Text(
-                '오늘의 할 일',
+                '상점 관리 도구',
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                       color: const Color(0xFF1E1D18),
                     ),
@@ -162,14 +158,12 @@ class _MerchantDashboardScreenState extends State<MerchantDashboardScreen> {
             icon: Icons.sell_outlined,
             iconBg: const Color(0xFFF5CDB5),
             title: '가격 정보 갱신',
-            subtitle: _suggestions.isEmpty
-                ? '시세 기반 제안 없음'
-                : '${_suggestions.length}개 상품 가격 제안 있음',
-            onTap: _suggestions.isEmpty
-                ? () => ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('현재 가격 제안이 없습니다.')),
-                    )
-                : _showPriceSuggestionsSheet,
+            subtitle: '정보 변경 반영',
+            onTap: () => Navigator.pushNamed(
+              context,
+              AppRoutes.merchantPriceHistory,
+              arguments: 'product_001',
+            ),
           ),
           const SizedBox(height: 8),
           _TaskTile(

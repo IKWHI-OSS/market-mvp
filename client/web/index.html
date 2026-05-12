@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="market_info_client">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>market_info_client</title>
+  <link rel="manifest" href="manifest.json">
+  <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=vfkjxwfl5n"></script>
+  <script>
+    // SCR-C-07 전용: 시장 범위(반경) 밖으로 카메라가 벗어나지 않도록 제한
+    window.initRouteNaverMap = function (containerId, centerLat, centerLng, radiusMeters) {
+      if (!window.naver || !window.naver.maps) return;
+      var mapEl = document.getElementById(containerId);
+      if (!mapEl) return;
+      if (mapEl.__mapInitialized) return;
+      mapEl.__mapInitialized = true;
+
+      var center = new naver.maps.LatLng(centerLat, centerLng);
+      var map = new naver.maps.Map(containerId, {
+        center: center,
+        zoom: 18,
+        minZoom: 18,
+        maxZoom: 18,
+        zoomControl: false,
+        logoControl: false,
+        mapDataControl: false,
+        scaleControl: false,
+        draggable: false,
+        pinchZoom: false,
+        scrollWheel: false,
+        keyboardShortcuts: false,
+        disableDoubleTapZoom: true,
+        disableDoubleClickZoom: true
+      });
+
+      // 하단 컴포넌트 조작 시 지도 이벤트가 전달되지 않도록 포인터 잠금
+      mapEl.style.pointerEvents = 'none';
+
+      new naver.maps.Marker({
+        position: center,
+        map: map
+      });
+
+      // 방문 점포 가상 핀포인트 (SCR-C-07 시연용)
+      var stopPins = [
+        { name: '정선 할머니 한과', lat: centerLat + 0.00022, lng: centerLng - 0.00015 },
+        { name: '원조 마약김밥 2호점', lat: centerLat + 0.00003, lng: centerLng + 0.00022 },
+        { name: '대성 축산물 도매', lat: centerLat - 0.00020, lng: centerLng + 0.00010 },
+        { name: '청정 채소 달래상회', lat: centerLat - 0.00005, lng: centerLng - 0.00024 }
+      ];
+
+      stopPins.forEach(function (pin) {
+        new naver.maps.Marker({
+          position: new naver.maps.LatLng(pin.lat, pin.lng),
+          map: map,
+          title: pin.name
+        });
+      });
+
+      // 반경 표시
+      new naver.maps.Circle({
+        map: map,
+        center: center,
+        radius: radiusMeters,
+        fillColor: '#4A7B29',
+        fillOpacity: 0.10,
+        strokeColor: '#4A7B29',
+        strokeOpacity: 0.9,
+        strokeWeight: 2
+      });
+
+      // meters -> lat/lng delta
+      var latDelta = radiusMeters / 111320.0;
+      var lngDelta = radiusMeters / (111320.0 * Math.cos(centerLat * Math.PI / 180.0));
+      var minLat = centerLat - latDelta;
+      var maxLat = centerLat + latDelta;
+      var minLng = centerLng - lngDelta;
+      var maxLng = centerLng + lngDelta;
+      var bounds = new naver.maps.LatLngBounds(
+        new naver.maps.LatLng(minLat, minLng),
+        new naver.maps.LatLng(maxLat, maxLng)
+      );
+
+      function clampCenter(latlng) {
+        var lat = latlng.y;
+        var lng = latlng.x;
+        if (lat < minLat) lat = minLat;
+        if (lat > maxLat) lat = maxLat;
+        if (lng < minLng) lng = minLng;
+        if (lng > maxLng) lng = maxLng;
+        return new naver.maps.LatLng(lat, lng);
+      }
+
+      // 초기 뷰를 시장 범위에 맞춤
+      map.fitBounds(bounds);
+      map.setZoom(18);
+
+      naver.maps.Event.addListener(map, 'zoom_changed', function (z) {
+        if (z !== 18) map.setZoom(18);
+      });
+
+      naver.maps.Event.addListener(map, 'dragend', function () {
+        var c = map.getCenter();
+        if (!bounds.hasLatLng(c)) {
+          map.setCenter(clampCenter(c));
+        }
+      });
+    };
+  </script>
+</head>
+<body>
+  <!--
+    You can customize the "flutter_bootstrap.js" script.
+    This is useful to provide a custom configuration to the Flutter loader
+    or to give the user feedback during the initialization process.
+
+    For more details:
+    * https://docs.flutter.dev/platform-integration/web/initialization
+  -->
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

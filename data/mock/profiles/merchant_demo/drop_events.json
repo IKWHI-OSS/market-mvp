@@ -1,0 +1,16 @@
+[
+  {
+    "drop_id": "dr900001-e5f6-4789-a012-b3c4d5e6f901",
+    "product_id": "p1000049-e5f6-4789-a012-b3c4d5e6f749",
+    "store_id": "d1000011-e5f6-4789-a012-b3c4d5e6f711",
+    "expected_at": "2026-05-07 08:10:00",
+    "status": "scheduled"
+  },
+  {
+    "drop_id": "dr900002-e5f6-4789-a012-b3c4d5e6f902",
+    "product_id": "p1000050-e5f6-4789-a012-b3c4d5e6f750",
+    "store_id": "d1000011-e5f6-4789-a012-b3c4d5e6f711",
+    "expected_at": "2026-05-07 09:20:00",
+    "status": "arrived"
+  }
+]

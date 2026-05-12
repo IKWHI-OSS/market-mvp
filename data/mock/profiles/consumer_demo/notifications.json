@@ -1,0 +1,20 @@
+[
+  {
+    "notification_id": "nt900001-e5f6-4789-a012-b3c4d5e6f901",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f701",
+    "type": "drop",
+    "title": "[입고알림] 망원 수산 광어 오늘 오전 도착",
+    "target_type": "drop",
+    "target_id": "dr000007-e5f6-4789-a012-b3c4d5e6f707",
+    "is_read": 0
+  },
+  {
+    "notification_id": "nt900002-e5f6-4789-a012-b3c4d5e6f902",
+    "user_id": "a1b2c3d4-e5f6-4789-a012-b3c4d5e6f702",
+    "type": "event",
+    "title": "[시장행사] 주말 제철 시식회 오픈",
+    "target_type": "store",
+    "target_id": "d1000008-e5f6-4789-a012-b3c4d5e6f708",
+    "is_read": 0
+  }
+]

@@ -5,6 +5,7 @@ import '../../core/network/api_client.dart';
 import '../../shared/widgets/error_state.dart';
 import '../../shared/widgets/market_logo_title.dart';
 import 'spotlight_screen.dart';
+import '../../core/repositories/repository_provider.dart';
 
 class EventScreen extends StatefulWidget {
   const EventScreen({super.key, this.eventId});
@@ -23,9 +24,9 @@ class _EventScreenState extends State<EventScreen> {
   @override
   void initState() {
     super.initState();
-    _listFuture = ApiClient.instance.getEvents();
+    _listFuture = context.marketRepository.getEvents();
     if (widget.eventId != null) {
-      _detailFuture = ApiClient.instance.getEventDetail(widget.eventId!);
+      _detailFuture = context.marketRepository.getEventDetail(widget.eventId!);
     }
   }
 
@@ -53,7 +54,7 @@ class _EventScreenState extends State<EventScreen> {
               return ErrorStateWidget(
                 title: '행사 정보를 불러오지 못했어요',
                 description: '잠시 후 다시 시도해주세요.',
-                onRetry: () => setState(() => _listFuture = ApiClient.instance.getEvents()),
+                onRetry: () => setState(() => _listFuture = context.marketRepository.getEvents()),
                 onSecondary: () => Navigator.pushNamed(context, AppRoutes.home),
                 secondaryLabel: '운영 공지 보기',
               );
@@ -63,7 +64,7 @@ class _EventScreenState extends State<EventScreen> {
               return ErrorStateWidget(
                 title: '행사가 없어요',
                 description: '인근 시장 행사 추천을 확인해보세요.',
-                onRetry: () => setState(() => _listFuture = ApiClient.instance.getEvents()),
+                onRetry: () => setState(() => _listFuture = context.marketRepository.getEvents()),
                 onSecondary: () => Navigator.pushNamed(context, AppRoutes.home),
                 secondaryLabel: '인근 시장 행사 추천',
               );
@@ -87,8 +88,8 @@ class _EventScreenState extends State<EventScreen> {
                     ),
                     const SizedBox(width: 6),
                     const SizedBox(
-                      height: 12,
-                      child: Align(
+                      height: 37,
+                    child: Align(
                         alignment: Alignment.centerLeft,
                         child: MarketLogoTitle(),
                       ),
@@ -116,7 +117,7 @@ class _EventScreenState extends State<EventScreen> {
                   children: [
                     _EventTab(label: '모든 행사', selected: _tabIndex == 0, onTap: () => setState(() => _tabIndex = 0)),
                     const SizedBox(width: 8),
-                    _EventTab(label: '수확', selected: _tabIndex == 1, onTap: () => setState(() => _tabIndex = 1)),
+                    _EventTab(label: '체험 행사', selected: _tabIndex == 1, onTap: () => setState(() => _tabIndex = 1)),
                     const SizedBox(width: 8),
                     _EventTab(label: '할인 행사', selected: _tabIndex == 2, onTap: () => setState(() => _tabIndex = 2)),
                   ],
@@ -134,7 +135,7 @@ class _EventScreenState extends State<EventScreen> {
                 _BannerCard(
                   title: '한가위 햇채소 대전',
                   subtitle: '가을 장보기에 딱 맞는 신선 채소를 통해\n30% 할인된 행사로 만나보세요.',
-                  image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80',
+                  image: 'assets/images/events/event_fruit_special.jpeg',
                   onTap: () => Navigator.pushNamed(context, AppRoutes.notification),
                 ),
                 const SizedBox(height: 10),
@@ -169,10 +170,10 @@ class _EventScreenState extends State<EventScreen> {
                 _BannerCard(
                   title: '전통 도자기 장인 박람회',
                   subtitle: '지역 장인 부스와 공예 체험 프로그램 운영',
-                  image: 'https://images.unsplash.com/photo-1510166089176-b57564a542b1?auto=format&fit=crop&w=1200&q=80',
+                  image: 'assets/images/events/event_ceramic_fair.jpeg',
                   onTap: () => Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => const SpotlightScreen(storeId: 'store_003')),
+                    MaterialPageRoute(builder: (_) => const SpotlightScreen(storeId: 'd1000003-e5f6-4789-a012-b3c4d5e6f703')),
                   ),
                 ),
               ],
@@ -216,6 +217,13 @@ class _EventDetailView extends StatelessWidget {
               Text('${detail.periodText} · ${detail.zoneLabel}', style: const TextStyle(color: Color(0xFF7A8376))),
               const SizedBox(height: 10),
               Text(detail.description, style: const TextStyle(color: Color(0xFF3D3B34), height: 1.45)),
+              const SizedBox(height: 18),
+              _BannerCard(
+                title: '전통 도자기 장인 박람회',
+                subtitle: '전통 공예 체험과 장인 토크 세션 운영',
+                image: 'assets/images/events/event_ceramic_fair.jpeg',
+                onTap: () {},
+              ),
               const SizedBox(height: 18),
               Row(
                 children: [
@@ -291,12 +299,19 @@ class _HeroEventCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: Image.network(
-              'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80',
-              height: 140,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
+            child: event.imageUrl.startsWith('assets/')
+                ? Image.asset(
+                    event.imageUrl,
+                    height: 140,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  )
+                : Image.network(
+                    event.imageUrl,
+                    height: 140,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
           ),
           const SizedBox(height: 8),
           Row(
@@ -403,12 +418,19 @@ class _BannerCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(14),
         child: Stack(
           children: [
-            Image.network(
-              image,
-              height: 168,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
+            image.startsWith('assets/')
+                ? Image.asset(
+                    image,
+                    height: 168,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  )
+                : Image.network(
+                    image,
+                    height: 168,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
             Positioned.fill(
               child: DecoratedBox(
                 decoration: BoxDecoration(

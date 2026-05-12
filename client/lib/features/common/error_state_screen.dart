@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../app/router.dart';
 import '../../shared/widgets/error_state.dart';
 
 class ErrorStateScreen extends StatelessWidget {
@@ -12,8 +13,16 @@ class ErrorStateScreen extends StatelessWidget {
       body: ErrorStateWidget(
         title: '문제가 발생했어요',
         description: '네트워크 상태를 확인하고 다시 시도해주세요.',
-        onRetry: () => Navigator.pop(context),
-        onSecondary: () => Navigator.pop(context),
+        onRetry: () => Navigator.pushNamedAndRemoveUntil(
+          context,
+          AppRoutes.consumerShell,
+          (route) => false,
+        ),
+        onSecondary: () => Navigator.pushNamedAndRemoveUntil(
+          context,
+          AppRoutes.consumerShell,
+          (route) => false,
+        ),
         secondaryLabel: '인근 시장 보기',
       ),
     );

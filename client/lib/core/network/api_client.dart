@@ -1,7 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-const _baseUrl = 'https://market-api-production-6e52.up.railway.app/api/v1';
+const _baseUrl = String.fromEnvironment(
+  'API_BASE_URL',
+  defaultValue: 'http://54.180.102.166/api/v1',
+);
 const _defaultMarketId = 'f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701';
 
 // ─── Data models ────────────────────────────────────────────────────────────
@@ -181,6 +184,9 @@ class MerchantStoryData {
   const MerchantStoryData({
     required this.storeId,
     required this.storeName,
+    required this.storyId,
+    required this.isPublished,
+    required this.publishedAt,
     required this.story,
     required this.storyVersions,
     required this.selectedLength,
@@ -193,6 +199,9 @@ class MerchantStoryData {
 
   final String storeId;
   final String storeName;
+  final String? storyId;
+  final bool isPublished;
+  final String? publishedAt;
   final String story;
   final Map<String, String> storyVersions;
   final String selectedLength;
@@ -259,6 +268,8 @@ class ShoppingAgentData {
     required this.generalListOnly,
     required this.shoppingListId,
     required this.fallbackMode,
+    required this.llmAssisted,
+    required this.nextActionGuide,
     required this.retryGuide,
   });
 
@@ -274,6 +285,8 @@ class ShoppingAgentData {
   final bool generalListOnly;
   final String? shoppingListId;
   final bool fallbackMode;
+  final bool llmAssisted;
+  final String? nextActionGuide;
   final String? retryGuide;
 }
 
@@ -285,8 +298,10 @@ class ApiClient {
   static final ApiClient instance = ApiClient._();
 
   String? _accessToken;
+  AuthUser? _currentUser;
 
   String? get accessToken => _accessToken;
+  AuthUser? get currentUser => _currentUser;
 
   Map<String, String> get _headers => {
         'Content-Type': 'application/json',
@@ -319,7 +334,7 @@ class ApiClient {
     final data = _unwrap(res);
     final u = data['user'] as Map<String, dynamic>;
     _accessToken = data['access_token'] as String;
-    return AuthSession(
+    final session = AuthSession(
       accessToken: _accessToken!,
       user: AuthUser(
         userId: u['user_id'] as String,
@@ -329,22 +344,13 @@ class ApiClient {
       ),
       homeScreenId: data['home_screen_id'] as String,
     );
+    _currentUser = session.user;
+    return session;
   }
 
-  void logout() => _accessToken = null;
-  void clearSession() => _accessToken = null;
-
-  // ── Profile ───────────────────────────────────────────────────────────────
-
-  Future<AuthUser> getMyProfile() async {
-    final res = await http.get(Uri.parse('$_baseUrl/auth/me'), headers: _headers);
-    final d = _unwrap(res);
-    return AuthUser(
-      userId: d['user_id'] as String,
-      email: d['email'] as String,
-      name: d['name'] as String,
-      role: d['role'] as String,
-    );
+  void logout() {
+    _accessToken = null;
+    _currentUser = null;
   }
 
   // ── Products ──────────────────────────────────────────────────────────────
@@ -352,11 +358,22 @@ class ApiClient {
   Future<List<ProductSummary>> searchProducts({required String query}) async {
     final q = query.trim();
     if (q.isEmpty) return const [];
-    final uri = Uri.parse('$_baseUrl/products/search').replace(
+    final withMarketUri = Uri.parse('$_baseUrl/products/search').replace(
       queryParameters: {'q': q, 'market_id': _defaultMarketId},
     );
-    final res = await http.get(uri, headers: _headers);
-    return _unwrapItems(res).map((e) {
+    final withMarketRes = await http.get(withMarketUri, headers: _headers);
+    var rawItems = _unwrapItems(withMarketRes);
+
+    // 시연 데이터 보정: market_id 필터 결과가 비면 전체 시장 기준으로 재조회
+    if (rawItems.isEmpty) {
+      final fallbackUri = Uri.parse('$_baseUrl/products/search').replace(
+        queryParameters: {'q': q},
+      );
+      final fallbackRes = await http.get(fallbackUri, headers: _headers);
+      rawItems = _unwrapItems(fallbackRes);
+    }
+
+    return rawItems.map((e) {
       final m = e as Map<String, dynamic>;
       return ProductSummary(
         productId: m['product_id'] as String,
@@ -462,7 +479,7 @@ class ApiClient {
     final res = await http.get(Uri.parse('$_baseUrl/home'), headers: _headers);
     final data = _unwrap(res);
     final cards = data['event_cards'] as List<dynamic>? ?? [];
-    return cards.map((e) {
+    final items = cards.map((e) {
       final m = e as Map<String, dynamic>;
       return EventSummary(
         eventId: m['catalog_item_id'] as String,
@@ -472,6 +489,24 @@ class ApiClient {
         zoneLabel: '',
       );
     }).toList();
+    if (items.isEmpty) return items;
+    return items.asMap().entries.map((e) {
+      final idx = e.key;
+      final v = e.value;
+      if (v.imageUrl.isNotEmpty) return v;
+      final fallback = idx == 0
+          ? 'assets/images/events/event_market_main.jpeg'
+          : idx == 1
+              ? 'assets/images/events/event_fruit_special.jpeg'
+              : 'assets/images/events/event_ceramic_fair.jpeg';
+      return EventSummary(
+        eventId: v.eventId,
+        title: v.title,
+        imageUrl: fallback,
+        periodText: v.periodText,
+        zoneLabel: v.zoneLabel,
+      );
+    }).toList(growable: false);
   }
 
   Future<EventDetailData> getEventDetail(String eventId) async {
@@ -499,7 +534,7 @@ class ApiClient {
     final res = await http.get(Uri.parse('$_baseUrl/home'), headers: _headers);
     final data = _unwrap(res);
     final spots = data['store_spotlights'] as List<dynamic>? ?? [];
-    return spots.map((e) {
+    final items = spots.map((e) {
       final m = e as Map<String, dynamic>;
       return SpotlightSummary(
         storeId: m['store_id'] as String,
@@ -508,6 +543,21 @@ class ApiClient {
         imageUrl: m['image_url'] as String? ?? '',
       );
     }).toList();
+    if (items.isNotEmpty) return items;
+    return const [
+      SpotlightSummary(
+        storeId: 'd1000001-e5f6-4789-a012-b3c4d5e6f701',
+        storeName: '망원 신선야채',
+        summary: '매일 새벽 선별한 채소와 제철 상품을 소개합니다.',
+        imageUrl: 'assets/images/mock/stores/store_mangwon_fresh_veg.jpeg',
+      ),
+      SpotlightSummary(
+        storeId: 'd1000003-e5f6-4789-a012-b3c4d5e6f703',
+        storeName: '망원 과일나라',
+        summary: '당일 입고 과일 중심으로 신선도를 최우선으로 운영합니다.',
+        imageUrl: 'assets/images/mock/stores/store_mangwon_fruitnara.jpeg',
+      ),
+    ];
   }
 
   Future<SpotlightDetailData> getSpotlightDetail(String storeId) async {
@@ -638,6 +688,9 @@ class ApiClient {
     return MerchantStoryData(
       storeId: d['store_id'] as String,
       storeName: d['store_name'] as String? ?? '',
+      storyId: d['story_id'] as String?,
+      isPublished: d['is_published'] as bool? ?? false,
+      publishedAt: d['published_at'] as String?,
       story: d['story'] as String? ?? '',
       storyVersions: {
         'short': versionsRaw['short'] as String? ?? '',
@@ -651,6 +704,60 @@ class ApiClient {
       fallbackMode: d['fallback_mode'] as bool? ?? false,
       productsUsed: (d['products_used'] as List<dynamic>? ?? const []).map((e) => '$e').toList(growable: false),
     );
+  }
+
+  // ── Stories (Phase 2 ADR-04 영구 저장) ────────────────────────────────
+
+  Future<List<Map<String, dynamic>>> listMyStories() async {
+    final res = await http.get(Uri.parse('$_baseUrl/merchant/stories'), headers: _headers);
+    return _unwrapItems(res).map((e) => e as Map<String, dynamic>).toList();
+  }
+
+  Future<Map<String, dynamic>> getStory(String storyId) async {
+    final res = await http.get(
+      Uri.parse('$_baseUrl/merchant/stories/$storyId'),
+      headers: _headers,
+    );
+    return _unwrap(res);
+  }
+
+  Future<Map<String, dynamic>> publishStory(String storyId, {required bool publish}) async {
+    final res = await http.patch(
+      Uri.parse('$_baseUrl/merchant/stories/$storyId/publish'),
+      headers: _headers,
+      body: jsonEncode({'publish': publish}),
+    );
+    return _unwrap(res);
+  }
+
+  Future<void> deleteStory(String storyId) async {
+    final res = await http.delete(
+      Uri.parse('$_baseUrl/merchant/stories/$storyId'),
+      headers: _headers,
+    );
+    if (res.statusCode < 200 || res.statusCode >= 300) {
+      throw Exception('스토리 삭제 실패');
+    }
+  }
+
+  Future<Map<String, dynamic>?> getPublishedStoryForStore(String storeId) async {
+    final res = await http.get(
+      Uri.parse('$_baseUrl/stores/$storeId/story'),
+      headers: _headers,
+    );
+    final d = _unwrap(res);
+    return d.isEmpty ? null : d;
+  }
+
+  Future<List<Map<String, dynamic>>> getProductPriceHistory(String productId) async {
+    final res = await http.get(
+      Uri.parse('$_baseUrl/merchant/products/$productId/price-history'),
+      headers: _headers,
+    );
+    final d = _unwrap(res);
+    return (d['items'] as List<dynamic>? ?? [])
+        .map((e) => e as Map<String, dynamic>)
+        .toList();
   }
 
   // ── Shopping Agent (SCR-C-05) ────────────────────────────────────────────
@@ -721,6 +828,8 @@ class ApiClient {
       generalListOnly: d['general_list_only'] as bool? ?? false,
       shoppingListId: d['shopping_list_id'] as String?,
       fallbackMode: d['fallback_mode'] as bool? ?? false,
+      llmAssisted: d['llm_assisted'] as bool? ?? false,
+      nextActionGuide: d['next_action_guide'] as String?,
       retryGuide: d['retry_guide'] as String?,
     );
   }

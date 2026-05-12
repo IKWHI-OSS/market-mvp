@@ -11,6 +11,8 @@ shopping_agent_service - SCR-C-05 장보기 에이전트(RAG) MVP
 from __future__ import annotations
 
 import hashlib
+import json
+import logging
 from typing import Any, Optional
 
 from fastapi import HTTPException
@@ -20,6 +22,19 @@ from sqlalchemy.orm import Session
 from app.db.models.product import Product, StockStatusEnum
 from app.db.models.store import Store
 from app.db.repositories import shopping_list_repository as shopping_repo
+from app.core.config import settings
+
+logger = logging.getLogger(__name__)
+
+def _candidate_shopping_models() -> list[str]:
+    preferred = (settings.ANTHROPIC_MODEL_SHOPPING_AGENT or "").strip()
+    models = [
+        preferred,
+        "claude-3-5-haiku-latest",
+        "claude-3-5-sonnet-latest",
+        "claude-3-haiku-20240307",
+    ]
+    return [m for i, m in enumerate(models) if m and m not in models[:i]]
 
 
 _RECIPE_DATASET = [
@@ -131,6 +146,42 @@ _RECIPE_DATASET = [
             },
         ],
     },
+    {
+        "id": "recipe_004",
+        "title": "고등어 간장볶음 세트",
+        "keywords": ["고등어", "볶음", "생선", "저녁", "2인"],
+        "reason": "고등어를 활용해 짧은 시간 안에 감칠맛 있는 볶음 요리를 만들 수 있습니다.",
+        "ingredients": [
+            {
+                "name": "고등어",
+                "qty": 1,
+                "unit": "손",
+                "alternatives": ["갈치", "꽁치"],
+                "seasonal": False,
+            },
+            {
+                "name": "양파",
+                "qty": 1,
+                "unit": "개",
+                "alternatives": ["대파"],
+                "seasonal": False,
+            },
+            {
+                "name": "대파",
+                "qty": 1,
+                "unit": "단",
+                "alternatives": ["쪽파"],
+                "seasonal": True,
+            },
+            {
+                "name": "청양고추",
+                "qty": 1,
+                "unit": "봉",
+                "alternatives": ["홍고추"],
+                "seasonal": True,
+            },
+        ],
+    },
 ]
 
 
@@ -154,6 +205,14 @@ def _pick_recipe(query: str, preferences: Optional[list[str]]) -> dict[str, Any]
                 score += 2
             if kw.lower() in pref:
                 score += 1
+        for ing in recipe["ingredients"]:
+            ing_name = str(ing.get("name", "")).lower()
+            if ing_name and ing_name in q:
+                score += 3
+            for alt in (ing.get("alternatives") or []):
+                alt_name = str(alt).lower()
+                if alt_name and alt_name in q:
+                    score += 2
         if score > best_score:
             best = recipe
             best_score = score
@@ -253,8 +312,73 @@ def _fallback_payload(query: str) -> dict[str, Any]:
         "general_list_only": True,
         "shopping_list_id": None,
         "fallback_mode": True,
+        "llm_assisted": False,
+        "next_action_guide": None,
         "retry_guide": "잠시 후 다시 시도해주세요. 문제가 지속되면 일반 장보기 리스트를 사용해주세요.",
     }
+
+def _call_llm_menu_copy(
+    query: str,
+    recipe_title: str,
+    recipe_reason: str,
+    people: int,
+    budget: Optional[int],
+) -> Optional[dict[str, str]]:
+    """
+    장보기 에이전트 응답 문구를 LLM으로 보강한다.
+    - 실패해도 기능 자체는 유지되어야 하므로 실패 시 None 반환.
+    """
+    api_key = (settings.ANTHROPIC_API_KEY or "").strip()
+    if not api_key:
+        return None
+
+    try:
+        import anthropic  # type: ignore
+    except Exception:
+        return None
+
+    client = anthropic.Anthropic(api_key=api_key)
+
+    prompt = (
+        "너는 전통시장 장보기 도우미다. 주어진 추천 메뉴를 바탕으로 소비자가 바로 행동할 수 있게 "
+        "짧고 명확한 한국어 문구를 만든다.\n"
+        "반드시 JSON 객체만 출력하라.\n"
+        '스키마: {"menu_title":"...", "menu_reason":"...", "next_action":"..."}\n'
+        "제약: menu_title 20자 이내, menu_reason 60자 이내, next_action 40자 이내.\n\n"
+        f"사용자 질의: {query}\n"
+        f"기본 추천 메뉴: {recipe_title}\n"
+        f"기본 추천 사유: {recipe_reason}\n"
+        f"인원: {people}\n"
+        f"예산: {budget if budget is not None else '미지정'}\n"
+    )
+
+    last_error: Optional[Exception] = None
+    for model_name in _candidate_shopping_models():
+        try:
+            message = client.messages.create(
+                model=model_name,
+                max_tokens=220,
+                messages=[{"role": "user", "content": prompt}],
+            )
+            raw = message.content[0].text.strip()
+            data = json.loads(raw)
+            if not isinstance(data, dict):
+                return None
+            title = str(data.get("menu_title", "")).strip()
+            reason = str(data.get("menu_reason", "")).strip()
+            action = str(data.get("next_action", "")).strip()
+            if not title or not reason:
+                return None
+            return {
+                "menu_title": title,
+                "menu_reason": reason,
+                "next_action": action,
+            }
+        except Exception as e:
+            last_error = e
+            continue
+    logger.warning("shopping-agent LLM 문구 보강 실패: %s", last_error)
+    return None
 
 
 def generate_agent_recommendation(
@@ -285,6 +409,8 @@ def generate_agent_recommendation(
                 "general_list_only": False,
                 "shopping_list_id": None,
                 "fallback_mode": False,
+                "llm_assisted": False,
+                "next_action_guide": None,
                 "retry_guide": None,
             }
 
@@ -292,6 +418,13 @@ def generate_agent_recommendation(
         scale = max(1, int(people or 2))
         if scale > 4:
             scale = 4
+        llm_copy = _call_llm_menu_copy(
+            query=clean_query,
+            recipe_title=recipe["title"],
+            recipe_reason=recipe["reason"],
+            people=scale,
+            budget=budget,
+        )
 
         ingredients_out: list[dict[str, Any]] = []
         store_index: dict[str, dict[str, Any]] = {}
@@ -400,8 +533,8 @@ def generate_agent_recommendation(
             "clarification_question": None,
             "stage": "menu_list_matching",
             "menu": {
-                "title": recipe["title"],
-                "reason": recipe["reason"],
+                "title": llm_copy["menu_title"] if llm_copy else recipe["title"],
+                "reason": llm_copy["menu_reason"] if llm_copy else recipe["reason"],
                 "rag_source": "sample_recipe_dataset_v1",
                 "people": scale,
                 "budget": budget,
@@ -412,6 +545,8 @@ def generate_agent_recommendation(
             "general_list_only": matching_failed,
             "shopping_list_id": shopping_list_id,
             "fallback_mode": False,
+            "llm_assisted": bool(llm_copy),
+            "next_action_guide": llm_copy["next_action"] if llm_copy else None,
             "retry_guide": None if not matching_failed else "점포 매칭이 어려워 일반 장보기 리스트만 먼저 제공했습니다.",
         }
     except HTTPException:

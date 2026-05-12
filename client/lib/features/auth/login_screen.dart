@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/router.dart';
-import '../../core/network/api_client.dart';
+import '../../core/repositories/repository_provider.dart';
 
 enum _RoleChoice { consumer, merchant }
 
@@ -50,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     setState(() => _loading = true);
     try {
-      final session = await ApiClient.instance.login(
+      final session = await context.marketRepository.login(
         email: email,
         password: password,
       );
@@ -70,17 +70,32 @@ class _LoginScreenState extends State<LoginScreen> {
       }
     } catch (e) {
       if (!mounted) return;
-      final raw = e.toString();
-      final message = raw.replaceFirst('Exception: ', '');
+      final message = _normalizeLoginError(e);
       await _showAuthDialog(
         title: '로그인 실패',
-        message: message == '아이디 또는 비밀번호를 확인해주세요.'
-            ? '등록되지 않은 계정이거나 비밀번호가 일치하지 않습니다.\n아이디와 비밀번호를 다시 확인해주세요.'
-            : message,
+        message: message,
       );
     } finally {
       if (mounted) setState(() => _loading = false);
     }
+  }
+
+  String _normalizeLoginError(Object error) {
+    final raw = error.toString().replaceFirst('Exception: ', '').trim();
+    if (raw.isEmpty) {
+      return '로그인 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.';
+    }
+    if (raw.contains('이메일 또는 비밀번호가 올바르지 않습니다') ||
+        raw.contains('아이디 또는 비밀번호')) {
+      return '등록되지 않은 계정이거나 비밀번호가 일치하지 않습니다.\n아이디와 비밀번호를 다시 확인해주세요.';
+    }
+    if (raw.contains('SocketException') ||
+        raw.contains('ClientException') ||
+        raw.contains('Failed host lookup') ||
+        raw.contains('XMLHttpRequest')) {
+      return '네트워크 연결이 원활하지 않습니다.\n인터넷 연결 또는 서버 상태를 확인해주세요.';
+    }
+    return '로그인 중 오류가 발생했습니다.\n$raw';
   }
 
   @override
@@ -97,22 +112,22 @@ class _LoginScreenState extends State<LoginScreen> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Image.asset(
-                  'assets/images/branding/icon_logo.png',
-                  height: 44,
+                  'assets/images/new_logo/icon_logo.png',
+                  height: 88,
                   fit: BoxFit.contain,
                 ),
               ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Image.asset(
-                  'assets/images/branding/typo logo.png',
-                  height: 34,
+                  'assets/images/new_logo/typo_logo_eng_black.png',
+                  height: 68,
                   fit: BoxFit.contain,
                 ),
               ),
               const SizedBox(height: 22),
               const Text(
-                '전통시장의 생동감과 장보기의 똑똑함을 담은\n마켓인포에 오신 것을 환영합니다.',
+                '전통시장의 생동감과 장보기의 똑똑함을 담은\n돗개비에 오신 것을 환영합니다.',
                 style: TextStyle(
                   fontSize: 14,
                   color: Color(0xFF5F6A58),
@@ -201,38 +216,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   child: const Text('회원가입'),
                 ),
-              ),
-              const SizedBox(height: 8),
-              Row(
-                children: [
-                  Expanded(
-                    child: OutlinedButton(
-                      onPressed: _loading
-                          ? null
-                          : () {
-                              setState(() => _selectedRole = _RoleChoice.consumer);
-                              _emailController.text = 'consumer@example.com';
-                              _passwordController.text = 'password123';
-                              _onLogin();
-                            },
-                      child: const Text('데모 소비자'),
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: OutlinedButton(
-                      onPressed: _loading
-                          ? null
-                          : () {
-                              setState(() => _selectedRole = _RoleChoice.merchant);
-                              _emailController.text = 'merchant@example.com';
-                              _passwordController.text = 'password123';
-                              _onLogin();
-                            },
-                      child: const Text('데모 상인'),
-                    ),
-                  ),
-                ],
               ),
               const SizedBox(height: 16),
               const Center(

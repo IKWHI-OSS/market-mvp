@@ -1,0 +1,26 @@
+[
+  {
+    "product_id": "p1000049-e5f6-4789-a012-b3c4d5e6f749",
+    "store_id": "d1000011-e5f6-4789-a012-b3c4d5e6f711",
+    "product_name": "친환경 애호박 1개",
+    "price": 2200,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000050-e5f6-4789-a012-b3c4d5e6f750",
+    "store_id": "d1000011-e5f6-4789-a012-b3c4d5e6f711",
+    "product_name": "무농약 대파 1단",
+    "price": 2400,
+    "stock_status": "in_stock",
+    "image_url": null
+  },
+  {
+    "product_id": "p1000051-e5f6-4789-a012-b3c4d5e6f751",
+    "store_id": "d1000011-e5f6-4789-a012-b3c4d5e6f711",
+    "product_name": "국내산 감자 1kg",
+    "price": 3900,
+    "stock_status": "low_stock",
+    "image_url": null
+  }
+]

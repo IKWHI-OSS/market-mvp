@@ -5,6 +5,7 @@ seed_mock.py — market_mvp 데이터베이스에 목(Mock) 데이터를 삽입�
 
 import os
 import json
+import argparse
 import bcrypt
 import mysql.connector
 from dotenv import load_dotenv
@@ -20,22 +21,62 @@ DB_CONFIG = {
 }
 
 MOCK_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "mock")
+MOCK_PROFILE = os.getenv("MOCK_PROFILE", "").strip()
+
+def _dedupe_rows(rows: list[dict]) -> list[dict]:
+    if not rows:
+        return rows
+    # *_id 형태의 PK를 우선 dedupe 키로 사용
+    id_key = None
+    sample = rows[0]
+    for k in sample.keys():
+        if k.endswith("_id"):
+            id_key = k
+            break
+    if not id_key:
+        return rows
+    out = {}
+    for row in rows:
+        key = row.get(id_key)
+        if key is None:
+            continue
+        out[key] = row
+    return list(out.values())
 
 
-def load_json(filename: str) -> list:
-    path = os.path.join(MOCK_DIR, filename)
-    if not os.path.exists(path):
-        print(f"[SKIP] {filename} not found")
+def load_json(filename: str, profile: str = "") -> list:
+    base_path = os.path.join(MOCK_DIR, filename)
+    base_rows = []
+    if os.path.exists(base_path):
+        with open(base_path, encoding="utf-8") as f:
+            base_rows = json.load(f)
+
+    if not profile:
+        if not base_rows:
+            print(f"[SKIP] {filename} not found")
+        return base_rows
+
+    profile_path = os.path.join(MOCK_DIR, "profiles", profile, filename)
+    profile_rows = []
+    if os.path.exists(profile_path):
+        with open(profile_path, encoding="utf-8") as f:
+            profile_rows = json.load(f)
+
+    if not base_rows and not profile_rows:
+        print(f"[SKIP] {filename} not found (base/profile)")
         return []
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
+
+    merged = _dedupe_rows(base_rows + profile_rows)
+    if profile_rows:
+        print(f"[PROFILE:{profile}] {filename} +{len(profile_rows)}건 병합")
+    return merged
 
 
-def seed(conn):
+def seed(conn, profile: str = ""):
     cur = conn.cursor()
 
     # 1. Market
-    markets = load_json("markets.json")
+    markets = load_json("markets.json", profile)
     for m in markets:
         cur.execute(
             "INSERT IGNORE INTO Market (market_id, market_name, address, lat, lng) "
@@ -45,7 +86,7 @@ def seed(conn):
     print(f"[OK] Market          : {len(markets)}건")
 
     # 2. User
-    users = load_json("users.json")
+    users = load_json("users.json", profile)
     for u in users:
         hashed_pw = bcrypt.hashpw(u["password"].encode(), bcrypt.gensalt(rounds=12)).decode()
         cur.execute(
@@ -59,7 +100,7 @@ def seed(conn):
     print("       merchant01@market.com  (상인)")
 
     # 3. Store
-    stores = load_json("stores.json")
+    stores = load_json("stores.json", profile)
     for s in stores:
         cur.execute(
             "INSERT IGNORE INTO Store "
@@ -71,7 +112,7 @@ def seed(conn):
     print(f"[OK] Store           : {len(stores)}건")
 
     # 4. Merchant
-    merchants = load_json("merchants.json")
+    merchants = load_json("merchants.json", profile)
     for m in merchants:
         cur.execute(
             "INSERT IGNORE INTO Merchant (merchant_id, store_id, user_id, display_name) "
@@ -81,7 +122,7 @@ def seed(conn):
     print(f"[OK] Merchant        : {len(merchants)}건")
 
     # 5. Product
-    products = load_json("products.json")
+    products = load_json("products.json", profile)
     for p in products:
         cur.execute(
             "INSERT IGNORE INTO Product "
@@ -93,7 +134,7 @@ def seed(conn):
     print(f"[OK] Product         : {len(products)}건")
 
     # 6. DropEvent
-    drops = load_json("drop_events.json")
+    drops = load_json("drop_events.json", profile)
     for d in drops:
         cur.execute(
             "INSERT IGNORE INTO DropEvent (drop_id, product_id, store_id, expected_at, status) "
@@ -104,7 +145,7 @@ def seed(conn):
     print(f"[OK] DropEvent       : {len(drops)}건")
 
     # 7. CatalogItem
-    catalogs = load_json("catalog_items.json")
+    catalogs = load_json("catalog_items.json", profile)
     for c in catalogs:
         title = c.get("title", c.get("title_snapshot", ""))
         cur.execute(
@@ -117,7 +158,7 @@ def seed(conn):
     print(f"[OK] CatalogItem     : {len(catalogs)}건")
 
     # 8. ShoppingList
-    slists = load_json("shopping_lists.json")
+    slists = load_json("shopping_lists.json", profile)
     for s in slists:
         cur.execute(
             "INSERT IGNORE INTO ShoppingList (shopping_list_id, user_id, title) "
@@ -127,7 +168,7 @@ def seed(conn):
     print(f"[OK] ShoppingList    : {len(slists)}건")
 
     # 9. ShoppingListItem
-    items = load_json("shopping_list_items.json")
+    items = load_json("shopping_list_items.json", profile)
     for i in items:
         cur.execute(
             "INSERT IGNORE INTO ShoppingListItem "
@@ -139,7 +180,7 @@ def seed(conn):
     print(f"[OK] ShoppingListItem: {len(items)}건")
 
     # 10. RoutePlan
-    routes = load_json("route_plans.json")
+    routes = load_json("route_plans.json", profile)
     for r in routes:
         route_json = r["route_json"]
         if not isinstance(route_json, str):
@@ -152,7 +193,7 @@ def seed(conn):
     print(f"[OK] RoutePlan       : {len(routes)}건")
 
     # 11. Notification
-    notifs = load_json("notifications.json")
+    notifs = load_json("notifications.json", profile)
     for n in notifs:
         cur.execute(
             "INSERT IGNORE INTO Notification "
@@ -165,7 +206,7 @@ def seed(conn):
     print(f"[OK] Notification    : {len(notifs)}건")
 
     # 12. Preorder
-    preorders = load_json("preorders.json")
+    preorders = load_json("preorders.json", profile)
     for p in preorders:
         cur.execute(
             "INSERT IGNORE INTO Preorder "
@@ -178,13 +219,22 @@ def seed(conn):
 
     conn.commit()
     cur.close()
-    print("\n✅ 전체 시딩 완료")
+    profile_txt = profile if profile else "base"
+    print(f"\n✅ 전체 시딩 완료 (profile={profile_txt})")
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Mock 데이터 시딩")
+    parser.add_argument(
+        "--profile",
+        default=MOCK_PROFILE,
+        help="data/mock/profiles/<profile> 데이터 병합 (예: consumer_demo, merchant_demo, agent_demo)",
+    )
+    args = parser.parse_args()
+
     conn = mysql.connector.connect(**DB_CONFIG)
     try:
-        seed(conn)
+        seed(conn, args.profile)
     finally:
         conn.close()
 

@@ -50,16 +50,6 @@ class _MerchantProductFormScreenState extends State<MerchantProductFormScreen> {
         child: ListView(
           padding: const EdgeInsets.fromLTRB(16, 10, 16, 20),
           children: [
-            const Text(
-              'THE HERITAGE LEDGER',
-              style: TextStyle(
-                fontSize: 12,
-                letterSpacing: 1.2,
-                color: Color(0xFFA34220),
-                fontWeight: FontWeight.w800,
-              ),
-            ),
-            const SizedBox(height: 8),
             Text(
               '새로운 상품\n등록하기',
               style: Theme.of(context).textTheme.headlineLarge?.copyWith(

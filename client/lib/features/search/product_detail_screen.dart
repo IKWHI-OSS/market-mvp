@@ -5,6 +5,7 @@ import '../../core/network/api_client.dart';
 import '../../shared/widgets/error_state.dart';
 import '../../shared/widgets/market_logo_title.dart';
 import '../home/spotlight_screen.dart';
+import '../../core/repositories/repository_provider.dart';
 
 class ProductDetailArgs {
   const ProductDetailArgs({required this.productId});
@@ -27,7 +28,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
   @override
   void initState() {
     super.initState();
-    _future = ApiClient.instance.getProductDetail(widget.args.productId);
+    _future = context.marketRepository.getProductDetail(widget.args.productId);
   }
 
   String _imageForProduct(String productId) {
@@ -72,7 +73,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               description: '잠시 후 다시 시도해주세요.',
               onRetry: () {
                 setState(() {
-                  _future = ApiClient.instance.getProductDetail(widget.args.productId);
+                  _future = context.marketRepository.getProductDetail(widget.args.productId);
                 });
               },
               onSecondary: () => Navigator.pop(context),
@@ -109,8 +110,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                             ),
                             const SizedBox(width: 8),
                             const SizedBox(
-                              height: 22,
-                              child: Align(
+                              height: 37,
+                    child: Align(
                                 alignment: Alignment.centerLeft,
                                 child: MarketLogoTitle(),
                               ),
@@ -277,7 +278,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                           Row(
                             children: [
                               const Text(
-                                'MERCHANT LOCATION',
+                                'SHOP LOCATION',
                                 style: TextStyle(fontSize: 11, color: Color(0xFF8C9587), fontWeight: FontWeight.w700, letterSpacing: 0.8),
                               ),
                               const Spacer(),
@@ -292,7 +293,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                             child: Image.network(
                               'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&q=80',
                               width: double.infinity,
-                              height: 138,
+                              height: 188,
                               fit: BoxFit.cover,
                             ),
                           ),
