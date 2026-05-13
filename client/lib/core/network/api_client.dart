@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 const _baseUrl = String.fromEnvironment(
   'API_BASE_URL',
-  defaultValue: 'http://54.180.102.166/api/v1',
+  defaultValue: 'http://13.125.251.236/api/v1',
 );
 const _defaultMarketId = 'f1a2b3c4-d5e6-4789-a012-b3c4d5e6f701';
 
